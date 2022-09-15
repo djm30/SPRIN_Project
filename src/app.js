@@ -4,6 +4,8 @@ const passport = require("passport");
 const getRedisClient = require("./config/redis");
 const RedisStore = require("connect-redis")(session);
 const morganMiddleware = require("./config/morgan");
+const errorMiddleware = require("./middleware/error");
+
 const logger = require("./config/logger");
 
 const app = express();
@@ -50,5 +52,7 @@ logger.info("This is a winston log message");
 
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/stats", require("./routes/statsRoutes"));
+
+app.use(errorMiddleware);
 
 module.exports = app;
