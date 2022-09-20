@@ -52,6 +52,7 @@ logger.info("This is a winston log message");
 
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/stats", require("./routes/statsRoutes"));
+app.use("/api/events", require("./routes/eventRoutes"));
 
 app.use(errorMiddleware);
 

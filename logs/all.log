@@ -203,3 +203,724 @@
 2022-09-15 09:50:57:5057 [32minfo[39m: [32mThis is a winston log message[39m
 2022-09-15 09:51:00:510 [32minfo[39m: [32mThis is a winston log message[39m
 2022-09-15 09:51:09:519 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 14:42:28:4228 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 14:44:39:4439 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 14:45:57:4557 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 14:47:33:4733 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 14:47:43:4743 [31merror[39m: [31mMongooseError: Operation `stats.findOne()` buffering timed out after 10000ms[39m
+2022-09-20 14:47:52:4752 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 14:48:08:488 [31merror[39m: [31mMongooseError: Operation `stats.findOne()` buffering timed out after 10000ms[39m
+2022-09-20 15:00:13:013 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:00:14:014 [32minfo[39m: [32mMongoose Connected[39m
+2022-09-20 15:00:23:023 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:00:24:024 [32minfo[39m: [32mMongoose Connected[39m
+2022-09-20 15:08:50:850 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:09:36:936 [35mhttp[39m: [35mGET /api/stats 200 109 - 55.438 ms Body - {}[39m
+[35m[39m
+2022-09-20 15:09:36:936 [35mhttp[39m: [35mGET /favicon.ico 404 150 - 2.242 ms Body - {}[39m
+[35m[39m
+2022-09-20 15:10:37:1037 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:12:00:120 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:12:13:1213 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:12:24:1224 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:12:45:1245 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:12:48:1248 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:12:55:1255 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:12:56:1256 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:16:14:1614 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:16:20:1620 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:16:20:1620 [32minfo[39m: [32mMongoose Connected[39m
+2022-09-20 15:16:20:1620 [32minfo[39m: [32m<ref *2> Response {[39m
+[32m  _events: [Object: null prototype] {},[39m
+[32m  _eventsCount: 0,[39m
+[32m  _maxListeners: undefined,[39m
+[32m  res: <ref *1> IncomingMessage {[39m
+[32m    _readableState: ReadableState {[39m
+[32m      objectMode: false,[39m
+[32m      highWaterMark: 16384,[39m
+[32m      buffer: BufferList { head: null, tail: null, length: 0 },[39m
+[32m      length: 0,[39m
+[32m      pipes: [],[39m
+[32m      flowing: true,[39m
+[32m      ended: true,[39m
+[32m      endEmitted: true,[39m
+[32m      reading: false,[39m
+[32m      constructed: true,[39m
+[32m      sync: true,[39m
+[32m      needReadable: false,[39m
+[32m      emittedReadable: false,[39m
+[32m      readableListening: false,[39m
+[32m      resumeScheduled: false,[39m
+[32m      errorEmitted: false,[39m
+[32m      emitClose: true,[39m
+[32m      autoDestroy: true,[39m
+[32m      destroyed: true,[39m
+[32m      errored: null,[39m
+[32m      closed: true,[39m
+[32m      closeEmitted: true,[39m
+[32m      defaultEncoding: 'utf8',[39m
+[32m      awaitDrainWriters: null,[39m
+[32m      multiAwaitDrain: false,[39m
+[32m      readingMore: true,[39m
+[32m      dataEmitted: true,[39m
+[32m      decoder: [StringDecoder],[39m
+[32m      encoding: 'utf8',[39m
+[32m      [Symbol(kPaused)]: false[39m
+[32m    },[39m
+[32m    _events: [Object: null prototype] {[39m
+[32m      end: [Array],[39m
+[32m      data: [Array],[39m
+[32m      error: [Array],[39m
+[32m      close: [Function: bound emit][39m
+[32m    },[39m
+[32m    _eventsCount: 4,[39m
+[32m    _maxListeners: undefined,[39m
+[32m    socket: Socket {[39m
+[32m      connecting: false,[39m
+[32m      _hadError: false,[39m
+[32m      _parent: null,[39m
+[32m      _host: null,[39m
+[32m      _readableState: [ReadableState],[39m
+[32m      _events: [Object: null prototype],[39m
+[32m      _eventsCount: 7,[39m
+[32m      _maxListeners: undefined,[39m
+[32m      _writableState: [WritableState],[39m
+[32m      allowHalfOpen: false,[39m
+[32m      _sockname: null,[39m
+[32m      _pendingData: null,[39m
+[32m      _pendingEncoding: '',[39m
+[32m      server: null,[39m
+[32m      _server: null,[39m
+[32m      parser: null,[39m
+[32m      _httpMessage: [ClientRequest],[39m
+[32m      [Symbol(async_id_symbol)]: 138,[39m
+[32m      [Symbol(kHandle)]: [TCP],[39m
+[32m      [Symbol(lastWriteQueueSize)]: 0,[39m
+[32m      [Symbol(timeout)]: null,[39m
+[32m      [Symbol(kBuffer)]: null,[39m
+[32m      [Symbol(kBufferCb)]: null,[39m
+[32m      [Symbol(kBufferGen)]: null,[39m
+[32m      [Symbol(kCapture)]: false,[39m
+[32m      [Symbol(kSetNoDelay)]: true,[39m
+[32m      [Symbol(kSetKeepAlive)]: false,[39m
+[32m      [Symbol(kSetKeepAliveInitialDelay)]: 0,[39m
+[32m      [Symbol(kBytesRead)]: 0,[39m
+[32m      [Symbol(kBytesWritten)]: 0[39m
+[32m    },[39m
+[32m    httpVersionMajor: 1,[39m
+[32m    httpVersionMinor: 1,[39m
+[32m    httpVersion: '1.1',[39m
+[32m    complete: true,[39m
+[32m    rawHeaders: [[39m
+[32m      'X-Powered-By',[39m
+[32m      'Express',[39m
+[32m      'Content-Type',[39m
+[32m      'application/json; charset=utf-8',[39m
+[32m      'Content-Length',[39m
+[32m      '109',[39m
+[32m      'ETag',[39m
+[32m      'W/"6d-mAW0SVLaV2N6BFhWngbVwd/sq1w"',[39m
+[32m      'Date',[39m
+[32m      'Tue, 20 Sep 2022 14:16:20 GMT',[39m
+[32m      'Connection',[39m
+[32m      'close'[39m
+[32m    ],[39m
+[32m    rawTrailers: [],[39m
+[32m    aborted: false,[39m
+[32m    upgrade: false,[39m
+[32m    url: '',[39m
+[32m    method: null,[39m
+[32m    statusCode: 200,[39m
+[32m    statusMessage: 'OK',[39m
+[32m    client: Socket {[39m
+[32m      connecting: false,[39m
+[32m      _hadError: false,[39m
+[32m      _parent: null,[39m
+[32m      _host: null,[39m
+[32m      _readableState: [ReadableState],[39m
+[32m      _events: [Object: null prototype],[39m
+[32m      _eventsCount: 7,[39m
+[32m      _maxListeners: undefined,[39m
+[32m      _writableState: [WritableState],[39m
+[32m      allowHalfOpen: false,[39m
+[32m      _sockname: null,[39m
+[32m      _pendingData: null,[39m
+[32m      _pendingEncoding: '',[39m
+[32m      server: null,[39m
+[32m      _server: null,[39m
+[32m      parser: null,[39m
+[32m      _httpMessage: [ClientRequest],[39m
+[32m      [Symbol(async_id_symbol)]: 138,[39m
+[32m      [Symbol(kHandle)]: [TCP],[39m
+[32m      [Symbol(lastWriteQueueSize)]: 0,[39m
+[32m      [Symbol(timeout)]: null,[39m
+[32m      [Symbol(kBuffer)]: null,[39m
+[32m      [Symbol(kBufferCb)]: null,[39m
+[32m      [Symbol(kBufferGen)]: null,[39m
+[32m      [Symbol(kCapture)]: false,[39m
+[32m      [Symbol(kSetNoDelay)]: true,[39m
+[32m      [Symbol(kSetKeepAlive)]: false,[39m
+[32m      [Symbol(kSetKeepAliveInitialDelay)]: 0,[39m
+[32m      [Symbol(kBytesRead)]: 0,[39m
+[32m      [Symbol(kBytesWritten)]: 0[39m
+[32m    },[39m
+[32m    _consuming: false,[39m
+[32m    _dumped: false,[39m
+[32m    req: ClientRequest {[39m
+[32m      _events: [Object: null prototype],[39m
+[32m      _eventsCount: 3,[39m
+[32m      _maxListeners: undefined,[39m
+[32m      outputData: [],[39m
+[32m      outputSize: 0,[39m
+[32m      writable: true,[39m
+[32m      destroyed: false,[39m
+[32m      _last: true,[39m
+[32m      chunkedEncoding: false,[39m
+[32m      shouldKeepAlive: false,[39m
+[32m      maxRequestsOnConnectionReached: false,[39m
+[32m      _defaultKeepAlive: true,[39m
+[32m      useChunkedEncodingByDefault: false,[39m
+[32m      sendDate: false,[39m
+[32m      _removedConnection: false,[39m
+[32m      _removedContLen: false,[39m
+[32m      _removedTE: false,[39m
+[32m      _contentLength: 0,[39m
+[32m      _hasBody: true,[39m
+[32m      _trailer: '',[39m
+[32m      finished: true,[39m
+[32m      _headerSent: true,[39m
+[32m      _closed: false,[39m
+[32m      socket: [Socket],[39m
+[32m      _header: 'GET /api/stats HTTP/1.1\r\n' +[39m
+[32m        'Host: 127.0.0.1:57115\r\n' +[39m
+[32m        'Accept-Encoding: gzip, deflate\r\n' +[39m
+[32m        'Connection: close\r\n' +[39m
+[32m        '\r\n',[39m
+[32m      _keepAliveTimeout: 0,[39m
+[32m      _onPendingData: [Function: nop],[39m
+[32m      agent: [Agent],[39m
+[32m      socketPath: undefined,[39m
+[32m      method: 'GET',[39m
+[32m      maxHeaderSize: undefined,[39m
+[32m      insecureHTTPParser: undefined,[39m
+[32m      path: '/api/stats',[39m
+[32m      _ended: true,[39m
+[32m      res: [Circular *1],[39m
+[32m      aborted: false,[39m
+[32m      timeoutCb: null,[39m
+[32m      upgradeOrConnect: false,[39m
+[32m      parser: null,[39m
+[32m      maxHeadersCount: null,[39m
+[32m      reusedSocket: false,[39m
+[32m      host: '127.0.0.1',[39m
+[32m      protocol: 'http:',[39m
+[32m      [Symbol(kCapture)]: false,[39m
+[32m      [Symbol(kNeedDrain)]: false,[39m
+[32m      [Symbol(corked)]: 0,[39m
+[32m      [Symbol(kOutHeaders)]: [Object: null prototype],[39m
+[32m      [Symbol(kUniqueHeaders)]: null[39m
+[32m    },[39m
+[32m    text: '{"_id":"6329c76e0ba944b553c3092e","month":8,"year":2022,"views":0,"users":0,"resources":0,"events":0,"__v":0}',[39m
+[32m    [Symbol(kCapture)]: false,[39m
+[32m    [Symbol(kHeaders)]: {[39m
+[32m      'x-powered-by': 'Express',[39m
+[32m      'content-type': 'application/json; charset=utf-8',[39m
+[32m      'content-length': '109',[39m
+[32m      etag: 'W/"6d-mAW0SVLaV2N6BFhWngbVwd/sq1w"',[39m
+[32m      date: 'Tue, 20 Sep 2022 14:16:20 GMT',[39m
+[32m      connection: 'close'[39m
+[32m    },[39m
+[32m    [Symbol(kHeadersCount)]: 12,[39m
+[32m    [Symbol(kTrailers)]: null,[39m
+[32m    [Symbol(kTrailersCount)]: 0[39m
+[32m  },[39m
+[32m  request: Test {[39m
+[32m    _events: [Object: null prototype] { abort: [Function (anonymous)] },[39m
+[32m    _eventsCount: 1,[39m
+[32m    _maxListeners: undefined,[39m
+[32m    _enableHttp2: false,[39m
+[32m    _agent: false,[39m
+[32m    _formData: null,[39m
+[32m    method: 'GET',[39m
+[32m    url: 'http://127.0.0.1:57115/api/stats',[39m
+[32m    _header: {},[39m
+[32m    header: {},[39m
+[32m    writable: true,[39m
+[32m    _redirects: 0,[39m
+[32m    _maxRedirects: 0,[39m
+[32m    cookies: '',[39m
+[32m    qs: {},[39m
+[32m    _query: [],[39m
+[32m    qsRaw: [],[39m
+[32m    _redirectList: [],[39m
+[32m    _streamRequest: false,[39m
+[32m    _lookup: undefined,[39m
+[32m    _buffer: true,[39m
+[32m    app: Server {[39m
+[32m      maxHeaderSize: undefined,[39m
+[32m      insecureHTTPParser: undefined,[39m
+[32m      requestTimeout: 300000,[39m
+[32m      headersTimeout: 60000,[39m
+[32m      keepAliveTimeout: 5000,[39m
+[32m      connectionsCheckingInterval: 30000,[39m
+[32m      _events: [Object: null prototype],[39m
+[32m      _eventsCount: 2,[39m
+[32m      _maxListeners: undefined,[39m
+[32m      _connections: 0,[39m
+[32m      _handle: null,[39m
+[32m      _usingWorkers: false,[39m
+[32m      _workers: [],[39m
+[32m      _unref: false,[39m
+[32m      allowHalfOpen: true,[39m
+[32m      pauseOnConnect: false,[39m
+[32m      noDelay: true,[39m
+[32m      keepAlive: false,[39m
+[32m      keepAliveInitialDelay: 0,[39m
+[32m      httpAllowHalfOpen: false,[39m
+[32m      timeout: 0,[39m
+[32m      maxHeadersCount: null,[39m
+[32m      maxRequestsPerSocket: 0,[39m
+[32m      _connectionKey: '6::::0',[39m
+[32m      [Symbol(IncomingMessage)]: [Function: IncomingMessage],[39m
+[32m      [Symbol(ServerResponse)]: [Function: ServerResponse],[39m
+[32m      [Symbol(kCapture)]: false,[39m
+[32m      [Symbol(async_id_symbol)]: 136,[39m
+[32m      [Symbol(http.server.connections)]: ConnectionsList {},[39m
+[32m      [Symbol(http.server.connectionsCheckingInterval)]: Timeout {[39m
+[32m        _idleTimeout: -1,[39m
+[32m        _idlePrev: null,[39m
+[32m        _idleNext: null,[39m
+[32m        _idleStart: 1114,[39m
+[32m        _onTimeout: null,[39m
+[32m        _timerArgs: undefined,[39m
+[32m        _repeat: 30000,[39m
+[32m        _destroyed: true,[39m
+[32m        [Symbol(refed)]: false,[39m
+[32m        [Symbol(kHasPrimitive)]: false,[39m
+[32m        [Symbol(asyncId)]: 133,[39m
+[32m        [Symbol(triggerId)]: 0[39m
+[32m      },[39m
+[32m      [Symbol(kUniqueHeaders)]: null[39m
+[32m    },[39m
+[32m    _asserts: [ [Function (anonymous)], [Function (anonymous)] ],[39m
+[32m    _server: Server {[39m
+[32m      maxHeaderSize: undefined,[39m
+[32m      insecureHTTPParser: undefined,[39m
+[32m      requestTimeout: 300000,[39m
+[32m      headersTimeout: 60000,[39m
+[32m      keepAliveTimeout: 5000,[39m
+[32m      connectionsCheckingInterval: 30000,[39m
+[32m      _events: [Object: null prototype],[39m
+[32m      _eventsCount: 2,[39m
+[32m      _maxListeners: undefined,[39m
+[32m      _connections: 0,[39m
+[32m      _handle: null,[39m
+[32m      _usingWorkers: false,[39m
+[32m      _workers: [],[39m
+[32m      _unref: false,[39m
+[32m      allowHalfOpen: true,[39m
+[32m      pauseOnConnect: false,[39m
+[32m      noDelay: true,[39m
+[32m      keepAlive: false,[39m
+[32m      keepAliveInitialDelay: 0,[39m
+[32m      httpAllowHalfOpen: false,[39m
+[32m      timeout: 0,[39m
+[32m      maxHeadersCount: null,[39m
+[32m      maxRequestsPerSocket: 0,[39m
+[32m      _connectionKey: '6::::0',[39m
+[32m      [Symbol(IncomingMessage)]: [Function: IncomingMessage],[39m
+[32m      [Symbol(ServerResponse)]: [Function: ServerResponse],[39m
+[32m      [Symbol(kCapture)]: false,[39m
+[32m      [Symbol(async_id_symbol)]: 136,[39m
+[32m      [Symbol(http.server.connections)]: ConnectionsList {},[39m
+[32m      [Symbol(http.server.connectionsCheckingInterval)]: Timeout {[39m
+[32m        _idleTimeout: -1,[39m
+[32m        _idlePrev: null,[39m
+[32m        _idleNext: null,[39m
+[32m        _idleStart: 1114,[39m
+[32m        _onTimeout: null,[39m
+[32m        _timerArgs: undefined,[39m
+[32m        _repeat: 30000,[39m
+[32m        _destroyed: true,[39m
+[32m        [Symbol(refed)]: false,[39m
+[32m        [Symbol(kHasPrimitive)]: false,[39m
+[32m        [Symbol(asyncId)]: 133,[39m
+[32m        [Symbol(triggerId)]: 0[39m
+[32m      },[39m
+[32m      [Symbol(kUniqueHeaders)]: null[39m
+[32m    },[39m
+[32m    req: ClientRequest {[39m
+[32m      _events: [Object: null prototype],[39m
+[32m      _eventsCount: 3,[39m
+[32m      _maxListeners: undefined,[39m
+[32m      outputData: [],[39m
+[32m      outputSize: 0,[39m
+[32m      writable: true,[39m
+[32m      destroyed: false,[39m
+[32m      _last: true,[39m
+[32m      chunkedEncoding: false,[39m
+[32m      shouldKeepAlive: false,[39m
+[32m      maxRequestsOnConnectionReached: false,[39m
+[32m      _defaultKeepAlive: true,[39m
+[32m      useChunkedEncodingByDefault: false,[39m
+[32m      sendDate: false,[39m
+[32m      _removedConnection: false,[39m
+[32m      _removedContLen: false,[39m
+[32m      _removedTE: false,[39m
+[32m      _contentLength: 0,[39m
+[32m      _hasBody: true,[39m
+[32m      _trailer: '',[39m
+[32m      finished: true,[39m
+[32m      _headerSent: true,[39m
+[32m      _closed: false,[39m
+[32m      socket: [Socket],[39m
+[32m      _header: 'GET /api/stats HTTP/1.1\r\n' +[39m
+[32m        'Host: 127.0.0.1:57115\r\n' +[39m
+[32m        'Accept-Encoding: gzip, deflate\r\n' +[39m
+[32m        'Connection: close\r\n' +[39m
+[32m        '\r\n',[39m
+[32m      _keepAliveTimeout: 0,[39m
+[32m      _onPendingData: [Function: nop],[39m
+[32m      agent: [Agent],[39m
+[32m      socketPath: undefined,[39m
+[32m      method: 'GET',[39m
+[32m      maxHeaderSize: undefined,[39m
+[32m      insecureHTTPParser: undefined,[39m
+[32m      path: '/api/stats',[39m
+[32m      _ended: true,[39m
+[32m      res: [IncomingMessage],[39m
+[32m      aborted: false,[39m
+[32m      timeoutCb: null,[39m
+[32m      upgradeOrConnect: false,[39m
+[32m      parser: null,[39m
+[32m      maxHeadersCount: null,[39m
+[32m      reusedSocket: false,[39m
+[32m      host: '127.0.0.1',[39m
+[32m      protocol: 'http:',[39m
+[32m      [Symbol(kCapture)]: false,[39m
+[32m      [Symbol(kNeedDrain)]: false,[39m
+[32m      [Symbol(corked)]: 0,[39m
+[32m      [Symbol(kOutHeaders)]: [Object: null prototype],[39m
+[32m      [Symbol(kUniqueHeaders)]: null[39m
+[32m    },[39m
+[32m    protocol: 'http:',[39m
+[32m    host: '127.0.0.1:57115',[39m
+[32m    _endCalled: true,[39m
+[32m    _callback: [Function (anonymous)],[39m
+[32m    _fullfilledPromise: Promise { [Circular *2] },[39m
+[32m    res: <ref *1> IncomingMessage {[39m
+[32m      _readableState: [ReadableState],[39m
+[32m      _events: [Object: null prototype],[39m
+[32m      _eventsCount: 4,[39m
+[32m      _maxListeners: undefined,[39m
+[32m      socket: [Socket],[39m
+[32m      httpVersionMajor: 1,[39m
+[32m      httpVersionMinor: 1,[39m
+[32m      httpVersion: '1.1',[39m
+[32m      complete: true,[39m
+[32m      rawHeaders: [Array],[39m
+[32m      rawTrailers: [],[39m
+[32m      aborted: false,[39m
+[32m      upgrade: false,[39m
+[32m      url: '',[39m
+[32m      method: null,[39m
+[32m      statusCode: 200,[39m
+[32m      statusMessage: 'OK',[39m
+[32m      client: [Socket],[39m
+[32m      _consuming: false,[39m
+[32m      _dumped: false,[39m
+[32m      req: [ClientRequest],[39m
+[32m      text: '{"_id":"6329c76e0ba944b553c3092e","month":8,"year":2022,"views":0,"users":0,"resources":0,"events":0,"__v":0}',[39m
+[32m      [Symbol(kCapture)]: false,[39m
+[32m      [Symbol(kHeaders)]: [Object],[39m
+[32m      [Symbol(kHeadersCount)]: 12,[39m
+[32m      [Symbol(kTrailers)]: null,[39m
+[32m      [Symbol(kTrailersCount)]: 0[39m
+[32m    },[39m
+[32m    _resBuffered: true,[39m
+[32m    response: [Circular *2],[39m
+[32m    called: true,[39m
+[32m    [Symbol(kCapture)]: false[39m
+[32m  },[39m
+[32m  req: <ref *3> ClientRequest {[39m
+[32m    _events: [Object: null prototype] {[39m
+[32m      drain: [Function],[39m
+[32m      error: [Function (anonymous)],[39m
+[32m      prefinish: [Function: requestOnPrefinish][39m
+[32m    },[39m
+[32m    _eventsCount: 3,[39m
+[32m    _maxListeners: undefined,[39m
+[32m    outputData: [],[39m
+[32m    outputSize: 0,[39m
+[32m    writable: true,[39m
+[32m    destroyed: false,[39m
+[32m    _last: true,[39m
+[32m    chunkedEncoding: false,[39m
+[32m    shouldKeepAlive: false,[39m
+[32m    maxRequestsOnConnectionReached: false,[39m
+[32m    _defaultKeepAlive: true,[39m
+[32m    useChunkedEncodingByDefault: false,[39m
+[32m    sendDate: false,[39m
+[32m    _removedConnection: false,[39m
+[32m    _removedContLen: false,[39m
+[32m    _removedTE: false,[39m
+[32m    _contentLength: 0,[39m
+[32m    _hasBody: true,[39m
+[32m    _trailer: '',[39m
+[32m    finished: true,[39m
+[32m    _headerSent: true,[39m
+[32m    _closed: false,[39m
+[32m    socket: Socket {[39m
+[32m      connecting: false,[39m
+[32m      _hadError: false,[39m
+[32m      _parent: null,[39m
+[32m      _host: null,[39m
+[32m      _readableState: [ReadableState],[39m
+[32m      _events: [Object: null prototype],[39m
+[32m      _eventsCount: 7,[39m
+[32m      _maxListeners: undefined,[39m
+[32m      _writableState: [WritableState],[39m
+[32m      allowHalfOpen: false,[39m
+[32m      _sockname: null,[39m
+[32m      _pendingData: null,[39m
+[32m      _pendingEncoding: '',[39m
+[32m      server: null,[39m
+[32m      _server: null,[39m
+[32m      parser: null,[39m
+[32m      _httpMessage: [Circular *3],[39m
+[32m      [Symbol(async_id_symbol)]: 138,[39m
+[32m      [Symbol(kHandle)]: [TCP],[39m
+[32m      [Symbol(lastWriteQueueSize)]: 0,[39m
+[32m      [Symbol(timeout)]: null,[39m
+[32m      [Symbol(kBuffer)]: null,[39m
+[32m      [Symbol(kBufferCb)]: null,[39m
+[32m      [Symbol(kBufferGen)]: null,[39m
+[32m      [Symbol(kCapture)]: false,[39m
+[32m      [Symbol(kSetNoDelay)]: true,[39m
+[32m      [Symbol(kSetKeepAlive)]: false,[39m
+[32m      [Symbol(kSetKeepAliveInitialDelay)]: 0,[39m
+[32m      [Symbol(kBytesRead)]: 0,[39m
+[32m      [Symbol(kBytesWritten)]: 0[39m
+[32m    },[39m
+[32m    _header: 'GET /api/stats HTTP/1.1\r\n' +[39m
+[32m      'Host: 127.0.0.1:57115\r\n' +[39m
+[32m      'Accept-Encoding: gzip, deflate\r\n' +[39m
+[32m      'Connection: close\r\n' +[39m
+[32m      '\r\n',[39m
+[32m    _keepAliveTimeout: 0,[39m
+[32m    _onPendingData: [Function: nop],[39m
+[32m    agent: Agent {[39m
+[32m      _events: [Object: null prototype],[39m
+[32m      _eventsCount: 2,[39m
+[32m      _maxListeners: undefined,[39m
+[32m      defaultPort: 80,[39m
+[32m      protocol: 'http:',[39m
+[32m      options: [Object: null prototype],[39m
+[32m      requests: [Object: null prototype] {},[39m
+[32m      sockets: [Object: null prototype],[39m
+[32m      freeSockets: [Object: null prototype] {},[39m
+[32m      keepAliveMsecs: 1000,[39m
+[32m      keepAlive: false,[39m
+[32m      maxSockets: Infinity,[39m
+[32m      maxFreeSockets: 256,[39m
+[32m      scheduling: 'lifo',[39m
+[32m      maxTotalSockets: Infinity,[39m
+[32m      totalSocketCount: 1,[39m
+[32m      [Symbol(kCapture)]: false[39m
+[32m    },[39m
+[32m    socketPath: undefined,[39m
+[32m    method: 'GET',[39m
+[32m    maxHeaderSize: undefined,[39m
+[32m    insecureHTTPParser: undefined,[39m
+[32m    path: '/api/stats',[39m
+[32m    _ended: true,[39m
+[32m    res: <ref *1> IncomingMessage {[39m
+[32m      _readableState: [ReadableState],[39m
+[32m      _events: [Object: null prototype],[39m
+[32m      _eventsCount: 4,[39m
+[32m      _maxListeners: undefined,[39m
+[32m      socket: [Socket],[39m
+[32m      httpVersionMajor: 1,[39m
+[32m      httpVersionMinor: 1,[39m
+[32m      httpVersion: '1.1',[39m
+[32m      complete: true,[39m
+[32m      rawHeaders: [Array],[39m
+[32m      rawTrailers: [],[39m
+[32m      aborted: false,[39m
+[32m      upgrade: false,[39m
+[32m      url: '',[39m
+[32m      method: null,[39m
+[32m      statusCode: 200,[39m
+[32m      statusMessage: 'OK',[39m
+[32m      client: [Socket],[39m
+[32m      _consuming: false,[39m
+[32m      _dumped: false,[39m
+[32m      req: [Circular *3],[39m
+[32m      text: '{"_id":"6329c76e0ba944b553c3092e","month":8,"year":2022,"views":0,"users":0,"resources":0,"events":0,"__v":0}',[39m
+[32m      [Symbol(kCapture)]: false,[39m
+[32m      [Symbol(kHeaders)]: [Object],[39m
+[32m      [Symbol(kHeadersCount)]: 12,[39m
+[32m      [Symbol(kTrailers)]: null,[39m
+[32m      [Symbol(kTrailersCount)]: 0[39m
+[32m    },[39m
+[32m    aborted: false,[39m
+[32m    timeoutCb: null,[39m
+[32m    upgradeOrConnect: false,[39m
+[32m    parser: null,[39m
+[32m    maxHeadersCount: null,[39m
+[32m    reusedSocket: false,[39m
+[32m    host: '127.0.0.1',[39m
+[32m    protocol: 'http:',[39m
+[32m    [Symbol(kCapture)]: false,[39m
+[32m    [Symbol(kNeedDrain)]: false,[39m
+[32m    [Symbol(corked)]: 0,[39m
+[32m    [Symbol(kOutHeaders)]: [Object: null prototype] {[39m
+[32m      host: [Array],[39m
+[32m      'accept-encoding': [Array][39m
+[32m    },[39m
+[32m    [Symbol(kUniqueHeaders)]: null[39m
+[32m  },[39m
+[32m  text: '{"_id":"6329c76e0ba944b553c3092e","month":8,"year":2022,"views":0,"users":0,"resources":0,"events":0,"__v":0}',[39m
+[32m  files: undefined,[39m
+[32m  buffered: true,[39m
+[32m  headers: {[39m
+[32m    'x-powered-by': 'Express',[39m
+[32m    'content-type': 'application/json; charset=utf-8',[39m
+[32m    'content-length': '109',[39m
+[32m    etag: 'W/"6d-mAW0SVLaV2N6BFhWngbVwd/sq1w"',[39m
+[32m    date: 'Tue, 20 Sep 2022 14:16:20 GMT',[39m
+[32m    connection: 'close'[39m
+[32m  },[39m
+[32m  header: {[39m
+[32m    'x-powered-by': 'Express',[39m
+[32m    'content-type': 'application/json; charset=utf-8',[39m
+[32m    'content-length': '109',[39m
+[32m    etag: 'W/"6d-mAW0SVLaV2N6BFhWngbVwd/sq1w"',[39m
+[32m    date: 'Tue, 20 Sep 2022 14:16:20 GMT',[39m
+[32m    connection: 'close'[39m
+[32m  },[39m
+[32m  statusCode: 200,[39m
+[32m  status: 200,[39m
+[32m  statusType: 2,[39m
+[32m  info: false,[39m
+[32m  ok: true,[39m
+[32m  redirect: false,[39m
+[32m  clientError: false,[39m
+[32m  serverError: false,[39m
+[32m  error: false,[39m
+[32m  created: false,[39m
+[32m  accepted: false,[39m
+[32m  noContent: false,[39m
+[32m  badRequest: false,[39m
+[32m  unauthorized: false,[39m
+[32m  notAcceptable: false,[39m
+[32m  forbidden: false,[39m
+[32m  notFound: false,[39m
+[32m  unprocessableEntity: false,[39m
+[32m  type: 'application/json',[39m
+[32m  charset: 'utf-8',[39m
+[32m  links: {},[39m
+[32m  setEncoding: [Function: bound ],[39m
+[32m  redirects: [],[39m
+[32m  _body: {[39m
+[32m    _id: '6329c76e0ba944b553c3092e',[39m
+[32m    month: 8,[39m
+[32m    year: 2022,[39m
+[32m    views: 0,[39m
+[32m    users: 0,[39m
+[32m    resources: 0,[39m
+[32m    events: 0,[39m
+[32m    __v: 0[39m
+[32m  },[39m
+[32m  pipe: [Function (anonymous)],[39m
+[32m  [Symbol(kCapture)]: false[39m
+[32m}[39m
+2022-09-20 15:16:55:1655 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:16:58:1658 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:21:02:212 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:21:06:216 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:22:17:2217 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:23:38:2338 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:25:03:253 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:30:16:3016 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:30:20:3020 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:30:21:3021 [32minfo[39m: [32mMongoose Connected[39m
+2022-09-20 15:30:45:3045 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:31:41:3141 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:31:42:3142 [32minfo[39m: [32mMongoose Connected[39m
+2022-09-20 15:33:57:3357 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:34:05:345 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:34:06:346 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:34:13:3413 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:34:14:3414 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:34:17:3417 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:34:20:3420 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:34:20:3420 [32minfo[39m: [32mMongoose Connected[39m
+2022-09-20 15:34:20:3420 [32minfo[39m: [32m{[39m
+[32m  _id: '6329c76e0ba944b553c3092e',[39m
+[32m  month: 8,[39m
+[32m  year: 2022,[39m
+[32m  views: 0,[39m
+[32m  users: 0,[39m
+[32m  resources: 0,[39m
+[32m  events: 0,[39m
+[32m  __v: 0[39m
+[32m}[39m
+2022-09-20 15:35:32:3532 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:35:33:3533 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:35:34:3534 [32minfo[39m: [32mMongoose Connected[39m
+2022-09-20 15:35:34:3534 [32minfo[39m: [32m{[39m
+[32m  _id: '6329c76e0ba944b553c3092e',[39m
+[32m  month: 8,[39m
+[32m  year: 2022,[39m
+[32m  views: 0,[39m
+[32m  users: 0,[39m
+[32m  resources: 0,[39m
+[32m  events: 0,[39m
+[32m  __v: 0[39m
+[32m}[39m
+2022-09-20 15:36:01:361 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:36:10:3610 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:36:13:3613 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:36:13:3613 [32minfo[39m: [32mMongoose Connected[39m
+2022-09-20 15:36:14:3614 [32minfo[39m: [32m{[39m
+[32m  _id: '6329c76e0ba944b553c3092e',[39m
+[32m  month: 8,[39m
+[32m  year: 2022,[39m
+[32m  views: 0,[39m
+[32m  users: 0,[39m
+[32m  resources: 0,[39m
+[32m  events: 0,[39m
+[32m  __v: 0[39m
+[32m}[39m
+2022-09-20 15:36:29:3629 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:36:30:3630 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:36:31:3631 [32minfo[39m: [32mMongoose Connected[39m
+2022-09-20 15:36:35:3635 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:36:36:3636 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:36:37:3637 [32minfo[39m: [32mMongoose Connected[39m
+2022-09-20 15:36:37:3637 [32minfo[39m: [32m{[39m
+[32m  _id: '6329c76e0ba944b553c3092e',[39m
+[32m  month: 8,[39m
+[32m  year: 2022,[39m
+[32m  views: 0,[39m
+[32m  users: 0,[39m
+[32m  resources: 0,[39m
+[32m  events: 0,[39m
+[32m  __v: 0[39m
+[32m}[39m
+2022-09-20 15:37:15:3715 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:37:16:3716 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:37:19:3719 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-20 15:37:20:3720 [32minfo[39m: [32mMongoose Connected[39m
+2022-09-20 15:37:20:3720 [32minfo[39m: [32m{[39m
+[32m  _id: '6329c76e0ba944b553c3092e',[39m
+[32m  month: 8,[39m
+[32m  year: 2022,[39m
+[32m  views: 0,[39m
+[32m  users: 0,[39m
+[32m  resources: 0,[39m
+[32m  events: 0,[39m
+[32m  __v: 0[39m
+[32m}[39m
+2022-09-20 15:37:27:3727 [32minfo[39m: [32mThis is a winston log message[39m

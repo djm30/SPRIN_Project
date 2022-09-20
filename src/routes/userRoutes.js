@@ -1,4 +1,5 @@
 const authorize = require("../middleware/auth");
+const asyncHandler = require("express-async-handler");
 const passport = require("passport");
 const roles = require("../config/roles");
 const {
@@ -15,20 +16,24 @@ const app = require("../app");
 const router = require("express").Router();
 
 // Only admin
-router.get("/", authorize("admin"), getUsers);
+router.get("/", authorize("admin"), asyncHandler(getUsers));
 
-router.get("/:id", getUser);
+router.get("/:id", asyncHandler(getUser));
 
 // Only admin
-router.post("/approve/:id", authorize(roles.ADMIN), approveUser);
+router.post("/approve/:id", authorize(roles.ADMIN), asyncHandler(approveUser));
 
-router.post("/register", registerUser);
+router.post("/register", asyncHandler(registerUser));
 
 // Only admin or account holder
-router.put("/:id", authorize(roles.ADMIN, roles.USER), editUser);
-router.delete("/:id", authorize(roles.ADMIN, roles.USER), deleteUser);
+router.put("/:id", authorize(roles.ADMIN, roles.USER), asyncHandler(editUser));
+router.delete(
+  "/:id",
+  authorize(roles.ADMIN, roles.USER),
+  asyncHandler(deleteUser),
+);
 
-router.post("/login", passport.authenticate("local"), login);
-router.post("/logout", logout);
+router.post("/login", passport.authenticate("local"), asyncHandler(login));
+router.post("/logout", asyncHandler(logout));
 
 module.exports = router;

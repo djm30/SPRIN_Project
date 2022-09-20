@@ -1,0 +1,2 @@
+2022-09-20 14:47:43:4743 [31merror[39m: [31mMongooseError: Operation `stats.findOne()` buffering timed out after 10000ms[39m
+2022-09-20 14:48:08:488 [31merror[39m: [31mMongooseError: Operation `stats.findOne()` buffering timed out after 10000ms[39m
