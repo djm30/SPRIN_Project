@@ -1,4 +1,5 @@
 const authorize = require("../middleware/auth");
+const userRoles = require("../config/roles");
 const asyncHandler = require("express-async-handler");
 const {
   getEvent,
@@ -9,10 +10,10 @@ const {
 } = require("../controllers/eventController");
 const router = require("express").Router();
 
-router.get("/", authorize("admin"), asyncHandler(getEvents));
-router.get("/:id", authorize("admin"), asyncHandler(getEvent));
-router.post("/", authorize("admin"), asyncHandler(createEvent));
-router.put("/:id", authorize("admin"), asyncHandler(updateEvent));
-router.delete("/:id", authorize("admin"), asyncHandler(deleteEvent));
+router.get("/", authorize(userRoles.ADMIN), asyncHandler(getEvents));
+router.get("/:id", authorize(userRoles.ADMIN), asyncHandler(getEvent));
+router.post("/", authorize(userRoles.ADMIN), asyncHandler(createEvent));
+router.put("/:id", authorize(userRoles.ADMIN), asyncHandler(updateEvent));
+router.delete("/:id", authorize(userRoles.ADMIN), asyncHandler(deleteEvent));
 
 module.exports = router;

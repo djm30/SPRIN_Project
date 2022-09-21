@@ -11,6 +11,7 @@ const validateTitle = (title) => {
   }
   return { success, message };
 };
+
 const validateDescription = (description) => {
   let success = true;
   let message = "";
@@ -27,6 +28,7 @@ const validateDescription = (description) => {
 
   return { success, message };
 };
+
 const validateLocation = (location) => {
   let success = true;
   let message = "";

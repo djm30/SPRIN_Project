@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const eventTypes = require("../config/eventTypes");
 
 const EventSchema = new mongoose.Schema({
   title: {
@@ -11,7 +12,7 @@ const EventSchema = new mongoose.Schema({
   },
   location: {
     type: String,
-    enum: ["online", "phsyical"],
+    enum: [eventTypes.online, eventTypes.physical],
   },
   address: {
     type: String,
