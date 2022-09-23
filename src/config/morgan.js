@@ -15,7 +15,7 @@ const stream = {
 // only warning and error messages in production.
 const skip = () => {
   const env = process.env.NODE_ENV || "development";
-  return env !== "development";
+  return env === "local" || env === "development" ? false : true;
 };
 
 morgan.token("body", (req) => JSON.stringify(req.body));

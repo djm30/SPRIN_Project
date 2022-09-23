@@ -8,26 +8,22 @@ const {
   updateResource,
   deleteResource,
 } = require("../controllers/resourceController");
+const upload = require("../middleware/upload");
+
 const router = require("express").Router();
 
-router.get(
-  "/",
-  authorize(userRoles.ADMIN, userRoles.USER),
-  asyncHandler(getResources),
-);
-router.get(
-  "/:id",
-  authorize(userRoles.ADMIN, userRoles.USER),
-  asyncHandler(getResource),
-);
+router.get("/", asyncHandler(getResources));
+router.get("/:id", asyncHandler(getResource));
 router.post(
   "/",
   authorize(userRoles.ADMIN, userRoles.USER),
+  upload.single("file"),
   asyncHandler(createResource),
 );
 router.put(
   "/:id",
   authorize(userRoles.ADMIN, userRoles.USER),
+  upload.single("file"),
   asyncHandler(updateResource),
 );
 router.delete(

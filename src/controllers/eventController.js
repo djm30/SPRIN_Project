@@ -33,7 +33,7 @@ const validateLocation = (location) => {
   let success = true;
   let message = "";
 
-  if (location !== "online" || location !== "phsyical") {
+  if (location !== "online" && location !== "phsyical") {
     success = false;
     message =
       "Please enter a valid input for location ('online' or 'phsyical')";
@@ -75,33 +75,32 @@ const getEvents = async (req, res) => {
 const createEvent = async (req, res) => {
   const id = req.params.id;
 
-  const eventToUpdate = await Event.findById(id);
-  if (!eventToUpdate) return res.sendStatus(404);
-
   const { title, description, location, address, eventbriteUrl } = req.body;
 
   // Validation
   // Title
-  const { titleSuccess, titleMessage } = validateTitle(title);
+  const { success: titleSuccess, message: titleMessage } = validateTitle(title);
   if (!titleSuccess) return res.status(400).json({ message: titleMessage });
 
   // Description
-  const { descriptionSuccess, descriptionMessage } =
+  const { success: descriptionSuccess, message: descriptionMessage } =
     validateDescription(description);
   if (!descriptionSuccess)
     return res.status(400).json({ message: descriptionMessage });
 
   // Location
-  const { locationSuccess, locationMessage } = validateLocation(location);
+  const { success: locationSuccess, message: locationMessage } =
+    validateLocation(location);
   if (!locationSuccess)
     return res.status(400).json({ message: locationMessage });
 
   // Address
-  const { addressSuccess, addressMessage } = validateAddress(address);
+  const { success: addressSuccess, message: addressMessage } =
+    validateAddress(address);
   if (!addressSuccess) return res.status(400).json({ message: addressMessage });
 
   // Eventbrite Url
-  const { eventbriteUrlSuccess, eventbriteUrlMessage } =
+  const { success: eventbriteUrlSuccess, message: eventbriteUrlMessage } =
     validateEventbriteUrl(eventbriteUrl);
   if (!eventbriteUrlSuccess)
     return res.status(400).json({ message: eventbriteUrlMessage });
@@ -116,37 +115,41 @@ const createEvent = async (req, res) => {
 
   try {
     await event.save();
-    res.sendStatus(201);
+    console.log(event);
+    res.status(201).json(event);
   } catch (e) {
     Logger.error(e);
     res.sendStatus(500);
   }
 };
+
 const updateEvent = async (req, res) => {
   const { title, description, location, address, eventbriteUrl } = req.body;
 
   // Validation
   // Title
-  const { titleSuccess, titleMessage } = validateTitle(title);
+  const { success: titleSuccess, message: titleMessage } = validateTitle(title);
   if (!titleSuccess) return res.status(400).json({ message: titleMessage });
 
   // Description
-  const { descriptionSuccess, descriptionMessage } =
+  const { success: descriptionSuccess, message: descriptionMessage } =
     validateDescription(description);
   if (!descriptionSuccess)
     return res.status(400).json({ message: descriptionMessage });
 
   // Location
-  const { locationSuccess, locationMessage } = validateLocation(location);
+  const { success: locationSuccess, message: locationMessage } =
+    validateLocation(location);
   if (!locationSuccess)
     return res.status(400).json({ message: locationMessage });
 
   // Address
-  const { addressSuccess, addressMessage } = validateAddress(address);
+  const { success: addressSuccess, message: addressMessage } =
+    validateAddress(address);
   if (!addressSuccess) return res.status(400).json({ message: addressMessage });
 
   // Eventbrite Url
-  const { eventbriteUrlSuccess, eventbriteUrlMessage } =
+  const { success: eventbriteUrlSuccess, message: eventbriteUrlMessage } =
     validateEventbriteUrl(eventbriteUrl);
   if (!eventbriteUrlSuccess)
     return res.status(400).json({ message: eventbriteUrlMessage });

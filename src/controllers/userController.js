@@ -49,7 +49,7 @@ const validatePassword = (password) => {
   let message = "";
 
   // 8 Characters
-  if (password.length.trim() < 8) {
+  if (password.trim().length < 8) {
     success = false;
     message = "Password must be at least 8 characters";
   }
@@ -86,7 +86,6 @@ const getUser = async (req, res) => {
 };
 
 const getUsers = async (req, res) => {
-  console.log(req.user._id.toString());
   const users = await User.find({});
   res.json(users);
 };
@@ -109,11 +108,15 @@ const registerUser = async (req, res) => {
   const { name, email, password, role } = req.body;
 
   // Validation
-  const { nameSuccess, nameMessage } = validateName(name);
+  const { success: nameSuccess, message: nameMessage } = validateName(name);
   if (!nameSuccess) return res.status(400).json({ message: nameMessage });
-  const { emailSuccess, emailMessage } = validateEmail(email);
+  const { success: emailSuccess, message: emailMessage } = await validateEmail(
+    email,
+  );
+
   if (!emailSuccess) return res.status(400).json({ message: emailMessage });
-  const { passwordSuccess, passwordMessage } = validatePassword(password);
+  const { success: passwordSuccess, message: passwordMessage } =
+    validatePassword(password);
   if (!passwordSuccess)
     return res.status(400).json({ message: passwordMessage });
 
