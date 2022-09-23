@@ -1009,3 +1009,511 @@
 2022-09-21 10:12:40:1240 [32minfo[39m: [32mThis is a winston log message[39m
 2022-09-21 10:12:48:1248 [32minfo[39m: [32mThis is a winston log message[39m
 2022-09-21 10:12:54:1254 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:14:32:1432 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:19:56:1956 [35mhttp[39m: [35mGET /api/users 403 9 - 4.919 ms Body - {}[39m
+[35m[39m
+2022-09-21 10:20:09:209 [31merror[39m: [31mMongooseError: Operation `users.findOne()` buffering timed out after 10000ms[39m
+2022-09-21 10:21:23:2123 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:23:04:234 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:25:16:2516 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:27:13:2713 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:33:40:3340 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:35:11:3511 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:45:33:4533 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:45:55:4555 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:46:11:4611 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:46:18:4618 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:47:04:474 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:47:41:4741 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:48:07:487 [32minfo[39m: [32mRequest recieved to register new user[39m
+2022-09-21 10:48:20:4820 [32minfo[39m: [32mRequest recieved to register new user[39m
+2022-09-21 10:49:21:4921 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:49:28:4928 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:49:31:4931 [32minfo[39m: [32mRequest recieved to register new user[39m
+2022-09-21 10:49:31:4931 [32minfo[39m: [32m[32minfo[32m[39m
+2022-09-21 10:49:58:4958 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:50:07:507 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:50:09:509 [32minfo[39m: [32mRequest recieved to register new user[39m
+2022-09-21 10:50:09:509 [32minfo[39m: [32m[32minfo[32m[39m
+2022-09-21 10:50:33:5033 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:50:36:5036 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:50:38:5038 [32minfo[39m: [32mRequest recieved to register new user[39m
+2022-09-21 10:50:38:5038 [32minfo[39m: [32m[32minfo[32m[39m
+2022-09-21 10:50:54:5054 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:50:59:5059 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:51:12:5112 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:51:14:5114 [32minfo[39m: [32mRequest recieved to register new user[39m
+2022-09-21 10:51:14:5114 [32minfo[39m: [32mundefined[39m
+2022-09-21 10:51:22:5122 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:51:23:5123 [32minfo[39m: [32mRequest recieved to register new user[39m
+2022-09-21 10:51:23:5123 [32minfo[39m: [32mundefined[39m
+2022-09-21 10:51:43:5143 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:51:45:5145 [32minfo[39m: [32mRequest recieved to register new user[39m
+2022-09-21 10:51:45:5145 [32minfo[39m: [32m[object Object][39m
+2022-09-21 10:51:56:5156 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:51:58:5158 [32minfo[39m: [32mRequest recieved to register new user[39m
+2022-09-21 10:52:13:5213 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:52:38:5238 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:52:41:5241 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:52:46:5246 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:52:49:5249 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:53:01:531 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:53:05:535 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:53:14:5314 [32minfo[39m: [32mRequest recieved to register new user[39m
+2022-09-21 10:53:21:5321 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:53:26:5326 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:53:28:5328 [32minfo[39m: [32mRequest recieved to register new user[39m
+2022-09-21 10:54:01:541 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:54:07:547 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:54:09:549 [32minfo[39m: [32mRequest recieved to register new user[39m
+2022-09-21 10:55:07:557 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:55:11:5511 [32minfo[39m: [32mRequest recieved to register new user[39m
+2022-09-21 10:55:17:5517 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:55:18:5518 [32minfo[39m: [32mRequest recieved to register new user[39m
+2022-09-21 10:55:45:5545 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:55:49:5549 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:55:53:5553 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:55:55:5555 [32minfo[39m: [32mRequest recieved to register new user[39m
+2022-09-21 10:56:03:563 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:56:04:564 [32minfo[39m: [32mRequest recieved to register new user[39m
+2022-09-21 10:56:12:5612 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:56:15:5615 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:56:17:5617 [32minfo[39m: [32mRequest recieved to register new user[39m
+2022-09-21 10:56:17:5617 [31merror[39m: [31mTypeError: password.length.trim is not a function[39m
+2022-09-21 10:56:53:5653 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 10:56:56:5656 [32minfo[39m: [32mRequest recieved to register new user[39m
+2022-09-21 10:57:02:572 [32minfo[39m: [32mRequest recieved to register new user[39m
+2022-09-21 10:58:50:5850 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:00:17:017 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:00:41:041 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:00:43:043 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:00:46:046 [35mhttp[39m: [35mPOST /api/events 404 9 - 8.294 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:01:30:130 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:01:32:132 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:01:34:134 [35mhttp[39m: [35mPOST /api/events 404 9 - 6.418 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:03:04:34 [35mhttp[39m: [35mPOST /api/events 404 9 - 14.734 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:03:08:38 [35mhttp[39m: [35mGET /api/events 200 2 - 9.298 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:03:10:310 [35mhttp[39m: [35mPOST /api/events 404 9 - 9.919 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:03:17:317 [35mhttp[39m: [35mGET /api/events 200 2 - 8.628 ms Body - {}[39m
+[35m[39m
+2022-09-21 11:03:19:319 [35mhttp[39m: [35mGET /api/resources 200 2 - 5.715 ms Body - {}[39m
+[35m[39m
+2022-09-21 11:08:07:87 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:08:14:814 [35mhttp[39m: [35mPOST /api/resources/:id 404 157 - 0.979 ms Body - {"title":"","description":"","resourceType":"","resourceUrl":""}[39m
+[35m[39m
+2022-09-21 11:08:30:830 [35mhttp[39m: [35mPOST /api/resources 400 2 - 4.604 ms Body - {"title":"","description":"","resourceType":"","resourceUrl":""}[39m
+[35m[39m
+2022-09-21 11:08:34:834 [35mhttp[39m: [35mPOST /api/events 404 9 - 10.817 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:09:16:916 [35mhttp[39m: [35mPOST /api/resources 403 9 - 0.612 ms Body - {"title":"The New Way","description":"Intersting article about alternative methods","resourceType":"website","resourceUrl":"https://medium.com"}[39m
+[35m[39m
+2022-09-21 11:09:23:923 [35mhttp[39m: [35mPOST /api/users/login 200 95 - 93.033 ms Body - {"email":"dylan@email.com","password":"Password123"}[39m
+[35m[39m
+2022-09-21 11:09:28:928 [35mhttp[39m: [35mPOST /api/resources 400 2 - 0.662 ms Body - {"title":"The New Way","description":"Intersting article about alternative methods","resourceType":"website","resourceUrl":"https://medium.com"}[39m
+[35m[39m
+2022-09-21 11:10:20:1020 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:10:24:1024 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:10:49:1049 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:11:40:1140 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:11:49:1149 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:11:58:1158 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:12:05:125 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:12:30:1230 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:12:33:1233 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:12:41:1241 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:13:06:136 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:13:08:138 [31merror[39m: [31mError: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client[39m
+2022-09-21 11:13:08:138 [31merror[39m: [31mError: Cannot set headers after they are sent to the client[39m
+2022-09-21 11:13:08:138 [35mhttp[39m: [35mPOST /api/resources 500 2 - 9.560 ms Body - {"title":"The New Way","description":"Intersting article about alternative methods","resourceType":"website","resourceUrl":"https://medium.com"}[39m
+[35m[39m
+2022-09-21 11:13:19:1319 [31merror[39m: [31mError: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client[39m
+2022-09-21 11:13:19:1319 [31merror[39m: [31mError: Cannot set headers after they are sent to the client[39m
+2022-09-21 11:13:19:1319 [35mhttp[39m: [35mPOST /api/resources 500 2 - 12.920 ms Body - {"title":"The New Way","description":"Intersting article about alternative methods","resourceType":"website","resourceUrl":"https://medium.com"}[39m
+[35m[39m
+2022-09-21 11:14:14:1414 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:15:29:1529 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:15:55:1555 [31merror[39m: [31mError: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client[39m
+2022-09-21 11:15:55:1555 [31merror[39m: [31mError: Cannot set headers after they are sent to the client[39m
+2022-09-21 11:15:55:1555 [35mhttp[39m: [35mPOST /api/resources 500 2 - 20561.652 ms Body - {"title":"The New Way","description":"Intersting article about alternative methods","resourceType":"website","resourceUrl":"https://medium.com"}[39m
+[35m[39m
+2022-09-21 11:16:58:1658 [31merror[39m: [31mError: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client[39m
+2022-09-21 11:16:58:1658 [31merror[39m: [31mError: Cannot set headers after they are sent to the client[39m
+2022-09-21 11:16:58:1658 [35mhttp[39m: [35mPOST /api/resources 500 2 - 59087.236 ms Body - {"title":"The New Way","description":"Intersting article about alternative methods","resourceType":"website","resourceUrl":"https://medium.com"}[39m
+[35m[39m
+2022-09-21 11:17:10:1710 [31merror[39m: [31mError: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client[39m
+2022-09-21 11:17:10:1710 [31merror[39m: [31mError: Cannot set headers after they are sent to the client[39m
+2022-09-21 11:17:10:1710 [35mhttp[39m: [35mPOST /api/resources 500 2 - 9.509 ms Body - {"title":"The New Way","description":"Intersting article about alternative methods","resourceType":"website","resourceUrl":"https://medium.com"}[39m
+[35m[39m
+2022-09-21 11:18:33:1833 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:18:45:1845 [31merror[39m: [31mError: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client[39m
+2022-09-21 11:18:45:1845 [31merror[39m: [31mError: Cannot set headers after they are sent to the client[39m
+2022-09-21 11:18:45:1845 [35mhttp[39m: [35mPOST /api/resources 500 2 - 13.759 ms Body - {"title":"The New Way","description":"Intersting article about alternative methods","resourceType":"website","resourceUrl":"https://medium.com"}[39m
+[35m[39m
+2022-09-21 11:19:20:1920 [35mhttp[39m: [35mGET /api/resources 200 1561 - 23.819 ms Body - {}[39m
+[35m[39m
+2022-09-21 11:19:37:1937 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:19:42:1942 [35mhttp[39m: [35mPOST /api/events 403 9 - 1.152 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:19:43:1943 [35mhttp[39m: [35mPOST /api/events 403 9 - 0.850 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:19:44:1944 [35mhttp[39m: [35mPOST /api/events 403 9 - 0.992 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:19:44:1944 [35mhttp[39m: [35mPOST /api/events 403 9 - 0.794 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:19:45:1945 [35mhttp[39m: [35mPOST /api/events 403 9 - 0.533 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:19:45:1945 [35mhttp[39m: [35mPOST /api/events 403 9 - 0.334 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:19:46:1946 [35mhttp[39m: [35mPOST /api/events 403 9 - 0.302 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:19:47:1947 [35mhttp[39m: [35mPOST /api/events 403 9 - 0.396 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:19:51:1951 [35mhttp[39m: [35mPOST /api/users/login 200 95 - 107.526 ms Body - {"email":"dylan@email.com","password":"Password123"}[39m
+[35m[39m
+2022-09-21 11:19:57:1957 [35mhttp[39m: [35mPOST /api/events 404 9 - 4.125 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:21:12:2112 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:21:15:2115 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:21:26:2126 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:21:30:2130 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:21:45:2145 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:22:28:2228 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:22:29:2229 [35mhttp[39m: [35mPOST /api/events 400 78 - 3.005 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:22:38:2238 [35mhttp[39m: [35mPOST /api/events 400 78 - 2.204 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:22:50:2250 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:22:59:2259 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:23:00:230 [35mhttp[39m: [35mPOST /api/events 400 78 - 1.366 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:23:15:2315 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:23:18:2318 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:23:19:2319 [35mhttp[39m: [35mPOST /api/events 201 7 - 9.452 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:23:43:2343 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:23:49:2349 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:23:51:2351 [35mhttp[39m: [35mPOST /api/events 201 231 - 13.754 ms Body - {"title":"Get Together","description":"An infromal meeting dicussing steps on how to expand","location":"online","address":"https://google.meet.com","eventbriteUrl":"https://eventbrite.com"}[39m
+[35m[39m
+2022-09-21 11:26:30:2630 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:26:34:2634 [31merror[39m: [31mError: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client[39m
+2022-09-21 11:26:34:2634 [31merror[39m: [31mError: Cannot set headers after they are sent to the client[39m
+2022-09-21 11:26:34:2634 [35mhttp[39m: [35mPOST /api/resources 500 7 - 12.291 ms Body - {"title":"The New Way","description":"Intersting article about alternative methods","resourceType":"website","resourceUrl":"https://medium.com"}[39m
+[35m[39m
+2022-09-21 11:26:45:2645 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:26:47:2647 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:26:48:2648 [35mhttp[39m: [35mPOST /api/resources 201 259 - 9.996 ms Body - {"title":"The New Way","description":"Intersting article about alternative methods","resourceType":"website","resourceUrl":"https://medium.com"}[39m
+[35m[39m
+2022-09-21 11:26:52:2652 [35mhttp[39m: [35mGET /api/resources 200 2081 - 4.936 ms Body - {}[39m
+[35m[39m
+2022-09-21 11:26:56:2656 [35mhttp[39m: [35mGET /api/resources/632ae3b4cb441554342c322a 200 259 - 6.701 ms Body - {}[39m
+[35m[39m
+2022-09-21 11:27:16:2716 [35mhttp[39m: [35mPUT /api/resources/632ae3b4cb441554342c322a 400 50 - 7.425 ms Body - {"title":"New ","description":"New","resourceType":"New","resourceUrl":"New"}[39m
+[35m[39m
+2022-09-21 11:27:23:2723 [31merror[39m: [31mError: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client[39m
+2022-09-21 11:27:23:2723 [31merror[39m: [31mError: Cannot set headers after they are sent to the client[39m
+2022-09-21 11:27:23:2723 [35mhttp[39m: [35mPUT /api/resources/632ae3b4cb441554342c322a 500 2 - 31.177 ms Body - {"title":"New ","description":"New","resourceType":"pdf","resourceUrl":"New"}[39m
+[35m[39m
+2022-09-21 11:27:32:2732 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 11:27:36:2736 [35mhttp[39m: [35mPUT /api/resources/632ae3b4cb441554342c322a 200 192 - 33.136 ms Body - {"title":"New ","description":"New","resourceType":"pdf","resourceUrl":"New"}[39m
+[35m[39m
+2022-09-21 11:27:40:2740 [35mhttp[39m: [35mGET /api/resources 200 2014 - 14.181 ms Body - {}[39m
+[35m[39m
+2022-09-21 11:27:45:2745 [35mhttp[39m: [35mDELETE /api/resources/632ae3b4cb441554342c322a 204 - - 18.391 ms Body - {}[39m
+[35m[39m
+2022-09-21 11:27:51:2751 [35mhttp[39m: [35mGET /api/resources 200 1821 - 9.128 ms Body - {}[39m
+[35m[39m
+2022-09-21 15:14:26:1426 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 15:15:16:1516 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 15:15:26:1526 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 15:15:46:1546 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 15:15:58:1558 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 15:16:57:1657 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 15:17:09:179 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 15:17:12:1712 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 15:17:22:1722 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 15:17:26:1726 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 15:17:35:1735 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 15:17:39:1739 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 15:17:49:1749 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-21 15:17:54:1754 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 08:51:12:5112 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 08:54:10:5410 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 08:54:11:5411 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 08:54:57:5457 [35mhttp[39m: [35mPOST /api/resources 403 9 - 2.900 ms Body - {}[39m
+[35m[39m
+2022-09-23 08:55:02:552 [35mhttp[39m: [35mPOST /api/users/login 200 95 - 104.921 ms Body - {"email":"dylan@email.com","password":"Password123"}[39m
+[35m[39m
+2022-09-23 08:55:05:555 [31merror[39m: [31mTypeError: Cannot read properties of undefined (reading 'trim')[39m
+2022-09-23 08:55:28:5528 [31merror[39m: [31mTypeError: Cannot read properties of undefined (reading 'trim')[39m
+2022-09-23 08:56:28:5628 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 08:56:34:5634 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 08:57:19:5719 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 08:57:24:5724 [35mhttp[39m: [35mPOST /api/resources 400 35 - 1.621 ms Body - {}[39m
+[35m[39m
+2022-09-23 08:57:47:5747 [35mhttp[39m: [35mPOST /api/resources 400 35 - 2.075 ms Body - {}[39m
+[35m[39m
+2022-09-23 08:57:49:5749 [35mhttp[39m: [35mPOST /api/resources 400 35 - 3.361 ms Body - {}[39m
+[35m[39m
+2022-09-23 08:58:09:589 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 08:58:10:5810 [31merror[39m: [31mTypeError: Cannot read properties of undefined (reading 'trim')[39m
+2022-09-23 08:58:20:5820 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 08:58:22:5822 [35mhttp[39m: [35mPOST /api/resources 400 35 - 3.346 ms Body - {}[39m
+[35m[39m
+2022-09-23 08:58:33:5833 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 08:58:35:5835 [35mhttp[39m: [35mPOST /api/resources 400 35 - 1.827 ms Body - {}[39m
+[35m[39m
+2022-09-23 08:58:40:5840 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 08:58:50:5850 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 08:58:51:5851 [35mhttp[39m: [35mPOST /api/resources 400 35 - 24.367 ms Body - {}[39m
+[35m[39m
+2022-09-23 08:59:48:5948 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 08:59:54:5954 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 08:59:57:5957 [35mhttp[39m: [35mPOST /api/resources 400 35 - 6.356 ms Body - {}[39m
+[35m[39m
+2022-09-23 09:00:04:04 [35mhttp[39m: [35mPOST /api/resources 201 259 - 23.254 ms Body - {"title":"The New Way","description":"Intersting article about alternative methods","resourceType":"website","resourceUrl":"https://medium.com","file":""}[39m
+[35m[39m
+2022-09-23 09:03:17:317 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 09:03:37:337 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 09:04:24:424 [35mhttp[39m: [35mPOST /api/resources 400 35 - 2.132 ms Body - {}[39m
+[35m[39m
+2022-09-23 10:11:39:1139 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:11:44:1144 [35mhttp[39m: [35mPOST /api/resources 403 9 - 4.629 ms Body - {}[39m
+[35m[39m
+2022-09-23 10:11:48:1148 [35mhttp[39m: [35mPOST /api/users/login 200 95 - 121.442 ms Body - {"email":"dylan@email.com","password":"Password123"}[39m
+[35m[39m
+2022-09-23 10:11:50:1150 [35mhttp[39m: [35mPOST /api/resources 400 34 - 77.819 ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 10:12:29:1229 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:12:31:1231 [35mhttp[39m: [35mPOST /api/resources 201 224 - 70.658 ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 10:12:50:1250 [35mhttp[39m: [35mPOST /api/resources 201 224 - 10.227 ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":"","file":""}[39m
+[35m[39m
+2022-09-23 10:13:18:1318 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:20:32:2032 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:20:39:2039 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:20:46:2046 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:20:55:2055 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:21:09:219 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:21:16:2116 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:21:41:2141 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:21:43:2143 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:22:58:2258 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:23:08:238 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:24:41:2441 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:24:52:2452 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:26:20:2620 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:26:27:2627 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:27:09:279 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:27:45:2745 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:29:13:2913 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:29:16:2916 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:29:50:2950 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:30:00:300 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:30:04:304 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:30:07:307 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:36:34:3634 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:36:46:3646 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:37:41:3741 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:37:50:3750 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:38:11:3811 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:38:31:3831 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:38:35:3835 [35mhttp[39m: [35mPOST /api/resources 403 9 - 6.530 ms Body - {}[39m
+[35m[39m
+2022-09-23 10:38:38:3838 [35mhttp[39m: [35mPOST /api/users/login 200 95 - 89.390 ms Body - {"email":"dylan@email.com","password":"Password123"}[39m
+[35m[39m
+2022-09-23 10:38:40:3840 [35mhttp[39m: [35mPOST /api/resources 400 34 - 13.754 ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":"","file":""}[39m
+[35m[39m
+2022-09-23 10:38:44:3844 [35mhttp[39m: [35mPOST /api/resources 201 224 - 126.016 ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 10:39:03:393 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:39:43:3943 [35mhttp[39m: [35mPOST /api/resources 201 224 - 75.809 ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 10:40:03:403 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:40:05:405 [35mhttp[39m: [35mPOST /api/resources 201 224 - 68.558 ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 10:41:12:4112 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:41:14:4114 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:41:15:4115 [35mhttp[39m: [35mPOST /api/resources 201 224 - 71.240 ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 10:41:42:4142 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:42:15:4215 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:42:21:4221 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:42:30:4230 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 10:42:33:4233 [35mhttp[39m: [35mPOST /api/resources 201 224 - 67.243 ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 12:46:59:4659 [35mhttp[39m: [35mPOST /api/resources 403 9 - 1.895 ms Body - {}[39m
+[35m[39m
+2022-09-23 12:47:03:473 [35mhttp[39m: [35mPOST /api/users/login 200 95 - 127.282 ms Body - {"email":"dylan@email.com","password":"Password123"}[39m
+[35m[39m
+2022-09-23 12:47:05:475 [35mhttp[39m: [35mPOST /api/resources 201 224 - 72.354 ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 12:48:49:4849 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 12:49:13:4913 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 12:49:18:4918 [35mhttp[39m: [35mPOST /api/resources 201 224 - 77.616 ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 12:50:33:5033 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 12:50:56:5056 [35mhttp[39m: [35mPOST /api/resources 201 224 - 66.347 ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 12:51:29:5129 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 12:51:50:5150 [35mhttp[39m: [35mPOST /api/resources 201 224 - 13938.349 ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 12:55:19:5519 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 12:55:28:5528 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 12:55:53:5553 [35mhttp[39m: [35mPOST /api/resources 201 224 - 14106.699 ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 12:56:50:5650 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 12:57:07:577 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 12:57:11:5711 [35mhttp[39m: [35mPOST /api/resources 403 9 - 4.486 ms Body - {}[39m
+[35m[39m
+2022-09-23 12:57:13:5713 [35mhttp[39m: [35mPOST /api/users/login 200 95 - 98.914 ms Body - {"email":"dylan@email.com","password":"Password123"}[39m
+[35m[39m
+2022-09-23 12:57:29:5729 [35mhttp[39m: [35mPOST /api/resources 201 224 - 13793.569 ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 12:59:56:5956 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:00:07:07 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:00:29:029 [35mhttp[39m: [35mPOST /api/resources 201 224 - 14102.100 ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 13:01:12:112 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:03:05:35 [35mhttp[39m: [35mPOST /api/resources 201 224 - 14313.756 ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 13:09:57:957 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:10:00:100 [35mhttp[39m: [35mPOST /api/resources 403 9 - 3.191 ms Body - {}[39m
+[35m[39m
+2022-09-23 13:10:02:102 [35mhttp[39m: [35mPOST /api/users/login 200 95 - 85.524 ms Body - {"email":"dylan@email.com","password":"Password123"}[39m
+[35m[39m
+2022-09-23 13:10:18:1018 [35mhttp[39m: [35mPOST /api/resources 201 224 - 14542.881 ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 13:15:36:1536 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:34:13:3413 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:34:21:3421 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:35:17:3517 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:35:22:3522 [35mhttp[39m: [35mPOST /api/resources 403 9 - 4.103 ms Body - {}[39m
+[35m[39m
+2022-09-23 13:35:25:3525 [35mhttp[39m: [35mPOST /api/users/login 200 95 - 91.854 ms Body - {"email":"dylan@email.com","password":"Password123"}[39m
+[35m[39m
+2022-09-23 13:35:41:3541 [31merror[39m: [31mTypeError: Assignment to constant variable.[39m
+2022-09-23 13:36:08:368 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:36:10:3610 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:36:25:3625 [35mhttp[39m: [35mPOST /api/resources - - - - ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 13:36:42:3642 [35mhttp[39m: [35mPOST /api/resources 201 316 - 15927.390 ms Body - {"title":"New Resource","description":"An interesting book to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 13:37:41:3741 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:38:12:3812 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:39:45:3945 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:39:49:3949 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:40:08:408 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:40:13:4013 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:42:14:4214 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:43:15:4315 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:43:20:4320 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:44:17:4417 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:44:35:4435 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:45:22:4522 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:45:29:4529 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:45:33:4533 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:45:50:4550 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:45:57:4557 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:46:15:4615 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:46:40:4640 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:46:45:4645 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:47:15:4715 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:50:53:5053 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:51:10:5110 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:52:10:5210 [35mhttp[39m: [35mGET /api/resources/632da85ad208e6ce62541064 403 9 - 4.294 ms Body - {}[39m
+[35m[39m
+2022-09-23 13:52:25:5225 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:52:28:5228 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:52:29:5229 [35mhttp[39m: [35mGET /api/resources/632da85ad208e6ce62541064 200 316 - 25.832 ms Body - {}[39m
+[35m[39m
+2022-09-23 13:52:30:5230 [35mhttp[39m: [35mGET /api/resources/632da85ad208e6ce62541064 200 316 - 10.453 ms Body - {}[39m
+[35m[39m
+2022-09-23 13:53:40:5340 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:53:46:5346 [35mhttp[39m: [35mPUT /api/resources/632da85ad208e6ce62541064 403 9 - 3.659 ms Body - {}[39m
+[35m[39m
+2022-09-23 13:53:49:5349 [35mhttp[39m: [35mPOST /api/users/login 200 95 - 99.989 ms Body - {"email":"dylan@email.com","password":"Password123"}[39m
+[35m[39m
+2022-09-23 13:53:51:5351 [32minfo[39m: [32mUploading Screenshot 2022-09-22 at 16.23.39.png to S3[39m
+2022-09-23 13:53:51:5351 [31merror[39m: [31mError: TypeError: unlink is not a function[39m
+2022-09-23 13:53:51:5351 [35mhttp[39m: [35mPUT /api/resources/632da85ad208e6ce62541064 200 316 - 583.931 ms Body - {"title":"New Resource","description":"An Intersting image to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 13:54:08:548 [35mhttp[39m: [35mGET /api/resources/632da85ad208e6ce62541064 200 316 - 5.537 ms Body - {}[39m
+[35m[39m
+2022-09-23 13:54:52:5452 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:55:09:559 [32minfo[39m: [32mUploading 417-4170878_discover-lumapps-new-employee-social-advocacy-solution-cartoon.png to S3[39m
+2022-09-23 13:55:09:559 [31merror[39m: [31mError: TypeError [ERR_INVALID_ARG_TYPE]: The "cb" argument must be of type function. Received undefined[39m
+2022-09-23 13:55:10:5510 [35mhttp[39m: [35mPUT /api/resources/632da85ad208e6ce62541064 200 316 - 724.005 ms Body - {"title":"New Resource","description":"An Intersting image to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 13:55:56:5556 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:56:08:568 [32minfo[39m: [32mUploading Screenshot 2022-09-22 at 16.23.39.png to S3[39m
+2022-09-23 13:56:08:568 [31merror[39m: [31mError: TypeError [ERR_INVALID_ARG_TYPE]: The "cb" argument must be of type function. Received undefined[39m
+2022-09-23 13:56:08:568 [35mhttp[39m: [35mPUT /api/resources/632da85ad208e6ce62541064 200 316 - 1068.762 ms Body - {"title":"New Resource","description":"An Intersting image to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 13:56:20:5620 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:57:08:578 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 13:59:10:5910 [32minfo[39m: [32mUploading akar-icons_reddit-filldfreddit.png to S3[39m
+2022-09-23 13:59:10:5910 [31merror[39m: [31mError: TypeError [ERR_INVALID_ARG_TYPE]: The "cb" argument must be of type function. Received undefined[39m
+2022-09-23 13:59:10:5910 [35mhttp[39m: [35mPUT /api/resources/632da85ad208e6ce62541064 200 316 - 360.261 ms Body - {"title":"New Resource","description":"An Intersting image to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 14:01:01:11 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 14:01:05:15 [32minfo[39m: [32mUploading akar-icons_reddit-filldfreddit.png to S3[39m
+2022-09-23 14:01:05:15 [31merror[39m: [31mError: TypeError [ERR_INVALID_ARG_TYPE]: The "cb" argument must be of type function. Received undefined[39m
+2022-09-23 14:01:05:15 [35mhttp[39m: [35mPUT /api/resources/632da85ad208e6ce62541064 200 316 - 334.306 ms Body - {"title":"New Resource","description":"An Intersting image to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 14:01:21:121 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 14:01:26:126 [32minfo[39m: [32mUploading akar-icons_reddit-filldfreddit.png to S3[39m
+2022-09-23 14:01:26:126 [31merror[39m: [31mError: TypeError [ERR_INVALID_ARG_TYPE]: The "cb" argument must be of type function. Received undefined[39m
+2022-09-23 14:01:26:126 [35mhttp[39m: [35mPUT /api/resources/632da85ad208e6ce62541064 200 316 - 298.070 ms Body - {"title":"New Resource","description":"An Intersting image to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 14:02:17:217 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 14:02:19:219 [32minfo[39m: [32mUploading akar-icons_reddit-filldfreddit.png to S3[39m
+2022-09-23 14:02:19:219 [32minfo[39m: [32mFile Cleaned up[39m
+2022-09-23 14:02:19:219 [35mhttp[39m: [35mPUT /api/resources/632da85ad208e6ce62541064 200 316 - 257.833 ms Body - {"title":"New Resource","description":"An Intersting image to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 14:02:43:243 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 14:02:49:249 [32minfo[39m: [32mUploading akar-icons_reddit-filldfreddit.png to S3[39m
+2022-09-23 14:02:49:249 [32minfo[39m: [32mFile Cleaned up[39m
+2022-09-23 14:02:49:249 [35mhttp[39m: [35mPUT /api/resources/632da85ad208e6ce62541064 200 316 - 287.464 ms Body - {"title":"New Resource","description":"An Intersting image to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 14:03:04:34 [32minfo[39m: [32mUploading akar-icons_reddit-filldfreddit.png to S3[39m
+2022-09-23 14:03:04:34 [32minfo[39m: [32mFile Cleaned up[39m
+2022-09-23 14:03:04:34 [35mhttp[39m: [35mPUT /api/resources/632da85ad208e6ce62541064 200 316 - 258.057 ms Body - {"title":"New Resource","description":"An Intersting image to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 14:03:21:321 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 14:03:51:351 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 14:04:01:41 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 14:04:06:46 [35mhttp[39m: [35mPUT /api/resources/632da85ad208e6ce62541064 403 9 - 3.401 ms Body - {}[39m
+[35m[39m
+2022-09-23 14:04:16:416 [35mhttp[39m: [35mPOST /api/users/login 200 95 - 92.401 ms Body - {"email":"dylan@email.com","password":"Password123"}[39m
+[35m[39m
+2022-09-23 14:04:18:418 [32minfo[39m: [32mUploading akar-icons_reddit-filldfreddit.png to S3[39m
+2022-09-23 14:04:18:418 [32minfo[39m: [32mFile Cleaned up[39m
+2022-09-23 14:04:18:418 [35mhttp[39m: [35mPUT /api/resources/632da85ad208e6ce62541064 200 316 - 508.724 ms Body - {"title":"New Resource","description":"An Intersting image to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 14:04:44:444 [35mhttp[39m: [35mGET /api/resources/632da85ad208e6ce62541064 200 316 - 3.969 ms Body - {}[39m
+[35m[39m
+2022-09-23 14:04:53:453 [32minfo[39m: [32mUploading akar-icons_reddit-filldfreddit.png to S3[39m
+2022-09-23 14:04:53:453 [32minfo[39m: [32mFile Cleaned up[39m
+2022-09-23 14:04:53:453 [35mhttp[39m: [35mPUT /api/resources/632da85ad208e6ce62541064 200 316 - 429.316 ms Body - {"title":"New Resource","description":"An Intersting image to be sure","resourceType":"pdf","resourceUrl":""}[39m
+[35m[39m
+2022-09-23 14:05:18:518 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 14:05:33:533 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 14:05:50:550 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 14:06:06:66 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 14:06:16:616 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 14:06:39:639 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 14:06:42:642 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 14:06:53:653 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 14:07:46:746 [32minfo[39m: [32mThis is a winston log message[39m
+2022-09-23 14:08:06:86 [35mhttp[39m: [35mGET /api/resources/632da85ad208e6ce62541064 200 316 - 28.702 ms Body - {}[39m
+[35m[39m
+2022-09-23 14:08:09:89 [32minfo[39m: [32mS3 Delete Response [object Object][39m
+2022-09-23 14:08:09:89 [35mhttp[39m: [35mDELETE /api/resources/632da85ad208e6ce62541064 204 - - 311.173 ms Body - {}[39m
+[35m[39m
+2022-09-23 14:08:12:812 [35mhttp[39m: [35mGET /api/resources/632da85ad208e6ce62541064 404 9 - 9.665 ms Body - {}[39m
+[35m[39m
