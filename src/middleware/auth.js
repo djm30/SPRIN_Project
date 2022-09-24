@@ -1,3 +1,8 @@
+/**
+ *
+ * @param  {string} roles
+ * @returns {function}  validates if logged in user is in one of the given roles
+ */
 const authorize = (...roles) => {
   return (req, res, next) => {
     let isAuthorized = false;
