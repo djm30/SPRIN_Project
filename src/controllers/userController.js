@@ -97,7 +97,7 @@ const approveUser = async (req, res) => {
   if (user) {
     user.approved = true;
     await user.save();
-    res.sendStatus(200);
+    res.status(200).json(user);
   } else {
     res.status(404).json({ error: "No user for that ID" });
   }

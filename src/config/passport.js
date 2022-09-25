@@ -8,6 +8,8 @@ const authCallback = async (username, password, done) => {
     if (!user) return done(null, false);
     const isValid = await user.isValidPassword(password);
     if (!isValid) return done(null, false);
+    const isApproved = user.approved;
+    if (!isApproved) return done(null, false);
     return done(null, user);
   } catch (Err) {
     done(Err);

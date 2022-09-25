@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Routes } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Partners from "./pages/Partners";
 import Events from "./pages/Events";
@@ -11,7 +11,7 @@ function App() {
     // Try to reauthenticate on page reload if a session id is found
   }, []);
   return (
-    <div>
+    <div className="font-body">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
