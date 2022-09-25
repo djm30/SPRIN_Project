@@ -174,6 +174,17 @@ const logout = async (req, res) => {
   res.status(200).send("Logged out");
 };
 
+const reauthenticate = async (req, res) => {
+  if (req.user) {
+    return res.status(200).json({
+      id: req.user._id,
+      role: req.user.role,
+      sessionID: req.sessionID,
+    });
+  }
+  res.status(403).json({ message: "Session has expired, please login again!" });
+};
+
 module.exports = {
   getUser,
   getUsers,
@@ -183,4 +194,5 @@ module.exports = {
   editUser,
   login,
   logout,
+  reauthenticate,
 };

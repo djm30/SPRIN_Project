@@ -11,8 +11,9 @@ const {
   editUser,
   login,
   logout,
+  reauthenticate,
 } = require("../controllers/userController");
-const app = require("../app");
+
 const router = require("express").Router();
 
 // Only admin
@@ -35,5 +36,10 @@ router.delete(
 
 router.post("/login", passport.authenticate("local"), asyncHandler(login));
 router.post("/logout", asyncHandler(logout));
+router.post(
+  "/reauthenticate",
+  authorize(roles.ADMIN, roles.USER),
+  asyncHandler(reauthenticate),
+);
 
 module.exports = router;
