@@ -20,3 +20,12 @@ export const logout = async () => {
     throw errorHandler(e);
   }
 };
+
+export const reauthenticate = async () => {
+  try {
+    const response = await axios.post(`${baseUrl}/reauthenticate`);
+    return response.data;
+  } catch (e) {
+    throw errorHandler(e);
+  }
+};

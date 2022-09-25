@@ -1,24 +1,27 @@
 import { useState, useEffect } from "react";
-import {
-  getResources,
-  getResource,
-  createResource,
-} from "./services/resourceService";
-import { login, logout } from "./services/authService";
+import { Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Partners from "./pages/Partners";
+import Events from "./pages/Events";
+import Resources from "./pages/Resources";
+import Admin from "./pages/Admin";
 
 function App() {
   useEffect(() => {
-    // login("dylan@email.com", "Password123").then((response) =>
-    //   console.log(response),
-    // );
-    // logout().then(() => console.log("Logged out"));
-    // getResources().then((resources) => console.log(resources));
-    // getResource("632ae3bfcb441554342c322d").then((resource) =>
-    //   console.log(resource),
-    // );
-    // createResource().then((response) => console.log(response));
+    // Try to reauthenticate on page reload if a session id is found
   }, []);
-  return <div>Frontend</div>;
+  return (
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/partners" element={<Partners />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
