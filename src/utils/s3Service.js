@@ -65,7 +65,6 @@ const replaceFile = async (oldResourceUrl, file) => {
 
   try {
     await deleteFile(oldResourceUrl);
-    const response = await s3.deleteObject(deleteParms).promise();
     newLocation = uploadFile(file);
   } catch (e) {
     Logger.error(`Error: ${e}`);
