@@ -6,6 +6,8 @@ import Events from "./pages/Events";
 import Resources from "./pages/Resources";
 import Admin from "./pages/Admin";
 
+import Footer from "./components/Footer/Footer";
+
 function App() {
   useEffect(() => {
     // Try to reauthenticate on page reload if a session id is found
@@ -20,6 +22,8 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/admin" element={<Admin />} />
       </Routes>
+
+      <Footer />
     </div>
   );
 }

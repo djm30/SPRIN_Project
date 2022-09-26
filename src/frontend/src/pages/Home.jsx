@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -26,9 +27,28 @@ const Home = () => {
               <button className="bg-skyblue-100 px-9 py-3 rounded-xl shadow-sm">
                 Login
               </button>
+              {/* BURGER */}
+              {/* TODO */}
+              <div></div>
             </div>
           </div>
         </nav>
+        {/* HEADING AND BUTTONS */}
+        <div className="mx-40 mt-20 space-y-12">
+          <div className="space-y-6 mr-32">
+            <h1 className="text-6xl text-white font-display">
+              Suicide Prevention & Research Impact Network
+            </h1>
+            <h2 className="text-5xl text-neutral-300 font-display">
+              Focused on strengthening research-practice connections and
+              improving the evidence base
+            </h2>
+          </div>
+          <div>
+            <button className="">Join Today</button>
+            <button className="">Learn More</button>
+          </div>
+        </div>
       </div>
       <div className="h-96 bg-white">Hello</div>
     </>
