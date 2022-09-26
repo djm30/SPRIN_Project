@@ -9,6 +9,8 @@ module.exports = {
     },
     extend: {
       colors: {
+        "border-color": "#DCDCDC",
+        "grey-transparent": "rgba(193, 202, 225, 0.5)",
         bluegrey: {
           100: "#D5D9DB",
           200: "#B7B7B7",

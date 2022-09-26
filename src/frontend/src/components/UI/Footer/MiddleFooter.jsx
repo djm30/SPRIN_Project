@@ -3,19 +3,21 @@ import React from "react";
 const MiddleFooter = () => {
   return (
     <>
-      <div class="bg-darkblue-200 w-full">
-        <div class="container text-white mx-auto pt-2">
+      <div className="bg-darkblue-200 w-full">
+        <div className="container text-white mx-auto pt-2">
           {/* FLEX CONTAINER */}
-          <div class="flex flex-col items-center pb-10">
-            <div class="text-3xl font-bold text-blue-100 mb-8 mt-5">SPRIN</div>
-            <div class="flex w-full flex-col md:flex-row justify-between space-y-10 md:space-y-0 relative md:px-20">
+          <div className="flex flex-col items-center pb-10">
+            <div className="text-3xl font-bold text-blue-100 mb-8 mt-5">
+              SPRIN
+            </div>
+            <div className="flex w-full flex-col md:flex-row justify-between space-y-10 md:space-y-0 relative md:px-20">
               {/* SOCIAL */}
-              <div class="flex flex-col justify-start items-center">
-                <h3 class="font-bold">Find us on our socials!</h3>
-                <div class="flex flex-row justify-around items-center space-x-5">
-                  <a class="block" href="#">
+              <div className="flex flex-col justify-start items-center">
+                <h3 className="font-bold">Find us on our socials!</h3>
+                <div className="flex flex-row justify-around items-center space-x-5">
+                  <a className="block" href="#">
                     <svg
-                      class="w-12 h-12 fill-white cursor-pointer hover:fill-red-300 transition-all"
+                      className="w-12 h-12 fill-white cursor-pointer hover:fill-red-3Name00 transition-all"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 576 512"
                     >
@@ -23,9 +25,9 @@ const MiddleFooter = () => {
                       <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z" />
                     </svg>
                   </a>
-                  <a class="block" href="#">
+                  <a className="block" href="#">
                     <svg
-                      class="w-12 h-12 fill-white cursor-pointer hover:fill-skyblue-200 transition-all"
+                      className="w-12 h-12 fill-white cursor-pointer hover:fill-skyblue-200 transition-all"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 512 512"
                     >
@@ -36,28 +38,28 @@ const MiddleFooter = () => {
                 </div>
               </div>
               {/* WEBPAGE LINKS */}
-              <div class="md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
-                <div class="flex flex-col space-y-1 items-center">
+              <div className="md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
+                <div className="flex flex-col space-y-1 items-center">
                   <a
-                    class="inline border-b-2 border-transparent hover:border-skyBlue hover:text-SkyBlue"
+                    className="inline border-b-2 border-transparent hover:border-skyBlue hover:text-SkyBlue"
                     href="#"
                   >
                     Home
                   </a>
                   <a
-                    class="inline border-b-2 border-transparent hover:border-skyBlue hover:text-SkyBlue"
+                    className="inline border-b-2 border-transparent hover:border-skyBlue hover:text-SkyBlue"
                     href="#"
                   >
                     Partners
                   </a>
                   <a
-                    class="inline border-b-2 border-transparent hover:border-skyBlue hover:text-SkyBlue"
+                    className="inline border-b-2 border-transparent hover:border-skyBlue hover:text-SkyBlue"
                     href="#"
                   >
                     Resources
                   </a>
                   <a
-                    class="inline border-b-2 border-transparent hover:border-skyBlue hover:text-SkyBlue"
+                    className="inline border-b-2 border-transparent hover:border-skyBlue hover:text-SkyBlue"
                     href="#"
                   >
                     Events
@@ -65,14 +67,14 @@ const MiddleFooter = () => {
                 </div>
               </div>
               {/* EMAIL ADDRESS */}
-              <div class="flex flex-col justify-start items-center">
-                <h3 class="font-bold">Contact us here</h3>
+              <div className="flex flex-col justify-start items-center">
+                <h3 className="font-bold">Contact us here</h3>
                 <a
                   href="mailto"
-                  class="flex justify-center items-center space-x-2 cursor-pointer border-b-2 border-transparent border-dashed text-sm group hover:text-skyBlue hover:border-skyBlue transition-all"
+                  className="flex justify-center items-center space-x-2 cursor-pointer border-b-2 border-transparent border-dashed text-sm group hover:text-skyBlue hover:border-skyBlue transition-all"
                 >
                   <svg
-                    class="w-6 h-6 fill-white mr-2 transition-all group-hover:fill-skyBlue"
+                    className="w-6 h-6 fill-white mr-2 transition-all group-hover:fill-skyBlue"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"
                   >

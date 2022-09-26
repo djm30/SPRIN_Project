@@ -6,7 +6,7 @@ import Events from "./pages/Events";
 import Resources from "./pages/Resources";
 import Admin from "./pages/Admin";
 
-import Footer from "./components/Footer/Footer";
+import Footer from "./components/UI/Footer/Footer";
 
 function App() {
   useEffect(() => {

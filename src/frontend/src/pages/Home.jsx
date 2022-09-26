@@ -1,40 +1,17 @@
 import React from "react";
-import Footer from "../components/Footer/Footer";
+import Navbar from "../components/UI/Navbar/Navbar";
+import Placeholder from "../assets/Placeholder.svg";
+import ContentContainer from "../components/UI/ContentContainer";
 
 const Home = () => {
   return (
     <>
       {/* CALL TO ACTION */}
-      <div className="h-screen bg-darkblue-100 rounded-bl-[30%]">
+      <section className="h-screen w-screen bg-darkblue-100 rounded-bl-[30%]">
         {/* NAVBAR */}
-        <nav className="h-20 bg-darkblue-100 font-body text-white">
-          {/* LABELS */}
-          <div className="flex justify-between items-center h-full mx-40">
-            {/* LABELS */}
-            <div className="flex items-end space-x-12">
-              <h4 className="text-3xl">SPRIN</h4>
-              <div>
-                <ol className="flex space-x-8 text-lg">
-                  <li>Home</li>
-                  <li>Partners</li>
-                  <li>Events</li>
-                  <li>Resources</li>
-                </ol>
-              </div>
-            </div>
-            {/* BUTTON / BURGER */}
-            <div>
-              <button className="bg-skyblue-100 px-9 py-3 rounded-xl shadow-sm">
-                Login
-              </button>
-              {/* BURGER */}
-              {/* TODO */}
-              <div></div>
-            </div>
-          </div>
-        </nav>
+        <Navbar transparent={true} />
         {/* HEADING AND BUTTONS */}
-        <div className="mx-40 mt-20 space-y-12">
+        <ContentContainer className="mt-20 space-y-20 flex flex-col  items-center">
           <div className="space-y-6 mr-32">
             <h1 className="text-6xl text-white font-display">
               Suicide Prevention & Research Impact Network
@@ -44,13 +21,74 @@ const Home = () => {
               improving the evidence base
             </h2>
           </div>
-          <div>
-            <button className="">Join Today</button>
-            <button className="">Learn More</button>
+          <div className="space-x-16">
+            <a className="bg-skyblue-200 text-lg hover:bg-skyblue-300 transition-all text-white shadow-sm px-10 py-3 rounded-3xl">
+              Join Today
+            </a>
+            <a className="bg-grey-transparent text-lg hover:bg-skyblue-100 transition-all text-white shadow-sm px-10 py-3 rounded-3xl">
+              Learn More
+            </a>
           </div>
-        </div>
-      </div>
-      <div className="h-96 bg-white">Hello</div>
+        </ContentContainer>
+      </section>
+      {/* CARD SECTION */}
+      <section className=" bg-white my-20">
+        <ContentContainer className="grid grid-cols-1 md:grid-cols-3 ">
+          {/* SINGLE CARD */}
+          <div className="border-[1px] border-border-color shadow-lg w-96 h-[30rem] rounded-2xl flex flex-col items-center py-12 px-5 space-y-10">
+            {/* CARD HEADER */}
+            <h4 className="text-darkblue-100 text-2xl font-display">
+              Connection
+            </h4>
+            {/* CARD ICON */}
+            <div>
+              <img src={Placeholder}></img>
+            </div>
+            {/* CARD TEXT */}
+            <p className="text-center">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
+              mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
+              fringilla, mattis ligula consectetur, ultrices mauris.
+            </p>
+          </div>
+          {/* SINGLE CARD */}
+          <div className="text-white border-[1px] bg-darkblue-100 border-border-color shadow-lg w-96 h-[30rem] rounded-2xl flex flex-col items-center py-12 px-5 space-y-10">
+            {/* CARD HEADER */}
+            <h4 className="text-2xl font-display">Support</h4>
+            {/* CARD ICON */}
+            <div>
+              <img src={Placeholder}></img>
+            </div>
+            {/* CARD TEXT */}
+            <p className="text-center">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
+              mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
+              fringilla, mattis ligula consectetur, ultrices mauris.
+            </p>
+          </div>{" "}
+          {/* SINGLE CARD */}
+          <div className="border-[1px] border-border-color shadow-lg w-96 h-[30rem] rounded-2xl flex flex-col items-center py-12 px-5 space-y-10">
+            {/* CARD HEADER */}
+            <h4 className="text-darkblue-100 text-2xl font-display">
+              Advocacy
+            </h4>
+            {/* CARD ICON */}
+            <div>
+              <img src={Placeholder}></img>
+            </div>
+            {/* CARD TEXT */}
+            <p className="text-center">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
+              mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
+              fringilla, mattis ligula consectetur, ultrices mauris.
+            </p>
+          </div>
+        </ContentContainer>
+      </section>
+      {/* ABOUT US SECTION */}
+      <section className="h-96 bg-neutral-200"></section>
+      {/* PADDING BETWEEN ABOUT US AND FOOTER */}
+      <div className="h-16"></div>
     </>
   );
 };

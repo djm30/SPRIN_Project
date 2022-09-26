@@ -1,7 +1,13 @@
 import React from "react";
+import Navbar from "../components/UI/Navbar/Navbar";
 
 const Resources = () => {
-  return <div>Resources</div>;
+  return (
+    <div>
+      <Navbar transparent={false} />
+      Resources
+    </div>
+  );
 };
 
 export default Resources;
