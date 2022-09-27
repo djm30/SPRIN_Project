@@ -12,7 +12,7 @@ const Navbar = ({ transparent }) => {
       <ContentContainer className="flex justify-between items-center h-full">
         {/* LABELS */}
         <div className="flex items-end space-x-12">
-          <Link to="/">
+          <Link to="/home">
             <h4 className="text-3xl">SPRIN</h4>
           </Link>
           <div>

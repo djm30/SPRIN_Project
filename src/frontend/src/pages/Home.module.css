@@ -1,0 +1,26 @@
+#cta {
+  position: relative;
+  overflow: hidden;
+  background-image: url("../assets/CallToAction.svg");
+  background-position: 10% 60%;
+}
+
+@media screen and (max-width: 480px) {
+  #cta {
+    position: relative;
+    overflow: hidden;
+    background-image: url("../assets/CallToActionSmall.svg");
+    background-position: 50% 30%;
+  }
+}
+/* 
+#cta::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -100%;
+  left: -0%;
+  z-index: 1;
+  background: url("../assets//CallToAction.svg");
+} */

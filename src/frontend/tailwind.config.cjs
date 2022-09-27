@@ -8,6 +8,9 @@ module.exports = {
       body: ["Lato", "sans-serif"],
     },
     extend: {
+      backgroundImage: {
+        hero: "url(./src/assets/CallToAction.svg)",
+      },
       colors: {
         "border-color": "#DCDCDC",
         "grey-transparent": "rgba(193, 202, 225, 0.5)",

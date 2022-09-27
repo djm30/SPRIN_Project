@@ -1,4 +1,5 @@
 import React from "react";
+import { FooterLink } from "./FooterLink";
 
 const MiddleFooter = () => {
   return (
@@ -17,7 +18,7 @@ const MiddleFooter = () => {
                 <div className="flex flex-row justify-around items-center space-x-5">
                   <a className="block" href="#">
                     <svg
-                      className="w-12 h-12 fill-white cursor-pointer hover:fill-red-3Name00 transition-all"
+                      className="w-12 h-12 fill-white cursor-pointer hover:fill-red-400 transition-all"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 576 512"
                     >
@@ -40,30 +41,10 @@ const MiddleFooter = () => {
               {/* WEBPAGE LINKS */}
               <div className="md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
                 <div className="flex flex-col space-y-1 items-center">
-                  <a
-                    className="inline border-b-2 border-transparent hover:border-skyBlue hover:text-SkyBlue"
-                    href="#"
-                  >
-                    Home
-                  </a>
-                  <a
-                    className="inline border-b-2 border-transparent hover:border-skyBlue hover:text-SkyBlue"
-                    href="#"
-                  >
-                    Partners
-                  </a>
-                  <a
-                    className="inline border-b-2 border-transparent hover:border-skyBlue hover:text-SkyBlue"
-                    href="#"
-                  >
-                    Resources
-                  </a>
-                  <a
-                    className="inline border-b-2 border-transparent hover:border-skyBlue hover:text-SkyBlue"
-                    href="#"
-                  >
-                    Events
-                  </a>
+                  <FooterLink to="/home">Home</FooterLink>
+                  <FooterLink to="/partners">Partners</FooterLink>
+                  <FooterLink to="/resources">Resources</FooterLink>
+                  <FooterLink to="/events">Events</FooterLink>
                 </div>
               </div>
               {/* EMAIL ADDRESS */}
@@ -71,10 +52,10 @@ const MiddleFooter = () => {
                 <h3 className="font-bold">Contact us here</h3>
                 <a
                   href="mailto"
-                  className="flex justify-center items-center space-x-2 cursor-pointer border-b-2 border-transparent border-dashed text-sm group hover:text-skyBlue hover:border-skyBlue transition-all"
+                  className="flex justify-center items-center space-x-2 cursor-pointer border-b-2 border-transparent border-dashed text-sm group hover:text-skyblue-100 hover:border-skyblue-100 transition-all"
                 >
                   <svg
-                    className="w-6 h-6 fill-white mr-2 transition-all group-hover:fill-skyBlue"
+                    className="w-6 h-6 fill-white mr-2 transition-all group-hover:fill-skyblue-100"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"
                   >
