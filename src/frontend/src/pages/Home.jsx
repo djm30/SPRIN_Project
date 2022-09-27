@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Navbar from "../components/UI/Navbar/Navbar";
 import Placeholder from "../assets/Placeholder.svg";
 import ContentContainer from "../components/UI/ContentContainer";
@@ -11,7 +11,7 @@ const Home = () => {
       {/* CALL TO ACTION */}
       <section
         id={styles.cta}
-        className="h-screen w-screen bg-darkblue-100 bg-no-repeat   rounded-bl-[30%] relative overflow-hidden"
+        className="h-screen w-screen bg-darkblue-100 bg-no-repeat   rounded-bl-[340px] relative overflow-hidden"
       >
         {/* NAVBAR */}
         <Navbar transparent={true} />
@@ -91,18 +91,18 @@ const Home = () => {
         </ContentContainer>
       </section>
       {/* ABOUT US SECTION */}
-      <section className="relative bg-neutral-200 overflow-hidden  rounded-br-[20%] md:rounded-br-[10%]">
+      <section className="relative bg-neutral-200 overflow-hidden  rounded-b-[60px] md:rounded-bl-none md:rounded-br-[140px]">
         {/* DECORATIVE SVG */}
         <img
           src={DecorativeSVG}
-          className="absolute  lg:-top-28 xl:-top-28 -right-96 hidden lg:block"
+          className="absolute  lg:-top-12 xl:-top-20 -right-96 hidden lg:block"
         />
         <ContentContainer className={"py-20"}>
           <h3 className="text-5xl text-darkblue-100 font-display mb-20">
             About Us
           </h3>
-          <div className="md:space-y-12 space-y-20 text-lg text-center lg:text-left">
-            <p className="pr-10 lg:pr-96 ">
+          <div className="md:space-y-12 space-y-20 text-lg text-center lg:text-left ">
+            <p className="pr-10 lg:pr-96 leading-8">
               Suicide is a growing concern in Northern Ireland with our suicide
               rate being one of the highest in the UK. The reasons for this are
               complex and may be linked to wide range of social factors
@@ -110,7 +110,7 @@ const Home = () => {
               mental ill-health. Reducing current suicide rates requires a
               multi-facetted approach.
             </p>
-            <p className="pr-10 lg:pr-96">
+            <p className="pr-10 lg:pr-96 leading-8">
               Recently, this has been recognised by the NI Assembly who have
               established a cross-departmental group focused on mental health
               improvement for NI. The Suicide Prevention Research and Impact
@@ -121,7 +121,7 @@ const Home = () => {
               and evaluating, that learning would be shared nationally and
               internationally, to ultimately prevent more deaths.
             </p>
-            <p className="pr-10 lg:pr-96">
+            <p className="pr-10 lg:pr-96 leading-8">
               Suicide prevention requires a focused, multi-disciplinary and
               multi-pronged approach that is effectively coordinated with strong
               leadership. The relationships established within the network will
