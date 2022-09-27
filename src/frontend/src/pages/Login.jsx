@@ -6,6 +6,7 @@ const Login = () => {
     <div>
       <Navbar transparent={false} />
       Login
+      <form></form>
     </div>
   );
 };
