@@ -3,7 +3,7 @@ import Navbar from "../components/UI/Navbar/Navbar";
 
 const Login = () => {
   return (
-    <div>
+    <div className="min-h-screen">
       <Navbar transparent={false} />
       Login
       <form></form>
