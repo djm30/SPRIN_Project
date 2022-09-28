@@ -4,7 +4,7 @@ import Clock from "../../assets/Clock.svg";
 
 const SingleResource = () => {
   return (
-    <Card className="h-96 max-w-xs flex flex-col cursor-pointer hover:-translate-y-[0.1rem] hover:shadow-lg transition-all">
+    <Card className="min-h-[24rem] max-w-xs flex flex-col cursor-pointer hover:-translate-y-[0.1rem] hover:shadow-lg transition-all">
       {/* CARD HEADING */}
       <div className="h-20 rounded-t-[0.8rem] bg-red-400"></div>
       {/* CARD BODY */}

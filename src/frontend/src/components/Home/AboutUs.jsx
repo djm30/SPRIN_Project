@@ -4,7 +4,7 @@ import DecorativeSVG from "../../assets/Radial.svg";
 
 const AboutUs = () => {
   return (
-    <section className="relative bg-neutral-200 overflow-hidden  rounded-br-[100px]  md:rounded-br-[140px]">
+    <section className="relative bg-gray-100 overflow-hidden  rounded-br-[100px]  md:rounded-br-[140px]">
       {/* DECORATIVE SVG */}
       <img
         src={DecorativeSVG}
