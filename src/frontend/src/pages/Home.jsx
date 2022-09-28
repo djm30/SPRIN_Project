@@ -38,7 +38,7 @@ const Home = () => {
       </section>
       {/* CARD SECTION */}
       <section className=" bg-white my-20 flex justify-center">
-        <ContentContainer className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <ContentContainer className="grid grid-cols-1 md:grid-cols-3 gap-4 space-y-5 md:space-y-0">
           {/* SINGLE CARD */}
           <div className="border-[1px] max-w-[360px] md:max-w-none border-border-color shadow-lg xl:w-96 xl:h-[30rem] rounded-2xl flex flex-col items-center py-12 px-5 space-y-10">
             {/* CARD HEADER */}
@@ -98,11 +98,11 @@ const Home = () => {
           className="absolute  lg:-top-12 xl:-top-20 -right-96 hidden lg:block"
         />
         <ContentContainer className={"py-20"}>
-          <h3 className="text-5xl text-darkblue-100 font-display mb-20">
+          <h3 className="text-center md:text-left text-5xl text-darkblue-100 font-display mb-20">
             About Us
           </h3>
           <div className="md:space-y-12 space-y-20 text-lg text-center lg:text-left ">
-            <p className="pr-10 lg:pr-96 leading-8">
+            <p className="md:pr-10 lg:pr-96 leading-8">
               Suicide is a growing concern in Northern Ireland with our suicide
               rate being one of the highest in the UK. The reasons for this are
               complex and may be linked to wide range of social factors
@@ -110,7 +110,7 @@ const Home = () => {
               mental ill-health. Reducing current suicide rates requires a
               multi-facetted approach.
             </p>
-            <p className="pr-10 lg:pr-96 leading-8">
+            <p className="md:pr-10 lg:pr-96 leading-8">
               Recently, this has been recognised by the NI Assembly who have
               established a cross-departmental group focused on mental health
               improvement for NI. The Suicide Prevention Research and Impact
@@ -121,7 +121,7 @@ const Home = () => {
               and evaluating, that learning would be shared nationally and
               internationally, to ultimately prevent more deaths.
             </p>
-            <p className="pr-10 lg:pr-96 leading-8">
+            <p className="md:pr-10 lg:pr-96 leading-8">
               Suicide prevention requires a focused, multi-disciplinary and
               multi-pronged approach that is effectively coordinated with strong
               leadership. The relationships established within the network will
