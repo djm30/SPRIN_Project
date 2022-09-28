@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import ContentContainer from "../ContentContainer";
 import Navlink from "./Navlink";
 import { Link } from "react-router-dom";
 import HamburgerMenu from "./HamburgerMenu";
+import MobileMenu from "./MobileMenu";
 
 const Navbar = ({ transparent }) => {
+  const [open, setOpen] = useState(false);
   const bgColor = transparent ? "transparent" : "darkblue-100";
 
   return (
-    <nav className={`h-20 bg-${bgColor} font-body text-white`}>
+    <nav className={`h-20 bg-${bgColor} relative font-body text-white`}>
       {/* LABELS */}
-      <ContentContainer className="flex justify-between items-center h-full">
+      <ContentContainer className="flex justify-between items-center h-full relative">
         {/* LABELS */}
         <div className="flex items-end space-x-12">
           <Link to="/home">
@@ -30,9 +32,10 @@ const Navbar = ({ transparent }) => {
           <button className="bg-skyblue-200 hover:bg-skyblue-300 transition-all px-9 py-3 rounded-xl shadow-sm hidden md:block">
             Login
           </button>
-          <HamburgerMenu />
+          <HamburgerMenu open={open} setOpen={setOpen} />
         </div>
       </ContentContainer>
+      <MobileMenu open={open} />
     </nav>
   );
 };

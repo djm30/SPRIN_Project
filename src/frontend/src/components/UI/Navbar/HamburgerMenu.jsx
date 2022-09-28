@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Hamburger.module.css";
 
-const HamburgerMenu = () => {
-  const [open, setOpen] = useState(false);
-
+const HamburgerMenu = ({ open, setOpen }) => {
   const hamburgerStyles = `block ${
     styles["hamburger"]
   } md:hidden focus:outline-none ${open ? styles["open"] : ""}`;

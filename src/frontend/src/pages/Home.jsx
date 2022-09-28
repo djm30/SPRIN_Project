@@ -98,10 +98,10 @@ const Home = () => {
           className="absolute  lg:-top-12 xl:-top-20 -right-96 hidden lg:block"
         />
         <ContentContainer className={"py-20"}>
-          <h3 className="text-center md:text-left text-5xl text-darkblue-100 font-display mb-20">
+          <h3 className="text-center md:text-left  text-3xl md:text-5xl text-darkblue-100 font-display mb-20">
             About Us
           </h3>
-          <div className="md:space-y-12 space-y-20 text-lg text-center lg:text-left ">
+          <div className="md:space-y-12 space-y-20 text-base md:text-lg text-center lg:text-left ">
             <p className="md:pr-10 lg:pr-96 leading-8">
               Suicide is a growing concern in Northern Ireland with our suicide
               rate being one of the highest in the UK. The reasons for this are
