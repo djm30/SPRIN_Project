@@ -2,7 +2,8 @@ import React from "react";
 import Navbar from "../components/UI/Navbar/Navbar";
 import ContentContainer from "../components/UI/ContentContainer";
 import Heading from "../components/UI/Heading";
-import PartnerFlashCards from "../components/Partners/PartnerCards";
+import PartnerFlashCardsRight from "../components/Partners/PartnerCardsLeft";
+import PartnerFlashCardsLeft from "../components/Partners/PartnerCardsRight";
 
 const Partners = () => {
   return (
@@ -11,8 +12,9 @@ const Partners = () => {
       <section>
         <ContentContainer>
           <Heading>Network Partners</Heading>
-          <PartnerFlashCards/>
         </ContentContainer>
+        <PartnerFlashCardsRight/>
+        <PartnerFlashCardsLeft/>
       </section>
     </div>
   );
