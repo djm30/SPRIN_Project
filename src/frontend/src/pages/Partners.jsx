@@ -9,7 +9,7 @@ const Partners = () => {
       <Navbar transparent={false} />
       <section>
         <ContentContainer>
-          <Heading>Test</Heading>
+          <Heading>Network Partners</Heading>
         </ContentContainer>
       </section>
     </div>
