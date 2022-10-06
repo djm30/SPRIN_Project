@@ -3,7 +3,7 @@ import Navbar from "../components/UI/Navbar/Navbar";
 
 const Login = () => {
   return (
-    <div>
+    <div className="min-h-screen">
     <section
         id={styles.cta}
         className="h-screen w-screen bg-darkblue-100 bg-no-repeat   rounded-bl-[30%] relative overflow-hidden"
@@ -37,9 +37,7 @@ const Login = () => {
             </a>
         </div>
       </form>
-      
     </div>
-   
   );
 };
 

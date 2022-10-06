@@ -1,0 +1,15 @@
+#cta {
+  position: relative;
+  overflow: hidden;
+  background-image: url("../../assets/CallToAction.svg");
+  background-position: 10% 60%;
+}
+
+@media screen and (max-width: 480px) {
+  #cta {
+    position: relative;
+    overflow: hidden;
+    background-image: url("../../assets/CallToActionSmall.svg");
+    background-position: 50% 30%;
+  }
+}

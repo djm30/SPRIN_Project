@@ -5,6 +5,8 @@ import Partners from "./pages/Partners";
 import Events from "./pages/Events";
 import Resources from "./pages/Resources";
 import Admin from "./pages/Admin";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 import Footer from "./components/UI/Footer/Footer";
 
@@ -21,6 +23,8 @@ function App() {
         <Route path="/resources" element={<Resources />} />
         <Route path="/events" element={<Events />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
 
       <Footer />
