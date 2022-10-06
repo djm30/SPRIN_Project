@@ -5,7 +5,7 @@ const TopFooter = () => {
     <>
       {/* <!-- ABOVE FOOTER --> */}
       <section className="bg-darkblue-100 w-full h-16 flex items-center relative">
-        <div className="absolute left-56 overflow-hidden h-16">
+        <div className="absolute left-20 sm:left-56 overflow-hidden h-16">
           <div className="-translate-y-8 opacity-30 w-32 h-32 rounded-full bg-skyblue-100"></div>
         </div>
 
