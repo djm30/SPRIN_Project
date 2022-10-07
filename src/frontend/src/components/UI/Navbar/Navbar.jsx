@@ -29,9 +29,12 @@ const Navbar = ({ transparent }) => {
         </div>
         {/* BUTTON / BURGER */}
         <div>
-          <button className="bg-skyblue-200 hover:bg-skyblue-300 transition-all px-9 py-3 rounded-xl shadow-sm hidden md:block">
+          <Link
+            to="/login"
+            className="bg-skyblue-200 hover:bg-skyblue-300 transition-all px-9 py-3 rounded-xl shadow-sm hidden md:block"
+          >
             Login
-          </button>
+          </Link>
           <HamburgerMenu open={open} setOpen={setOpen} />
         </div>
       </ContentContainer>
