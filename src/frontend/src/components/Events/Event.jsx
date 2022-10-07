@@ -23,7 +23,7 @@ const InfoSection = ({ left }) => {
     : "";
 
   return (
-    <div className={`${borderClass} md:w-3/5 p-4 space-y-8 md:space-y-6`}>
+    <div className={`${borderClass} md:w-3/5 p-6 space-y-8 md:space-y-6`}>
       {/* TITLE */}
       <h3 className="text-2xl md:text-3xl">Title</h3>
       {/* DESCRIPTION */}
@@ -43,12 +43,12 @@ const InfoSection = ({ left }) => {
         </div>
 
         {/* VIEW BUTTON */}
-        <a className="text-darkblue-100 border-border-color border-[1px] rounded-lg px-5 py-2 shadow-sm">
+        <a className="text-darkblue-100 border-border-color border-[1px] rounded-lg px-5 py-2 shadow-sm cursor-pointer hover:bg-sky-50 transition-all">
           View
         </a>
       </div>
       {/* REGISTER BUTTON */}
-      <button className="text-white bg-skyblue-200 rounded-lg px-5 py-2">
+      <button className="text-white bg-skyblue-200 hover:bg-skyblue-300 rounded-lg px-5 py-2">
         Register
       </button>
     </div>
@@ -62,7 +62,7 @@ const Event = ({ alt }) => {
   const responsiveFlexDirection = alt ? "flex-col-reverse" : "flex-col";
   return (
     <Card
-      className={`max-w-[800px] flex md:flex-row w-11/12 sm:w-2/3 ${responsiveFlexDirection} md:w-5/6 `}
+      className={`max-w-[800px] flex md:flex-row w-11/12 sm:w-2/3 ${responsiveFlexDirection} md:w-5/6 hover:-translate-y-[0.1rem] hover:shadow-lg transition-all`}
     >
       {!alt ? (
         <>
