@@ -2,6 +2,11 @@
 
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  variants: {
+    extend: {
+      padding: ["last"],
+    },
+  },
   theme: {
     fontFamily: {
       display: ["Arvo", "serif"],
@@ -29,5 +34,6 @@ module.exports = {
       },
     },
   },
+
   plugins: [],
 };

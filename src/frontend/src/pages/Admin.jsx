@@ -1,5 +1,6 @@
 import React from "react";
 import Stat from "../components/Admin/Stat";
+import { Table } from "../components/Admin/Table/Table";
 import Card from "../components/UI/Card";
 import ContentContainer from "../components/UI/ContentContainer";
 import Heading from "../components/UI/Heading";
@@ -12,8 +13,11 @@ const Admin = () => {
       <ContentContainer>
         <Heading>Admin Page</Heading>
         {/* STATS */}
+        <h3 className="mt-10 mb-4 font-display text-darkblue-100 text-2xl">
+          Monthly stats
+        </h3>
         <div className="flex justify-center">
-          <div className="mt-10 grid grid-cols-2 gap-2 sm:gap-8 lg:grid-cols-4 lg:gap-2 xl:gap-10">
+          <div className="grid grid-cols-2 gap-2 sm:gap-8 lg:grid-cols-4 lg:gap-2 xl:gap-10">
             <Stat />
             <Stat />
             <Stat />
@@ -21,15 +25,13 @@ const Admin = () => {
           </div>
         </div>
         {/* APPROVE USERS TABLE */}
-        <h3 className="mt-10 font-display text-darkblue-100 text-2xl">
-          Users awaiting approval
+        <h3 className="mt-10 mb-10 font-display text-darkblue-100 text-2xl">
+          User Management
         </h3>
-        <div></div>
-        {/* USERS TABLE */}
-        <h3 className="mt-10 font-display text-darkblue-100 text-2xl">
-          Manage Registered Users
-        </h3>
-        <div></div>
+
+        <div className="overflow-x-scroll">
+          <Table />
+        </div>
       </ContentContainer>
     </div>
   );
