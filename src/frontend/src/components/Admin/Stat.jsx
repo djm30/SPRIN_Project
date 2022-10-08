@@ -1,0 +1,18 @@
+import React from "react";
+import Card from "../UI/Card";
+
+const Stat = () => {
+  return (
+    <Card
+      className="w-36 h-36 sm:w-52 sm:h-52 text-white text-center p-2"
+      blue={true}
+    >
+      {/* CARD TITLE */}
+      <h4 className="text-base sm:text-xl">Monthly Views</h4>
+      {/* CARD INFO */}
+      <p className="text-3xl sm:text-4xl font-bold mt-5 sm:mt-10">100</p>
+    </Card>
+  );
+};
+
+export default Stat;
