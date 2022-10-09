@@ -31,7 +31,7 @@ const Navbar = ({ transparent }) => {
         <div>
           <Link
             to="/login"
-            className="bg-skyblue-200 hover:bg-skyblue-300 transition-all px-9 py-3 rounded-xl shadow-sm hidden md:block"
+            className="bg-skyblue-200 hover:bg-skyblue-300 transition-all px-6 py-2 rounded-xl shadow-sm hidden md:block"
           >
             Login
           </Link>
