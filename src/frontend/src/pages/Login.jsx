@@ -12,7 +12,7 @@ const Login = () => {
           <Heading>Login</Heading>
         </ContentContainer>
         <ContentContainer className="flex justify-center">
-          <div className="mb-10 items-center sm:w-4/5 md:w-2/3 xl:w-1/3 my-5 py-5">
+          <div className="mb-10 items-center sm:w-4/5 md:w-2/3 xl:w-3/6 lg:w-3/6 my-5 py-5">
             <form>
               {/* EMAIL */}
               <div className="flex flex-col gap-2 mx-2 pb-4">
@@ -37,7 +37,7 @@ const Login = () => {
                 <span className="min-h-[6px] text-red-500"></span>
               </div>
               <div className="flex justify-center">
-                <button className="bg-darkblue-100 text-white px-4 py-2 rounded-lg hover:bg-skyblue-200 transition-all">
+                <button className="bg-darkblue-100 text-white w-1/3 px-4 py-2 rounded-lg hover:bg-skyblue-200 transition-all">
                   Login
                 </button>
               </div>
