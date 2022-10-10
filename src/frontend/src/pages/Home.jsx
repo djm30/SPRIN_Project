@@ -7,7 +7,6 @@ import Modal from "../components/UI/Modal/Modal";
 const Home = () => {
   return (
     <>
-      <Modal className="h-96 w-96" />
       <CallToAction />
       <ConnectionSupportAdvocacy />
       <AboutUs />
