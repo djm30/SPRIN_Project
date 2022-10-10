@@ -1,32 +1,37 @@
 import React from "react";
 import Navbar from "../components/UI/Navbar/Navbar";
 import ContentContainer from "../components/UI/ContentContainer";
+import Heading from "../components/UI/Heading";
 
 const Login = () => {
   return (
     <div className="min-h-screen">
-      {/* NAVBAR */}
       <Navbar transparent={false} />
-      {/* HEADING AND BUTTONS */}
-      <ContentContainer className="mt-20 space-y-20 flex flex-col items-center">
-        <div className="space-y-6 mr-32">
-          <h1 className="text-6xl text-white font-display">LOGIN</h1>
-        </div>
-      </ContentContainer>
+      <section className="w-full">
+        <ContentContainer>
+          <Heading>Login</Heading>
+        </ContentContainer>
+        {/* POST A RESOURCE BUTTON HERE */}
+        <div className="mb-10 flex flex-col items-center ">
+          <div className="w-full my-5 py-5 flex justify-center">
       <form>
         <div className="space-x-16">
-          <h2>Email:</h2>
-          <input className="bg-skyblue-200 text-lg text-white shadow-sm px-10 py-3 rounded-3xl type='Email'" />
-          <h2>Password:</h2>
-          <input className="bg-skyblue-200 text-lg text-white shadow-sm px-10 py-3 rounded-3xl type='Email'" />
-          <a className="bg-skyblue-200 text-lg hover:bg-skyblue-300 transition-all text-white shadow-sm px-10 py-3 rounded-3xl select-none">
+          <h2 className="text-blue-600 font-display text-3xl">Email:</h2>
+          <input className="bg-white text-lg text-blue-600 shadow-sm px-10 py-3 rounded-3xl type='Email'" />
+        <div className="space-x-16">
+          <h2 className="text-blue-600 font-display text-3xl">Password:</h2>
+          <input className="bg-white text-lg text-blue-600 shadow-sm px-10 py-3 rounded-3xl type='Email'" />
+        <div className="space-x-2 sm:space-x-16">
+          <a className="z-20 bg-skyblue-200 md:text-lg hover:bg-skyblue-300 transition-all text-white shadow-sm px-10 py-3 rounded-3xl select-none">
             Login
           </a>
-          <a className="bg-skyblue-200 text-lg hover:bg-skyblue-300 transition-all text-white shadow-sm px-10 py-3 rounded-3xl select-none">
-            Register
-          </a>
+        </div>
+        </div>
         </div>
       </form>
+        </div>
+        </div>
+      </section>
     </div>
   );
 };
