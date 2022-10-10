@@ -11,7 +11,7 @@ const TopFooter = () => {
 
         <div className="w-full text-sm pr-2 text-white pt-2 flex justify-end items-center space-x-5 md:text-base md:container md:pr-0">
           <p>Join the network to stay up to date!</p>
-          <div className="border-2 border-white px-4 py-2 transition-all rounded-lg hover:bg-white hover:text-darkblue-100 font-bold lg:text-base">
+          <div className="cursor-pointer border-2 border-white px-4 py-2 transition-all rounded-lg hover:bg-white hover:text-darkblue-100 font-bold lg:text-base">
             Register
           </div>
         </div>
