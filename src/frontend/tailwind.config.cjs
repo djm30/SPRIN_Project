@@ -2,6 +2,11 @@
 
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  variants: {
+    extend: {
+      padding: ["last"],
+    },
+  },
   theme: {
     fontFamily: {
       display: ["Arvo", "serif"],
@@ -14,6 +19,7 @@ module.exports = {
       colors: {
         "border-color": "#DCDCDC",
         "grey-transparent": "rgba(193, 202, 225, 0.5)",
+        modal: "rgba(0,0,0,0.75)",
         bluegrey: {
           100: "#D5D9DB",
           200: "#B7B7B7",
@@ -29,5 +35,6 @@ module.exports = {
       },
     },
   },
+
   plugins: [],
 };
