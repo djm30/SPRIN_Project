@@ -11,26 +11,40 @@ const Login = () => {
         <ContentContainer>
           <Heading>Login</Heading>
         </ContentContainer>
+        <ContentContainer className="flex justify-center">
+          <div className="mb-10 items-center sm:w-4/5 md:w-2/3 xl:w-1/3 my-5 py-5">
+            <form>
+              {/* EMAIL */}
+              <div className="flex flex-col gap-2 mx-2 pb-4">
+                <label className="md:text-2xl text-darkblue-100">Email</label>
+                <input
+                  type="Email"
+                  className="border-border-color border-2 h-8 md:h-12 rounded-lg px-2 py-4 focus:outline-none focus:border-skyblue-200"
+                />
+                {/* ERROR MESSAGE */}
+                <span className="min-h-[6px] text-red-500"></span>
+              </div>
+              {/* PASSWORD */}
+              <div className="flex flex-col gap-2 mx-2 pb-4">
+                <label className="md:text-2xl text-darkblue-100">
+                  Password
+                </label>
+                <input
+                  type="Password"
+                  className="border-border-color border-2 h-8 md:h-12 rounded-lg px-2 py-4 focus:outline-none focus:border-skyblue-200"
+                />
+                {/* ERROR MESSAGE */}
+                <span className="min-h-[6px] text-red-500"></span>
+              </div>
+              <div className="flex justify-center">
+                <button className="bg-darkblue-100 text-white px-4 py-2 rounded-lg hover:bg-skyblue-200 transition-all">
+                  Login
+                </button>
+              </div>
+            </form>
+          </div>
+        </ContentContainer>
         {/* POST A RESOURCE BUTTON HERE */}
-        <div className="mb-10 flex flex-col items-center ">
-          <div className="w-full my-5 py-5 flex justify-center">
-      <form>
-        <div className="space-x-16">
-          <h2 className="text-blue-600 font-display text-3xl">Email:</h2>
-          <input className="bg-white text-lg text-blue-600 shadow-sm px-10 py-3 rounded-3xl type='Email'" />
-        <div className="space-x-16">
-          <h2 className="text-blue-600 font-display text-3xl">Password:</h2>
-          <input className="bg-white text-lg text-blue-600 shadow-sm px-10 py-3 rounded-3xl type='Email'" />
-        <div className="space-x-2 sm:space-x-16">
-          <a className="z-20 bg-skyblue-200 md:text-lg hover:bg-skyblue-300 transition-all text-white shadow-sm px-10 py-3 rounded-3xl select-none">
-            Login
-          </a>
-        </div>
-        </div>
-        </div>
-      </form>
-        </div>
-        </div>
       </section>
     </div>
   );
