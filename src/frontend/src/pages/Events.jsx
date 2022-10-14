@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/UI/Navbar/Navbar";
 import ContentContainer from "../components/UI/ContentContainer";
 import Heading from "../components/UI/Heading";
 import PageNumbers from "../components/UI/PageNumbers";
-
 import Event from "../components/Events/Event";
+import EventForm from "../components/Events/EventForm";
 
 const Events = () => {
+  const [openForm, setOpenForm] = useState(true);
+
   return (
     <div className="min-h-screen">
       <Navbar transparent={false} />
+      <EventForm open={openForm} setOpen={setOpenForm} />
       <section>
         <ContentContainer>
           <Heading>Events</Heading>

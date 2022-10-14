@@ -3,33 +3,32 @@ import Modal from "../UI/Modal/Modal";
 import { useTextField } from "../../hooks";
 import TextField from "../UI/TextField";
 import FileUpload from "../UI/FileUpload";
-import DropdownBox from "./DropdownBox";
+import RadioButtons from "./RadioButtons";
 
-const ResourceForm = ({ open, setOpen }) => {
+const EventForm = ({ open, setOpen }) => {
   const onSubmit = (e) => {
     e.preventDefault();
   };
 
-  const resourceTypes = {
-    YOUTUBE: "YOUTUBE",
-    WEBSITE: "WEBSITE",
-    PAPER: "PAPER",
+  const eventTypes = {
+    ONLINE: "ONLINE",
+    PHSYCIAL: "PHSYCIAL",
   };
 
   const [
-    resourceTitle,
-    resourceTitleReset,
-    resourceTitleError,
-    isResourceTitleValid,
-    resourceTitleInputParams,
+    eventTitle,
+    eventTitleReset,
+    eventTitleError,
+    isEventTitleValid,
+    eventTitleInputParams,
   ] = useTextField(() => {});
 
   const [
-    resourceDescription,
-    resourceDescriptionReset,
-    resourceDescriptionError,
-    isResourceDescriptionValid,
-    resourceDescriptionInputParams,
+    eventDescription,
+    eventDescriptionReset,
+    eventDescriptionError,
+    isEventDescriptionValid,
+    eventDescriptionInputParams,
   ] = useTextField(() => {});
 
   const [
@@ -40,7 +39,7 @@ const ResourceForm = ({ open, setOpen }) => {
     resourceUrlInputParams,
   ] = useTextField(() => {});
 
-  const [radialValue, setRadialValue] = useState(resourceTypes.YOUTUBE);
+  const [radialValue, setRadialValue] = useState(eventTypes.ONLINE);
 
   return (
     <Modal
@@ -58,38 +57,30 @@ const ResourceForm = ({ open, setOpen }) => {
         className="mt-10 md:space-y-3"
       >
         {/* RESOURCE Title */}
-        <TextField
-          error={resourceTitleError}
-          inputParams={resourceTitleInputParams}
-        >
-          Resource Title
+        <TextField error={eventTitleError} inputParams={eventTitleInputParams}>
+          Event Title
         </TextField>
         {/* RESOURCE DESCRIPTION */}
         <TextField
-          error={resourceDescriptionError}
-          inputParams={resourceDescriptionInputParams}
+          error={eventDescriptionError}
+          inputParams={eventDescriptionInputParams}
         >
-          Resource Description
+          Event Description
         </TextField>
         {/* RESOURCE TYPE RADIAL BUTTONS */}
-        <DropdownBox />
+
         {/* DIFFERENT FORM DEPENDING ON WHAT RESOURCE HAS BEEN CHOSEN */}
+        <RadioButtons />
         <div>
-          {radialValue === resourceTypes.PAPER ? (
-            <FileUpload></FileUpload>
-          ) : (
-            <TextField>
-              {radialValue === resourceTypes.WEBSITE
-                ? "Website Url"
-                : "Youtube Url"}
-            </TextField>
-          )}
+          <TextField>
+            {radialValue === eventTypes.ONLINE ? "Meeting Url" : "Address"}
+          </TextField>
         </div>
         {/* SUBMIT BUTTON */}
 
         <div className="mx-2">
-          <button className="w-full mt-4  bg-darkblue-100 text-white  py-3 rounded-lg hover:bg-skyblue-200 transition-all">
-            Add Resource
+          <button className="w-full mt-4 bg-darkblue-100 text-white px-4 py-3 rounded-lg hover:bg-skyblue-200 transition-all">
+            Add Event
           </button>
         </div>
       </form>
@@ -97,4 +88,4 @@ const ResourceForm = ({ open, setOpen }) => {
   );
 };
 
-export default ResourceForm;
+export default EventForm;

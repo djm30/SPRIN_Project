@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import { createPortal } from "react-dom";
 import Card from "../Card";
 
 const Modal = ({ open, setOpen, children, className }) => {
+  let clicked;
+
   return open
     ? createPortal(
         // BACKGROUND DIV
