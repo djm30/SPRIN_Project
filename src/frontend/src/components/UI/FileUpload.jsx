@@ -4,10 +4,10 @@ const FileUpload = ({ onChange, errorMessage, fileName, label }) => {
   onChange = () => {};
   let showFileSelected = () => {};
   return (
-    <div className="mb-6 mt-4">
-      <p className="block text-gray-700 text-sm font-bold mb-2">{label}</p>
+    <div className="">
+      <p className="block text-neutral-500 md:text-xl mx-2 mb-2">{label}</p>
       <div className="flex items-center justify-center bg-grey-lighter">
-        <label className="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue-400 cursor-pointer hover:bg-blue-400 hover:text-white">
+        <label className="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue-400 cursor-pointer hover:bg-darkblue-100 hover:text-white">
           <svg
             className="w-8 h-8"
             fill="currentColor"

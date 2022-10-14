@@ -5,7 +5,7 @@ const RadioButtons = () => {
     <div className="mx-2 mt-2 border-b-[1px] border-border-color pb-4">
       <h5 className="md:text-xl text-neutral-500">Event Location</h5>
       <div
-        class="grid  grid-cols-2 max-w space-x-2 rounded-xl bg-gray-200 p-2  sm:p-2 items-center"
+        class="grid  grid-cols-2 max-w space-x-2 rounded-xl bg-gray-100 p-2 mt-2  sm:p-2 items-center"
         x-data="app"
       >
         <div>
@@ -18,7 +18,7 @@ const RadioButtons = () => {
           />
           <label
             for="1"
-            class="block cursor-pointer select-none rounded-lg sm:rounded-xl p-[2px] sm:p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white"
+            class="block cursor-pointer select-none rounded-lg sm:rounded-xl p-[2px] sm:p-2 text-center peer-checked:bg-darkblue-100 peer-checked:font-bold peer-checked:text-white"
           >
             In Person
           </label>
@@ -28,7 +28,7 @@ const RadioButtons = () => {
           <input type="radio" name="option" id="2" class="peer hidden" />
           <label
             for="2"
-            class="block cursor-pointer select-none rounded-lg sm:rounded-xl p-[2px] sm:p-2 text-center peer-checked:bg-blue-500 peer-checked:font-bold peer-checked:text-white"
+            class="block cursor-pointer select-none rounded-lg sm:rounded-xl p-[2px] sm:p-2 text-center peer-checked:bg-darkblue-100 peer-checked:font-bold peer-checked:text-white"
           >
             Online
           </label>

@@ -40,13 +40,13 @@ const ResourceForm = ({ open, setOpen }) => {
     resourceUrlInputParams,
   ] = useTextField(() => {});
 
-  const [radialValue, setRadialValue] = useState(resourceTypes.YOUTUBE);
+  const [resourceType, setResourceType] = useState(resourceTypes.YOUTUBE);
 
   return (
     <Modal
       open={open}
       setOpen={setOpen}
-      className="mx-4 w-[600px] md:max-h-[720px] h-fit px-3 sm:px-6 py-4 font-body overflow-y-scroll -translate-y-2"
+      className="mx-4 w-[600px] md:max-h-[732px] h-fit px-3 sm:px-6 py-4 font-body overflow-y-scroll -translate-y-5"
     >
       <h3 className="text-lg text-center mx-2 md:text-2xl text-darkblue-100 font-bold">
         Add A Resource
@@ -72,14 +72,23 @@ const ResourceForm = ({ open, setOpen }) => {
           Resource Description
         </TextField>
         {/* RESOURCE TYPE RADIAL BUTTONS */}
-        <DropdownBox />
+        <DropdownBox
+          children="Resource Type"
+          options={[
+            { value: resourceTypes.YOUTUBE, label: "YouTube Video" },
+            { value: resourceTypes.WEBSITE, label: "Website Link" },
+            { value: resourceTypes.PAPER, label: "Research Paper" },
+          ]}
+          selectedOption={resourceType}
+          setSelectedOption={setResourceType}
+        />
         {/* DIFFERENT FORM DEPENDING ON WHAT RESOURCE HAS BEEN CHOSEN */}
         <div>
-          {radialValue === resourceTypes.PAPER ? (
-            <FileUpload></FileUpload>
+          {resourceType === resourceTypes.PAPER ? (
+            <FileUpload label="Upload Research Paper" />
           ) : (
             <TextField>
-              {radialValue === resourceTypes.WEBSITE
+              {resourceType === resourceTypes.WEBSITE
                 ? "Website Url"
                 : "Youtube Url"}
             </TextField>
