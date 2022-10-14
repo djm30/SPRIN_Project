@@ -12,8 +12,10 @@ const EventForm = ({ open, setOpen }) => {
 
   const eventTypes = {
     ONLINE: "ONLINE",
-    PHSYCIAL: "PHSYCIAL",
+    PHYSICAL: "PHYSICAL",
   };
+
+  const [eventType, setEventType] = useState(eventTypes.PHYSICAL);
 
   const [
     eventTitle,
@@ -38,8 +40,6 @@ const EventForm = ({ open, setOpen }) => {
     isResourceUrlValid,
     resourceUrlInputParams,
   ] = useTextField(() => {});
-
-  const [radialValue, setRadialValue] = useState(eventTypes.ONLINE);
 
   return (
     <Modal
@@ -70,10 +70,14 @@ const EventForm = ({ open, setOpen }) => {
         {/* RESOURCE TYPE RADIAL BUTTONS */}
 
         {/* DIFFERENT FORM DEPENDING ON WHAT RESOURCE HAS BEEN CHOSEN */}
-        <RadioButtons />
+        <RadioButtons
+          value={eventType}
+          setValue={setEventType}
+          values={eventTypes}
+        />
         <div>
           <TextField>
-            {radialValue === eventTypes.ONLINE ? "Meeting Url" : "Address"}
+            {eventType === eventTypes.ONLINE ? "Meeting Url" : "Address"}
           </TextField>
         </div>
         {/* SUBMIT BUTTON */}
