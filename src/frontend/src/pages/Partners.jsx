@@ -4,6 +4,7 @@ import ContentContainer from "../components/UI/ContentContainer";
 import Heading from "../components/UI/Heading";
 import PartnerFlashCardsRight from "../components/Partners/PartnerCardsLeft";
 import PartnerFlashCardsLeft from "../components/Partners/PartnerCardsRight";
+import JoinTodayBar from "../components/Partners/JoinToday";
 
 const Partners = () => {
   return (
@@ -15,6 +16,7 @@ const Partners = () => {
         </ContentContainer>
         <PartnerFlashCardsRight/>
         <PartnerFlashCardsLeft/>
+        <JoinTodayBar/>
       </section>
     </div>
   );
