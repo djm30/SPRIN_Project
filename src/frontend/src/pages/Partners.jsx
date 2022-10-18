@@ -5,6 +5,7 @@ import Heading from "../components/UI/Heading";
 import PartnerFlashCardsRight from "../components/Partners/PartnerCardsLeft";
 import PartnerFlashCardsLeft from "../components/Partners/PartnerCardsRight";
 import JoinTodayBar from "../components/Partners/JoinToday";
+import PreventionCardsTop from "../components/Partners/PreventionCardsTop";
 
 const Partners = () => {
   return (
@@ -17,6 +18,10 @@ const Partners = () => {
         <PartnerFlashCardsRight/>
         <PartnerFlashCardsLeft/>
         <JoinTodayBar/>
+        <ContentContainer>
+        <Heading>Prevention Partners and resources</Heading>
+        </ContentContainer>
+        <PreventionCardsTop/>
       </section>
     </div>
   );
