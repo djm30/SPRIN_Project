@@ -130,7 +130,10 @@ const createResource = async (req, res) => {
       return res.status(400).json({ message: resourceUrlMessage });
   }
 
-  if (resourceType !== resourceTypes.website) {
+  if (
+    resourceType !== resourceTypes.website &&
+    resourceType !== resourceTypes.youtube
+  ) {
     const file = req.file;
     if (!file) return res.status(400).json({ message: "Please upload a file" });
     resourceUrl = await uploadFile(file);

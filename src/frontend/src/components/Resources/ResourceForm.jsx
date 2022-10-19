@@ -5,42 +5,73 @@ import TextField from "../UI/TextField";
 import FileUpload from "../UI/FileUpload";
 import DropdownBox from "./DropdownBox";
 import { newResource } from "../../reducers/resourceReducer";
-import { isValid } from "date-fns";
+import { setNotification } from "../../reducers/notificationReducer";
+import { useDispatch } from "react-redux";
 
 const ResourceForm = ({ open, setOpen }) => {
+  const dispatch = useDispatch();
+
   const onSubmit = (e) => {
     e.preventDefault();
+
     if (!validateAll()) {
+      dispatch(setNotification("Please fill in all fields correctly", true));
+    } else {
+      resetAll();
+      dispatch(setNotification("Creating new resource!"));
+      let formData = new FormData();
+      formData.append("title", resourceTitle);
+      formData.append("description", resourceDescription);
+      formData.append("resourceType", resourceType);
+      if (resourceType !== resourceTypes.PAPER) {
+        formData.append("resourceUrl", resourceUrl);
+      } else {
+        formData.append("file", pdf);
+      }
+      dispatch(newResource(formData));
     }
   };
 
   const validateAll = () => {
-    const validators = [
-      isResourceTitleValid,
-      isResourceDescriptionValid,
-      isResourceUrlValid,
-    ];
+    const validators = [isResourceTitleValid, isResourceDescriptionValid];
+
+    // Assuming initial validation state is true, will be set to false if any field is invalid
     let isValid = true;
-    // Settting isValid to false if there is a pdfError
-    if (pdfError) isValid = false;
-    console.log(isResourceTitleValid());
+
+    // Settting isValid to false if there is a pdfError and it is in research paper mode
+    if (resourceType === resourceTypes.PAPER && pdfError) isValid = false;
+
+    // setting isValid to false if there is a url error and it is in website or youtube mode
+    if (resourceType !== resourceTypes.PAPER && !isResourceUrlValid())
+      isValid = false;
 
     // Going through each text field validator function and calling it
     validators.forEach((validtor) => {
-      if (isValid) isValid = validtor();
+      const isFieldValid = validtor();
+      // Only updating value of isValid if it is currently true
+      if (isValid) isValid = isFieldValid;
     });
 
     return isValid;
   };
 
-  const resourceTypes = {
-    YOUTUBE: "YOUTUBE",
-    WEBSITE: "WEBSITE",
-    PAPER: "PAPER",
+  const resetAll = () => {
+    setPdf(undefined);
+    setPdfError("");
+    resourceTitleReset();
+    resourceDescriptionReset();
+    resourceUrlReset();
   };
 
-  const formData = new FormData();
+  const resourceTypes = {
+    YOUTUBE: "youtube",
+    WEBSITE: "website",
+    PAPER: "pdf",
+  };
 
+  const [resourceType, setResourceType] = useState(resourceTypes.YOUTUBE);
+
+  // Resource Title textfield
   const [
     resourceTitle,
     resourceTitleReset,
@@ -52,8 +83,7 @@ const ResourceForm = ({ open, setOpen }) => {
     return "";
   });
 
-  const [resourceType, setResourceType] = useState(resourceTypes.YOUTUBE);
-
+  //
   const [
     resourceDescription,
     resourceDescriptionReset,
@@ -95,7 +125,21 @@ const ResourceForm = ({ open, setOpen }) => {
   useEffect(resourceUrlReset, [resourceType]);
   const [pdf, setPdf] = useState(null);
   const [pdfError, setPdfError] = useState("");
-  const validatePdf = () => {};
+
+  const validatePdf = () => {
+    if (!pdf) {
+      setPdfError("Please upload a pdf file");
+      return "Please upload a pdf file";
+    }
+    setPdfError("");
+    return "";
+  };
+
+  // Validating PDF
+  useEffect(() => {
+    validatePdf();
+    console.log(pdf);
+  }, [pdf]);
 
   return (
     <Modal
