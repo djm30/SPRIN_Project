@@ -16,13 +16,12 @@ const Modal = ({ open, setOpen, children, className }) => {
 
   // Gets the position of the curser when it is initially clicked
   const mouseDown = (e) => {
-    console.log("triggered");
     clickTarget = e.target;
   };
 
   //Will close the modal only if the original mouseDown event was targeted at the modal background
   const mouseUp = (e) => {
-    // Checks that both the mouse click origin and destination came are from the modal background
+    // Checks that both the mouse click origin and destination came areg from the modal background
     if (
       clickTarget === backgroundRef.current &&
       e.target === backgroundRef.current

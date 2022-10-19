@@ -12,7 +12,7 @@ export const useTextField = (
   additionalInputParameters = {},
 ) => {
   const [value, setValue] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState(validationFunction(value));
 
   const onChange = (event) => {
     setValue(event.target.value);
@@ -25,6 +25,7 @@ export const useTextField = (
   };
 
   const isValid = () => {
+    setError(validationFunction(value));
     return error === "";
   };
 

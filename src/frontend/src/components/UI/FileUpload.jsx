@@ -1,7 +1,6 @@
 import React from "react";
 
 const FileUpload = ({ onChange, errorMessage, fileName, label }) => {
-  onChange = () => {};
   let showFileSelected = () => {};
   return (
     <div className="">
