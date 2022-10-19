@@ -18,15 +18,15 @@ const SingleResource = ({ resource }) => {
   switch (resourceType) {
     case "website":
       readbleResourceType = "External Website";
-      headerColor = "bg-green-400";
+      headerColor = "bg-green-gradient";
       break;
     case "pdf":
       readbleResourceType = "Research Paper";
-      headerColor = "bg-blue-400";
+      headerColor = "bg-blue-gradient";
       break;
     case "youtube":
       readbleResourceType = "YouTube Video";
-      headerColor = "bg-red-400";
+      headerColor = "bg-red-gradient";
       break;
   }
 

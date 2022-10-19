@@ -5,12 +5,12 @@ const Notification = () => {
   const { error, message } = useSelector((state) => state.notification);
 
   let errorClasses = {
-    header: "bg-red-600",
+    header: "bg-red-gradient",
     body: "bg-white",
   };
 
   let successClasses = {
-    header: "bg-green-600",
+    header: "bg-green-gradient",
     body: "bg-white",
   };
 
