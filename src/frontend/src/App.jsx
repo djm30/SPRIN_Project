@@ -12,14 +12,15 @@ import { useDispatch } from "react-redux";
 
 import Footer from "./components/UI/Footer/Footer";
 import { submitLogin } from "./reducers/authReducer";
+import { initializeResources } from "./reducers/resourceReducer";
 
 function App() {
+  const dispatch = useDispatch();
   useEffect(() => {
     // Try to reauthenticate on page reload if a session id is found
+    dispatch(submitLogin("dylan@email.com", "Password123"));
+    dispatch(initializeResources());
   }, []);
-
-  const dispatch = useDispatch();
-  dispatch(submitLogin("dylan@email.com", "Password123"));
 
   return (
     <>

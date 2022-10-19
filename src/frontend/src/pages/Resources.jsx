@@ -5,9 +5,16 @@ import Navbar from "../components/UI/Navbar/Navbar";
 import SingleResource from "../components/Resources/SingleResource";
 import PageNumbers from "../components/UI/PageNumbers";
 import ResourceForm from "../components/Resources/ResourceForm";
+import ResourceContainer from "../components/Resources/ResourceContainer";
+import { useSelector } from "react-redux";
 
 const Resources = () => {
-  const [openForm, setOpenForm] = useState(true);
+  const [openForm, setOpenForm] = useState(false);
+  const resources = useSelector((state) => state.resources);
+  const [currPage, setCurrPage] = useState(1);
+  const numPages = resources.length;
+  console.log(resources);
+  // Segmenting resources into separate pages, each with 9
 
   return (
     <div className="min-h-screen">
@@ -18,34 +25,16 @@ const Resources = () => {
           <Heading>Resources</Heading>
         </ContentContainer>
         {/* POST A RESOURCE BUTTON HERE */}
-        <div className="mb-10 flex flex-col items-center ">
-          <div className="w-full my-5 py-5 flex justify-center">
-            <ContentContainer className="grid md:grid-cols-3  gap-8 grid-cols-1  items-center mx-auto">
-              <SingleResource />
-              <SingleResource />
-              <SingleResource />
-            </ContentContainer>
-          </div>
-          <div className="bg-gray-100 w-full my-5 py-5 flex justify-center rounded-tr-[160px]">
-            <ContentContainer className="grid md:grid-cols-3  gap-8 grid-cols-1  items-center mx-auto">
-              <SingleResource />
-              <SingleResource />
-              <SingleResource />
-            </ContentContainer>
-          </div>
-          <div className="w-full my-5 py-5 flex justify-center">
-            <ContentContainer className="grid md:grid-cols-3  gap-8 grid-cols-1  items-center mx-auto">
-              <SingleResource />
-              <SingleResource />
-              <SingleResource />
-            </ContentContainer>
-          </div>
-        </div>
+        <ResourceContainer resources={resources[currPage - 1]} />
         {/* GRID CONTAINER FOR RESOURCE CARDS */}
         {/* I WANT 3 rows per page, with the middle being a different color */}
         {/* SINGLE ROW */}
       </section>
-      <PageNumbers />
+      <PageNumbers
+        numPages={numPages}
+        currPage={currPage}
+        setCurrPage={setCurrPage}
+      />
     </div>
   );
 };
