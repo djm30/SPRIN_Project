@@ -27,8 +27,6 @@ export const useTextField = (
   const isValid = () => {
     setError(validationFunction(value));
     let upToDateError = validationFunction(value);
-    console.log("Running");
-    console.log(upToDateError);
     return upToDateError === "";
   };
 

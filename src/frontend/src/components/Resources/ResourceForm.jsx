@@ -138,7 +138,6 @@ const ResourceForm = ({ open, setOpen }) => {
   // Validating PDF
   useEffect(() => {
     validatePdf();
-    console.log(pdf);
   }, [pdf]);
 
   return (

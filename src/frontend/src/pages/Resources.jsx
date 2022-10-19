@@ -10,10 +10,12 @@ import { useSelector } from "react-redux";
 
 const Resources = () => {
   const [openForm, setOpenForm] = useState(false);
+
+  // Retrieving resources from global state
   const resources = useSelector((state) => state.resources);
   const [currPage, setCurrPage] = useState(1);
   const numPages = resources.length;
-  console.log(resources);
+
   // Segmenting resources into separate pages, each with 9
 
   return (
@@ -24,10 +26,9 @@ const Resources = () => {
         <ContentContainer>
           <Heading>Resources</Heading>
         </ContentContainer>
-        {/* POST A RESOURCE BUTTON HERE */}
+        {/* POST A RESOURCE BUTTON HERE TODO*/}
         <ResourceContainer resources={resources[currPage - 1]} />
-        {/* GRID CONTAINER FOR RESOURCE CARDS */}
-        {/* I WANT 3 rows per page, with the middle being a different color */}
+
         {/* SINGLE ROW */}
       </section>
       <PageNumbers

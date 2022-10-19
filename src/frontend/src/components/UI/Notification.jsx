@@ -15,7 +15,6 @@ const Notification = () => {
   };
 
   let classes = error ? errorClasses : successClasses;
-  console.log(message);
 
   return (
     <div
