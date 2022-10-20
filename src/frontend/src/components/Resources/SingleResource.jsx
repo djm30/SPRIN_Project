@@ -31,7 +31,7 @@ const SingleResource = ({ resource }) => {
   }
 
   return (
-    <Card className="min-h-[24rem] xl:min-w-[340px] max-w-xs flex flex-col cursor-pointer hover:-translate-y-[0.1rem] hover:shadow-lg transition-all">
+    <Card className="min-h-[24rem] min-w-[340px] sm:min-w-0 xl:min-w-[340px] max-w-xs flex flex-col cursor-pointer hover:-translate-y-[0.1rem] hover:shadow-lg transition-all">
       {/* CARD HEADING */}
       <div className={`h-20 rounded-t-[0.8rem] ${headerColor}`}></div>
       {/* CARD BODY */}
