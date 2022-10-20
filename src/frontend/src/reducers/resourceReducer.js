@@ -49,6 +49,9 @@ export const initializeResources = () => {
   return async (dispatch) => {
     try {
       const resources = await getResources();
+      resources.sort((first, second) => {
+        return new Date(second.dateTime) - new Date(first.dateTime);
+      });
 
       const pages = [];
       let currPage = [];

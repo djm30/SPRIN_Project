@@ -1,9 +1,14 @@
 import React from "react";
 
 import Card from "../UI/Card";
+
+import { format } from "date-fns";
+
 import Placeholder from "../../assets/PlaceholderLarge.svg";
 import Location from "../../assets/Location.svg";
 import Meeting from "../../assets/Meeting.svg";
+import Clock from "../../assets/Clock.svg";
+import Calendar from "../../assets/Calendar.svg";
 
 const ImageSection = ({ left }) => {
   const borderClass = left
@@ -58,6 +63,19 @@ const InfoSection = ({
         >
           View
         </button>
+      </div>
+      {/* DATE AND TIME */}
+      <div className="flex flex-row space-x-3">
+        {/* DATE */}
+        <div className="flex flex-row items-center space-x-2">
+          <img src={Calendar} alt="Calendar Icon" />
+          <p>24/01/20</p>
+        </div>
+        {/* TIME */}
+        <div className="flex flex-row items-center space-x-2">
+          <img src={Clock} alt="Clock Icon" className="w-5 h-5" />
+          <p>15:00</p>
+        </div>
       </div>
       {/* REGISTER BUTTON */}
       <button

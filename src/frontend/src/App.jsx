@@ -11,7 +11,7 @@ import Notification from "./components/UI/Notification";
 import { useDispatch } from "react-redux";
 
 import Footer from "./components/UI/Footer/Footer";
-import { submitLogin } from "./reducers/authReducer";
+import { submitLogin, tryReauthenticate } from "./reducers/authReducer";
 import { initializeResources } from "./reducers/resourceReducer";
 import { initializeEvents } from "./reducers/eventReducer";
 
@@ -20,6 +20,7 @@ function App() {
   useEffect(() => {
     // Try to reauthenticate on page reload if a session id is found
     dispatch(submitLogin("dylan@email.com", "Password123"));
+    dispatch(tryReauthenticate());
     dispatch(initializeResources());
     dispatch(initializeEvents());
   }, []);
@@ -38,7 +39,6 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
-
         <Footer />
       </div>
     </>

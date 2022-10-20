@@ -30,14 +30,17 @@ const Modal = ({ open, setOpen, children, className }) => {
     }
   };
 
+  const bodyHeight = window.document.body.offsetHeight + "px";
+
   return open
     ? createPortal(
         // BACKGROUND DIV
         <div
           ref={backgroundRef}
-          className="w-full h-screen bg-modal  fixed top-0 left-0 z-10 flex justify-center pt-10"
+          className={`w-full modal bg-modal absolute top-0 left-0 z-10 flex justify-center pt-10`}
           onMouseDown={mouseDown}
           onMouseUp={mouseUp}
+          style={{ height: bodyHeight }}
         >
           {/* CONTENT DIV */}
           <Card className={`relative my-5 ${className}`} useRef={modalRef}>

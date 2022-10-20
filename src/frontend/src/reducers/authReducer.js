@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
   login as loginRequest,
   logout as logoutRequest,
+  reauthenticate,
 } from "../services/authService";
 
 let initialState = null;
@@ -44,6 +45,17 @@ export const submitLogout = () => {
       dispatch(logout());
     } catch (e) {
       console.log(e);
+    }
+  };
+};
+
+export const tryReauthenticate = () => {
+  return async (dispatch) => {
+    try {
+      const user = await reauthenticate();
+      dispatch(login(user));
+    } catch (e) {
+      console.log("No session found for this user");
     }
   };
 };
