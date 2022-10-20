@@ -29,3 +29,15 @@
 2022-09-23 14:01:05:15 [31merror[39m: [31mError: TypeError [ERR_INVALID_ARG_TYPE]: The "cb" argument must be of type function. Received undefined[39m
 2022-09-23 14:01:26:126 [31merror[39m: [31mError: TypeError [ERR_INVALID_ARG_TYPE]: The "cb" argument must be of type function. Received undefined[39m
 2022-10-19 12:41:40:4140 [31merror[39m: [31mCastError: Cast to ObjectId failed for value ":id" (type string) at path "_id" for model "User"[39m
+2022-10-20 20:35:36:3536 [31merror[39m: [31mTypeError: Cannot read properties of undefined (reading 'trim')[39m
+2022-10-20 20:37:09:379 [31merror[39m: [31mTypeError: Cannot read properties of undefined (reading 'trim')[39m
+2022-10-20 20:37:37:3737 [31merror[39m: [31mTypeError: Cannot read properties of undefined (reading 'trim')[39m
+2022-10-20 20:40:38:4038 [31merror[39m: [31mMulterError: Unexpected field[39m
+2022-10-20 20:40:57:4057 [31merror[39m: [31mMulterError: Unexpected field[39m
+2022-10-20 20:41:49:4149 [31merror[39m: [31mReferenceError: resourceUrl is not defined[39m
+2022-10-20 20:43:15:4315 [31merror[39m: [31mCastError: Cast to ObjectId failed for value ":id" (type string) at path "_id" for model "Event"[39m
+2022-10-20 20:44:03:443 [31merror[39m: [31mCastError: Cast to ObjectId failed for value ":id" (type string) at path "_id" for model "Event"[39m
+2022-10-20 20:44:39:4439 [31merror[39m: [31mCastError: Cast to ObjectId failed for value ":id" (type string) at path "_id" for model "Event"[39m
+2022-10-20 20:45:31:4531 [31merror[39m: [31mCastError: Cast to ObjectId failed for value ":id" (type string) at path "_id" for model "Event"[39m
+2022-10-20 20:45:57:4557 [31merror[39m: [31mCastError: Cast to ObjectId failed for value ":id" (type string) at path "_id" for model "Event"[39m
+2022-10-20 20:46:28:4628 [31merror[39m: [31mReferenceError: resource is not defined[39m

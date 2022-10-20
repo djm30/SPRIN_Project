@@ -54,7 +54,6 @@ const uploadFile = async (file) => {
       Logger.info("File Cleaned up");
     });
   } catch (e) {
-    console.log("Here");
     Logger.error(`Error: ${e}`);
   }
   return location;
@@ -76,7 +75,6 @@ const replaceFile = async (oldResourceUrl, file) => {
 const deleteFile = async (resourceUrl) => {
   // Getting name of old file on bucket
   const key = resourceUrl.replace(bucketUrl, "");
-  console.log(key);
   const deleteParms = {
     Bucket: AWS_BUCKET,
     Key: key,

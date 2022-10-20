@@ -1,5 +1,6 @@
 const Event = require("../models/Event");
 const Logger = require("../config/logger");
+const { uploadFile, replaceFile, deleteFile } = require("../utils/s3Service");
 
 const validateTitle = (title) => {
   let success = true;
@@ -73,8 +74,6 @@ const getEvents = async (req, res) => {
 };
 
 const createEvent = async (req, res) => {
-  const id = req.params.id;
-
   const { title, description, location, address, eventbriteUrl } = req.body;
 
   // Validation
@@ -105,17 +104,30 @@ const createEvent = async (req, res) => {
   if (!eventbriteUrlSuccess)
     return res.status(400).json({ message: eventbriteUrlMessage });
 
+  let imgUrl = "";
+
+  if ("file" in req) {
+    const file = req.file;
+    if (!file) return res.status(400).json({ message: "Please upload a file" });
+    imgUrl = await uploadFile(file);
+    if (!imgUrl)
+      return res
+        .status(500)
+        .json({ message: "Something went wrong uploading, please try again" });
+  }
+
   const event = new Event({
     title,
     description,
     location,
     address,
     eventbriteUrl,
+    imgUrl,
   });
 
   try {
     await event.save();
-    console.log(event);
+    // console.log(event);
     res.status(201).json(event);
   } catch (e) {
     Logger.error(e);
@@ -126,6 +138,8 @@ const createEvent = async (req, res) => {
 const updateEvent = async (req, res) => {
   const { title, description, location, address, eventbriteUrl } = req.body;
 
+  let eventToUpdate = await Event.findById(req.params.id);
+
   // Validation
   // Title
   const { success: titleSuccess, message: titleMessage } = validateTitle(title);
@@ -154,12 +168,25 @@ const updateEvent = async (req, res) => {
   if (!eventbriteUrlSuccess)
     return res.status(400).json({ message: eventbriteUrlMessage });
 
+  imgUrl = eventToUpdate.imgUrl;
+
+  if ("file" in req) {
+    const file = req.file;
+    if (!file) return res.status(400).json({ message: "Please upload a file" });
+    imgUrl = await replaceFile(eventToUpdate.imgUrl, file);
+    if (!imgUrl)
+      return res.status(500).json({
+        message: "Something went wrong uploading, please try again",
+      });
+  }
+
   try {
     eventToUpdate.title = title;
     eventToUpdate.description = description;
     eventToUpdate.location = location;
     eventToUpdate.address = address;
     eventToUpdate.eventbriteUrl = eventbriteUrl;
+    eventToUpdate.imgUrl = imgUrl;
     await eventToUpdate.save();
     res.status(200).json(eventToUpdate);
   } catch (e) {
