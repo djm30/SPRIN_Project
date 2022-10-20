@@ -37,7 +37,12 @@ const PageNumbers = ({ numPages, currPage, setCurrPage }) => {
     <div className="mb-10 flex justify-center space-x-2 md:space-x-5 text-darkblue-100">
       {/* HIDING PREV PAGE IF CURR PAGE IS THE FIRST */}
 
-      <PageButton value={1} setCurrPage={setCurrPage} hide={currPage === 1}>
+      <PageButton
+        value={1}
+        setCurrPage={setCurrPage}
+        hide={currPage === 1}
+        key="first"
+      >
         First
       </PageButton>
 
@@ -59,6 +64,7 @@ const PageNumbers = ({ numPages, currPage, setCurrPage }) => {
         value={numPages}
         setCurrPage={setCurrPage}
         hide={currPage === numPages}
+        key="last"
       >
         Last
       </PageButton>

@@ -27,7 +27,6 @@ const Resources = () => {
   useEffect(() => {
     currentPageOfResources = resources[currPage - 1];
   }, [resources]);
-  // Segmenting resources into separate pages, each with 9
 
   return (
     <div className="min-h-screen">

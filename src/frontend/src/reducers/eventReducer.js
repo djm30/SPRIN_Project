@@ -37,7 +37,18 @@ export const initializeEvents = () => {
   return async (dispatch) => {
     try {
       const events = await getEvents();
-      dispatch(setEvents(events));
+
+      const pages = [];
+      let currPage = [];
+      for (let i = 0; i < events.length; i++) {
+        if (currPage.length === 4) {
+          pages.push(currPage);
+          currPage = [];
+        }
+        currPage.push(events[i]);
+      }
+      pages.push(currPage);
+      dispatch(setEvents(pages));
     } catch (e) {
       console.log(e);
     }

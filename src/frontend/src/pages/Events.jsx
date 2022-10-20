@@ -1,13 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/UI/Navbar/Navbar";
 import ContentContainer from "../components/UI/ContentContainer";
 import Heading from "../components/UI/Heading";
 import PageNumbers from "../components/UI/PageNumbers";
-import Event from "../components/Events/Event";
 import EventForm from "../components/Events/EventForm";
+import { useSelector } from "react-redux";
+import EventContainer from "../components/Events/EventContainer";
 
 const Events = () => {
-  const [openForm, setOpenForm] = useState(true);
+  const [openForm, setOpenForm] = useState(false);
+
+  const events = useSelector((state) => state.events);
+
+  // Reading information about how many pages of events there is
+  const [currPage, setCurrPage] = useState(1);
+  const numPages = events.length;
+
+  let currentPageOfEvents;
+
+  try {
+    currentPageOfEvents = events[currPage - 1];
+  } catch (e) {}
+
+  // Refetching current page when events changes
+  useEffect(() => {
+    currentPageOfEvents = events[currPage - 1];
+  }, [events]);
 
   return (
     <div className="min-h-screen">
@@ -17,13 +35,12 @@ const Events = () => {
         <ContentContainer>
           <Heading>Events</Heading>
           {/* EVENTS CONTAINER */}
-          <div className="flex flex-col min-h-[400px] items-center py-10 space-y-6 md:space-y-10">
-            <Event />
-            <Event alt={true} />
-            <Event />
-            <Event alt={true} />
-          </div>
-          <PageNumbers />
+          <EventContainer events={currentPageOfEvents} />
+          <PageNumbers
+            numPages={numPages}
+            currPage={currPage}
+            setCurrPage={setCurrPage}
+          />
         </ContentContainer>
       </section>
     </div>
