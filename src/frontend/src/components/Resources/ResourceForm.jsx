@@ -7,9 +7,64 @@ import DropdownBox from "./DropdownBox";
 import { newResource } from "../../reducers/resourceReducer";
 import { setNotification } from "../../reducers/notificationReducer";
 import { useDispatch } from "react-redux";
+import { resourceTypes } from "./ResourceTypes";
+
+import {
+  resourceTileValidator,
+  resourceDescriptionValidator,
+  resourceUrlValidator,
+} from "./ResourceValidationFunctuions";
 
 const ResourceForm = ({ open, setOpen }) => {
   const dispatch = useDispatch();
+
+  const [resourceType, setResourceType] = useState(resourceTypes.YOUTUBE);
+
+  // Resource Title textfield
+  const [
+    resourceTitle,
+    resourceTitleReset,
+    resourceTitleError,
+    isResourceTitleValid,
+    resourceTitleInputParams,
+  ] = useTextField(resourceTileValidator);
+
+  //
+  const [
+    resourceDescription,
+    resourceDescriptionReset,
+    resourceDescriptionError,
+    isResourceDescriptionValid,
+    resourceDescriptionInputParams,
+  ] = useTextField(resourceDescriptionValidator);
+
+  const [
+    resourceUrl,
+    resourceUrlReset,
+    resourceUrlError,
+    isResourceUrlValid,
+    resourceUrlInputParams,
+  ] = useTextField(resourceUrlValidator(resourceType, resourceTypes));
+
+  // useEffect to reset url input when resouce type gets changed
+  useEffect(resourceUrlReset, [resourceType]);
+  const [pdf, setPdf] = useState(null);
+  const [pdfError, setPdfError] = useState("");
+
+  // TODO ENSURE FILE EXTENSION IS IN FACT A PDF
+  const validatePdf = () => {
+    if (!pdf) {
+      setPdfError("Please upload a pdf file");
+      return "Please upload a pdf file";
+    }
+    setPdfError("");
+    return "";
+  };
+
+  // Validating PDF
+  useEffect(() => {
+    validatePdf();
+  }, [pdf]);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -46,8 +101,8 @@ const ResourceForm = ({ open, setOpen }) => {
       isValid = false;
 
     // Going through each text field validator function and calling it
-    validators.forEach((validtor) => {
-      const isFieldValid = validtor();
+    validators.forEach((validator) => {
+      const isFieldValid = validator();
       // Only updating value of isValid if it is currently true
       if (isValid) isValid = isFieldValid;
     });
@@ -63,88 +118,11 @@ const ResourceForm = ({ open, setOpen }) => {
     resourceUrlReset();
   };
 
-  const resourceTypes = {
-    YOUTUBE: "youtube",
-    WEBSITE: "website",
-    PAPER: "pdf",
-  };
-
-  const [resourceType, setResourceType] = useState(resourceTypes.YOUTUBE);
-
-  // Resource Title textfield
-  const [
-    resourceTitle,
-    resourceTitleReset,
-    resourceTitleError,
-    isResourceTitleValid,
-    resourceTitleInputParams,
-  ] = useTextField((resourceTitle) => {
-    if (resourceTitle.trim().length < 4) return "Please provide a longer title";
-    return "";
-  });
-
-  //
-  const [
-    resourceDescription,
-    resourceDescriptionReset,
-    resourceDescriptionError,
-    isResourceDescriptionValid,
-    resourceDescriptionInputParams,
-  ] = useTextField((resourceDescription) => {
-    if (resourceDescription.trim().length < 10)
-      return "Please provide a longer description";
-    return "";
-  });
-
-  const [
-    resourceUrl,
-    resourceUrlReset,
-    resourceUrlError,
-    isResourceUrlValid,
-    resourceUrlInputParams,
-  ] = useTextField((url) => {
-    if (resourceType === resourceTypes.YOUTUBE) {
-      const regex =
-        /^http(?:s?):\/\/(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([\w\-\_]*)(&(amp;)?‌​[\w\?‌​=]*)?/;
-      if (!regex.test(url)) return "Please provide a valid YouTube video link";
-    }
-
-    if (resourceType === resourceTypes.WEBSITE) {
-      if (url.substring(0, 5) !== "https") {
-        return "Please ensure URL begins with https (To ensure the url is from a secure site)";
-      }
-      const regex =
-        /^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z0-9\u00a1-\uffff][a-z0-9\u00a1-\uffff_-]{0,62})?[a-z0-9\u00a1-\uffff]\.)+(?:[a-z\u00a1-\uffff]{2,}\.?))(?::\d{2,5})?(?:[/?#]\S*)?$/i;
-      if (!regex.test(url)) return "Please provide a valid URL";
-    }
-
-    return "";
-  });
-
-  // useEffect to reset url input when resouce type gets changed
-  useEffect(resourceUrlReset, [resourceType]);
-  const [pdf, setPdf] = useState(null);
-  const [pdfError, setPdfError] = useState("");
-
-  const validatePdf = () => {
-    if (!pdf) {
-      setPdfError("Please upload a pdf file");
-      return "Please upload a pdf file";
-    }
-    setPdfError("");
-    return "";
-  };
-
-  // Validating PDF
-  useEffect(() => {
-    validatePdf();
-  }, [pdf]);
-
   return (
     <Modal
       open={open}
       setOpen={setOpen}
-      className="mx-4 w-[600px] md:max-h-[768px] h-fit px-3 sm:px-6 py-4 font-body overflow-y-scroll -translate-y-5"
+      className="mx-4 w-[600px] md:max-h-[768px] h-fit px-3 sm:px-6 py-4 font-body  -translate-y-5"
     >
       <h3 className="text-lg text-center mx-2 md:text-2xl text-darkblue-100 font-bold">
         Add A Resource

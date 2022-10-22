@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import EventContainer from "../components/Events/EventContainer";
 
 const Events = () => {
-  const [openForm, setOpenForm] = useState(false);
+  const [openForm, setOpenForm] = useState(true);
 
   const events = useSelector((state) => state.events);
 

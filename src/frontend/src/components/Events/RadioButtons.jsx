@@ -2,7 +2,7 @@ import React from "react";
 
 const RadioButtons = ({ value, setValue, values }) => {
   return (
-    <div className="mx-2 mt-2 border-b-[1px] border-border-color pb-4">
+    <div className="mx-2 mt-2 mb-2 border-b-[1px] border-border-color pb-4">
       <h5 className="md:text-xl text-neutral-500">Event Location</h5>
       <div
         className="grid  grid-cols-2 max-w space-x-2 rounded-xl bg-gray-100 p-2 mt-2  sm:p-2 items-center"

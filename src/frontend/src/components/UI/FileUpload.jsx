@@ -20,7 +20,7 @@ const FileUpload = ({ onChange, errorMessage, fileName, label }) => {
         </label>
       </div>
       <div className="flex items-center justify-center">
-        <p className={`text-blue-500 mt-1 text-center ${showFileSelected}`}>
+        <p className={`text-gray-500 mt-1 text-center ${showFileSelected}`}>
           Selected File: {fileName}
         </p>
       </div>

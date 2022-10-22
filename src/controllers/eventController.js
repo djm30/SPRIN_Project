@@ -1,6 +1,7 @@
 const Event = require("../models/Event");
 const Logger = require("../config/logger");
 const { uploadFile, replaceFile, deleteFile } = require("../utils/s3Service");
+const eventTypes = require("../config/eventTypes");
 
 const validateTitle = (title) => {
   let success = true;
@@ -34,10 +35,10 @@ const validateLocation = (location) => {
   let success = true;
   let message = "";
 
-  if (location !== "online" && location !== "phsyical") {
+  if (location !== eventTypes.online && location !== eventTypes.physical) {
     success = false;
     message =
-      "Please enter a valid input for location ('online' or 'phsyical')";
+      "Please enter a valid input for location ('online' or 'physical')";
   }
 
   return { success, message };

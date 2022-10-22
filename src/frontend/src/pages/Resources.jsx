@@ -8,7 +8,7 @@ import ResourceContainer from "../components/Resources/ResourceContainer";
 import { useSelector } from "react-redux";
 
 const Resources = () => {
-  const [openForm, setOpenForm] = useState(false);
+  const [openForm, setOpenForm] = useState(true);
 
   // Retrieving resources from global state
   const resources = useSelector((state) => state.resources);
