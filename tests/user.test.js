@@ -1,15 +1,15 @@
 describe("Registering Users", () => {
-  test.todo("");
+  test.skip("");
 });
 
 describe("Editing Users", () => {
-  test.todo("");
+  test.skip("");
 });
 
 describe("Retrieving Users", () => {
-  test.todo("");
+  test.skip("");
 });
 
 describe("Deleting Users", () => {
-  test.todo();
+  test.skip();
 });

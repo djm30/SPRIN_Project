@@ -1,15 +1,15 @@
 describe("Registering Resources", () => {
-  test.todo("");
+  test.skip("");
 });
 
 describe("Editing Resources", () => {
-  test.todo("");
+  test.skip("");
 });
 
 describe("Retrieving Resources", () => {
-  test.todo("");
+  test.skip("");
 });
 
 describe("Deleting Resources", () => {
-  test.todo();
+  test.skip();
 });

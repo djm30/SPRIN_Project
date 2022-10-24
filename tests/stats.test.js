@@ -4,6 +4,7 @@ const helper = require("./testUtils");
 const supertest = require("supertest");
 const Logger = require("../src/config/logger");
 const { getYear, getMonth } = require("date-fns");
+const { assert } = require("chai");
 const should = require("chai").should();
 
 helper.connectToDatabase();
@@ -11,6 +12,14 @@ helper.connectToDatabase();
 const baseUrl = "/api/stats";
 
 const api = supertest(app);
+
+beforeEach(async () => {
+  await Stats.deleteMany();
+});
+
+afterEach(async () => {
+  await Stats.deleteMany();
+});
 
 describe("Retrieving stats from the database", () => {
   test("GET / -> Retrieves stats for the current month", async () => {
@@ -32,23 +41,43 @@ describe("Retrieving stats from the database", () => {
 });
 
 describe("Updating statistics", () => {
-  test.todo(
-    "POST / Views -> Increments the views for the current month by one",
-    async () => {},
-  );
+  test("POST / Views -> Increments the views for the current month by one", async () => {
+    const response = await api.post(baseUrl + "/views").expect(200);
 
-  test.todo(
-    "POST / Users -> Increments the users for the current month by one",
-    async () => {},
-  );
+    const updatedResponse = await api.get(baseUrl);
+    const updatedStats = updatedResponse.body;
 
-  test.todo(
-    "POST / Resources -> Increments the resources for the current month by one",
-    async () => {},
-  );
+    console.log(updatedStats);
+    assert.equal(updatedStats.views, 1);
+  });
 
-  test.todo(
-    "POST / Events -> Increments the events for the current month by one",
-    async () => {},
-  );
+  test("POST / Users -> Increments the users for the current month by one", async () => {
+    const response = await api.post(baseUrl + "/users").expect(200);
+
+    const updatedResponse = await api.get(baseUrl);
+    const updatedStats = updatedResponse.body;
+
+    console.log(updatedStats);
+    assert.equal(updatedStats.users, 1);
+  });
+
+  test("POST / Resources -> Increments the resources for the current month by one", async () => {
+    const response = await api.post(baseUrl + "/resources").expect(200);
+
+    const updatedResponse = await api.get(baseUrl);
+    const updatedStats = updatedResponse.body;
+
+    console.log(updatedStats);
+    assert.equal(updatedStats.resources, 1);
+  });
+
+  test("POST / Events -> Increments the events for the current month by one", async () => {
+    const response = await api.post(baseUrl + "/events").expect(200);
+
+    const updatedResponse = await api.get(baseUrl);
+    const updatedStats = updatedResponse.body;
+
+    console.log(updatedStats);
+    assert.equal(updatedStats.events, 1);
+  });
 });
