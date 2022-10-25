@@ -49,4 +49,11 @@ UserSchema.methods.isValidPassword = async function (password) {
   return comparison;
 };
 
+// This method ensures the hashed password is never returned in a request
+UserSchema.methods.toJSON = function () {
+  var obj = this.toObject();
+  delete obj.password;
+  return obj;
+};
+
 module.exports = mongoose.model("User", UserSchema);

@@ -123,7 +123,7 @@ const registerUser = async (req, res) => {
   const user = await User.create({ name, email, password });
   if (role) user.role = role;
   await user.save();
-  res.send(user);
+  res.status(201).send(user);
 };
 
 const deleteUser = async (req, res) => {
@@ -185,6 +185,12 @@ const reauthenticate = async (req, res) => {
   res.status(403).json({ message: "Session has expired, please login again!" });
 };
 
+const exportedForTesting = {
+  validateName,
+  validateEmail,
+  validatePassword,
+};
+
 module.exports = {
   getUser,
   getUsers,
@@ -195,4 +201,5 @@ module.exports = {
   login,
   logout,
   reauthenticate,
+  exportedForTesting,
 };

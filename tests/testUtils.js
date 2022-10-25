@@ -13,4 +13,7 @@ const connectToDatabase = () => {
     });
 };
 
+const getUserAuthCookie = (api) => {};
+const getAdminAuthCookie = (api) => {};
+
 module.exports = { connectToDatabase };

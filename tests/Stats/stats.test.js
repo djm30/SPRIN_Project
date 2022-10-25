@@ -1,8 +1,8 @@
-const app = require("../src/app");
-const Stats = require("../src/models/Stats");
-const helper = require("./testUtils");
+const app = require("../../src/app");
+const Stats = require("../../src/models/Stats");
+const helper = require("../testUtils");
 const supertest = require("supertest");
-const Logger = require("../src/config/logger");
+const Logger = require("../../src/config/logger");
 const { getYear, getMonth } = require("date-fns");
 const { assert } = require("chai");
 const should = require("chai").should();
@@ -47,7 +47,6 @@ describe("Updating statistics", () => {
     const updatedResponse = await api.get(baseUrl);
     const updatedStats = updatedResponse.body;
 
-    console.log(updatedStats);
     assert.equal(updatedStats.views, 1);
   });
 
@@ -57,7 +56,6 @@ describe("Updating statistics", () => {
     const updatedResponse = await api.get(baseUrl);
     const updatedStats = updatedResponse.body;
 
-    console.log(updatedStats);
     assert.equal(updatedStats.users, 1);
   });
 
@@ -67,7 +65,6 @@ describe("Updating statistics", () => {
     const updatedResponse = await api.get(baseUrl);
     const updatedStats = updatedResponse.body;
 
-    console.log(updatedStats);
     assert.equal(updatedStats.resources, 1);
   });
 
@@ -77,7 +74,6 @@ describe("Updating statistics", () => {
     const updatedResponse = await api.get(baseUrl);
     const updatedStats = updatedResponse.body;
 
-    console.log(updatedStats);
     assert.equal(updatedStats.events, 1);
   });
 });
