@@ -1,5 +1,6 @@
-const authorize = require("../middleware/auth");
+const router = require("express").Router();
 const asyncHandler = require("express-async-handler");
+const authorize = require("../middleware/auth");
 const {
   getStats,
   IncrementViewsEndpoint,
@@ -7,10 +8,9 @@ const {
   IncrementResourcesEndpoint,
   IncrementEventsEndpoint,
 } = require("../controllers/statsController");
-const router = require("express").Router();
 
 // router.get("/", authorize("admin"), asyncHandler(getStats));
-router.get("/", asyncHandler(getStats));
+router.get("/", authorize("admin"), asyncHandler(getStats));
 router.post("/views", asyncHandler(IncrementViewsEndpoint));
 router.post("/users", asyncHandler(IncrementUsersEndpoint));
 router.post("/resources", asyncHandler(IncrementResourcesEndpoint));

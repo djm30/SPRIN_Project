@@ -23,7 +23,7 @@ const validateEmail = async (email) => {
   let success = true;
   let message = "";
 
-  //Check if email is a valid email
+  // Check if email is a valid email
   if (
     !email
       .toLowerCase()
@@ -55,7 +55,7 @@ const validatePassword = (password) => {
   }
 
   // 1 Number
-  if (!/d/.test(password)) {
+  if (!/[0-9]/.test(password)) {
     success = false;
     message = "Password must contain a number";
   }
@@ -73,6 +73,7 @@ const authorizeUser = async (reqUser, userID) => {
   if (reqUser.role !== "admin") {
     return reqUser._id.toString() === userID;
   }
+  return true;
 };
 
 const getUser = async (req, res) => {
@@ -105,7 +106,7 @@ const approveUser = async (req, res) => {
 
 const registerUser = async (req, res) => {
   Logger.info("Request recieved to register new user");
-  const { name, email, password, role } = req.body;
+  const { name, email, password } = req.body;
 
   // Validation
   const { success: nameSuccess, message: nameMessage } = validateName(name);
@@ -120,10 +121,14 @@ const registerUser = async (req, res) => {
   if (!passwordSuccess)
     return res.status(400).json({ message: passwordMessage });
 
-  const user = await User.create({ name, email, password });
-  if (role) user.role = role;
-  await user.save();
-  res.status(201).send(user);
+  const user = await User.create({
+    name,
+    email,
+    password,
+    role: "user",
+  });
+
+  return res.status(201).send(user);
 };
 
 const deleteUser = async (req, res) => {
@@ -142,19 +147,48 @@ const editUser = async (req, res) => {
   if (!authorizeUser(req.user, id))
     return res.status(403).json({ message: "forbidden" });
 
-  const { name, email } = req.body;
+  const { name, email, role } = req.body;
+  const user = await User.findById(id);
+
+  // TODO PASSWORD AND ROLE CHANGES
 
   // Validation
-  const { nameSuccess, nameMessage } = validateName(name);
+
+  // Checking if a user was found
+  if (!user) {
+    return res.status(404).json({ message: "No user found for this id" });
+  }
+
+  // Checking if new name is valid
+  const { success: nameSuccess, message: nameMessage } = await validateName(
+    name,
+  );
   if (!nameSuccess) return res.status(400).json({ message: nameMessage });
-  const { emailSuccess, emailMessage } = validateEmail(email);
+
+  // Checking if new email is valid
+  let { success: emailSuccess, message: emailMessage } = await validateEmail(
+    email,
+  );
+
+  // Checking if duplicate email error was found,
+  // and ignoring it is user email is the same as the new email
+  if (
+    emailMessage === "User with email already exists!" &&
+    email === user.email
+  ) {
+    emailSuccess = true;
+    emailMessage = "";
+  }
   if (!emailSuccess) return res.status(400).json({ message: emailMessage });
 
-  const user = await User.findById(id);
+  // Checking if new role is admin, and if it is ensuring the request sender is also an admin
+  if (role === "admin" && req.user.role !== "admin") return res.sendStatus(403);
+
   user.name = name;
   user.email = email;
+  user.role = role;
   await user.save();
-  res.send(user);
+  return res.send(user);
 };
 
 const login = async (req, res) => {

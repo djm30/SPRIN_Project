@@ -11,28 +11,27 @@ const bcrypt = require("bcrypt");
 helper.connectToDatabase();
 
 const baseUrl = "/api/users";
+const baseUser = helper.baseUser;
+const authUser = helper.authUser;
 
 const api = supertest(app);
-
-const baseUser = {
-  email: "email@mail.com",
-  name: "Test User",
-  password: "Password123",
-  approved: true,
-  role: "admin",
-};
 
 beforeEach(async () => {
   await User.deleteMany();
 });
 
-afterEach(async () => {
+beforeEach(async () => {
+  await User.deleteMany();
+  await User.create(baseUser);
+});
+
+afterAll(async () => {
   await User.deleteMany();
 });
 
 describe("Registering Users", () => {
   test("Registering a user with valid credentials", async () => {
-    const user = { ...baseUser };
+    const user = { ...baseUser, email: "newemail@mail.com" };
     const response = await api
       .post(baseUrl + "/register")
       .send(user)
@@ -43,7 +42,7 @@ describe("Registering Users", () => {
     recievedUser.name.should.equal(user.name);
     recievedUser.email.should.equal(user.email);
     recievedUser.should.not.have.property("password");
-    recievedUser.role.should.equal("admin");
+    recievedUser.role.should.equal("user");
     recievedUser.approved.should.equal(false);
   });
 
@@ -58,16 +57,63 @@ describe("Registering Users", () => {
 
     const body = response.body;
     body.should.have.property("message");
-    console.log(response.body);
   });
 });
 
 describe("Logging in User", () => {
-  test.skip("Logging in with valid credentials", () => {});
+  test("Logging in with valid credentials", async () => {
+    const loginCredentials = {
+      email: baseUser.email,
+      password: baseUser.password,
+    };
+    const response = await api
+      .post(`${baseUrl}/login`)
+      .send(loginCredentials)
+      .expect(200)
+      .expect("Content-Type", /application\/json/);
+
+    const body = response.body;
+    body.should.have.property("id").have.length(24);
+    body.should.have.property("role").equal("user");
+    body.should.have.property("sessionID");
+  });
+
+  test("Logging in with invalid email", async () => {
+    const loginCredentials = {
+      email: "notarealemail@mail.com",
+      password: baseUser.password,
+    };
+    const response = await api
+      .post(`${baseUrl}/login`)
+      .send(loginCredentials)
+      .expect(401);
+  });
+  test("Logging in with invalid password", async () => {
+    const loginCredentials = {
+      email: baseUser.email,
+      password: "notthesamepassword",
+    };
+    const response = await api
+      .post(`${baseUrl}/login`)
+      .send(loginCredentials)
+      .expect(401);
+  });
 });
 
 describe("Editing Users", () => {
-  test.skip("Logging in with valid credentials", () => {});
+  test("Editing user as that user", async () => {
+    const cookie = await helper.getUserAuthCookie(api);
+    const updatedUser = { ...authUser, name: "New Test Name" };
+
+    const response = await api
+      .put(`${baseUrl}/${authUser._id}`)
+      .set("cookie", cookie)
+      .send(updatedUser)
+      .expect(200);
+    console.log(response);
+  });
+
+  test.skip("Editing user as an admin", async () => {});
 });
 
 describe("Retrieving Users", () => {

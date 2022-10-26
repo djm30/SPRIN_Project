@@ -1,7 +1,8 @@
-const authorize = require("../middleware/auth");
+const router = require("express").Router();
 const asyncHandler = require("express-async-handler");
 const passport = require("passport");
 const roles = require("../config/roles");
+const authorize = require("../middleware/auth");
 const {
   getUser,
   getUsers,
@@ -13,8 +14,6 @@ const {
   logout,
   reauthenticate,
 } = require("../controllers/userController");
-
-const router = require("express").Router();
 
 // Only admin
 router.get("/", authorize("admin"), asyncHandler(getUsers));
