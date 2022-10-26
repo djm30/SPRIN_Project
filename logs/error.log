@@ -63,3 +63,5 @@
 2022-10-26 15:10:54:1054 [31merror[39m: [31mTypeError: this.toObject is not a function[39m
 2022-10-26 15:11:42:1142 [31merror[39m: [31mTypeError: this.toObject is not a function[39m
 2022-10-26 15:40:32:4032 [31merror[39m: [31mReferenceError: refalse is not defined[39m
+2022-10-26 23:08:01:81 [31merror[39m: [31mSome error: MongooseError: The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.[39m
+2022-10-26 23:08:42:842 [31merror[39m: [31mSome error: MongooseError: The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.[39m

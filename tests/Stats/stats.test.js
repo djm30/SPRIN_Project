@@ -22,7 +22,7 @@ afterEach(async () => {
 });
 
 describe("Retrieving stats from the database", () => {
-  test("GET / -> Retrieves stats for the current month", async () => {
+  test("GET / -> Retrieves stats for the current month for an admin user", async () => {
     const actualResponse = await api
       .get(baseUrl)
       .expect(200)
@@ -38,6 +38,34 @@ describe("Retrieving stats from the database", () => {
     stats.should.have.property("resources").equal(0);
     stats.should.have.property("events").equal(0);
   });
+
+  test.todo(
+    "GET / -> Does not retrieve stats for the current month for a regular user",
+    async () => {
+      const actualResponse = await api
+        .get(baseUrl)
+        .expect(200)
+        .expect("Content-Type", /application\/json/);
+
+      const stats = actualResponse.body;
+
+      // stats.should.have.property("_id").with.lengthOf(24);
+    },
+  );
+
+  test.todo(
+    "GET / -> Does not retrieve stats for the current month for an unauthenticated user",
+    async () => {
+      const actualResponse = await api
+        .get(baseUrl)
+        .expect(200)
+        .expect("Content-Type", /application\/json/);
+
+      const stats = actualResponse.body;
+
+      // stats.should.have.property("_id").with.lengthOf(24);
+    },
+  );
 });
 
 describe("Updating statistics", () => {

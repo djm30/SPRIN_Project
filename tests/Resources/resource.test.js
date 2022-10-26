@@ -1,15 +1,15 @@
 describe("Registering Resources", () => {
-  test.skip("");
+  test.skip("", () => {});
 });
 
 describe("Editing Resources", () => {
-  test.skip("");
+  test.skip("", () => {});
 });
 
 describe("Retrieving Resources", () => {
-  test.skip("");
+  test.skip("", () => {});
 });
 
 describe("Deleting Resources", () => {
-  test.skip();
+  test.skip("", () => {});
 });
