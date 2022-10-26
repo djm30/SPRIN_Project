@@ -18,7 +18,7 @@ const Partners = () => {
         <PartnerFlashCardsRight/>
         <PartnerFlashCardsLeft/>
         <JoinTodayBar/>
-        <ContentContainer>
+        <ContentContainer className="flex flex-col items-center pb-10">
         <Heading>Prevention Partners and resources</Heading>
         </ContentContainer>
         <PreventionCardsTop/>
