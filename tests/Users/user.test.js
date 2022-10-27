@@ -110,16 +110,202 @@ describe("Editing Users", () => {
       .set("cookie", cookie)
       .send(updatedUser)
       .expect(200);
-    console.log(response);
+
+    const { body } = response;
+    body.should.have.property("name").equals("New Test Name");
+    body.should.have.property("email").equals(authUser.email);
   });
 
-  test.skip("Editing user as an admin", async () => {});
+  test("Editing user as an admin", async () => {
+    const cookie = await helper.getAdminAuthCookie(api);
+    const updatedUser = { ...baseUser, name: "New Test Name" };
+
+    const response = await api
+      .put(`${baseUrl}/${baseUser._id}`)
+      .set("cookie", cookie)
+      .send(updatedUser)
+      .expect(200);
+
+    const { body } = response;
+    body.should.have.property("name").equals("New Test Name");
+    body.should.have.property("email").equals(baseUser.email);
+  });
+
+  test("Editing user while logged in as a different user returns a 403", async () => {
+    // Get user auth cookie is for a different user, not the base user
+    const cookie = helper.getUserAuthCookie(api);
+    const updatedUser = { ...baseUser, name: "New Test Name" };
+
+    const response = await api
+      .put(`${baseUrl}/${baseUser._id}`)
+      .set("cookie", cookie)
+      .send(updatedUser)
+      .expect(403);
+  });
+
+  test("Editing user while not logged in returns a 403", async () => {
+    const updatedUser = { ...baseUser, name: "New Test Name" };
+
+    const response = await api
+      .put(`${baseUrl}/${baseUser._id}`)
+      .send(updatedUser)
+      .expect(403);
+  });
 });
 
 describe("Retrieving Users", () => {
-  test.skip("Logging in with valid credentials", () => {});
+  describe("All Users", () => {
+    test("Admin can retrieve all users", async () => {
+      const cookie = await helper.getAdminAuthCookie(api);
+
+      const response = await api
+        .get(`${baseUrl}`)
+        .set("cookie", cookie)
+        .expect(200);
+
+      const { body } = response;
+      assert.isArray(body);
+      assert.lengthOf(body, 2);
+    });
+
+    test("User cannot retrieve all users", async () => {
+      const cookie = await helper.getUserAuthCookie(api);
+
+      const response = await api
+        .get(`${baseUrl}`)
+        .set("cookie", cookie)
+        .expect(403);
+    });
+
+    test("Unauthenticated user cannot retrieve all users", async () => {
+      const response = await api.get(`${baseUrl}`).expect(403);
+    });
+  });
+
+  describe("Single user by ID", () => {
+    test("Admin can retrieve their own details", async () => {
+      const cookie = await helper.getAdminAuthCookie(api);
+
+      const response = await api
+        .get(`${baseUrl}/${authUser._id}`)
+        .set("cookie", cookie)
+        .expect(200);
+
+      const { body } = response;
+      body.should.have.property("_id").equals(authUser._id);
+      body.should.have.property("email").equals(authUser.email);
+      body.should.have.property("name").equals(authUser.name);
+    });
+    test("Admin can retrieve deatils of another user", async () => {
+      const cookie = await helper.getAdminAuthCookie(api);
+
+      const response = await api
+        .get(`${baseUrl}/${baseUser._id}`)
+        .set("cookie", cookie)
+        .expect(200);
+
+      const { body } = response;
+      body.should.have.property("_id").equals(baseUser._id);
+      body.should.have.property("email").equals(baseUser.email);
+      body.should.have.property("name").equals(baseUser.name);
+    });
+
+    test("User can retrieve their own deatils ", async () => {
+      const cookie = await helper.getUserAuthCookie(api);
+
+      const response = await api
+        .get(`${baseUrl}/${authUser._id}`)
+        .set("cookie", cookie)
+        .expect(200);
+
+      const { body } = response;
+      body.should.have.property("_id").equals(authUser._id);
+      body.should.have.property("email").equals(authUser.email);
+      body.should.have.property("name").equals(authUser.name);
+    });
+    test("User cannot retrieve deatils of another user", async () => {
+      const cookie = await helper.getUserAuthCookie(api);
+
+      const response = await api
+        .get(`${baseUrl}/${baseUser._id}`)
+        .set("cookie", cookie)
+        .expect(403);
+    });
+    test("Unauthenticated user cannot retrieve deatils of another user", async () => {
+      const response = await api.get(`${baseUrl}/${baseUser._id}`).expect(403);
+    });
+  });
 });
 
 describe("Deleting Users", () => {
-  test.skip("Logging in with valid credentials", () => {});
+  test("Admin can delete their account", async () => {
+    const cookie = await helper.getAdminAuthCookie(api);
+
+    const response = await api
+      .delete(`${baseUrl}/${authUser._id}`)
+      .set("cookie", cookie)
+      .expect(204);
+
+    const deletedUser = await User.findById(authUser._id);
+    assert.isNull(deletedUser);
+  });
+
+  test("Admin can delete the account of another user", async () => {
+    const cookie = await helper.getAdminAuthCookie(api);
+
+    const response = await api
+      .delete(`${baseUrl}/${baseUser._id}`)
+      .set("cookie", cookie)
+      .expect(204);
+
+    const deletedUser = await User.findById(baseUser._id);
+    assert.isNull(deletedUser);
+  });
+
+  test("User can delete their account", async () => {
+    const cookie = await helper.getUserAuthCookie(api);
+
+    const response = await api
+      .delete(`${baseUrl}/${authUser._id}`)
+      .set("cookie", cookie)
+      .expect(204);
+
+    const deletedUser = await User.findById(authUser._id);
+    assert.isNull(deletedUser);
+  });
+
+  test("User cannot delete the account of another user", async () => {
+    const cookie = await helper.getUserAuthCookie(api);
+
+    const response = await api
+      .delete(`${baseUrl}/${baseUser._id}`)
+      .set("cookie", cookie)
+      .expect(403);
+
+    const deletedUser = await User.findById(baseUser._id);
+    assert.isNotNull(deletedUser);
+  });
+
+  test("Unauthenticated user cannot delete the account of another user", async () => {
+    const response = await api.delete(`${baseUrl}/${baseUser._id}`).expect(403);
+
+    const deletedUser = await User.findById(baseUser._id);
+    assert.isNotNull(deletedUser);
+  });
+
+  test("Same response code when a user has already been updated", async () => {
+    const cookie = await helper.getAdminAuthCookie(api);
+
+    // Deleting user from database
+    await User.findByIdAndDelete(baseUser.id);
+
+    // Trying to call the delete method
+    const response = await api
+      .delete(`${baseUrl}/${baseUser._id}`)
+      .set("cookie", cookie)
+      .expect(204);
+
+    const deletedUser = await User.findById(baseUser._id);
+    assert.isNull(deletedUser);
+  });
 });

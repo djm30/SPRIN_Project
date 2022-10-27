@@ -93,8 +93,6 @@ describe("validatePassword()", () => {
     let password = "Passwo2";
     const result = validatePassword(password);
 
-    console.log(result);
-
     result.should.have.property("success").equals(false);
     result.should.have
       .property("message")

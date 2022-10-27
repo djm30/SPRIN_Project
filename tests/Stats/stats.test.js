@@ -1,5 +1,6 @@
 const app = require("../../src/app");
 const Stats = require("../../src/models/Stats");
+const User = require("../../src/models/User");
 const helper = require("../testUtils");
 const supertest = require("supertest");
 const Logger = require("../../src/config/logger");
@@ -15,16 +16,21 @@ const api = supertest(app);
 
 beforeEach(async () => {
   await Stats.deleteMany();
+  await User.deleteMany();
 });
 
 afterEach(async () => {
   await Stats.deleteMany();
+  await User.deleteMany();
 });
 
 describe("Retrieving stats from the database", () => {
   test("GET / -> Retrieves stats for the current month for an admin user", async () => {
+    const cookie = await helper.getAdminAuthCookie(api);
+
     const actualResponse = await api
       .get(baseUrl)
+      .set("Cookie", [cookie])
       .expect(200)
       .expect("Content-Type", /application\/json/);
 
@@ -39,67 +45,56 @@ describe("Retrieving stats from the database", () => {
     stats.should.have.property("events").equal(0);
   });
 
-  test.todo(
-    "GET / -> Does not retrieve stats for the current month for a regular user",
-    async () => {
-      const actualResponse = await api
-        .get(baseUrl)
-        .expect(200)
-        .expect("Content-Type", /application\/json/);
+  test("GET / -> Does not retrieve stats for a user", async () => {
+    const cookie = await helper.getUserAuthCookie(api);
 
-      const stats = actualResponse.body;
+    const actualResponse = await api
+      .get(baseUrl)
+      .set("Cookie", [cookie])
+      .expect(403);
+  });
 
-      // stats.should.have.property("_id").with.lengthOf(24);
-    },
-  );
-
-  test.todo(
-    "GET / -> Does not retrieve stats for the current month for an unauthenticated user",
-    async () => {
-      const actualResponse = await api
-        .get(baseUrl)
-        .expect(200)
-        .expect("Content-Type", /application\/json/);
-
-      const stats = actualResponse.body;
-
-      // stats.should.have.property("_id").with.lengthOf(24);
-    },
-  );
+  test("GET / -> Does not retrieve stats for the current month for an unauthenticated user", async () => {
+    const actualResponse = await api.get(baseUrl).expect(403);
+  });
 });
 
 describe("Updating statistics", () => {
   test("POST / Views -> Increments the views for the current month by one", async () => {
-    const response = await api.post(baseUrl + "/views").expect(200);
+    const response = await api.post(baseUrl + "/views").expect(204);
 
-    const updatedResponse = await api.get(baseUrl);
+    const cookie = await helper.getAdminAuthCookie(api);
+    const updatedResponse = await api.get(baseUrl).set("Cookie", [cookie]);
     const updatedStats = updatedResponse.body;
 
     assert.equal(updatedStats.views, 1);
   });
 
   test("POST / Users -> Increments the users for the current month by one", async () => {
-    const response = await api.post(baseUrl + "/users").expect(200);
+    const response = await api.post(baseUrl + "/users").expect(204);
 
-    const updatedResponse = await api.get(baseUrl);
+    const cookie = await helper.getAdminAuthCookie(api);
+    const updatedResponse = await api.get(baseUrl).set("Cookie", [cookie]);
     const updatedStats = updatedResponse.body;
 
     assert.equal(updatedStats.users, 1);
   });
 
   test("POST / Resources -> Increments the resources for the current month by one", async () => {
-    const response = await api.post(baseUrl + "/resources").expect(200);
+    const response = await api.post(baseUrl + "/resources").expect(204);
 
-    const updatedResponse = await api.get(baseUrl);
+    const cookie = await helper.getAdminAuthCookie(api);
+    const updatedResponse = await api.get(baseUrl).set("Cookie", [cookie]);
     const updatedStats = updatedResponse.body;
 
     assert.equal(updatedStats.resources, 1);
   });
 
   test("POST / Events -> Increments the events for the current month by one", async () => {
-    const response = await api.post(baseUrl + "/events").expect(200);
+    const response = await api.post(baseUrl + "/events").expect(204);
 
-    const updatedResponse = await api.get(baseUrl);
+    const cookie = await helper.getAdminAuthCookie(api);
+    const updatedResponse = await api.get(baseUrl).set("Cookie", [cookie]);
     const updatedStats = updatedResponse.body;
 
     assert.equal(updatedStats.events, 1);

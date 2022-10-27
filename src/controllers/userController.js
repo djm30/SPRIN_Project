@@ -69,15 +69,22 @@ const validatePassword = (password) => {
   return { success, message };
 };
 
-const authorizeUser = async (reqUser, userID) => {
+const authorizeUser = (reqUser, userID) => {
+  // Checking if there is a user
+  if (!reqUser) return false;
+  // Checking if user is an admin
   if (reqUser.role !== "admin") {
+    // If user is not an admin, does their id match the id of the user they are trying to access?
     return reqUser._id.toString() === userID;
   }
   return true;
 };
 
 const getUser = async (req, res) => {
-  const id = req.params.id;
+  const { id } = req.params;
+
+  if (!authorizeUser(req.user, id)) return res.sendStatus(403);
+
   const user = await User.findById(id);
   if (user) {
     res.json(user);
