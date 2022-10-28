@@ -241,7 +241,10 @@ const deleteResource = async (req, res) => {
   const resource = await Resource.findById(id);
   if (!resource) return res.sendStatus(204);
   if (!authorizeUser(req.user, resource.poster)) return res.sendStatus(403);
-  if (resource.resourceType !== resourceTypes.website)
+  if (
+    resource.resourceType !== resourceTypes.website ||
+    resource.resourceType !== resourceTypes.youtube
+  )
     await deleteFile(resource.resourceUrl);
   await resource.remove();
   res.sendStatus(204);
