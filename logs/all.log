@@ -1540,3 +1540,21 @@
 2022-10-24 11:03:15:315 [31merror[39m: [31mSome error: MongooseError: The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.[39m
 2022-10-24 11:06:39:639 [31merror[39m: [31mSome error: MongooseError: The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.[39m
 2022-10-24 20:40:00:400 [31merror[39m: [31mSome error: MongooseServerSelectionError: Error: connect ECONNREFUSED 127.0.0.1:27017[39m
+2022-10-26 14:44:30:4430 [31merror[39m: [31mError: data and hash arguments required[39m
+2022-10-26 14:44:58:4458 [31merror[39m: [31mError: data and hash arguments required[39m
+2022-10-26 14:45:12:4512 [31merror[39m: [31mError: data and hash arguments required[39m
+2022-10-26 14:45:36:4536 [31merror[39m: [31mError: data and hash arguments required[39m
+2022-10-26 14:45:42:4542 [31merror[39m: [31mError: data and hash arguments required[39m
+2022-10-26 14:45:53:4553 [31merror[39m: [31mError: data and hash arguments required[39m
+2022-10-26 14:46:09:469 [31merror[39m: [31mError: data and hash arguments required[39m
+2022-10-26 14:46:14:4614 [31merror[39m: [31mError: data and hash arguments required[39m
+2022-10-26 15:10:51:1051 [31merror[39m: [31mTypeError: this.toObject is not a function[39m
+2022-10-26 15:10:54:1054 [31merror[39m: [31mTypeError: this.toObject is not a function[39m
+2022-10-26 15:11:42:1142 [31merror[39m: [31mTypeError: this.toObject is not a function[39m
+2022-10-26 15:40:32:4032 [31merror[39m: [31mReferenceError: refalse is not defined[39m
+2022-10-26 23:08:01:81 [31merror[39m: [31mSome error: MongooseError: The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.[39m
+2022-10-26 23:08:42:842 [31merror[39m: [31mSome error: MongooseError: The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.[39m
+2022-10-27 13:56:22:5622 [31merror[39m: [31mCould not establish a connection with redis: Error: Connection timeout[39m
+2022-10-27 13:59:57:5957 [31merror[39m: [31mTypeError: Cannot destructure property 'id' of 'req.aparams' as it is undefined.[39m
+2022-10-27 14:00:45:045 [31merror[39m: [31mTypeError: Cannot read properties of undefined (reading 'role')[39m
+2022-10-27 14:06:55:655 [31merror[39m: [31mCould not establish a connection with redis: Error: Connection timeout[39m

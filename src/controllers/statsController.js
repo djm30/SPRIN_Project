@@ -1,5 +1,6 @@
 const Stats = require("../models/Stats");
 const { getYear, getMonth } = require("date-fns");
+const Logger = require("../config/logger");
 
 const getStatByDate = async () => {
   const stat = await Stats.findOne({
@@ -18,25 +19,25 @@ const createNewStat = async () => {
   return newStat;
 };
 
-const IncrementViews = async (req, res) => {
+const IncrementViews = async () => {
   const stat = await getStatByDate();
   stat.views = stat.views + 1;
   await stat.save();
 };
 
-const IncrementUsers = async (req, res) => {
+const IncrementUsers = async () => {
   const stat = await getStatByDate();
   stat.users = stat.users + 1;
   await stat.save();
 };
 
-const IncrementResources = async (req, res) => {
+const IncrementResources = async () => {
   const stat = await getStatByDate();
   stat.resources = stat.resources + 1;
   await stat.save();
 };
 
-const IncrementEvents = async (req, res) => {
+const IncrementEvents = async () => {
   const stat = await getStatByDate();
   stat.events = stat.events + 1;
   await stat.save();
@@ -50,40 +51,40 @@ const getStats = async (req, res) => {
 const IncrementViewsEndpoint = async (req, res) => {
   try {
     await IncrementViews();
-    res.sendStatus(200);
+    res.sendStatus(204);
   } catch (error) {
-    // LOG ERROR
-    res.sendStatus(500);
+    Logger.error(error);
+    throw error;
   }
 };
 
 const IncrementUsersEndpoint = async (req, res) => {
   try {
     await IncrementUsers();
-    res.sendStatus(200);
+    res.sendStatus(204);
   } catch (error) {
-    // LOG ERROR
-    res.sendStatus(500);
+    Logger.error(error);
+    throw error;
   }
 };
 
 const IncrementResourcesEndpoint = async (req, res) => {
   try {
     await IncrementResources();
-    res.sendStatus(200);
+    res.sendStatus(204);
   } catch (error) {
-    // LOG ERROR
-    res.sendStatus(500);
+    Logger.error(error);
+    throw error;
   }
 };
 
 const IncrementEventsEndpoint = async (req, res) => {
   try {
     await IncrementEvents();
-    res.sendStatus(200);
+    res.sendStatus(204);
   } catch (error) {
-    // LOG ERROR
-    res.sendStatus(500);
+    Logger.error(error);
+    throw error;
   }
 };
 

@@ -1,15 +1,15 @@
 describe("Registering Events", () => {
-  test.skip("");
+  test.skip("", () => {});
 });
 
 describe("Editing Events", () => {
-  test.skip("");
+  test.skip("", () => {});
 });
 
 describe("Retrieving Events", () => {
-  test.skip("");
+  test.skip("", () => {});
 });
 
 describe("Deleting Events", () => {
-  test.skip();
+  test.skip("", () => {});
 });

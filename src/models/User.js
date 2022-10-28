@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const roles = require("../config/roles");
 const bcrypt = require("bcrypt");
+const roles = require("../config/roles");
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -29,29 +29,32 @@ const UserSchema = new mongoose.Schema({
 
 const saltRounds = 10;
 // Hashes the password before saving
+
+/*eslint-disable */
 UserSchema.pre("save", async function (next) {
   if (this.isNew || this.isModified("password")) {
     const user = this;
     try {
-      hashedPassword = await bcrypt.hash(user.password, saltRounds);
+      const hashedPassword = await bcrypt.hash(user.password, saltRounds);
       user.password = hashedPassword;
     } catch (Err) {
       return next(Err);
     }
   } else next();
 });
+/*eslint-reenable */
 
 // This method is attached to any instance of the UserSchema
 // Validates if a given password is correct
 UserSchema.methods.isValidPassword = async function (password) {
   const user = this;
-  let comparison = await bcrypt.compare(password, user.password);
+  const comparison = await bcrypt.compare(password, user.password);
   return comparison;
 };
 
 // This method ensures the hashed password is never returned in a request
 UserSchema.methods.toJSON = function () {
-  var obj = this.toObject();
+  const obj = this.toObject();
   delete obj.password;
   return obj;
 };
