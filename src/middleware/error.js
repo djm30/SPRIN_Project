@@ -2,7 +2,8 @@ const Logger = require("../config/logger");
 require("dotenv").config();
 
 const errorHandler = (error, req, res, next) => {
-  if (process.env !== "test") Logger.error(`${error.name}: ${error.message}`);
+  if (process.env.NODE_ENV !== "test")
+    Logger.error(`${error.name}: ${error.message}`);
 
   if (error.name === "CastError") {
     res.status(400).json({ message: "Please provide a valid ObjectID" });
