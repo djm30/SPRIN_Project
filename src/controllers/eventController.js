@@ -1,6 +1,6 @@
 const Event = require("../models/Event");
 const Logger = require("../config/logger");
-const { uploadFile, replaceFile, deleteFile } = require("../utils/s3Service");
+const { uploadFile, replaceFile } = require("../utils/s3Service");
 const eventTypes = require("../config/eventTypes");
 
 const validateTitle = (title) => {
@@ -202,10 +202,19 @@ const deleteEvent = async (req, res) => {
   res.sendStatus(204);
 };
 
+const exportedForTesting = {
+  validateTitle,
+  validateDescription,
+  validateLocation,
+  validateEventbriteUrl,
+  validateAddress,
+};
+
 module.exports = {
   getEvent,
   getEvents,
   createEvent,
   updateEvent,
   deleteEvent,
+  exportedForTesting,
 };

@@ -69,3 +69,10 @@
 2022-10-27 13:59:57:5957 [31merror[39m: [31mTypeError: Cannot destructure property 'id' of 'req.aparams' as it is undefined.[39m
 2022-10-27 14:00:45:045 [31merror[39m: [31mTypeError: Cannot read properties of undefined (reading 'role')[39m
 2022-10-27 14:06:55:655 [31merror[39m: [31mCould not establish a connection with redis: Error: Connection timeout[39m
+2022-10-28 13:54:13:5413 [31merror[39m: [31mCastError: Cast to ObjectId failed for value "63593b2abe62496acf00f360}" (type string) at path "_id" for model "Resource"[39m
+2022-10-28 13:54:27:5427 [31merror[39m: [31mCastError: Cast to ObjectId failed for value "thisisnotavalidmongoose}" (type string) at path "_id" for model "Resource"[39m
+2022-10-28 13:55:47:5547 [31merror[39m: [31mCastError: Cast to ObjectId failed for value "63593b2abe62496acf00f360}" (type string) at path "_id" for model "Resource"[39m
+2022-10-28 13:56:13:5613 [31merror[39m: [31mCastError: Cast to ObjectId failed for value "thisisnotavalidmongoose}" (type string) at path "_id" for model "Resource"[39m
+2022-10-28 13:56:20:5620 [31merror[39m: [31mCastError: Cast to ObjectId failed for value "thisisnotavalidmongoose}" (type string) at path "_id" for model "Resource"[39m
+2022-10-28 13:56:57:5657 [31merror[39m: [31mCastError: Cast to ObjectId failed for value "thisisnotavalidmongoose}" (type string) at path "_id" for model "Resource"[39m
+2022-10-28 14:46:36:4636 [31merror[39m: [31mCastError: Cast to ObjectId failed for value "thisisnotavalidmongoose}" (type string) at path "_id" for model "Resource"[39m
