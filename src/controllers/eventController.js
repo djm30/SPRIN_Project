@@ -2,6 +2,7 @@ const Event = require("../models/Event");
 const Logger = require("../config/logger");
 const { uploadFile, replaceFile } = require("../utils/s3Service");
 const eventTypes = require("../config/eventTypes");
+import { object, string, number, date, InferType } from "yup";
 
 const validateTitle = (title) => {
   let success = true;
@@ -43,15 +44,50 @@ const validateLocation = (location) => {
 
   return { success, message };
 };
-const validateAddress = (address) => {
+
+const validateAddress = (location, address) => {
   let success = true;
   let message = "";
 
+  if (location === "online") {
+    const regex =
+      /^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z0-9\u00a1-\uffff][a-z0-9\u00a1-\uffff_-]{0,62})?[a-z0-9\u00a1-\uffff]\.)+(?:[a-z\u00a1-\uffff]{2,}\.?))(?::\d{2,5})?(?:[/?#]\S*)?$/i;
+    if (!regex.test(resourceUrl)) {
+      success = false;
+      message = "Please provide a valid URL";
+    }
+  }
+
+  if (location === "physical") {
+    const addressSchema = object({
+      addressLineOne: string().required(),
+      addressLineTwo: string(),
+      postCode: string().required(),
+      townCity: string().required(),
+    });
+
+    const deserializedAddress = JSON.parse(address);
+
+    if (!addressSchema.validateSync(deserializedAddress)) {
+      success = false;
+      message = "Please provide a valid address";
+    }
+  }
+
   return { success, message };
 };
+
 const validateEventbriteUrl = (url) => {
   let success = true;
   let message = "";
+
+  const regex =
+    /^\s*https?:\/\/(?:www\.)?(?:eventbrite\.[a-z.]+)\/e\/[^\/]*?(\d+)\/?(?:\?[^\/]*)?\s*$/gim;
+
+  if (!regex.test(url)) {
+    success = false;
+    message = "Please enter a valid eventbrite link!";
+  }
 
   return { success, message };
 };
@@ -95,8 +131,10 @@ const createEvent = async (req, res) => {
     return res.status(400).json({ message: locationMessage });
 
   // Address
-  const { success: addressSuccess, message: addressMessage } =
-    validateAddress(address);
+  const { success: addressSuccess, message: addressMessage } = validateAddress(
+    location,
+    address,
+  );
   if (!addressSuccess) return res.status(400).json({ message: addressMessage });
 
   // Eventbrite Url
@@ -159,8 +197,10 @@ const updateEvent = async (req, res) => {
     return res.status(400).json({ message: locationMessage });
 
   // Address
-  const { success: addressSuccess, message: addressMessage } =
-    validateAddress(address);
+  const { success: addressSuccess, message: addressMessage } = validateAddress(
+    location,
+    address,
+  );
   if (!addressSuccess) return res.status(400).json({ message: addressMessage });
 
   // Eventbrite Url
