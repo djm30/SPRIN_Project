@@ -2,97 +2,14 @@ const Resource = require("../models/Resource");
 const resourceTypes = require("../config/resourceTypes");
 const Logger = require("../config/logger");
 const { uploadFile, replaceFile, deleteFile } = require("../utils/s3Service");
-
-// UTIL METHODS
-
-const validateTitle = (title) => {
-  let success = true;
-  let message = "";
-
-  if (!title || title.trim().length === 0) {
-    success = false;
-    message = "Please enter a title!";
-  }
-  return { success, message };
-};
-
-const validateDescription = (description) => {
-  let success = true;
-  let message = "";
-
-  if (!description || description.trim().length === 0) {
-    success = false;
-    message = "Please enter a title!";
-  }
-
-  if (description.trim().length > 240) {
-    success = false;
-    message = "Please keep the description under 240 characters!";
-  }
-
-  return { success, message };
-};
-
-const validateResourceType = (resourceType) => {
-  let success = true;
-  let message = "";
-
-  if (!resourceType) {
-    success = false;
-    message = "Please provide a resource type";
-  }
-
-  let match = false;
-  Object.entries(resourceTypes).forEach(([key, val]) => {
-    if (resourceType === val) {
-      match = true;
-    }
-  });
-
-  if (!match) {
-    success = false;
-    message = "Please provide a valid resource type";
-  }
-  return { success, message };
-};
-
-// TODO - MORE VALIDATION
-const validateResourceUrl = (resourceType, resourceUrl) => {
-  let success = true;
-  let message = "";
-
-  if (resourceType === resourceTypes.youtube) {
-    const regex =
-      /^http(?:s?):\/\/(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([\w\-\_]*)(&(amp;)?‌​[\w\?‌​=]*)?/;
-    if (!regex.test(resourceUrl)) {
-      success = false;
-      message = "Please provide a valid YouTube url";
-    }
-  }
-
-  if (resourceType === resourceTypes.website) {
-    if (resourceUrl.substring(0, 5) !== "https") {
-      success = false;
-      message = "Please ensure URL begins with https";
-    }
-    const regex =
-      /^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z0-9\u00a1-\uffff][a-z0-9\u00a1-\uffff_-]{0,62})?[a-z0-9\u00a1-\uffff]\.)+(?:[a-z\u00a1-\uffff]{2,}\.?))(?::\d{2,5})?(?:[/?#]\S*)?$/i;
-    if (!regex.test(resourceUrl)) {
-      success = false;
-      message = "Please provide a valid URL";
-    }
-  }
-
-  return { success, message };
-};
-
-// Checks if user is either an admin, or is the owner of the requested resource
-const authorizeUser = (reqUser, userID) => {
-  if (reqUser.role !== "admin") {
-    return reqUser._id.toString() === userID.toString();
-  }
-  return true;
-};
+const {
+  validateTitle,
+  validateDescription,
+  validateResourceType,
+  validateResourceUrl,
+} = require("../validation/Resource");
+const authorizeUser = require("../utils/authorizeUser");
+const { validateSync } = require("../validation/common");
 
 // CONTROLLER METHODS
 // Returns a resource from a given id
@@ -121,27 +38,18 @@ const createResource = async (req, res) => {
 
   // Validation
   // Title
-  const { success: titleSuccess, message: titleMessage } = validateTitle(title);
-  if (!titleSuccess) return res.status(400).json({ message: titleMessage });
+  if (!validateSync(validateTitle, [title], res)) return res;
 
   // Description
-  const { success: descriptionSuccess, message: descriptionMessage } =
-    validateDescription(description);
-  if (!descriptionSuccess)
-    return res.status(400).json({ message: descriptionMessage });
+  if (!validateSync(validateDescription, [description], res)) return res;
 
   // Resource Type
-  const { success: resourceTypeSuccess, message: resourceTypeMessage } =
-    validateResourceType(resourceType);
-  if (!resourceTypeSuccess)
-    return res.status(400).json({ message: resourceTypeMessage });
+  if (!validateSync(validateResourceType, [resourceType], res)) return res;
 
   // Resource Url
-  if (resourceType !== resourceTypes.website) {
-    const { success: resourceUrlSuccess, message: resourceUrlMessage } =
-      validateResourceUrl(resourceUrl);
-    if (!resourceUrlSuccess)
-      return res.status(400).json({ message: resourceUrlMessage });
+  if (resourceType !== resourceTypes.pdf) {
+    if (!validateSync(validateResourceUrl, [resourceType, resourceUrl], res))
+      return res;
   }
 
   if (
@@ -185,27 +93,18 @@ const updateResource = async (req, res) => {
 
   // Validation
   // Title
-  const { success: titleSuccess, message: titleMessage } = validateTitle(title);
-  if (!titleSuccess) return res.status(400).json({ message: titleMessage });
+  if (!validateSync(validateTitle, [title], res)) return res;
 
   // Description
-  const { success: descriptionSuccess, message: descriptionMessage } =
-    validateDescription(description);
-  if (!descriptionSuccess)
-    return res.status(400).json({ message: descriptionMessage });
+  if (!validateSync(validateDescription, [description], res)) return res;
 
   // Resource Type
-  const { success: resourceTypeSuccess, message: resourceTypeMessage } =
-    validateResourceType(resourceType);
-  if (!resourceTypeSuccess)
-    return res.status(400).json({ message: resourceTypeMessage });
+  if (!validateSync(validateResourceType, [resourceType], res)) return res;
 
   // Resource Url
-  if (resourceType !== resourceTypes.website) {
-    const { success: resourceUrlSuccess, message: resourceUrlMessage } =
-      validateResourceUrl(resourceUrl);
-    if (!resourceUrlSuccess)
-      return res.status(400).json({ message: resourceUrlMessage });
+  if (resourceType !== resourceTypes.pdf) {
+    if (!validateSync(validateResourceUrl, [resourceType, resourceUrl], res))
+      return res;
   }
 
   // Checking if a new file
@@ -247,18 +146,10 @@ const deleteResource = async (req, res) => {
   res.sendStatus(204);
 };
 
-const exportedForTesting = {
-  validateTitle,
-  validateDescription,
-  validateResourceUrl,
-  validateResourceType,
-};
-
 module.exports = {
   getResource,
   getResources,
   createResource,
   updateResource,
   deleteResource,
-  exportedForTesting,
 };

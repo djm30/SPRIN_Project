@@ -1,7 +1,10 @@
 const { assert } = require("chai");
 const should = require("chai").should();
-const { exportedForTesting } = require("../../src/controllers/userController");
-const { validateEmail, validateName, validatePassword } = exportedForTesting;
+const {
+  validateEmail,
+  validateName,
+  validatePassword,
+} = require("../../src/validation/User");
 const helper = require("../testUtils");
 const User = require("../../src/models/User");
 

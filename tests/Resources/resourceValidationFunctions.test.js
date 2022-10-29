@@ -1,14 +1,12 @@
 const { assert } = require("chai");
 const should = require("chai").should();
-const {
-  exportedForTesting,
-} = require("../../src/controllers/resourceController");
+
 const {
   validateTitle,
   validateDescription,
   validateResourceType,
   validateResourceUrl,
-} = exportedForTesting;
+} = require("../../src/validation/Resource");
 const helper = require("../testUtils");
 
 describe("validateTitle()", () => {

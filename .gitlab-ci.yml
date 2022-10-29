@@ -2,7 +2,7 @@ image: node:latest
 
 variables:
   TEST_MONGODB_URI: "mongodb://mongodb:27017/sprinApplicationTest"
-  REDIS_URL=redis: "redis://redis:6379?ConnectTimeout=5000&IdleTimeOutSecs=180."
+  REDIS_URL: "redis://redis:6379?ConnectTimeout=5000&IdleTimeOutSecs=180."
   
 
 services:

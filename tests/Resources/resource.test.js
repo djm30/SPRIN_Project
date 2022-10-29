@@ -3,10 +3,8 @@ const Resource = require("../../src/models/Resource");
 const helper = require("../testUtils");
 const supertest = require("supertest");
 const Logger = require("../../src/config/logger");
-const { getYear, getMonth } = require("date-fns");
 const { assert } = require("chai");
 const should = require("chai").should();
-const bcrypt = require("bcrypt");
 const User = require("../../src/models/User");
 
 helper.connectToDatabase();
