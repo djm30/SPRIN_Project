@@ -12,11 +12,21 @@ module.exports = {
       display: ["Arvo", "serif"],
       body: ["Lato", "sans-serif"],
     },
+
     extend: {
       backgroundImage: {
         hero: "url(./src/assets/CallToAction.svg)",
+        "blue-gradient":
+          "linear-gradient(40deg, rgba(72,97,228,1) 0%, rgba(9,9,121,1) 97%);",
+        "red-gradient":
+          "linear-gradient(34deg, rgba(245,92,92,1) 0%, rgba(199,41,41,1) 97%);",
+        "green-gradient":
+          "linear-gradient(34deg, rgba(134,228,90,1) 0%, rgba(57,198,35,1) 97%);",
       },
       colors: {
+        "blue-gradient": "rgb(72,97,228);",
+        "red-gradient": "rgb(245,92,92);",
+        "green-gradient": "background: rgb(134,228,90);",
         "border-color": "#DCDCDC",
         "grey-transparent": "rgba(193, 202, 225, 0.5)",
         modal: "rgba(0,0,0,0.75)",

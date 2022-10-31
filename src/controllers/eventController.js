@@ -1,58 +1,16 @@
 const Event = require("../models/Event");
 const Logger = require("../config/logger");
+const { uploadFile, replaceFile } = require("../utils/s3Service");
+const {
+  validateTitle,
+  validateDescription,
+  validateLocation,
+  validateAddress,
+  validateDateTime,
+  validateEventbriteUrl,
+} = require("../validation/Event");
 
-const validateTitle = (title) => {
-  let success = true;
-  let message = "";
-
-  if (title.trim().length == 0) {
-    success = false;
-    message = "Please enter a title!";
-  }
-  return { success, message };
-};
-
-const validateDescription = (description) => {
-  let success = true;
-  let message = "";
-
-  if (description.trim().length == 0) {
-    success = false;
-    message = "Please enter a title!";
-  }
-
-  if (description.trim().length > 240) {
-    success = false;
-    message = "Please keep the description under 240 characters!";
-  }
-
-  return { success, message };
-};
-
-const validateLocation = (location) => {
-  let success = true;
-  let message = "";
-
-  if (location !== "online" && location !== "phsyical") {
-    success = false;
-    message =
-      "Please enter a valid input for location ('online' or 'phsyical')";
-  }
-
-  return { success, message };
-};
-const validateAddress = (address) => {
-  let success = true;
-  let message = "";
-
-  return { success, message };
-};
-const validateEventbriteUrl = (url) => {
-  let success = true;
-  let message = "";
-
-  return { success, message };
-};
+const { validateSync } = require("../validation/common");
 
 // All event methods require admin authorization,
 // therefore user object will always be available
@@ -73,37 +31,39 @@ const getEvents = async (req, res) => {
 };
 
 const createEvent = async (req, res) => {
-  const id = req.params.id;
-
-  const { title, description, location, address, eventbriteUrl } = req.body;
+  const { title, description, location, address, eventbriteUrl, dateTime } =
+    req.body;
 
   // Validation
   // Title
-  const { success: titleSuccess, message: titleMessage } = validateTitle(title);
-  if (!titleSuccess) return res.status(400).json({ message: titleMessage });
+  if (!validateSync(validateTitle, [title], res)) return res;
 
   // Description
-  const { success: descriptionSuccess, message: descriptionMessage } =
-    validateDescription(description);
-  if (!descriptionSuccess)
-    return res.status(400).json({ message: descriptionMessage });
+  if (!validateSync(validateDescription, [description], res)) return res;
 
   // Location
-  const { success: locationSuccess, message: locationMessage } =
-    validateLocation(location);
-  if (!locationSuccess)
-    return res.status(400).json({ message: locationMessage });
+  if (!validateSync(validateLocation, [location], res)) return res;
+
+  // Datetime
+  if (!validateSync(validateDateTime, [dateTime], res)) return res;
 
   // Address
-  const { success: addressSuccess, message: addressMessage } =
-    validateAddress(address);
-  if (!addressSuccess) return res.status(400).json({ message: addressMessage });
+  if (!validateSync(validateAddress, [location, address], res)) return res;
 
   // Eventbrite Url
-  const { success: eventbriteUrlSuccess, message: eventbriteUrlMessage } =
-    validateEventbriteUrl(eventbriteUrl);
-  if (!eventbriteUrlSuccess)
-    return res.status(400).json({ message: eventbriteUrlMessage });
+  if (!validateSync(validateEventbriteUrl, [eventbriteUrl], res)) return res;
+
+  let imgUrl = "";
+
+  if ("file" in req) {
+    const file = req.file;
+    if (!file) return res.status(400).json({ message: "Please upload a file" });
+    imgUrl = await uploadFile(file);
+    if (!imgUrl)
+      return res
+        .status(500)
+        .json({ message: "Something went wrong uploading, please try again" });
+  }
 
   const event = new Event({
     title,
@@ -111,12 +71,14 @@ const createEvent = async (req, res) => {
     location,
     address,
     eventbriteUrl,
+    imgUrl,
+    dateTime,
   });
 
   try {
     await event.save();
-    console.log(event);
-    res.status(201).json(event);
+    // console.log(event);
+    res.status(200).json(event);
   } catch (e) {
     Logger.error(e);
     res.sendStatus(500);
@@ -124,35 +86,41 @@ const createEvent = async (req, res) => {
 };
 
 const updateEvent = async (req, res) => {
-  const { title, description, location, address, eventbriteUrl } = req.body;
+  const { title, description, location, address, eventbriteUrl, dateTime } =
+    req.body;
+
+  let eventToUpdate = await Event.findById(req.params.id);
 
   // Validation
   // Title
-  const { success: titleSuccess, message: titleMessage } = validateTitle(title);
-  if (!titleSuccess) return res.status(400).json({ message: titleMessage });
+  if (!validateSync(validateTitle, [title], res)) return res;
 
   // Description
-  const { success: descriptionSuccess, message: descriptionMessage } =
-    validateDescription(description);
-  if (!descriptionSuccess)
-    return res.status(400).json({ message: descriptionMessage });
+  if (!validateSync(validateDescription, [description], res)) return res;
 
   // Location
-  const { success: locationSuccess, message: locationMessage } =
-    validateLocation(location);
-  if (!locationSuccess)
-    return res.status(400).json({ message: locationMessage });
+  if (!validateSync(validateLocation, [location], res)) return res;
+
+  // Datetime
+  if (!validateSync(validateDateTime, [dateTime], res)) return res;
 
   // Address
-  const { success: addressSuccess, message: addressMessage } =
-    validateAddress(address);
-  if (!addressSuccess) return res.status(400).json({ message: addressMessage });
+  if (!validateSync(validateAddress, [location, address], res)) return res;
 
   // Eventbrite Url
-  const { success: eventbriteUrlSuccess, message: eventbriteUrlMessage } =
-    validateEventbriteUrl(eventbriteUrl);
-  if (!eventbriteUrlSuccess)
-    return res.status(400).json({ message: eventbriteUrlMessage });
+  if (!validateSync(validateEventbriteUrl, [eventbriteUrl], res)) return res;
+
+  let imgUrl = eventToUpdate.imgUrl;
+
+  if ("file" in req) {
+    const file = req.file;
+    if (!file) return res.status(400).json({ message: "Please upload a file" });
+    imgUrl = await replaceFile(eventToUpdate.imgUrl, file);
+    if (!imgUrl)
+      return res.status(500).json({
+        message: "Something went wrong uploading, please try again",
+      });
+  }
 
   try {
     eventToUpdate.title = title;
@@ -160,6 +128,7 @@ const updateEvent = async (req, res) => {
     eventToUpdate.location = location;
     eventToUpdate.address = address;
     eventToUpdate.eventbriteUrl = eventbriteUrl;
+    eventToUpdate.imgUrl = imgUrl;
     await eventToUpdate.save();
     res.status(200).json(eventToUpdate);
   } catch (e) {

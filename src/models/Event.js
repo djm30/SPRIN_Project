@@ -18,6 +18,13 @@ const EventSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  dateTime: {
+    type: Date,
+    default: Date.now,
+  },
+  imgUrl: {
+    type: String,
+  },
   eventbriteUrl: {
     type: String,
     required: true,

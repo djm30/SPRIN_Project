@@ -12,12 +12,12 @@ const CallToAction = () => {
       {/* NAVBAR */}
       <Navbar transparent={true} />
       {/* HEADING AND BUTTONS */}
-      <ContentContainer className="mt-8 sm:mt-20 space-y-12 md:space-y-20 flex flex-col items-center ">
-        <div className="flex flex-col justify-around h-full sm:block space-y-6  sm:mr-32">
-          <h1 className="text-4xl md:text-6xl text-white font-display">
+      <ContentContainer className="mt-8 sm:mt-20 space-y-12 md:space-y-20 2xl:space-y-40 flex flex-col items-center ">
+        <div className="flex flex-col justify-around h-full sm:block space-y-6 2xl:space-y-12 sm:mr-32">
+          <h1 className="text-4xl md:text-6xl 2xl:text-8xl text-white font-display">
             Suicide Prevention & Research Impact Network
           </h1>
-          <h2 className="text-3xl md:text-5xl text-neutral-300 font-display">
+          <h2 className="text-3xl md:text-5xl 2xl:text-6xl text-neutral-300 font-display">
             Focused on strengthening research-practice connections and improving
             the evidence base
           </h2>

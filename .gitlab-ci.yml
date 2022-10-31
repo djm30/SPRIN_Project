@@ -1,0 +1,32 @@
+image: node:latest
+
+variables:
+  TEST_MONGODB_URI: "mongodb://mongodb:27017/sprinApplicationTest"
+  REDIS_URL: "redis://redis:6379?ConnectTimeout=5000&IdleTimeOutSecs=180."
+  
+
+services:
+  - mongodb:latest
+  - redis:latest
+
+cache:
+  paths:
+    - node_modules/
+    - src/frontend/node_modules/
+
+test_backend:
+  script:
+    - npm install
+    - npm run test
+
+test_frontend:
+  script:
+    - cd src/frontend
+    - npm install
+    - npm run cypress
+
+
+# deploy:
+#   stage: deploy
+#   script: echo "Define your deployment script!"
+#   environment: production

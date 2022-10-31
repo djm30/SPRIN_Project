@@ -6,7 +6,7 @@ import Card from "../UI/Card";
 const ConnectionSupportAdvocacy = () => {
   return (
     <section className=" bg-white my-20 flex justify-center">
-      <ContentContainer className="grid grid-cols-1 md:grid-cols-3 gap-4 space-y-5 md:space-y-0">
+      <ContentContainer className="grid grid-cols-1 md:grid-cols-3 gap-4 space-y-5 2xl:gap-12  md:space-y-0">
         {/* SINGLE CARD */}
         <Card className="max-w-[360px] md:max-w-none xl:w-96 xl:h-[30rem] flex flex-col items-center py-12 px-5 space-y-10">
           {/* CARD HEADER */}

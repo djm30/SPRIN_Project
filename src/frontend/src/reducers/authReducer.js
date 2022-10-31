@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
   login as loginRequest,
   logout as logoutRequest,
+  reauthenticate,
 } from "../services/authService";
 
 let initialState = null;
@@ -25,7 +26,7 @@ const deleteCookie = (name) => {
   document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 };
 
-export const SubmitLogin = (email, password) => {
+export const submitLogin = (email, password) => {
   return async (dispatch) => {
     try {
       const user = await loginRequest(email, password);
@@ -44,6 +45,17 @@ export const submitLogout = () => {
       dispatch(logout());
     } catch (e) {
       console.log(e);
+    }
+  };
+};
+
+export const tryReauthenticate = () => {
+  return async (dispatch) => {
+    try {
+      const user = await reauthenticate();
+      dispatch(login(user));
+    } catch (e) {
+      console.log("No session found for this user");
     }
   };
 };

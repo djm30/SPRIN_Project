@@ -6,11 +6,11 @@ import Card from "../UI/Card";
 
 const PartnerFlashCardsRight = () =>{
 return(
-<section className=" bg-white my-20 flex justify-center">
-<ContentContainer className="grid grid-cols-1 md:grid-cols-3 gap-4 space-y-5 md:space-y-0 space-x-4">
-<Card className="max-w-[360px] md:max-w-none xl:w-96 xl:h-[17rem] flex flex-col items-center py-12 px-5 space-y-10">
+<section className=" bg-white my-20 w-screen items-end pb-10">
+<ContentContainer className="grid grid-cols-1 md:grid-cols-3 gap-4 space-y-5 md:space-y-0 space-x-1 justify-items-start">
+<Card className="max-w-[360px] md:max-w-none xl:w-96 xl:h-[17rem] flex flex-col items-center py-12 px-5 space-y-10 ">
           {/* CARD HEADER */}
-          <h4 className="text-darkblue-100 text-2xl font-display">
+          <h4 className="text-darkblue-100 text-2xl font-display text-center">
             All Party Group on Suicide Prevention
           </h4>
           {/* CARD ICON */}
@@ -24,15 +24,15 @@ return(
           className="max-w-[360px] md:max-w-none xl:w-96 xl:h-[17rem] flex flex-col items-center py-12 px-5 space-y-10 text-white"
         >
           {/* CARD HEADER */}
-          <h4 className="text-2xl font-display">Family Voices Form</h4>
+          <h4 className="text-2xl font-display text-center">Family Voices Form</h4>
           {/* CARD ICON */}
           <div>
             <img src={Placeholder}></img>
           </div>
         </Card>
- <Card className="max-w-[360px] md:max-w-none xl:w-96 xl:h-[17rem] flex flex-col items-center py-12 px-5 space-y-10 space-x-10">
+ <Card className="max-w-[360px] md:max-w-none xl:w-96 xl:h-[17rem] flex flex-col items-center py-12 px-5 space-y-10">
           {/* CARD HEADER */}
-          <h4 className="text-darkblue-100 text-2xl font-display">
+          <h4 className="text-darkblue-100 text-2xl font-display text-center">
             Public Health Agency
           </h4>
           {/* CARD ICON */}

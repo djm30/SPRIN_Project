@@ -6,6 +6,7 @@ import {
   deleteResource as deleteResourceRequest,
 } from "../services/resourceService";
 
+// An array of arrays, each inner array will have a max length of 9
 let initialState = [];
 
 const resourceSlice = createSlice({
@@ -16,17 +17,27 @@ const resourceSlice = createSlice({
       return action.payload;
     },
     addResource(state, action) {
-      return [...state, action.payload];
+      // Checking if last page is full and if so, creating a new page
+      if (state[state.length - 1].length === 9) {
+        state.push([action.payload]);
+        // Pushing resource to last page if its not full
+      } else {
+        state[state.length - 1].push(action.payload);
+      }
     },
     replaceResource(state, action) {
       const resourceToReplace = action.payload;
-      return state.map((resource) =>
-        resource._id === resourceToReplace._id ? resourceToReplace : resource,
-      );
+      state.forEach((page) => {
+        page.map((resource) =>
+          resource._id === resourceToReplace._id ? resourceToReplace : resource,
+        );
+      });
     },
     removeResource(state, action) {
       const id = action.payload;
-      return state.filter((resource) => resource._id !== id);
+      state.forEach((page) => {
+        page.filter((resource) => resource._id !== id);
+      });
     },
   },
 });
@@ -38,7 +49,21 @@ export const initializeResources = () => {
   return async (dispatch) => {
     try {
       const resources = await getResources();
-      dispatch(setResources(resources));
+      resources.sort((first, second) => {
+        return new Date(second.dateTime) - new Date(first.dateTime);
+      });
+
+      const pages = [];
+      let currPage = [];
+      for (let i = 0; i < resources.length; i++) {
+        if (currPage.length === 9) {
+          pages.push(currPage);
+          currPage = [];
+        }
+        currPage.push(resources[i]);
+      }
+      pages.push(currPage);
+      dispatch(setResources(pages));
     } catch (e) {
       console.log(e);
     }

@@ -1,8 +1,9 @@
 const express = require("express");
 const session = require("express-session");
+const RedisStore = require("connect-redis")(session);
 const passport = require("passport");
 const getRedisClient = require("./config/redis");
-const RedisStore = require("connect-redis")(session);
+
 const morganMiddleware = require("./config/morgan");
 const errorMiddleware = require("./middleware/error");
 
@@ -15,17 +16,18 @@ app.use(express.urlencoded({ extended: true }));
 // Initializing connection to redis
 const redisClient = getRedisClient();
 redisClient.connect();
-redisClient.on("error", function (err) {
-  console.log("Could not establish a connection with redis. " + err);
+redisClient.on("error", (err) => {
+  logger.error(`Could not establish a connection with redis: ${err}`);
 });
-redisClient.on("connect", function (err) {
-  console.log("Connected to redis successfully");
+redisClient.on("connect", () => {
+  logger.info("Connected to redis successfully");
 });
 
 // Express-session middleware configruation
 // Express-session is used to establish a session for the user
 // The details for which are stored in ther redis server
-// This middleware will retrieve the session db on each request so we can access it in the request object
+// This middleware will retrieve the session db on each
+// request so we can access it in the request object
 app.use(
   session({
     store: new RedisStore({ client: redisClient }),
@@ -44,6 +46,7 @@ app.use(
 // Passport is used to authenticate the user
 // Passport is extensible and so other auth strategies can be used
 require("./config/passport");
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(morganMiddleware);

@@ -7,28 +7,41 @@ import Resources from "./pages/Resources";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Notification from "./components/UI/Notification";
+import { useDispatch } from "react-redux";
 
 import Footer from "./components/UI/Footer/Footer";
+import { submitLogin, tryReauthenticate } from "./reducers/authReducer";
+import { initializeResources } from "./reducers/resourceReducer";
+import { initializeEvents } from "./reducers/eventReducer";
 
 function App() {
+  const dispatch = useDispatch();
   useEffect(() => {
     // Try to reauthenticate on page reload if a session id is found
+    dispatch(submitLogin("dylan@email.com", "Password123"));
+    dispatch(tryReauthenticate());
+    dispatch(initializeResources());
+    dispatch(initializeEvents());
   }, []);
-  return (
-    <div className="font-body overflow-x-hidden -z-50">
-      <Routes>
-        <Route path="/" element={<Navigate to={"/home"} replace />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/partners" element={<Partners />} />
-        <Route path="/resources" element={<Resources />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
 
-      <Footer />
-    </div>
+  return (
+    <>
+      <Notification />
+      <div className="font-body overflow-x-hidden -z-50">
+        <Routes>
+          <Route path="/" element={<Navigate to={"/home"} replace />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/partners" element={<Partners />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+        <Footer />
+      </div>
+    </>
   );
 }
 

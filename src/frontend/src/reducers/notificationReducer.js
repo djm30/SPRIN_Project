@@ -20,6 +20,8 @@ const notificationSlice = createSlice({
   },
 });
 
+const { setMessage, resetMessage } = notificationSlice.actions;
+
 export const setNotification = (message, error, time = 5) => {
   return (dispatch) => {
     clearTimeout(timeout);
@@ -29,7 +31,5 @@ export const setNotification = (message, error, time = 5) => {
     }, time * 1000);
   };
 };
-
-const { setMessage, resetMessage } = notificationSlice.actions;
 
 export default notificationSlice.reducer;
