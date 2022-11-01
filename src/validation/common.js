@@ -1,3 +1,5 @@
+// Function that runs a validation function, and updates the response with the error message
+// if the validation failed. Does this with synchronous methods
 const validateSync = (validationFunction, params, res) => {
   const { success, message } = validationFunction(...params);
 
@@ -7,7 +9,8 @@ const validateSync = (validationFunction, params, res) => {
   return success;
 };
 
-// General purpose validation function to handle setting of response
+// Function that runs a validation function, and updates the response with the error message
+// if the validation failed. Does this with asynchronous methods
 const validate = async (validationFunction, params, res) => {
   const { success, message } = await validationFunction(...params);
 
@@ -17,6 +20,7 @@ const validate = async (validationFunction, params, res) => {
   return success;
 };
 
+// Common validatoin function for multiple fields, validates urls and ensures they are HTTPS
 const validateUrl = (url) => {
   let success = true;
   let message = "";
