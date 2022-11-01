@@ -74,9 +74,25 @@ const validateResourceUrl = (resourceType, resourceUrl) => {
   return { success, message };
 };
 
+const validateFile = (file) => {
+  let success = true;
+  let message = "";
+
+  const extension = file.filename
+    ? file.filename.split(".").slice(-1)[0]
+    : ".invalid";
+  if (extension !== "pdf") {
+    message = "Please upload a pdf file";
+    success = false;
+  }
+
+  return { success, message };
+};
+
 module.exports = {
   validateTitle,
   validateDescription,
   validateResourceType,
   validateResourceUrl,
+  validateFile,
 };

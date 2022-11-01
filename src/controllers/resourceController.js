@@ -7,6 +7,7 @@ const {
   validateDescription,
   validateResourceType,
   validateResourceUrl,
+  validateFile,
 } = require("../validation/Resource");
 const authorizeUser = require("../utils/authorizeUser");
 const { validateSync } = require("../validation/common");
@@ -57,7 +58,7 @@ const createResource = async (req, res) => {
     resourceType !== resourceTypes.youtube
   ) {
     const file = req.file;
-    if (!file) return res.status(400).json({ message: "Please upload a file" });
+    if (!validateSync(validateFile, [file], res)) return res;
     resourceUrl = await uploadFile(file);
     if (!resourceUrl)
       return res
@@ -111,6 +112,7 @@ const updateResource = async (req, res) => {
   if (resourceType !== resourceTypes.website) {
     const file = req.file;
     if (file) {
+      if (!validateSync(validateFile, [file], res)) return res;
       resourceUrl = await replaceFile(resource.resourceUrl, file);
       if (!resourceUrl)
         return res.status(500).json({

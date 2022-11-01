@@ -6,6 +6,7 @@ const {
   validateDescription,
   validateResourceType,
   validateResourceUrl,
+  validateFile,
 } = require("../../src/validation/Resource");
 const helper = require("../testUtils");
 
@@ -155,5 +156,35 @@ describe("validateResourceUrl()", () => {
 
     result.should.have.property("success").equals(true);
     result.should.have.property("message").equals("");
+  });
+});
+
+describe("ValidateFile", () => {
+  test("Fails with an undefined file", () => {
+    const file = undefined;
+    const result = validateFile(file);
+
+    result.should.have.property("success").equals(true);
+    result.should.have.property("message").equals("");
+  });
+  test("Passes with a file extension of pdf", () => {
+    const file = { filename: "file.pdf" };
+    const result = validateFile(file);
+
+    result.should.have.property("success").equals(true);
+    result.should.have.property("message").equals("");
+  });
+  test("Fails with a file extension other than pdf", () => {
+    const invalidFile = { filename: "invalid.png" };
+    const result = validateFile(invalidFile);
+
+    result.should.have.property("success").equals(false);
+    result.should.have.property("message").equals("Please upload a pdf file");
+  });
+  test("Fails with an invalid file object", () => {
+    const result = validateFile({});
+
+    result.should.have.property("success").equals(false);
+    result.should.have.property("message").equals("Please upload a pdf file");
   });
 });
