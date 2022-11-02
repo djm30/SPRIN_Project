@@ -18,7 +18,8 @@ class Carousel extends Component {
         <div className="max-w-lg h-72 flex overflow-hidden relative">
           {CarouselData.map((slide, index) => {
             return (
-              <img
+              <div>
+                <img
               onMouseEnter={() => {
                 this.setState({paused: true})
             }}
@@ -35,8 +36,12 @@ class Carousel extends Component {
                     : "hidden"
                 }
               />
+              </div>
+                
+
             );
           })}
+
           
 
           <div className="absolute w-full flex justify-center bottom-0">
