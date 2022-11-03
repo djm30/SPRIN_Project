@@ -31,7 +31,7 @@ class Carousel extends Component {
                 key={index}
                 className={
                   index === this.state.currentSlide
-                    ? "block w-full h-auto object-cover"
+                    ? "block w-full h-auto object-contain"
                     : "hidden"
                 }
               />
@@ -61,9 +61,9 @@ class Carousel extends Component {
 </div>
 
 
-          <AiOutlineLeft onClick={this.prevSlide} className='absolute left-0 text-3xl inset-y-1/2 text-white cursor-pointer' />
+          <AiOutlineLeft onClick={this.prevSlide} className='absolute left-0 text-3xl inset-y-1/2 text-blue cursor-pointer' />
 
-          <AiOutlineRight onClick={this.nextSlide} className='absolute right-0 text-3xl inset-y-1/2 text-white cursor-pointer' />
+          <AiOutlineRight onClick={this.nextSlide} className='absolute right-0 text-3xl inset-y-1/2 text-blue cursor-pointer' />
         </div>
       </div>
     );
