@@ -49,7 +49,7 @@ class Carousel extends Component {
           className={
            index === this.state.currentSlide
             ? "h-2 w-2 bg-blue-700 rounded-full mx-2 mb-2 cursor-pointer"
-            : "h-2 w-2 bg-white rounded-full mx-2 mb-2 cursor-pointer"
+            : "h-2 w-2 bg-black rounded-full mx-2 mb-2 cursor-pointer"
             }
             key={index}
             onClick={() => {
