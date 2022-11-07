@@ -16,9 +16,11 @@ const Partners = () => {
         <ContentContainer>
           <Heading>Network Partners</Heading>
         </ContentContainer>
-        <ContentContainer className="flex flex-col items-center pb-40">
+        <ContentContainer className="flex flex-col items-center pb-10">
         <Carousel />
         </ContentContainer>
+        <PartnerFlashCardsRight />
+        <PartnerFlashCardsLeft />
         <JoinTodayBar/>
         <ContentContainer className="flex flex-col items-center pb-10">
         <Heading>Prevention Partners and resources</Heading>
