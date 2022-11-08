@@ -15,7 +15,7 @@ import {
   resourceUrlValidator,
 } from "./ResourceValidationFunctuions";
 
-const ResourceForm = ({ open, setOpen }) => {
+const ResourceForm = ({ open, setOpen, resource }) => {
   const dispatch = useDispatch();
 
   const [resourceType, setResourceType] = useState(resourceTypes.YOUTUBE);

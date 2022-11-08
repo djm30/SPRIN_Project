@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { useMatch } from "react-router-dom";
 
 /**
  *
@@ -8,33 +10,62 @@ import { useState } from "react";
  * @param {*} additionalInputParameters Any additional parameters that can modify an input tag e.g. maxLength
  */
 export const useTextField = (
-  validationFunction,
-  additionalInputParameters = {},
+    validationFunction,
+    additionalInputParameters = {},
 ) => {
-  const [value, setValue] = useState("");
-  const [error, setError] = useState("");
+    const [value, setValue] = useState("");
+    const [error, setError] = useState("");
 
-  const onChange = (event) => {
-    setValue(event.target.value);
-    setError(validationFunction(event.target.value));
-  };
+    const onChange = (event) => {
+        setValue(event.target.value);
+        setError(validationFunction(event.target.value));
+    };
 
-  const reset = () => {
-    setValue("");
-    setError("");
-  };
+    const reset = () => {
+        setValue("");
+        setError("");
+    };
 
-  const isValid = () => {
-    setError(validationFunction(value));
-    let upToDateError = validationFunction(value);
-    return upToDateError === "";
-  };
+    const isValid = () => {
+        setError(validationFunction(value));
+        let upToDateError = validationFunction(value);
+        return upToDateError === "";
+    };
 
-  const inputParams = {
-    ...additionalInputParameters,
-    value,
-    onChange,
-  };
+    const inputParams = {
+        ...additionalInputParameters,
+        value,
+        onChange,
+    };
 
-  return [value, reset, error, isValid, inputParams];
+    return [value, reset, error, isValid, inputParams];
+};
+
+export const useResource = () => {
+    const resources = useSelector((state) => state.resources);
+    const match = useMatch("/resources/:id");
+    if (match) {
+        return findInPage(resources, match.params.id);
+    }
+    return null;
+};
+
+export const useEvent = () => {
+    const events = useSelector((state) => state.events);
+    const match = useMatch("/events/:id");
+    if (match) {
+        return findInPage(events, match.params.id);
+    }
+    return null;
+};
+
+const findInPage = (pages, id) => {
+    for (let page of pages) {
+        for (let item of page) {
+            if (item._id === id) {
+                return item;
+            }
+        }
+    }
+    return null;
 };
