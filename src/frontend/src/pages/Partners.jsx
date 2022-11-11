@@ -7,6 +7,7 @@ import PartnerFlashCardsLeft from "../components/Partners/PartnerCardsRight";
 import JoinTodayBar from "../components/Partners/JoinToday";
 import PreventionCardsTop from "../components/Partners/PreventionCardsTop";
 import Carousel from "../components/Partners/Carousel";
+import PopUp from "../components/UI/UrgentHelpPopup";
 
 const Partners = () => {
   return (
@@ -17,6 +18,7 @@ const Partners = () => {
           <Heading>Network Partners</Heading>
         </ContentContainer>
         <ContentContainer className="flex flex-col items-center pb-10">
+        <PopUp />
         <Carousel />
         </ContentContainer>
         <PartnerFlashCardsRight />
