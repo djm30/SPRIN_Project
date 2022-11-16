@@ -36,8 +36,12 @@ export default function PopUp() {
                 {/*body*/}
                 <div className="relative p-6 flex-auto">
                   <p className="my-4 text-slate-500 text-lg leading-relaxed">
-                  If you require urgent help please speak to someone today. 
+                  If you require urgent help please speak to someone today.
+                  </p>
+                  <p className="my-4 text-slate-500 text-lg leading-relaxed">
                   Lifeline: 0808 808 8000
+                  </p>
+                  <p className="my-4 text-slate-500 text-lg leading-relaxed">
                   Samaritans: 116 123
                   </p>
                 </div>
