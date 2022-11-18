@@ -1,9 +1,13 @@
 import React from "react";
+import {useEffect, useState} from 'react';
 
 export default function PopUp() {
-  const timerId = setInterval(() => {
-    setShowModal(true)
-  }, 3000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowModal(true)
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
   const [showModal, setShowModal] = React.useState(false);
   return (
     <>
