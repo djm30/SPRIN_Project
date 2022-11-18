@@ -1,4 +1,5 @@
 import React from "react";
+import SingleEvent from "../components/Events/SingleEvent";
 import ContentContainer from "../components/UI/ContentContainer";
 import Heading from "../components/UI/Heading";
 import Navbar from "../components/UI/Navbar/Navbar";
@@ -13,6 +14,9 @@ const SingleEventPage = ({ event }) => {
             <Navbar transparent={false} />
             <ContentContainer>
                 <Heading>{event.title}</Heading>
+                <div className="flex justify-center mt-10">
+                    <SingleEvent event={event} />
+                </div>
             </ContentContainer>
         </div>
     );

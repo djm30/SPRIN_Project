@@ -8,43 +8,47 @@ import { useSelector } from "react-redux";
 import EventContainer from "../components/Events/EventContainer";
 
 const Events = () => {
-  const [openForm, setOpenForm] = useState(true);
+    const [openForm, setOpenForm] = useState(false);
 
-  const events = useSelector((state) => state.events);
+    const events = useSelector((state) => state.events);
 
-  // Reading information about how many pages of events there is
-  const [currPage, setCurrPage] = useState(1);
-  const numPages = events.length;
+    // Reading information about how many pages of events there is
+    const [currPage, setCurrPage] = useState(1);
+    const numPages = events.length;
 
-  let currentPageOfEvents;
+    let currentPageOfEvents;
 
-  try {
-    currentPageOfEvents = events[currPage - 1];
-  } catch (e) {}
+    try {
+        currentPageOfEvents = events[currPage - 1];
+    } catch (e) {}
 
-  // Refetching current page when events changes
-  useEffect(() => {
-    currentPageOfEvents = events[currPage - 1];
-  }, [events]);
+    // Refetching current page when events changes
+    useEffect(() => {
+        currentPageOfEvents = events[currPage - 1];
+    }, [events]);
 
-  return (
-    <div className="min-h-screen">
-      <Navbar transparent={false} />
-      <EventForm open={openForm} setOpen={setOpenForm} />
-      <section>
-        <ContentContainer>
-          <Heading>Events</Heading>
-          {/* EVENTS CONTAINER */}
-          <EventContainer events={currentPageOfEvents} />
-          <PageNumbers
-            numPages={numPages}
-            currPage={currPage}
-            setCurrPage={setCurrPage}
-          />
-        </ContentContainer>
-      </section>
-    </div>
-  );
+    return (
+        <div className="min-h-screen">
+            <Navbar transparent={false} />
+            <EventForm open={openForm} setOpen={setOpenForm} />
+            <section className="w-full h-full">
+                <ContentContainer>
+                    <Heading>Events</Heading>
+                    {/* EVENTS CONTAINER */}
+                </ContentContainer>
+                <EventContainer events={currentPageOfEvents} />
+            </section>
+            <div className="flex justify-center">
+                <div className="absolute bottom-10">
+                    <PageNumbers
+                        numPages={numPages}
+                        currPage={currPage}
+                        setCurrPage={setCurrPage}
+                    />
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default Events;

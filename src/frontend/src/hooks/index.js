@@ -69,3 +69,13 @@ const findInPage = (pages, id) => {
     }
     return null;
 };
+
+export const useAuthorized = (...roles) => {
+    const user = useSelector((state) => state.auth);
+    if (!user) return false;
+    const isAuthorized = roles.reduce(
+        (prev, role) => (!prev ? user.role === role : false),
+        false,
+    );
+    return isAuthorized;
+};

@@ -1,17 +1,25 @@
 const mongoose = require("mongoose");
 
-const URI = require("./config").MONGODB_URI;
+const {
+    MONGODB_URI,
+    MONGODB_USER,
+    MONGODB_PASS,
+    DATABASE_NAME,
+} = require("./config");
 
 module.exports = function () {
-  mongoose
-    .connect(URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
-    .then(() => {
-      console.log("Connected to mongodb");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    mongoose
+        .connect(MONGODB_URI, {
+            authSource: DATABASE_NAME,
+            user: MONGODB_USER,
+            pass: MONGODB_PASS,
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        })
+        .then(() => {
+            console.log("Connected to mongodb");
+        })
+        .catch((err) => {
+            console.log(err);
+        });
 };
