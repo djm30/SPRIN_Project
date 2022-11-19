@@ -5,7 +5,7 @@ export default function PopUp() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowModal(true)
-    }, 1000);
+    }, 4000);
     return () => clearTimeout(timer);
   }, []);
   const [showModal, setShowModal] = React.useState(false);
