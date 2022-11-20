@@ -3,6 +3,7 @@ import ContentContainer from "../UI/ContentContainer";
 import { Link } from "react-router-dom";
 import HamburgerMenu from "../UI/Navbar/HamburgerMenu";
 import MobileMenu from "../UI/Navbar/MobileMenu";
+import JoinPopUp from "./JoinTodayPop";
 
 const JoinTodayBar = ({ transparent }) => {
   const [open, setOpen] = useState(false);
@@ -20,9 +21,7 @@ const JoinTodayBar = ({ transparent }) => {
         </div>
         {/* BUTTON / BURGER */}
         <div>
-          <button className="bg-skyblue-100 hover:bg-skyblue-300 transition-all px-9 py-3 rounded-xl shadow-sm hidden md:block">
-            Join Today
-          </button>
+          <JoinPopUp />
         </div>
       </ContentContainer>
     </nav>
