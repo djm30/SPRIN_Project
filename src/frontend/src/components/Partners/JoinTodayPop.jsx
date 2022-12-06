@@ -5,6 +5,7 @@ export default function JoinPopUp() {
   return (
     <>
       <button
+        data-cy="joinBut"
         className="bg-blue-500 text-white active:bg-blue-600 font-bold text-sm px-6 py-3 rounded-3xl shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
         type="button"
         onClick={() => setShowModal(true)}
@@ -42,6 +43,7 @@ export default function JoinPopUp() {
                 {/*footer*/}
                 <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
                   <button
+                    data-cy="joinClose"
                     className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
                     onClick={() => setShowModal(false)}

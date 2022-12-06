@@ -9,8 +9,8 @@ import PopUp from "../components/UI/UrgentHelpPopup";
 const Home = () => {
     return (
         <>
-            <PopUp />
-            <CallToAction />
+            <PopUp data-cy="closeBut" />
+            <CallToAction data-cy="joinBut" />
             <ConnectionSupportAdvocacy />
             <AboutUs />
             {/* PADDING BETWEEN ABOUT US AND FOOTER */}
