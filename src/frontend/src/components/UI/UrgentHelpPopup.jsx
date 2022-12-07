@@ -2,12 +2,19 @@ import React from "react";
 import {useEffect, useState} from 'react';
 
 export default function PopUp() {
+  const popupShown = localStorage.getItem('popupShown') === 'true';
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowModal(true)
-    }, 4000);
-    return () => clearTimeout(timer);
+    // Only show the popup if it hasn't been shown before
+    if (!popupShown) {
+      const timer = setTimeout(() => {
+        setShowModal(true);
+        // Add the value to local storage so the popup is not shown again
+        localStorage.setItem('popupShown', 'true');
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
   }, []);
+
   const [showModal, setShowModal] = React.useState(false);
   return (
     <>
