@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "../UI/Card";
-import Clock from "../../assets/Clock.svg";
+import Clock from "../../assets/ClockBlack.svg";
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 

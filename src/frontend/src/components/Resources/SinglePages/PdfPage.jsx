@@ -1,26 +1,36 @@
 import React, { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
+import LoadingSpinner from "../../UI/LoadingSpinner";
 import PageNumbers from "../../UI/PageNumbers";
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
 
 const PdfPage = ({ resource }) => {
     const [currPage, setCurrPage] = useState(1);
     const [numPages, setNumPages] = useState(0);
+    const [loading, setLoading] = useState(true);
 
     function onDocumentLoadSuccess({ numPages }) {
+        setLoading(false);
         setNumPages(numPages);
     }
 
     return (
         <div>
-            <div className="flex flex-col justify-center items-center h-fit">
-                <Document
-                    className="mt-12 border-4 border-darkblue-100 rounded-lg mb-5"
-                    file={resource.resourceUrl}
-                    onLoadSuccess={onDocumentLoadSuccess}
-                >
-                    <Page pageNumber={currPage} renderAnnotationLayer={false} />
-                </Document>
+            <div>
+                <div className="flex justify-center items-center bg-neutral-50 rounded-xl p-4 my-4 min-h-[500px]">
+                    <Document
+                        className=""
+                        file={resource.resourceUrl}
+                        onLoadSuccess={onDocumentLoadSuccess}
+                        loading={<LoadingSpinner />}
+                    >
+                        <Page
+                            pageNumber={currPage}
+                            renderAnnotationLayer={false}
+                            loading={<LoadingSpinner />}
+                        />
+                    </Document>
+                </div>
 
                 <div>
                     <PageNumbers

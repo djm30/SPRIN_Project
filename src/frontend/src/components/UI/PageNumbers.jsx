@@ -13,7 +13,7 @@ const PageButton = ({
     const px = number ? "6" : "4";
     return (
         <button
-            className={`px-${px} ${bgColor} ${opacity} py-4 border-border-color border-[1px] rounded-lg shadow-md hover:-translate-y-[0.1rem] hover:shadow-lg hover:border-skyblue-100 transition-all`}
+            className={`px-${px} ${bgColor} ${opacity} py-4 border-border-color border-[1px] rounded-lg shadow-md hover:-translate-y-[0.1rem] select-none hover:shadow-lg hover:border-skyblue-100 transition-all`}
             onClick={() => {
                 setCurrPage(value);
             }}
@@ -31,7 +31,8 @@ const PageNumbers = ({ numPages, currPage, setCurrPage }) => {
         if (currPage + 2 <= numPages) pageNumberButtons.push(currPage + 2);
         else if (currPage - 2 >= 1) pageNumberButtons.push(currPage - 2);
     }
-    pageNumberButtons.sort();
+
+    pageNumberButtons.sort((a, b) => a - b);
 
     return (
         <div className="mb-10 flex justify-center space-x-2 md:space-x-5 text-darkblue-100">

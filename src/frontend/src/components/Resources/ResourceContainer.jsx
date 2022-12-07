@@ -1,5 +1,6 @@
 import React from "react";
 import ResourceRow from "./ResourceRow";
+import LoadingSpinner from "../UI/LoadingSpinner";
 
 const ResourceContainer = ({ resources }) => {
     // Making sure resources are only rendered if an array is passed
@@ -20,7 +21,12 @@ const ResourceContainer = ({ resources }) => {
                 <ResourceRow resources={resources.slice(6, 9)} />
             </div>
         );
-    }
+    } else
+        return (
+            <div className="flex justify-center">
+                <LoadingSpinner />
+            </div>
+        );
 };
 
 export default ResourceContainer;

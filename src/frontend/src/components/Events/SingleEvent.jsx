@@ -7,7 +7,7 @@ import { format } from "date-fns";
 import Placeholder from "../../assets/PlaceholderLarge.svg";
 import Location from "../../assets/Location.svg";
 import Meeting from "../../assets/Meeting.svg";
-import Clock from "../../assets/Clock.svg";
+import Clock from "../../assets/ClockBlack.svg";
 import Calendar from "../../assets/Calendar.svg";
 import { eventTypes } from "./EventTypes";
 
