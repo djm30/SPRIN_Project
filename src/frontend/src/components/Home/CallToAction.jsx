@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../UI/Navbar/Navbar";
 import ContentContainer from "../UI/ContentContainer";
 import styles from "./CallToAction.module.css";
+import JoinPopUp from "../Partners/JoinTodayPop";
 
 const CallToAction = () => {
   return (
@@ -23,9 +24,7 @@ const CallToAction = () => {
           </h2>
         </div>
         <div className="space-x-2 sm:space-x-16">
-          <a className="z-20 bg-skyblue-200 md:text-lg hover:bg-skyblue-300 transition-all text-white shadow-sm px-10 py-3 rounded-3xl select-none">
-            Join Today
-          </a>
+          <JoinPopUp />
           <a className="bg-grey-transparent md:text-lg hover:bg-skyblue-100 transition-all text-white shadow-sm px-10 py-3 rounded-3xl select-none">
             Learn More
           </a>

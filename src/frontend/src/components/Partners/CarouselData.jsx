@@ -8,7 +8,7 @@ export const CarouselData = [
     },
     {
       image:
-        "https://pbs.twimg.com/profile_images/1275380925157773312/57I_gKmU_400x400.jpg",
+        "https://www.dhcni.com/blog/~/Handlers/GetImage.ashx?w=300&h=169&f=1&IDMF=a0d22171-d54a-4b48-817f-ac81f300906d",
         label: 
         "Family Voices Forum",
 

@@ -2,12 +2,19 @@ import React from "react";
 import {useEffect, useState} from 'react';
 
 export default function PopUp() {
+  const popupShown = localStorage.getItem('popupShown') === 'true';
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowModal(true)
-    }, 4000);
-    return () => clearTimeout(timer);
+    // Only show the popup if it hasn't been shown before
+    if (!popupShown) {
+      const timer = setTimeout(() => {
+        setShowModal(true);
+        // Add the value to local storage so the popup is not shown again
+        localStorage.setItem('popupShown', 'true');
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
   }, []);
+
   const [showModal, setShowModal] = React.useState(false);
   return (
     <>
@@ -48,6 +55,7 @@ export default function PopUp() {
                 {/*footer*/}
                 <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
                   <button
+                    data-cy="closeBut"
                     className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
                     onClick={() => setShowModal(false)}
