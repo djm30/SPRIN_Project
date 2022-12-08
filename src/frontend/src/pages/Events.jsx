@@ -30,7 +30,7 @@ const Events = () => {
     }, [events]);
 
     const toggleButton = () => {
-        return useAuthorized(UserRoles.ADMIN, UserRoles.USER) ? (
+        return useAuthorized(UserRoles.ADMIN) ? (
             <button
                 className="bg-darkblue-100 text-white hover:bg-skyblue-300 hover:text-white transition-all px-6 py-2 rounded-xl shadow-sm hidden md:block"
                 onClick={() => setOpenForm(true)}

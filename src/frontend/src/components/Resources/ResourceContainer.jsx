@@ -23,7 +23,7 @@ const ResourceContainer = ({ resources }) => {
         );
     } else
         return (
-            <div className="flex justify-center">
+            <div className="flex justify-center items-center min-h-[420px]">
                 <LoadingSpinner />
             </div>
         );

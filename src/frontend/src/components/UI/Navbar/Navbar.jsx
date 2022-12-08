@@ -6,6 +6,8 @@ import HamburgerMenu from "./HamburgerMenu";
 import MobileMenu from "./MobileMenu";
 import { useSelector, useDispatch } from "react-redux";
 import { submitLogout } from "../../../reducers/authReducer";
+import { useAuthorized } from "../../../hooks/index";
+import UserRoles from "../../../services/UserRoles";
 
 const Navbar = ({ transparent }) => {
     const [open, setOpen] = useState(false);
@@ -29,6 +31,11 @@ const Navbar = ({ transparent }) => {
                             <Navlink to="/partners">Partners</Navlink>
                             <Navlink to="/resources">Resources</Navlink>
                             <Navlink to="/events">Events</Navlink>
+                            {useAuthorized(UserRoles.ADMIN) ? (
+                                <Navlink to="/admin">Admin</Navlink>
+                            ) : (
+                                ""
+                            )}
                         </ol>
                     </div>
                 </div>

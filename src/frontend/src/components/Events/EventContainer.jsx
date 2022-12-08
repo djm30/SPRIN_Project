@@ -1,5 +1,6 @@
 import React from "react";
 import SingleEvent from "./SingleEvent";
+import LoadingSpinner from "../UI/LoadingSpinner";
 
 const EventContainer = ({ events }) => {
     if (Array.isArray(events)) {
@@ -23,7 +24,12 @@ const EventContainer = ({ events }) => {
                 ))}
             </div>
         );
-    }
+    } else
+        return (
+            <div className="flex justify-center items-center min-h-[420px]">
+                <LoadingSpinner />
+            </div>
+        );
 };
 
 export default EventContainer;
