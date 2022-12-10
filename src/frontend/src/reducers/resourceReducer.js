@@ -5,6 +5,7 @@ import {
     updateResource as updateResourceRequest,
     deleteResource as deleteResourceRequest,
 } from "../services/resourceService";
+import { setNotification } from "./notificationReducer";
 
 // An array of arrays, each inner array will have a max length of 9
 let initialState = [];
@@ -67,7 +68,7 @@ export const initializeResources = () => {
             pages.push(currPage);
             dispatch(setResources(pages));
         } catch (e) {
-            console.log(e);
+            dispatch(setNotification(e.message, true));
         }
     };
 };
@@ -78,7 +79,7 @@ export const newResource = (resource) => {
             const newResource = await createResourceRequest(resource);
             dispatch(addResource(newResource));
         } catch (e) {
-            console.log(e);
+            dispatch(setNotification(e.message, true));
         }
     };
 };
@@ -89,7 +90,7 @@ export const updateResource = (id, resource) => {
             const updatedResource = await updateResourceRequest(id, resource);
             dispatch(replaceResource(updatedResource));
         } catch (e) {
-            console.log(e);
+            dispatch(setNotification(e.message, true));
         }
     };
 };
@@ -100,7 +101,7 @@ export const deleteResource = (id) => {
             await deleteResourceRequest(id);
             dispatch(removeResource(id));
         } catch (e) {
-            console.log(e);
+            dispatch(setNotification(e.message, true));
         }
     };
 };

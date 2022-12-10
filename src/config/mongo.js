@@ -7,8 +7,6 @@ const {
     DATABASE_NAME,
 } = require("./config");
 
-console.log({ MONGODB_URI, MONGODB_USER, MONGODB_PASS, DATABASE_NAME });
-
 module.exports = function () {
     mongoose
         .connect(MONGODB_URI, {

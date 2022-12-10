@@ -23,7 +23,7 @@ function App() {
     const dispatch = useDispatch();
     useEffect(() => {
         // Try to reauthenticate on page reload if a session id is found
-        dispatch(submitLogin("dylan@email.com", "Password123"));
+        // dispatch(submitLogin("dylan@email.com", "Password123"));
         dispatch(tryReauthenticate());
         dispatch(initializeResources());
         dispatch(initializeEvents());

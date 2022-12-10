@@ -4,7 +4,7 @@ const config = require("./config/config");
 const app = require("./app");
 
 // connect mongoose to mongodb
-require("./config/mongo")();
+// require("./config/mongo")();
 
 // setting up passport take 2
 

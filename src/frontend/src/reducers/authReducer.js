@@ -23,10 +23,6 @@ const authSlice = createSlice({
 
 const { login, logout } = authSlice.actions;
 
-const deleteCookie = (name) => {
-    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-};
-
 export const submitLogin = (email, password) => {
     return async (dispatch) => {
         try {
@@ -34,7 +30,7 @@ export const submitLogin = (email, password) => {
             dispatch(login(user));
             dispatch(setNotification("Logged in successfully!", false));
         } catch (e) {
-            console.log(e);
+            dispatch(setNotification(e.message, true));
         }
     };
 };
@@ -43,7 +39,6 @@ export const submitLogout = () => {
     return async (dispatch) => {
         try {
             await logoutRequest();
-            deleteCookie("connect.sid");
             dispatch(logout());
             dispatch(setNotification("Logged out successfully!", false));
         } catch (e) {

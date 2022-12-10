@@ -7,14 +7,20 @@ import Navbar from "../components/UI/Navbar/Navbar";
 import { useSelector } from "react-redux";
 import UserRoles from "../services/UserRoles";
 import { useNavigate } from "react-router-dom";
+import { initializeUsers } from "../reducers/userReducer";
+import { useDispatch } from "react-redux";
 
 const Admin = () => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const user = useSelector((state) => state.auth);
 
     useEffect(() => {
-        console.log(user);
         if (!user || user.role !== UserRoles.ADMIN) navigate("/home");
+        const initialize = async () => {
+            await dispatch(initializeUsers());
+        };
+        initialize();
     }, []);
 
     return (
