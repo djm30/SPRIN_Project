@@ -23,7 +23,7 @@ export const getUsers = async () => {
 
 export const approveUser = async (id) => {
     try {
-        const response = await axios.get(`${baseUrl}/approve/${id}`);
+        const response = await axios.post(`${baseUrl}/approve/${id}`);
         return response.data;
     } catch (e) {
         throw errorHandler(e);

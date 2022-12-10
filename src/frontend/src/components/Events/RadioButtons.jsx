@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const RadioButtons = ({ value, setValue, info, children }) => {
     return (
@@ -10,7 +10,7 @@ const RadioButtons = ({ value, setValue, info, children }) => {
             >
                 {info.map((inf, index) => (
                     <div
-                        key={index}
+                        key={Math.random()}
                         onClick={() => {
                             setValue(inf.value);
                         }}
@@ -30,46 +30,6 @@ const RadioButtons = ({ value, setValue, info, children }) => {
                         </label>
                     </div>
                 ))}
-
-                {/* <div
-                    onClick={() => {
-                        setValue(values.PHYSICAL);
-                    }}
-                >
-                    <input
-                        type="radio"
-                        name="option"
-                        id="1"
-                        className="peer hidden"
-                        defaultChecked={value === values.PHYSICAL}
-                    />
-                    <label
-                        htmlFor="1"
-                        className="block cursor-pointer select-none rounded-lg sm:rounded-xl p-[2px] sm:p-2 text-center peer-checked:bg-darkblue-100 peer-checked:font-bold peer-checked:text-white"
-                    >
-                        In Person
-                    </label>
-                </div>
-
-                <div
-                    onClick={() => {
-                        setValue(values.ONLINE);
-                    }}
-                >
-                    <input
-                        type="radio"
-                        name="option"
-                        id="2"
-                        className="peer hidden"
-                        defaultChecked={value === values.ONLINE}
-                    />
-                    <label
-                        htmlFor="2"
-                        className="block cursor-pointer select-none rounded-lg sm:rounded-xl p-[2px] sm:p-2 text-center peer-checked:bg-darkblue-100 peer-checked:font-bold peer-checked:text-white"
-                    >
-                        Online
-                    </label>
-                </div> */}
             </div>
         </div>
     );

@@ -30,7 +30,7 @@ require("./config/mongo")();
 // Express-session middleware configruation
 // Express-session is used to establish a session for the user
 // The details for which are stored in ther redis server
-// This middleware will retrieve the session db on each
+// This middleware will retrieve tße session db on eacß
 // request so we can access it in the request object
 app.use(
     session({
@@ -42,7 +42,7 @@ app.use(
         cookie: {
             secure: false, // if true only transmit cookie over https
             httpOnly: true, // if true prevent client side JS from reading the cookie
-            maxAge: 1000 * 60 * 10, // session max age in miliseconds
+            maxAge: 1000 * 60 * 60, // session max age in miliseconds
         },
     }),
 );

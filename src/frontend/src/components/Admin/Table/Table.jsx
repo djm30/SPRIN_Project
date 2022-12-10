@@ -3,7 +3,7 @@ import TableHead from "./TableHead";
 import TableRow from "./TableRow";
 import { useSelector } from "react-redux";
 
-export const Table = ({ editUser }) => {
+export const Table = ({ editUser, deleteUser }) => {
     const users = useSelector((state) => state.users);
     return (
         <table className="min-w-max w-full table-auto overflow-x-scroll ">
@@ -17,6 +17,7 @@ export const Table = ({ editUser }) => {
                             alt={index % 2 === 0}
                             user={user}
                             editUser={editUser}
+                            deleteUser={deleteUser}
                         />
                     ))
                 }

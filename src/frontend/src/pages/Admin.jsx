@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 import { initializeUsers } from "../reducers/userReducer";
 import { useDispatch } from "react-redux";
 import UserForm from "../components/Admin/UserForm/UserForm";
+import ConfirmationModal from "../components/UI/ConfirmationModal";
+import { deleteUser } from "../reducers/userReducer";
 
 const Admin = () => {
     const dispatch = useDispatch();
@@ -17,6 +19,7 @@ const Admin = () => {
     const user = useSelector((state) => state.auth);
 
     const [open, setOpen] = useState(false);
+    const [confirmOpen, setConfirmOpen] = useState(false);
     const [chosenUser, setUser] = useState(null);
 
     useEffect(() => {
@@ -32,9 +35,30 @@ const Admin = () => {
         setOpen(true);
     };
 
+    const delUser = (user) => {
+        setUser(user);
+        setConfirmOpen(true);
+    };
+
     return (
         <div className="min-h-screen">
-            <UserForm open={open} setOpen={setOpen} user={chosenUser} />
+            <ConfirmationModal
+                open={confirmOpen}
+                setOpen={setConfirmOpen}
+                onConfirm={() => {
+                    // console.log(chosenUser._id);
+                    dispatch(deleteUser(chosenUser._id));
+                    setConfirmOpen(false);
+                }}
+            >
+                Are you sure you want to delete this user?
+            </ConfirmationModal>
+            <UserForm
+                open={open}
+                setOpen={setOpen}
+                user={chosenUser}
+                admin={true}
+            />
             <Navbar transparent={false} />
             <ContentContainer>
                 <Heading>Admin Page</Heading>
@@ -56,7 +80,7 @@ const Admin = () => {
                 </h3>
 
                 <div className="overflow-x-scroll">
-                    <Table editUser={editUser} />
+                    <Table editUser={editUser} deleteUser={delUser} />
                 </div>
             </ContentContainer>
         </div>

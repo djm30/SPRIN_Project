@@ -1,7 +1,18 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { approveUser } from "../../../reducers/userReducer";
 
-const TableRow = ({ alt, user, editUser }) => {
+const TableRow = ({ alt, user, editUser, deleteUser }) => {
     const bgColor = alt ? "bg-gray-50" : "";
+
+    const dispatch = useDispatch();
+
+    const approve = (e) => {
+        if (!user.approved) {
+            // console.log("Approving user: ", user._id);
+            dispatch(approveUser(user._id));
+        }
+    };
 
     return (
         <tr
@@ -21,15 +32,32 @@ const TableRow = ({ alt, user, editUser }) => {
             </td>
 
             {/* STATUS */}
-            <td className="py-5 px-8 text-center">
-                <span className="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">
-                    {user.approved ? "Approved" : "Pending"}
+            <td
+                className="py-5 px-8 text-center cursor-pointer select-none"
+                title="Approve User"
+                onClick={approve}
+            >
+                <span
+                    className={` ${
+                        user.approved
+                            ? "text-purple-600 bg-purple-200"
+                            : "bg-red-200 text-red-600"
+                    } py-1 px-3 rounded-full text-xs`}
+                >
+                    {user.approved ? "Approved" : "Not Approved"}
                 </span>
+            </td>
+
+            {/* ROLE */}
+            <td className="py-5 px-8 text-left">
+                <p className="text-center">
+                    {user.role.charAt(0).toUpperCase() + user.role.slice(1)}
+                </p>
             </td>
             {/* ACTIONS */}
             <td className="py-5 px-8 text-center">
                 <div className="flex item-center justify-center">
-                    <div className="w-4 mr-2 transform hover:text-skyblue-200 hover:scale-110">
+                    {/* <div className="w-4 mr-2 transform hover:text-skyblue-200 hover:scale-110">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -49,10 +77,11 @@ const TableRow = ({ alt, user, editUser }) => {
                                 d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                             />
                         </svg>
-                    </div>
+                    </div> */}
                     <div
+                        title="Edit User"
                         onClick={() => editUser(user)}
-                        className="w-4 mr-2 transform hover:text-skyblue-200 hover:scale-110"
+                        className="w-4 mr-2 transform hover:text-skyblue-200 hover:scale-110 cursor-pointer"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +97,11 @@ const TableRow = ({ alt, user, editUser }) => {
                             />
                         </svg>
                     </div>
-                    <div className="w-4 mr-2 transform hover:text-red-400 hover:scale-110">
+                    <div
+                        title="Delete User"
+                        onClick={() => deleteUser(user)}
+                        className="w-4 mr-2 transform hover:text-red-400 hover:scale-110 cursor-pointer"
+                    >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
