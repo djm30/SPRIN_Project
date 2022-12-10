@@ -3,7 +3,6 @@ import { ReactComponent as Clock } from "../../../assets/ClockWhite.svg";
 import { format } from "date-fns";
 
 const YoutubePage = ({ resource }) => {
-    console.log(resource);
     // Youtube only allows videos with embed to be played through a
     let embedLink = resource.resourceUrl.replace("watch?v=", "embed/");
     return (

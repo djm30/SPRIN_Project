@@ -3,7 +3,7 @@ import TableHead from "./TableHead";
 import TableRow from "./TableRow";
 import { useSelector } from "react-redux";
 
-export const Table = () => {
+export const Table = ({ editUser }) => {
     const users = useSelector((state) => state.users);
     return (
         <table className="min-w-max w-full table-auto overflow-x-scroll ">
@@ -13,9 +13,10 @@ export const Table = () => {
                     // map users to table rows with every other row having alt set to true}
                     users.map((user, index) => (
                         <TableRow
-                            key={user.id}
+                            key={user._id}
                             alt={index % 2 === 0}
                             user={user}
+                            editUser={editUser}
                         />
                     ))
                 }

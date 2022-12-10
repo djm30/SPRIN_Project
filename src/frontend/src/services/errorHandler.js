@@ -8,7 +8,7 @@ export const errorHandler = (e) => {
         if (e.message.includes("403")) {
             return new ForbiddenAccessError();
         } else if (e.message.includes("400")) {
-            return new InvalidRequestError(e.response.data);
+            return new InvalidRequestError(e.response.data.message);
         } else if (e.message.includes("401")) {
             return new InvalidCredentialsError();
         }

@@ -1,6 +1,6 @@
 import React from "react";
 
-const TableRow = ({ alt, user }) => {
+const TableRow = ({ alt, user, editUser }) => {
     const bgColor = alt ? "bg-gray-50" : "";
 
     return (
@@ -50,7 +50,10 @@ const TableRow = ({ alt, user }) => {
                             />
                         </svg>
                     </div>
-                    <div className="w-4 mr-2 transform hover:text-skyblue-200 hover:scale-110">
+                    <div
+                        onClick={() => editUser(user)}
+                        className="w-4 mr-2 transform hover:text-skyblue-200 hover:scale-110"
+                    >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"

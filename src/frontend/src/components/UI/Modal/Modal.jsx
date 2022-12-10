@@ -33,10 +33,7 @@ const Modal = ({ open, setOpen, children, className }) => {
     };
 
     useEffect(() => {
-        console.log(modalRef);
         if (modalRef.current) {
-            console.log(modalRef.current.offsetHeight);
-            console.log(window.document.body.offsetHeight);
             setHeight(
                 Math.max(
                     window.document.body.offsetHeight,

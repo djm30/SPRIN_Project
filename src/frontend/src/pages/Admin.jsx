@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Stat from "../components/Admin/Stat";
 import { Table } from "../components/Admin/Table/Table";
 import ContentContainer from "../components/UI/ContentContainer";
@@ -9,11 +9,15 @@ import UserRoles from "../services/UserRoles";
 import { useNavigate } from "react-router-dom";
 import { initializeUsers } from "../reducers/userReducer";
 import { useDispatch } from "react-redux";
+import UserForm from "../components/Admin/UserForm/UserForm";
 
 const Admin = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const user = useSelector((state) => state.auth);
+
+    const [open, setOpen] = useState(false);
+    const [chosenUser, setUser] = useState(null);
 
     useEffect(() => {
         if (!user || user.role !== UserRoles.ADMIN) navigate("/home");
@@ -23,8 +27,14 @@ const Admin = () => {
         initialize();
     }, []);
 
+    const editUser = (user) => {
+        setUser(user);
+        setOpen(true);
+    };
+
     return (
         <div className="min-h-screen">
+            <UserForm open={open} setOpen={setOpen} user={chosenUser} />
             <Navbar transparent={false} />
             <ContentContainer>
                 <Heading>Admin Page</Heading>
@@ -46,7 +56,7 @@ const Admin = () => {
                 </h3>
 
                 <div className="overflow-x-scroll">
-                    <Table />
+                    <Table editUser={editUser} />
                 </div>
             </ContentContainer>
         </div>

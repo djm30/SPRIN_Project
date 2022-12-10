@@ -21,8 +21,8 @@ export const useTextField = (
         setError(validationFunction(event.target.value));
     };
 
-    const reset = () => {
-        setValue("");
+    const reset = (value = "") => {
+        setValue(value);
         setError("");
     };
 

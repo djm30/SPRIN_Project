@@ -51,6 +51,7 @@ export const registerUser = (user) => {
         try {
             const newUser = await createUserRequest(user);
             dispatch(addUser(newUser));
+            dispatch(setNotification("User created successfully", false));
         } catch (e) {
             dispatch(setNotification(e.message, true));
         }
