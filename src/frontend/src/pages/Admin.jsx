@@ -12,11 +12,13 @@ import { useDispatch } from "react-redux";
 import UserForm from "../components/Admin/UserForm/UserForm";
 import ConfirmationModal from "../components/UI/ConfirmationModal";
 import { deleteUser } from "../reducers/userReducer";
+import { initializeStats } from "../reducers/statsReducer";
 
 const Admin = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const user = useSelector((state) => state.auth);
+    const stats = useSelector((state) => state.stats);
 
     const [open, setOpen] = useState(false);
     const [confirmOpen, setConfirmOpen] = useState(false);
@@ -26,6 +28,7 @@ const Admin = () => {
         if (!user || user.role !== UserRoles.ADMIN) navigate("/home");
         const initialize = async () => {
             await dispatch(initializeUsers());
+            await dispatch(initializeStats());
         };
         initialize();
     }, []);
@@ -68,10 +71,10 @@ const Admin = () => {
                 </h3>
                 <div className="flex justify-center">
                     <div className="grid grid-cols-2 gap-2 sm:gap-8 lg:grid-cols-4 lg:gap-2 xl:gap-10">
-                        <Stat />
-                        <Stat />
-                        <Stat />
-                        <Stat />
+                        <Stat number={stats.views}>Monthly Views</Stat>
+                        <Stat number={stats.users}>New Users</Stat>
+                        <Stat number={stats.resources}>New Resources</Stat>
+                        <Stat number={stats.events}>New Events</Stat>
                     </div>
                 </div>
                 {/* APPROVE USERS TABLE */}

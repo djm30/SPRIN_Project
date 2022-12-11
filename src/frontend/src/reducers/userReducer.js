@@ -7,6 +7,8 @@ import {
     deleteUser as deleteUserRequest,
 } from "../services/userService";
 import { setNotification } from "./notificationReducer";
+import { incrementStats } from "./statsReducer";
+import statTypes from "../services/StatTypes";
 
 let initialState = [];
 
@@ -52,6 +54,7 @@ export const registerUser = (user) => {
             const newUser = await createUserRequest(user);
             dispatch(addUser(newUser));
             dispatch(setNotification("User created successfully", false));
+            dispatch(incrementStats(statTypes.USERS));
         } catch (e) {
             dispatch(setNotification(e.message, true));
         }

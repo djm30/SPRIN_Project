@@ -6,6 +6,8 @@ import {
     deleteResource as deleteResourceRequest,
 } from "../services/resourceService";
 import { setNotification } from "./notificationReducer";
+import { incrementStats } from "./statsReducer";
+import statTypes from "../services/StatTypes";
 
 // An array of arrays, each inner array will have a max length of 9
 let initialState = [];
@@ -78,6 +80,7 @@ export const newResource = (resource) => {
         try {
             const newResource = await createResourceRequest(resource);
             dispatch(addResource(newResource));
+            dispatch(incrementStats(statTypes.RESOURCES));
         } catch (e) {
             dispatch(setNotification(e.message, true));
         }

@@ -6,6 +6,8 @@ import {
     deleteEvent as deleteEventRequest,
 } from "../services/eventService";
 import { setNotification } from "./notificationReducer";
+import { incrementStats } from "./statsReducer";
+import statTypes from "../services/StatTypes";
 
 let initialState = [];
 
@@ -62,6 +64,8 @@ export const newEvent = (event) => {
         try {
             const newEvent = await createEventRequest(event);
             dispatch(addEvent(newEvent));
+            dispatch(setNotification("Event created successfully", false));
+            dispatch(incrementStats(statTypes.EVENTS));
         } catch (e) {
             if (e.message) dispatch(setNotification(e.message, true));
             console.log(e);

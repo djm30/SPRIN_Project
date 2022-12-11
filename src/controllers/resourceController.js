@@ -112,7 +112,7 @@ const updateResource = async (req, res) => {
     }
 
     // Checking if a new file
-    if (resourceType !== resourceTypes.website) {
+    if (resourceType === resourceTypes.pdf) {
         const file = req.file;
         if (file) {
             if (!validateSync(validateFile, [file], res)) return res;

@@ -23,7 +23,9 @@ const Resources = () => {
     // Trying to get current page from resources on load, may not be loaded at this stage however
     try {
         currentPageOfResources = resources[currPage - 1];
-    } catch (e) {}
+    } catch (e) {
+        console.log(e);
+    }
 
     // Refetching current page when resources changes
     useEffect(() => {

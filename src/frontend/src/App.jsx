@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Partners from "./pages/Partners";
@@ -11,7 +11,9 @@ import Notification from "./components/UI/Notification";
 import { useDispatch } from "react-redux";
 
 import Footer from "./components/UI/Footer/Footer";
-import { submitLogin, tryReauthenticate } from "./reducers/authReducer";
+import { tryReauthenticate } from "./reducers/authReducer";
+import { incrementStats } from "./reducers/statsReducer";
+import statTypes from "./services/statTypes";
 import { initializeResources } from "./reducers/resourceReducer";
 import { initializeEvents } from "./reducers/eventReducer";
 import SingleResourcePage from "./pages/SingleResourcePage";
@@ -23,7 +25,7 @@ function App() {
     const dispatch = useDispatch();
     useEffect(() => {
         // Try to reauthenticate on page reload if a session id is found
-        // dispatch(submitLogin("dylan@email.com", "Password123"));
+        dispatch(incrementStats(statTypes.VIEWS));
         dispatch(tryReauthenticate());
         dispatch(initializeResources());
         dispatch(initializeEvents());
