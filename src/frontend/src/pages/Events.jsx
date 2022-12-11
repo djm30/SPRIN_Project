@@ -56,13 +56,11 @@ const Events = () => {
                 <EventContainer events={currentPageOfEvents} />
             </section>
             <div className="flex justify-center">
-                <div className="absolute bottom-10">
-                    <PageNumbers
-                        numPages={numPages}
-                        currPage={currPage}
-                        setCurrPage={setCurrPage}
-                    />
-                </div>
+                <PageNumbers
+                    numPages={numPages}
+                    currPage={currPage}
+                    setCurrPage={setCurrPage}
+                />
             </div>
         </div>
     );

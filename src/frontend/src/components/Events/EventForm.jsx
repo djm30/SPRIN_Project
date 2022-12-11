@@ -136,7 +136,7 @@ const EventForm = ({ open, setOpen, event, edit }) => {
             // Only updating value of isValid if it is currently true
             if (isValid) isValid = isFieldValid;
         });
-
+        if (validateImage()) isValid = false;
         return isValid;
     };
 
@@ -180,6 +180,7 @@ const EventForm = ({ open, setOpen, event, edit }) => {
             }
             formData.append("eventbriteUrl", eventbriteUrl);
             if (!imageError && image) formData.append("file", image);
+            console.log(formData);
 
             edit
                 ? dispatch(updateEvent(event._id, formData))
@@ -199,8 +200,16 @@ const EventForm = ({ open, setOpen, event, edit }) => {
         if (image) {
             if (image.size > 5000000) {
                 setImageError("Image must be less than 5MB");
+                return "Image must be less than 5MB";
+            } else if (
+                image.type !== "image/jpeg" &&
+                image.type !== "image/png"
+            ) {
+                setImageError("Image must be a jpeg or png");
+                return "Image must be a jpeg or png";
             } else {
                 setImageError("");
+                return "";
             }
         }
     };
@@ -320,6 +329,10 @@ const EventForm = ({ open, setOpen, event, edit }) => {
                     Eventbrite Link
                 </TextField>
                 <FileUpload
+                    clearValue={() => {
+                        setImage(null);
+                        setImageError("");
+                    }}
                     label="Want to upload an image?"
                     onChange={(e) => {
                         setImage(e.target.files[0]);

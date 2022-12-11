@@ -113,11 +113,11 @@ const updateEvent = async (req, res) => {
 
     let imgUrl = eventToUpdate.imgUrl;
 
-    if ("file" in req) {
+    if (req.file) {
         const file = req.file;
         if (!file)
             return res.status(400).json({ message: "Please upload a file" });
-        imgUrl = await replaceFile(eventToUpdate.imgUrl, file.mimetype);
+        imgUrl = await replaceFile(eventToUpdate.imgUrl, file, file.mimetype);
         if (!imgUrl)
             return res.status(500).json({
                 message: "Something went wrong uploading, please try again",

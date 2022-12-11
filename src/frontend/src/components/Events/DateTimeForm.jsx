@@ -11,7 +11,6 @@ export const DateTimeForm = ({
         <div className="flex flex-col gap-2 mx-2 border-b-[1px] border-border-color pb-4">
             <label className="md:text-xl text-neutral-500">Date & Time</label>
             <input
-                defaultValue={value}
                 value={value}
                 onChange={(e) => {
                     setDateTime(e.target.value);

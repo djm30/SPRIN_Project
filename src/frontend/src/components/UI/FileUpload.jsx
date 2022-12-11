@@ -1,6 +1,12 @@
 import React from "react";
 
-const FileUpload = ({ onChange, errorMessage, fileName, label }) => {
+const FileUpload = ({
+    clearValue,
+    onChange,
+    errorMessage,
+    fileName,
+    label,
+}) => {
     let showFileSelected = () => {};
     return (
         <div className="border-b-[1px] border-border-color pb-4">
@@ -23,12 +29,26 @@ const FileUpload = ({ onChange, errorMessage, fileName, label }) => {
                     <input type="file" onChange={onChange} className="hidden" />
                 </label>
             </div>
-            <div className="flex items-center justify-center">
+
+            <div className="flex items-center justify-center flex-col">
                 <p
                     className={`text-gray-500 mt-1 text-center ${showFileSelected}`}
                 >
                     Selected File: {fileName}
                 </p>
+
+                {clearValue && (
+                    <button
+                        className="bg-skyblue-200 text-sm text-white hover:bg-skyblue-300 mt-2 hover:text-white transition-all px-8 py-1 rounded-xl shadow-sm hidden md:block"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            e.preventDefault();
+                            clearValue();
+                        }}
+                    >
+                        Clear File
+                    </button>
+                )}
             </div>
             <p className="text-red-500  text-center text-sm mt-2">
                 {errorMessage}

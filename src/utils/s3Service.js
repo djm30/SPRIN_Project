@@ -20,47 +20,45 @@ const s3 = new S3({
     },
 });
 
-const validateFile = () => {};
-
 /**
  *
  * @param {*} filename
  *
  */
 const uploadFile = async (file, contentType = "application/octet-stream") => {
-    const fileStream = fs.createReadStream(file.path);
-
-    const extension = "." + file.originalname.split(".").pop();
-
-    console.log(contentType);
-
-    const uploadParams = {
-        Bucket: AWS_BUCKET,
-        Body: fileStream,
-        Key: file.filename + extension,
-        ContentType: contentType,
-        ACl: "public-read",
-    };
-
-    let location;
     try {
+        const fileStream = fs.createReadStream(file.path);
+
+        const extension = "." + file.originalname.split(".").pop();
+
+        const uploadParams = {
+            Bucket: AWS_BUCKET,
+            Body: fileStream,
+            Key: file.filename + extension,
+            ContentType: contentType,
+            ACl: "public-read",
+        };
+
+        let location;
+
         const response = await s3.upload(uploadParams).promise();
         Logger.info(`Uploading ${file.originalname} to S3`);
         location = response.Location;
-    } catch (e) {
-        Logger.error(`Error: ${e}`);
-    }
 
-    // Cleaning up uploaded file and deleting it from the server
-    await fileStream.close();
-    try {
-        unlink(file.path, () => {
-            Logger.info("File Cleaned up");
-        });
+        // Cleaning up uploaded file and deleting it from the server
+        await fileStream.close();
+
+        return location;
     } catch (e) {
         Logger.error(`Error: ${e}`);
+    } finally {
+        // Delete the file from the local file system
+        fs.unlink(file.path, (err) => {
+            if (err) {
+                Logger.error(`Error: ${err}`);
+            }
+        });
     }
-    return location;
 };
 
 const replaceFile = async (oldResourceUrl, file, contentType) => {

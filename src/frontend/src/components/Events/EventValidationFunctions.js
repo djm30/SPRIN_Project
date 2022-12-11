@@ -26,6 +26,9 @@ export const meetingUrlValidator = (url) => {
 
 export const dateTimeValidator = (dateTime) => {
     if (!dateTime) return "Please provide a date and a time";
+    // Make sure date is in the future
+    const now = new Date();
+    if (dateTime < now) return "Please provide a date in the future";
     return "";
 };
 
@@ -55,6 +58,9 @@ export const addressLineTwoValidator = (address) => {
 
 export const postCodeValidator = (postCode) => {
     if (postCode.trim().length === 0) return "Please provide a postcode";
+    // Validate a UK postcode
+    const regex = /^[A-Z]{1,2}[0-9][0-9A-Z]?\s?[0-9][A-Z]{2}$/i;
+    if (!regex.test(postCode)) return "Please provide a valid postcode";
     return "";
 };
 

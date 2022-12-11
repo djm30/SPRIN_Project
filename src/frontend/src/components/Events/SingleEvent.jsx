@@ -12,6 +12,8 @@ const ImageSection = ({ left, img }) => {
     const borderClass = left
         ? "border-b-[1px] md:border-b-0 md:border-r-[1px]"
         : "";
+
+    console.log(left);
     return (
         <div
             className={`${borderClass} border-border-color md:w-2/5  rounded-l-lg justify-center items-center flex max-h-[500px]`}
@@ -19,7 +21,11 @@ const ImageSection = ({ left, img }) => {
             <img
                 src={img ? img : Placeholder}
                 alt="Event Image"
-                className="rounded-t-xl sm:rounded-r-none sm:rounded-bl-xl object-contain w-full"
+                className={`${
+                    left
+                        ? "rounded-t-xl sm:rounded-r-none sm:rounded-bl-xl"
+                        : "rounded-t-xl sm:rounded-l-none sm:rounded-br-xl"
+                } object-contain w-full`}
             />
         </div>
     );
