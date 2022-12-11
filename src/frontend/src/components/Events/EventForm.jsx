@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "../UI/Modal/Modal";
 import { useTextField } from "../../hooks";
 import TextField from "../UI/TextField";
@@ -8,7 +8,7 @@ import { DateTimeForm } from "./DateTimeForm";
 import { eventTypes } from "./EventTypes";
 import { useDispatch } from "react-redux";
 import { setNotification } from "../../reducers/notificationReducer";
-import { newEvent } from "../../reducers/eventReducer";
+import { newEvent, updateEvent } from "../../reducers/eventReducer";
 import {
     eventTileValidator,
     eventDescriptionValidator,
@@ -20,9 +20,12 @@ import {
     townCityValidator,
     dateTimeValidator,
 } from "./EventValidationFunctions";
+import format from "date-fns/format";
+import { useNavigate } from "react-router-dom";
 
-const EventForm = ({ open, setOpen }) => {
+const EventForm = ({ open, setOpen, event, edit }) => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [eventType, setEventType] = useState(eventTypes.PHYSICAL);
     const eventTypeInfo = [
@@ -178,11 +181,55 @@ const EventForm = ({ open, setOpen }) => {
             formData.append("eventbriteUrl", eventbriteUrl);
             if (!imageError && image) formData.append("file", image);
 
-            dispatch(newEvent(formData));
-            dispatch(setNotification("Creating new resource!"));
+            edit
+                ? dispatch(updateEvent(event._id, formData))
+                : dispatch(newEvent(formData));
+            dispatch(
+                setNotification(
+                    edit ? "Updating Resource" : "Creating new resource!",
+                ),
+            );
             resetAll();
+            navigate("/events");
         }
     };
+
+    // Validating image size
+    const validateImage = () => {
+        if (image) {
+            if (image.size > 5000000) {
+                setImageError("Image must be less than 5MB");
+            } else {
+                setImageError("");
+            }
+        }
+    };
+
+    // Loading event data into form if event is being edited
+    useEffect(() => {
+        if (event) {
+            setEventType(event.location);
+            const date = new Date(event.dateTime);
+            const formattedDate = format(date, "yyyy-MM-dd'T'HH:mm");
+            setDateTime(formattedDate);
+            eventTitleReset(event.title);
+            eventDescriptionReset(event.description);
+            if (event.location === eventTypes.PHYSICAL) {
+                const address = JSON.parse(event.address);
+                addressLineOneReset(address.addressLineOne);
+                addressLineTwoReset(address.addressLineTwo);
+                postCodeReset(address.postCode);
+                townCityReset(address.townCity);
+            } else {
+                meetingUrlReset(event.address);
+            }
+            eventbriteUrlReset(event.eventbriteUrl);
+        }
+    }, [event]);
+
+    useEffect(() => {
+        validateImage();
+    }, [image]);
 
     return (
         <Modal
@@ -261,6 +308,7 @@ const EventForm = ({ open, setOpen }) => {
                     )}
                 </div>
                 <DateTimeForm
+                    value={dateTime}
                     setDateTime={setDateTime}
                     setDateTimeError={setDateTimeError}
                     error={dateTimeError}
@@ -282,7 +330,7 @@ const EventForm = ({ open, setOpen }) => {
                 {/* SUBMIT BUTTON */}
                 <div className="mx-2">
                     <button className="w-full mt-4 bg-darkblue-100 text-white px-4 py-3 rounded-lg hover:bg-skyblue-200 transition-all">
-                        Add Event
+                        {edit ? "Update Event" : "Add Event"}
                     </button>
                 </div>
             </form>

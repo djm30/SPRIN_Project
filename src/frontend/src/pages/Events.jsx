@@ -22,7 +22,9 @@ const Events = () => {
 
     try {
         currentPageOfEvents = events[currPage - 1];
-    } catch (e) {}
+    } catch (e) {
+        console.log(e);
+    }
 
     // Refetching current page when events changes
     useEffect(() => {
