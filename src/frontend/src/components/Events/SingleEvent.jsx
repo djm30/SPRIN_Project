@@ -5,8 +5,9 @@ import Meeting from "../../assets/Meeting.svg";
 import Clock from "../../assets/ClockBlack.svg";
 import Calendar from "../../assets/Calendar.svg";
 import { eventTypes } from "./EventTypes";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import gradient from "random-gradient";
+import { format } from "date-fns";
 
 const ImageSection = ({ left, img, title }) => {
     const borderClass = left
@@ -45,6 +46,7 @@ const InfoSection = ({
     isAuthorized,
     setOpen,
     setConfirmOpen,
+    dateTime,
 }) => {
     const borderClass = left
         ? "border-t-[1px] md:border-t-0 md:border-r-[1px]"
@@ -154,12 +156,15 @@ const InfoSection = ({
                     {/* DATE */}
                     <div className="flex flex-row items-center space-x-2">
                         <img src={Calendar} alt="Calendar Icon" />
-                        <p>24/01/20</p>
+                        <p>
+                            {/* 24/01/20 */}
+                            {format(new Date(dateTime), "dd/MM/yy")}
+                        </p>
                     </div>
                     {/* TIME */}
                     <div className="flex flex-row items-center space-x-2">
                         <img src={Clock} alt="Clock Icon" className="w-5 h-5" />
-                        <p>15:00</p>
+                        <p>{format(new Date(dateTime), "h:mm a")}</p>
                     </div>
                 </div>
                 {/* REGISTER BUTTON */}
@@ -183,10 +188,19 @@ const SingleEvent = ({ alt, event, isAuthorized, setOpen, setConfirmOpen }) => {
     const imageLeft = !alt;
     const infoLeft = alt;
 
+    console.log(event);
+
     const navigate = useNavigate();
 
-    const { title, description, eventbriteUrl, location, address, imgUrl } =
-        event;
+    const {
+        title,
+        description,
+        eventbriteUrl,
+        location,
+        address,
+        imgUrl,
+        dateTime,
+    } = event;
 
     const onCardClick = () => {
         navigate(`/events/${event._id}`);
@@ -211,6 +225,7 @@ const SingleEvent = ({ alt, event, isAuthorized, setOpen, setConfirmOpen }) => {
                         isAuthorized={isAuthorized}
                         setOpen={setOpen}
                         setConfirmOpen={setConfirmOpen}
+                        dateTime={dateTime}
                     />
                 </>
             ) : (
@@ -222,8 +237,12 @@ const SingleEvent = ({ alt, event, isAuthorized, setOpen, setConfirmOpen }) => {
                         eventbriteUrl={eventbriteUrl}
                         location={location}
                         address={address}
+                        isAuthorized={isAuthorized}
+                        setOpen={setOpen}
+                        setConfirmOpen={setConfirmOpen}
+                        dateTime={dateTime}
                     />
-                    <ImageSection left={imageLeft} img={imgUrl} />
+                    <ImageSection left={imageLeft} img={imgUrl} title={title} />
                 </>
             )}
         </Card>

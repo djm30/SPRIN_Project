@@ -81,12 +81,20 @@ const Navbar = ({ transparent }) => {
                             </button>
                         </div>
                     ) : (
-                        <Link
-                            to="/login"
-                            className="bg-skyblue-200 hover:bg-skyblue-300 transition-all px-6 py-2 rounded-xl shadow-sm hidden md:block"
-                        >
-                            Login
-                        </Link>
+                        <div className="flex gap-2">
+                            <Link
+                                to="/login"
+                                className="bg-skyblue-200 hover:bg-skyblue-300 transition-all px-6 py-2 rounded-xl shadow-sm hidden md:block"
+                            >
+                                Login
+                            </Link>
+                            <Link
+                                to="/register"
+                                className="bg-skyblue-200 hover:bg-skyblue-300 transition-all px-6 py-2 rounded-xl shadow-sm hidden md:block"
+                            >
+                                Register
+                            </Link>
+                        </div>
                     )}
 
                     <HamburgerMenu open={open} setOpen={setOpen} />

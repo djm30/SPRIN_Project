@@ -27,7 +27,10 @@ const MobileMenu = ({ open }) => {
                     ""
                 )}
                 {!user ? (
-                    <MobileMenuLink to="/login">Login</MobileMenuLink>
+                    <>
+                        <MobileMenuLink to="/login">Login</MobileMenuLink>
+                        <MobileMenuLink to="/register">Register</MobileMenuLink>
+                    </>
                 ) : (
                     <button
                         onClick={() => {
