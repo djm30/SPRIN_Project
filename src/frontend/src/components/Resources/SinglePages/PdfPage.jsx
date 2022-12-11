@@ -8,14 +8,15 @@ import ResourceForm from "../ResourceForm";
 import ConfirmationModal from "../../UI/ConfirmationModal";
 import UserRoles from "../../../services/UserRoles";
 import { ReactComponent as Download } from "../../../assets/Download.svg";
-import { useAuthorized } from "../../../hooks";
 import { useSelector } from "react-redux";
 import { deleteResource } from "../../../reducers/resourceReducer";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
 
 const PdfPage = ({ resource }) => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [currPage, setCurrPage] = useState(1);
     const [numPages, setNumPages] = useState(0);
@@ -36,8 +37,9 @@ const PdfPage = ({ resource }) => {
             auth.role === UserRoles.ADMIN || resource.poster._id === auth.id;
     }
 
-    const deleteResource = () => {
+    const delResource = () => {
         dispatch(deleteResource(resource._id));
+        navigate("/resources");
     };
 
     return (
@@ -51,7 +53,7 @@ const PdfPage = ({ resource }) => {
             <ConfirmationModal
                 open={confirmOpen}
                 setOpen={setConfirmOpen}
-                onConfirm={deleteResource}
+                onConfirm={delResource}
             >
                 Are you sure you want to delete this resource?
             </ConfirmationModal>

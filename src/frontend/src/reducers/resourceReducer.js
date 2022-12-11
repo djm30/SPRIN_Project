@@ -100,6 +100,7 @@ export const deleteResource = (id) => {
         try {
             await deleteResourceRequest(id);
             dispatch(removeResource(id));
+            dispatch(setNotification("Resource deleted!"));
         } catch (e) {
             dispatch(setNotification(e.message, true));
         }

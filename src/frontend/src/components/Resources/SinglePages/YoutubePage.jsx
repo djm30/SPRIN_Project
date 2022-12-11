@@ -5,9 +5,12 @@ import ConfirmationModal from "../../UI/ConfirmationModal";
 import ResourceForm from "../ResourceForm";
 import UserRoles from "../../../services/UserRoles";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { deleteResource } from "../../../reducers/resourceReducer";
 
 const YoutubePage = ({ resource }) => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [open, setOpen] = useState(false);
     const [confirmOpen, setConfirmOpen] = useState(false);
@@ -19,8 +22,9 @@ const YoutubePage = ({ resource }) => {
             auth.role === UserRoles.ADMIN || resource.poster._id === auth.id;
     }
 
-    const deleteResource = () => {
+    const delResource = () => {
         dispatch(deleteResource(resource._id));
+        navigate("/resources");
     };
 
     // Youtube only allows videos with embed to be played through a
@@ -36,7 +40,7 @@ const YoutubePage = ({ resource }) => {
             <ConfirmationModal
                 open={confirmOpen}
                 setOpen={setConfirmOpen}
-                onConfirm={deleteResource}
+                onConfirm={delResource}
             >
                 Are you sure you want to delete this resource?
             </ConfirmationModal>
