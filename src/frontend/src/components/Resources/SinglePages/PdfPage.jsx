@@ -43,7 +43,7 @@ const PdfPage = ({ resource }) => {
     };
 
     return (
-        <div>
+        <div className="flex flex-col mt-4  mb-12 md:mt-16 space-y-5">
             <ResourceForm
                 open={open}
                 setOpen={setOpen}
@@ -131,14 +131,20 @@ const PdfPage = ({ resource }) => {
                                 )}
                             </div>
                         </div>
-                        <div className="bg-darkblue-100 px-4 py-2 rounded-xl text-white">
-                            <button className="flex gap-2 items-center">
-                                <Download />
-                                Download
-                            </button>
-                        </div>
-                        <div className="bg-darkblue-100 px-4 py-2 rounded-xl text-white">
-                            Poster: {resource.poster.name}
+                        <div className="flex gap-2 sm:flex-row flex-col  ">
+                            <a
+                                href={resource.resourceUrl}
+                                download
+                                className="bg-darkblue-100 px-4 py-2 rounded-xl text-white"
+                            >
+                                <div className="flex gap-2 items-center justify-center">
+                                    <Download />
+                                    Download
+                                </div>
+                            </a>
+                            <div className="bg-darkblue-100 px-4 py-2 rounded-xl text-white">
+                                Poster: {resource.poster.name}
+                            </div>
                         </div>
                     </div>
                 </div>

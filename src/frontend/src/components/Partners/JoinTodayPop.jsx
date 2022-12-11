@@ -16,7 +16,7 @@ export default function JoinPopUp() {
             <a
                 data-cy="joinBut"
                 onClick={() => setShowModal(true)}
-                className="z-20 bg-skyblue-200 md:text-lg hover:bg-skyblue-300 transition-all text-white shadow-sm px-10 py-3 rounded-3xl select-none"
+                className="z-20 bg-skyblue-200 md:text-lg hover:bg-skyblue-300 transition-all text-white shadow-sm px-10 py-3 rounded-3xl select-none cursor-pointer"
             >
                 Join Today
             </a>

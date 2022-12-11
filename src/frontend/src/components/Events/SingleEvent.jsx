@@ -1,32 +1,36 @@
 import React from "react";
 import Card from "../UI/Card";
-import Placeholder from "../../assets/PlaceholderLarge.svg";
 import Location from "../../assets/Location.svg";
 import Meeting from "../../assets/Meeting.svg";
 import Clock from "../../assets/ClockBlack.svg";
 import Calendar from "../../assets/Calendar.svg";
 import { eventTypes } from "./EventTypes";
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
+import gradient from "random-gradient";
 
-const ImageSection = ({ left, img }) => {
+const ImageSection = ({ left, img, title }) => {
     const borderClass = left
-        ? "border-b-[1px] md:border-b-0 md:border-r-[1px]"
-        : "";
+        ? "rounded-t-xl sm:rounded-r-none sm:rounded-bl-xl border-b-[1px] md:border-b-0 md:border-r-[1px]"
+        : "rounded-t-xl sm:rounded-l-none sm:rounded-br-xl";
 
-    console.log(left);
+    const bg = img ? "bg-transparent" : gradient(title ? title : "Event");
+
     return (
         <div
+            style={{ background: bg }}
             className={`${borderClass} border-border-color md:w-2/5  rounded-l-lg justify-center items-center flex max-h-[500px]`}
         >
-            <img
-                src={img ? img : Placeholder}
-                alt="Event Image"
-                className={`${
-                    left
-                        ? "rounded-t-xl sm:rounded-r-none sm:rounded-bl-xl"
-                        : "rounded-t-xl sm:rounded-l-none sm:rounded-br-xl"
-                } object-contain w-full`}
-            />
+            {img && (
+                <img
+                    src={img}
+                    alt="Event Image"
+                    className={`${
+                        left
+                            ? "rounded-t-xl sm:rounded-r-none sm:rounded-bl-xl"
+                            : "rounded-t-xl sm:rounded-l-none sm:rounded-br-xl"
+                    } object-contain w-full`}
+                />
+            )}
         </div>
     );
 };
@@ -130,14 +134,20 @@ const InfoSection = ({
 
                     {/* TODO */}
                     {/* VIEW BUTTON */}
-                    <button
-                        className="text-darkblue-100 border-border-color border-[1px] rounded-lg px-5 py-2 shadow-sm cursor-pointer hover:bg-sky-50 transition-all"
-                        onClick={(e) => {
-                            e.stopPropagation();
-                        }}
-                    >
-                        View
-                    </button>
+                    {location === "physical" && (
+                        <button
+                            className="text-darkblue-100 border-border-color border-[1px] rounded-lg px-5 py-2 shadow-sm cursor-pointer hover:bg-sky-50 transition-all"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                window.open(
+                                    `https://www.google.com/maps/search/?api=1&query=${formattedAddress}`,
+                                    "_blank",
+                                );
+                            }}
+                        >
+                            View
+                        </button>
+                    )}
                 </div>
                 {/* DATE AND TIME */}
                 <div className="flex flex-row space-x-3">
@@ -158,7 +168,7 @@ const InfoSection = ({
                         className="text-white bg-skyblue-200 hover:bg-skyblue-300 rounded-lg px-5 py-2"
                         onClick={(e) => {
                             e.stopPropagation();
-                            alert("REDIRECT TO EVENTBRITE");
+                            window.open(eventbriteUrl, "_blank");
                         }}
                     >
                         Register
@@ -190,7 +200,7 @@ const SingleEvent = ({ alt, event, isAuthorized, setOpen, setConfirmOpen }) => {
         >
             {!alt ? (
                 <>
-                    <ImageSection left={imageLeft} img={imgUrl} />
+                    <ImageSection left={imageLeft} img={imgUrl} title={title} />
                     <InfoSection
                         left={infoLeft}
                         title={title}

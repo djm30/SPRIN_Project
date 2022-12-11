@@ -7,6 +7,7 @@ import UserRoles from "../../../services/UserRoles";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { deleteResource } from "../../../reducers/resourceReducer";
+import { ReactComponent as Link } from "../../../assets/Link.svg";
 
 const WebsitePage = ({ resource }) => {
     const dispatch = useDispatch();
@@ -27,8 +28,12 @@ const WebsitePage = ({ resource }) => {
         navigate("/resources");
     };
 
+    const openLink = () => {
+        window.open(resource.resourceUrl, "_blank");
+    };
+
     return (
-        <div>
+        <div className="flex flex-col mt-4  mb-12 md:mt-16 space-y-5">
             <ResourceForm
                 open={open}
                 setOpen={setOpen}
@@ -42,7 +47,12 @@ const WebsitePage = ({ resource }) => {
             >
                 Are you sure you want to delete this resource?
             </ConfirmationModal>
-            WebsitePage
+            <iframe
+                title="View Website"
+                className="aspect-video w-full mb-6 cursor-pointer p-2 bg-neutral-50 rounded-xl"
+                onClick={openLink}
+                src={resource.resourceUrl}
+            ></iframe>
             <div className="mt-6 bg-neutral-50 px-4 py-6 rounded-xl relative">
                 {isAuthorized && (
                     <div className="flex absolute sm:right-5 sm:top-10 bottom-3 right-3">
@@ -89,8 +99,8 @@ const WebsitePage = ({ resource }) => {
                 <p className="text-3xl text-neutral-500 mt-2 mb-12">
                     {resource.description}
                 </p>
-                <div className="flex space-y-2  mt-6 flex-col sm:flex-row sm:justify-between md:text-lg">
-                    <div className="flex space-x-4 items-center  bg-darkblue-100 px-4 py-2 rounded-xl text-white">
+                <div className="flex space-y-2  mt-6 flex-col sm:flex-row mb-3 sm:justify-between md:text-lg text-center">
+                    <div className="flex space-x-4 items-center justify-center bg-darkblue-100 px-4 py-2 rounded-xl text-white">
                         {/* <img src={Clock} /> */}
                         <Clock />
                         <div>
@@ -100,8 +110,20 @@ const WebsitePage = ({ resource }) => {
                             )}
                         </div>
                     </div>
-                    <div className="bg-darkblue-100 px-4 py-2 rounded-xl text-white">
-                        Poster: {resource.poster.name}
+
+                    <div className="flex gap-2 sm:flex-row flex-col  ">
+                        <button
+                            onClick={openLink}
+                            className="bg-darkblue-100 px-4 py-2 rounded-xl text-white"
+                        >
+                            <div className="flex gap-2 items-center justify-center">
+                                <Link />
+                                View Website
+                            </div>
+                        </button>
+                        <div className="bg-darkblue-100 px-4 py-2 rounded-xl text-white">
+                            Poster: {resource.poster.name}
+                        </div>
                     </div>
                 </div>
             </div>
