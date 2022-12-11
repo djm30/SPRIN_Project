@@ -33,7 +33,19 @@ router.delete(
     asyncHandler(deleteUser),
 );
 
-router.post("/login", passport.authenticate("local"), asyncHandler(login));
+router.post(
+    "/login",
+    (req, res, next) => {
+        const { email, password } = req.body;
+        if (!email || !password) {
+            return res.status(400).json({ message: "Please enter all fields" });
+        } else {
+            next();
+        }
+    },
+    passport.authenticate("local"),
+    asyncHandler(login),
+);
 router.post("/logout", asyncHandler(logout));
 router.post("/reauthenticate", asyncHandler(reauthenticate));
 
