@@ -18,42 +18,44 @@ class Carousel extends Component {
         <div className="max-w-lg h-72 flex overflow-hidden relative">
           {CarouselData.map((slide, index) => {
             return (
+              <a href={slide.url} target="_blank" rel="noopener noreferrer">
                 <img
-              onMouseEnter={() => {
-                this.setState({paused: true})
-            }}
-            
-            onMouseLeave={() => {
-                this.setState({paused: false})
-            }}
-                src={slide.image}
-                alt="This is a carousel slide"
-                key={index}
-                className={
-                  index === this.state.currentSlide
-                    ? "block w-full h-auto object-contain"
-                    : "hidden"
-                }
-              />
-                
+                    onMouseEnter={() => {
+                     this.setState({paused: true})
+                    }}
 
+                    onMouseLeave={() => {
+                    this.setState({paused: false})
+                     }}
+                     src={slide.image}
+                     alt="This is a carousel slide"
+                     key={index}
+                     className={
+                     index === this.state.currentSlide
+                     ? "block w-full h-auto object-contain"
+                     : "hidden"
+                     }
+                      style={{
+                       maxWidth: "100%",
+                       maxHeight: "100%"
+                       }}
+/>
+              </a>
             );
           })}
 
-          
-
           <div className="absolute w-full flex justify-center bottom-0">
             {CarouselData.map((element, index) => {
-             return (
-           <div
-          className={
-           index === this.state.currentSlide
-            ? "h-2 w-2 bg-blue-700 rounded-full mx-2 mb-2 cursor-pointer"
-            : "h-2 w-2 bg-black rounded-full mx-2 mb-2 cursor-pointer"
-            }
-            key={index}
-            onClick={() => {
-            this.setCurrentSlide(index);
+              return (
+                <div
+                  className={
+                    index === this.state.currentSlide
+                      ? "h-2 w-2 bg-blue-700 rounded-full mx-2 mb-2 cursor-pointer"
+                      : "h-2 w-2 bg-black rounded-full mx-2 mb-2 cursor-pointer"
+                  }
+                  key={index}
+                  onClick={() => {
+                    this.setCurrentSlide(index);
         }}
       ></div>
     );
