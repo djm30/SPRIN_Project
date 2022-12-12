@@ -23,7 +23,7 @@ export const CarouselData = [
         label: 
         "Public Health Agency",
         url:
-        'https://www.dhcni.com/families-voices'
+        'https://www.publichealth.hscni.net'
     },
     {
       image:
