@@ -46,7 +46,7 @@ export default function JoinPopUp() {
                                     <p className="my-4 text-slate-500 text-lg leading-relaxed">
                                         If you are interested in becoming our
                                         next partner please contact
-                                        example@gmail.com.
+                                        k.galway@qub.ac.uk.
                                     </p>
                                 </div>
                                 {/*footer*/}
