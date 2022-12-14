@@ -19,7 +19,7 @@ const ImageSection = ({ left, img, title }) => {
     return (
         <div
             style={{ background: bg }}
-            className={`${borderClass} border-border-color md:w-2/5  rounded-l-lg justify-center items-center flex max-h-[500px]`}
+            className={`${borderClass} border-border-color md:w-2/5 sm:min-h-0 min-h-[100px] rounded-b-none ounded-l-lg justify-center items-center flex max-h-[500px]`}
         >
             {img && (
                 <img
@@ -210,7 +210,7 @@ const SingleEvent = ({ alt, event, isAuthorized, setOpen, setConfirmOpen }) => {
     return (
         <Card
             onClick={onCardClick}
-            className={`max-w-[800px] min-h-[300px] sm:max-h-[500px] flex md:flex-row w-11/12 sm:w-2/3 ${responsiveFlexDirection} md:w-5/6 hover:-translate-y-[0.1rem] hover:shadow-lg transition-all cursor-pointer`}
+            className={`max-w-[800px] min-h-[300px] sm:max-h-[500px] flex sm:flex-row w-11/12 sm:w-2/3 ${responsiveFlexDirection} md:w-5/6 hover:-translate-y-[0.1rem] hover:shadow-lg transition-all cursor-pointer`}
         >
             {!alt ? (
                 <>
