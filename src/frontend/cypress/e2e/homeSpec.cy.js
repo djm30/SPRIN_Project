@@ -10,5 +10,8 @@ describe("Using home page", () => {
         cy.get('[data-cy=joinBut]').click();
         cy.get('[data-cy=joinClose]').click();
     });
+    it("Allows user to learn more"), () =>{
+      cy.get('[data-cy=learnMore]').click();
+    }
   });
   
