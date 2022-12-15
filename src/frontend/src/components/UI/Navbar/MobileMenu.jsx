@@ -5,6 +5,8 @@ import { submitLogout } from "../../../reducers/authReducer";
 import { useAuthorized } from "../../../hooks/index";
 import UserRoles from "../../../services/UserRoles";
 
+// Navigation menu used when the hamburger menu is clicked
+// Displays the navigation links and the logout button
 const MobileMenu = ({ open }) => {
     const openClass = open ? "flex" : "hidden";
 

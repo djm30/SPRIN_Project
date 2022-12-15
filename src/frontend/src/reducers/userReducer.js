@@ -12,6 +12,9 @@ import statTypes from "../services/StatTypes";
 
 let initialState = [];
 
+// Reducer for users
+// Contains the state of all users
+// Contains the actions for updating the state of all users
 const userSlice = createSlice({
     name: "users",
     initialState,
@@ -37,6 +40,7 @@ const userSlice = createSlice({
 
 const { setUsers, addUser, replaceUser, removeUser } = userSlice.actions;
 
+// Action for fetching all users from the backend
 export const initializeUsers = () => {
     return async (dispatch) => {
         try {
@@ -48,11 +52,13 @@ export const initializeUsers = () => {
     };
 };
 
+// Action for creating a new user
 export const registerUser = (user) => {
     return async (dispatch) => {
         try {
             const newUser = await createUserRequest(user);
             dispatch(addUser(newUser));
+            // Setting notification and incrementing stats upon successful user creation
             dispatch(setNotification("User created successfully", false));
             dispatch(incrementStats(statTypes.USERS));
         } catch (e) {
@@ -61,6 +67,7 @@ export const registerUser = (user) => {
     };
 };
 
+// Action for approving a user
 export const approveUser = (id) => {
     return async (dispatch) => {
         try {
@@ -72,6 +79,7 @@ export const approveUser = (id) => {
     };
 };
 
+// Action for updating a user
 export const updateUser = (id, user) => {
     return async (dispatch) => {
         try {
@@ -83,6 +91,7 @@ export const updateUser = (id, user) => {
     };
 };
 
+// Action for deleting a user
 export const deleteUser = (id) => {
     return async (dispatch) => {
         try {

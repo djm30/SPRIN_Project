@@ -8,6 +8,7 @@ import { setNotification } from "./notificationReducer";
 
 let initialState = null;
 
+// Reducer for authentication management
 const authSlice = createSlice({
     name: "auth",
     initialState,
@@ -23,6 +24,7 @@ const authSlice = createSlice({
 
 const { login, logout } = authSlice.actions;
 
+// Action for logging in
 export const submitLogin = (email, password) => {
     return async (dispatch) => {
         try {
@@ -35,6 +37,7 @@ export const submitLogin = (email, password) => {
     };
 };
 
+// Action for logging out
 export const submitLogout = () => {
     return async (dispatch) => {
         try {
@@ -47,9 +50,11 @@ export const submitLogout = () => {
     };
 };
 
+// Action for reauthenticating user
 export const tryReauthenticate = () => {
     return async (dispatch) => {
         try {
+            // If a session ID is found, this will reauthenticate the user
             const user = await reauthenticate();
             dispatch(login(user));
         } catch (e) {

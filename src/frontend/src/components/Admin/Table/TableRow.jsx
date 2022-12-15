@@ -2,11 +2,13 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { approveUser } from "../../../reducers/userReducer";
 
+// Individual table row for the table
 const TableRow = ({ alt, user, editUser, deleteUser }) => {
     const bgColor = alt ? "bg-gray-50" : "";
 
     const dispatch = useDispatch();
 
+    // Will approve the user if they are not already approved
     const approve = (e) => {
         if (!user.approved) {
             // console.log("Approving user: ", user._id);

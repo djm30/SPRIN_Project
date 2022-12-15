@@ -9,6 +9,8 @@ import { useSelector } from "react-redux";
 import { useAuthorized } from "../hooks";
 import UserRoles from "../services/UserRoles";
 
+// Resources page
+// Lists out all resources
 const Resources = () => {
     const [openForm, setOpenForm] = useState(false);
 

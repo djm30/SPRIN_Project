@@ -12,6 +12,8 @@ import ConfirmationModal from "../components/UI/ConfirmationModal";
 import EventForm from "../components/Events/EventForm";
 import { deleteEvent } from "../reducers/eventReducer";
 
+// Single event page
+// Displays a single event on an entire page when the url is /events/:id
 const SingleEventPage = ({ event }) => {
     if (event === undefined) return <Loading />;
     if (event === null) return <NotFound />;

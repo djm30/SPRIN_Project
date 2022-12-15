@@ -1,6 +1,10 @@
 const { validateUrl } = require("./common");
 const resourceTypes = require("../config/resourceTypes");
 
+// Validation functions for the Resource model
+// These functions will be used in the resourceController
+// to validate the data before creating a new resource
+
 const validateTitle = (title) => {
     let success = true;
     let message = "";

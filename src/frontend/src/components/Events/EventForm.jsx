@@ -23,6 +23,11 @@ import {
 import format from "date-fns/format";
 import { useNavigate } from "react-router-dom";
 
+// Form to create a new event
+// If the event prop is passed, it will be used to populate the form
+// If the edit prop is passed, it will be used to determine if the form is for editing an event
+// If the open prop is passed, it will be used to determine if the form is open
+// If the setOpen prop is passed, it will be used to set the open state of the form
 const EventForm = ({ open, setOpen, event, edit }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();

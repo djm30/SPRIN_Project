@@ -8,6 +8,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { deleteResource } from "../../../reducers/resourceReducer";
 
+// Single page for displaying a youtube video
+// Displays the video and the resource information
+// If the user is authorized, they can edit or delete the resource
 const YoutubePage = ({ resource }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -27,7 +30,8 @@ const YoutubePage = ({ resource }) => {
         navigate("/resources");
     };
 
-    // Youtube only allows videos with embed to be played through a
+    // Youtube only allows videos with embed to be played through a url with embed
+    // Converting the url to an embed url
     let embedLink = resource.resourceUrl.replace("watch?v=", "embed/");
     return (
         <div className="flex flex-col mt-4  mb-12 md:mt-16 space-y-5">

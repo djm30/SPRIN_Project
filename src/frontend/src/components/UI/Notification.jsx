@@ -1,7 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
+// Notification component
+// Takes in error and message
+// Error is a boolean that determines if the notification is an error or success
+// Message is the text of the notification
 const Notification = () => {
+    // Get the error and message from the redux store
+    // Notification is shown when the state changes
     const { error, message } = useSelector((state) => state.notification);
 
     let errorClasses = {

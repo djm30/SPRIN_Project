@@ -1,11 +1,12 @@
 import React from "react";
 import ContentContainer from "../UI/ContentContainer";
-import Placeholder from "../../assets/Placeholder.svg";
 import { ReactComponent as Connection } from "../../assets/Connection.svg";
 import { ReactComponent as Support } from "../../assets/Support.svg";
 import { ReactComponent as Advocacy } from "../../assets/Advocacy.svg";
 import Card from "../UI/Card";
 
+// Connection, Support and Advocacy section
+// Displays three cards with icons and text
 const ConnectionSupportAdvocacy = () => {
     return (
         <section className=" bg-white my-20 flex justify-center">

@@ -3,6 +3,8 @@ import TableHead from "./TableHead";
 import TableRow from "./TableRow";
 import { useSelector } from "react-redux";
 
+// Table for displaying all users
+// Takes in functions to edit and delete users to pass to the table rows
 export const Table = ({ editUser, deleteUser }) => {
     const users = useSelector((state) => state.users);
     return (

@@ -12,6 +12,9 @@ import statTypes from "../services/StatTypes";
 // An array of arrays, each inner array will have a max length of 9
 let initialState = [];
 
+// Reducer for resources
+// Contains the state of all resources
+// Contains the actions for updating the state of all resources
 const resourceSlice = createSlice({
     name: "resources",
     initialState,
@@ -50,6 +53,7 @@ const resourceSlice = createSlice({
 const { setResources, addResource, replaceResource, removeResource } =
     resourceSlice.actions;
 
+// Action for fetching all resources from the backend
 export const initializeResources = () => {
     return async (dispatch) => {
         try {
@@ -58,6 +62,7 @@ export const initializeResources = () => {
                 return new Date(second.dateTime) - new Date(first.dateTime);
             });
 
+            // Splitting resources into pages of 9
             const pages = [];
             let currPage = [];
             for (let i = 0; i < resources.length; i++) {
@@ -75,11 +80,14 @@ export const initializeResources = () => {
     };
 };
 
+// Action for creating a new resource
 export const newResource = (resource) => {
     return async (dispatch) => {
         try {
             const newResource = await createResourceRequest(resource);
             dispatch(addResource(newResource));
+            // Setting notification and incrementing stats
+            dispatch(setNotification("Resource created!", false));
             dispatch(incrementStats(statTypes.RESOURCES));
         } catch (e) {
             dispatch(setNotification(e.message, true));
@@ -87,6 +95,7 @@ export const newResource = (resource) => {
     };
 };
 
+// Action for updating a resource
 export const updateResource = (id, resource) => {
     return async (dispatch) => {
         try {
@@ -98,6 +107,7 @@ export const updateResource = (id, resource) => {
     };
 };
 
+// Action for deleting a resource
 export const deleteResource = (id) => {
     return async (dispatch) => {
         try {

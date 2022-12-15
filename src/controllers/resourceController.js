@@ -30,12 +30,7 @@ const getResources = async (req, res) => {
     res.status(200).json(resources);
 };
 
-/**
- *
- * @param {*} req
- * @param {*} res
- * @returns
- */
+// Creates a new resource
 const createResource = async (req, res) => {
     const { title, description, resourceType } = req.body;
     let { resourceUrl } = req.body;
@@ -84,6 +79,7 @@ const createResource = async (req, res) => {
     }
 };
 
+// Updates a resource
 const updateResource = async (req, res) => {
     const id = req.params.id;
     const resource = await Resource.findById(id);

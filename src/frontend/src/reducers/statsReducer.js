@@ -16,6 +16,9 @@ let initialState = {
     events: 0,
 };
 
+// Reducer for stats
+// Contains the state of all stats
+// Contains the actions for updating the state of all stats
 const statsSlice = createSlice({
     name: "stats",
     initialState,
@@ -41,6 +44,7 @@ const statsSlice = createSlice({
 const { setStats, addResource, addUsers, addEvents, addViews } =
     statsSlice.actions;
 
+// Action for fetching all stats from the backend
 export const initializeStats = () => {
     return async (dispatch) => {
         try {
@@ -52,9 +56,11 @@ export const initializeStats = () => {
     };
 };
 
+// Action for incrementing a stat
 export const incrementStats = (stat) => {
     return async (dispatch) => {
         try {
+            // Get what stat to increment
             switch (stat) {
                 case "resources":
                     await incrementResources();
@@ -65,9 +71,11 @@ export const incrementStats = (stat) => {
                     dispatch(addUsers());
                     break;
                 case "views":
+                    // Check if the user has already incremented the views
                     if (localStorage.getItem("views") === "true") return;
                     await incrementViews();
                     dispatch(addViews());
+                    // Set the views to true so that the user can't increment the views again
                     localStorage.setItem("views", "true");
                     break;
                 case "events":

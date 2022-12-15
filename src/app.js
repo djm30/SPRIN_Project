@@ -1,10 +1,9 @@
 const express = require("express");
 const session = require("express-session");
-const RedisStore = require("connect-redis")(session);
+
 const MongoStore = require("connect-mongo");
 const mongoose = require("mongoose");
 const passport = require("passport");
-const getRedisClient = require("./config/redis");
 
 const morganMiddleware = require("./config/morgan");
 const errorMiddleware = require("./middleware/error");
@@ -15,16 +14,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Initializing connection to redis
-// const redisClient = getRedisClient();
-// redisClient.connect();
-// redisClient.on("error", (err) => {
-//     logger.error(`Could not establish a connection with redis: ${err}`);
-// });
-// redisClient.on("connect", () => {
-//     logger.info("Connected to redis successfully");
-// });
-
+// Connecting to the mongo database
 require("./config/mongo")();
 
 // Express-session middleware configruation
@@ -56,6 +46,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(morganMiddleware);
 
+// All routes are imported here
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/stats", require("./routes/statsRoutes"));
 app.use("/api/events", require("./routes/eventRoutes"));

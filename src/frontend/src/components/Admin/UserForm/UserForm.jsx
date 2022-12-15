@@ -14,6 +14,7 @@ import {
     validateConfirmPassword,
 } from "./UserValidationFunctions";
 
+// Component for the user form
 const UserForm = ({ open, setOpen, user, admin }) => {
     if (!user) return null;
 

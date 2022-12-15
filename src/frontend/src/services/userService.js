@@ -3,6 +3,9 @@ import { errorHandler } from "./errorHandler";
 
 export const baseUrl = "/api/users";
 
+// All backend requests related to users are defined here
+
+// Gets a single user from the backend
 export const getUser = async (id) => {
     try {
         const response = await axios.get(`${baseUrl}/${id}`);
@@ -12,6 +15,7 @@ export const getUser = async (id) => {
     }
 };
 
+// Gets all users from the backend
 export const getUsers = async () => {
     try {
         const response = await axios.get(baseUrl);
@@ -21,6 +25,7 @@ export const getUsers = async () => {
     }
 };
 
+// Approves a user and returns the approved user
 export const approveUser = async (id) => {
     try {
         const response = await axios.post(`${baseUrl}/approve/${id}`);
@@ -30,6 +35,7 @@ export const approveUser = async (id) => {
     }
 };
 
+// Creates a new user and returns the created user
 export const createUser = async (user) => {
     try {
         const response = await axios.post(baseUrl + "/register", user);
@@ -39,6 +45,7 @@ export const createUser = async (user) => {
     }
 };
 
+// Updates a user and returns the updated user
 export const updateUser = async (id, user) => {
     try {
         const response = await axios.put(`${baseUrl}/${id}`, user);
@@ -48,6 +55,7 @@ export const updateUser = async (id, user) => {
     }
 };
 
+// Deletes a user and returns true if successful
 export const deleteUser = async (id) => {
     try {
         const response = await axios.delete(`${baseUrl}/${id}`);

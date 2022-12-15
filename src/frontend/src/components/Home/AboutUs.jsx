@@ -2,6 +2,8 @@ import React from "react";
 import ContentContainer from "../UI/ContentContainer";
 import DecorativeSVG from "../../assets/Radial.svg";
 
+// About Us section
+// Displays a description of the SPRIN network
 const AboutUs = () => {
     return (
         <section

@@ -4,6 +4,8 @@ import CallToAction from "../components/Home/CallToAction";
 import ConnectionSupportAdvocacy from "../components/Home/CSA";
 import PopUp from "../components/UI/UrgentHelpPopup";
 
+// Home page
+// Displays the home page
 const Home = () => {
     return (
         <>

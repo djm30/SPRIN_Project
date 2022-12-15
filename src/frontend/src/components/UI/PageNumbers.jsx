@@ -23,8 +23,16 @@ const PageButton = ({
     );
 };
 
+// Page numbers component
+// Takes in numPages, currPage, and setCurrPage
+// NumPages is the total number of pages
+// CurrPage is the current page
+// SetCurrPage is a function that sets the current page
 const PageNumbers = ({ numPages, currPage, setCurrPage }) => {
     let pageNumberButtons = [currPage];
+
+    // Determine which page numbers to show
+
     if (currPage + 1 <= numPages) pageNumberButtons.push(currPage + 1);
     if (currPage - 1 >= 1) pageNumberButtons.push(currPage - 1);
     if (pageNumberButtons.length === 2) {
