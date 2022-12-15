@@ -50,12 +50,12 @@ const SingleResource = ({ resource }) => {
             <div className="p-5 flex flex-col justify-between flex-1">
                 {/* HEADING AND DESCRIPTION */}
                 <div className="space-y-2">
-                    <h3 className="text-2xl">{title}</h3>
+                    <h3 data-cy='resourceLink' className="text-2xl">{title}</h3>
                     <p className="text-neutral-700">{description}</p>
                 </div>
                 {/* TYPE AND DATE */}
                 <div className="space-y-2 text-neutral-700">
-                    <p>Type: {readbleResourceType}</p>
+                    <p data-cy='website'>Type: {readbleResourceType}</p>
                     <div className="flex items-center space-x-2">
                         <img src={Clock} alt="Clock icon" />
                         <p>{format(dateTime, "dd/MM/yyyy")}</p>

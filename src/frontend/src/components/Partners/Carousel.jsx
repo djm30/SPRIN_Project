@@ -24,6 +24,7 @@ class Carousel extends Component {
                                 rel="noopener noreferrer"
                             >
                                 <img
+                                    data-cy="partLink"
                                     onMouseEnter={() => {
                                         this.setState({ paused: true });
                                     }}
