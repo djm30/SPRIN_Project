@@ -2,6 +2,8 @@ import React from "react";
 import ContentContainer from "../UI/ContentContainer";
 import SingleResource from "./SingleResource";
 
+// Represents a single row of 3 resources
+// If alt is true, it will have a different background color
 const ResourceRow = ({ alt, resources }) => {
     const extraClasses = alt ? "bg-gray-100 rounded-tr-[160px]" : "";
     return resources.length !== 0 ? (

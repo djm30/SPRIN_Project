@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+// Function used to connect to mongo db with the appropriate credentials
+
 const {
     MONGODB_URI,
     MONGODB_USER,

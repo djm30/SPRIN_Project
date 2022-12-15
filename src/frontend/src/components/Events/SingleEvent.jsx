@@ -9,6 +9,10 @@ import { useNavigate } from "react-router-dom";
 import gradient from "random-gradient";
 import { format } from "date-fns";
 
+// The image section of each event
+// Takes in the left prop to determine if it is on the left or right
+// Takes in the img prop to determine if it is an image or a gradient
+// Takes in the title prop to determine the gradient color
 const ImageSection = ({ left, img, title }) => {
     const borderClass = left
         ? "rounded-t-xl sm:rounded-r-none sm:rounded-bl-xl border-b-[1px] md:border-b-0 md:border-r-[1px]"
@@ -36,6 +40,17 @@ const ImageSection = ({ left, img, title }) => {
     );
 };
 
+// The info section of each event
+// Takes in the left prop to determine if it is on the left or right
+// Takes in the title prop to determine the title of the event
+// Takes in the description prop to determine the description of the event
+// Takes in the eventbriteUrl prop to determine the eventbrite url of the event
+// Takes in the location prop to determine the location of the event
+// Takes in the address prop to determine the address of the event
+// Takes in the isAuthorized prop to determine if the user is authorized to edit the event
+// Takes in the setOpen prop to determine if the edit event modal is open
+// Takes in the setConfirmOpen prop to determine if the delete event modal is open
+// Takes in the dateTime prop to determine the date and time of the event
 const InfoSection = ({
     left,
     title,
@@ -184,6 +199,14 @@ const InfoSection = ({
     );
 };
 
+// main component for single event
+// takes in event object and alt boolean
+// alt boolean is used to alternate the image and info
+// alt = true means image is on the right and info is on the left
+// alt = false means image is on the left and info is on the right
+// isAuthorized is used to determine if the user is authorized to edit or delete the event
+// setOpen is used to open the edit event modal
+// setConfirmOpen is used to open the delete event modal
 const SingleEvent = ({ alt, event, isAuthorized, setOpen, setConfirmOpen }) => {
     const imageLeft = !alt;
     const infoLeft = alt;

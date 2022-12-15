@@ -1,5 +1,11 @@
 import React from "react";
 
+// Defines a reusable file upload component
+// Takes in a label, onChange, clearValue, and errorMessage
+// clearValue is a function that clears the file input
+// onChange is a function that handles the file input change
+// errorMessage is a string that displays an error message
+// label is a string that displays a label
 const FileUpload = ({
     clearValue,
     onChange,

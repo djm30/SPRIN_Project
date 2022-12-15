@@ -16,6 +16,8 @@ import {
 } from "./ResourceValidationFunctuions";
 import { useNavigate } from "react-router-dom";
 
+// Form for creating or editing a resource
+// If edit is true, the form will be pre-filled with the resource data and used to edit the resource
 const ResourceForm = ({ open, setOpen, resource, edit }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -55,7 +57,7 @@ const ResourceForm = ({ open, setOpen, resource, edit }) => {
     const [pdf, setPdf] = useState(null);
     const [pdfError, setPdfError] = useState("");
 
-    // TODO ENSURE FILE EXTENSION IS IN FACT A PDF
+    // Validating the uploaded file is a pdf
     const validatePdf = () => {
         // If this is a new resource and there is no valid pdf, then error
         // If this is an edit and the original resource was not a pdf, then error
@@ -73,7 +75,7 @@ const ResourceForm = ({ open, setOpen, resource, edit }) => {
         return "";
     };
 
-    // Validating PDF
+    // Validating PDF every time it changes
     useEffect(() => {
         validatePdf();
     }, [pdf]);
@@ -180,7 +182,6 @@ const ResourceForm = ({ open, setOpen, resource, edit }) => {
                 </TextField>
                 {/* RESOURCE TYPE RADIAL BUTTONS */}
                 <DropdownBox
-                    children="Resource Type"
                     options={[
                         {
                             value: resourceTypes.YOUTUBE,
@@ -191,7 +192,10 @@ const ResourceForm = ({ open, setOpen, resource, edit }) => {
                     ]}
                     selectedOption={resourceType}
                     setSelectedOption={setResourceType}
-                />
+                >
+                    Resource Type
+                </DropdownBox>
+
                 {/* DIFFERENT FORM DEPENDING ON WHAT RESOURCE HAS BEEN CHOSEN */}
                 <div>
                     {resourceType === resourceTypes.PAPER ? (

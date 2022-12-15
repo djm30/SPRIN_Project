@@ -2,11 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Card from "../Card";
 
-/**
- *
- * @param {*} param0
- * @returns
- */
+// Modal component
+// Takes in open, setOpen, children, and className
+// Open is a boolean that determines if the modal is open or closed
+// SetOpen is a function that sets the open state
+// Children is the content of the modal
+// ClassName is to add additional classes to the modal
 const Modal = ({ open, setOpen, children, className }) => {
     const backgroundRef = useRef(null);
     const modalRef = useRef(null);

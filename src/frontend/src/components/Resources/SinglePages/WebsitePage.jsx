@@ -9,6 +9,9 @@ import { useNavigate } from "react-router-dom";
 import { deleteResource } from "../../../reducers/resourceReducer";
 import { ReactComponent as Link } from "../../../assets/Link.svg";
 
+// Single page for displaying a website
+// Displays the website and the resource information
+// If the user is authorized, they can edit or delete the resource
 const WebsitePage = ({ resource }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();

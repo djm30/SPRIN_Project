@@ -7,6 +7,7 @@ import { submitLogin } from "../reducers/authReducer";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
+// Login page
 const Login = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();

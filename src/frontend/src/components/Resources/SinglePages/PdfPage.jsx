@@ -14,6 +14,9 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
 
+// Single page for displaying a pdf
+// Displays the pdf and the resource information
+// If the user is authorized, they can edit or delete the resource
 const PdfPage = ({ resource }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();

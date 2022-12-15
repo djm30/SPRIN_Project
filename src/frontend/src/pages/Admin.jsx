@@ -14,9 +14,12 @@ import ConfirmationModal from "../components/UI/ConfirmationModal";
 import { deleteUser } from "../reducers/userReducer";
 import { initializeStats } from "../reducers/statsReducer";
 
+// Admin page
+// Displays the admin dashboard
 const Admin = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
     const user = useSelector((state) => state.auth);
     const stats = useSelector((state) => state.stats);
 
@@ -24,6 +27,8 @@ const Admin = () => {
     const [confirmOpen, setConfirmOpen] = useState(false);
     const [chosenUser, setUser] = useState(null);
 
+    // Redirects to home if user is not an admin
+    // Fetches all users and stats if user is an admin
     useEffect(() => {
         if (!user || user.role !== UserRoles.ADMIN) navigate("/home");
         const initialize = async () => {

@@ -3,6 +3,9 @@ import { errorHandler } from "./errorHandler";
 
 const baseUrl = "/api/stats";
 
+// All backend requests related to stats are defined here
+
+// Gets all stats from the backend
 export const getStats = async () => {
     try {
         const response = await axios.get(baseUrl);
@@ -12,6 +15,7 @@ export const getStats = async () => {
     }
 };
 
+// Generic method for incrementing a stat
 const incrementStat = async (stat) => {
     try {
         await axios.post(baseUrl + "/" + stat);
@@ -20,6 +24,7 @@ const incrementStat = async (stat) => {
     }
 };
 
+// Specific methods are exposed for incrementing each stat based on the above generic method
 export const incrementViews = async () => incrementStat("views");
 
 export const incrementUsers = async () => incrementStat("users");

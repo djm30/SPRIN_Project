@@ -1,5 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 
+// Radio buttons component
+// Takes in a value, setValue, info, and children
+// Value is the value of the radio button
+// SetValue is the function to set the value of the radio button
+// Info is an array of objects that contain the label and value of the radio button
+// Children is the title of the radio buttons
 const RadioButtons = ({ value, setValue, info, children }) => {
     return (
         <div className="mx-2 mt-2 mb-2 border-b-[1px] border-border-color pb-4">

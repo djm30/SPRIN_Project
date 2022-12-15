@@ -1,5 +1,10 @@
 import React from "react";
 
+// Text field designed to be used with the UseTextField hook
+// Takes in children, error and inputParams
+// Children is the label of the text field
+// Error is the error message of the text field
+// InputParams is the parameters of the input element
 const TextField = ({ children, error, inputParams }) => {
     return (
         <div className="flex flex-col gap-2 mx-2 border-b-[1px] border-border-color pb-4">

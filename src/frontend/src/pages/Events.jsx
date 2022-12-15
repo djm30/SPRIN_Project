@@ -9,6 +9,8 @@ import EventContainer from "../components/Events/EventContainer";
 import { useAuthorized } from "../hooks";
 import UserRoles from "../services/UserRoles";
 
+// Events page
+// Displays all events
 const Events = () => {
     const [openForm, setOpenForm] = useState(false);
 
@@ -20,6 +22,7 @@ const Events = () => {
 
     let currentPageOfEvents;
 
+    // Trying to get current page of events
     try {
         currentPageOfEvents = events[currPage - 1];
     } catch (e) {

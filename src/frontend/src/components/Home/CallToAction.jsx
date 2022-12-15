@@ -4,6 +4,8 @@ import ContentContainer from "../UI/ContentContainer";
 import styles from "./CallToAction.module.css";
 import JoinPopUp from "../Partners/JoinTodayPop";
 
+// Call to action section
+// Displays a heading and a button to join the network
 const CallToAction = () => {
     return (
         <section

@@ -21,20 +21,25 @@ import SingleEventPage from "./pages/SingleEventPage";
 import { useResource, useEvent } from "./hooks";
 import NotFound from "./pages/NotFound";
 
+// Main app component
 function App() {
     const dispatch = useDispatch();
     useEffect(() => {
         // Try to reauthenticate on page reload if a session id is found
-        dispatch(incrementStats(statTypes.VIEWS));
         dispatch(tryReauthenticate());
+        dispatch(incrementStats(statTypes.VIEWS));
+
+        // Initialize resources and events
         dispatch(initializeResources());
         dispatch(initializeEvents());
     }, []);
 
     return (
         <>
+            {/* Notification component to display all notifications published from the application */}
             <Notification />
             <div className="font-body overflow-x-hidden -z-50">
+                {/* Defined routing for the application here */}
                 <Routes>
                     <Route
                         path="/"

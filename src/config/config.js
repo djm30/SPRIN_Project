@@ -1,5 +1,7 @@
 require("dotenv").config();
 
+// This file handles retrieving the environment variables from the .env file or the system environment variables
+
 const PORT = process.env.PORT;
 const SECRET = process.env.SECRET;
 

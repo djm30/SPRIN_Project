@@ -1,6 +1,7 @@
 import React from "react";
 import { dateTimeValidator } from "./EventValidationFunctions";
 
+// Component using the datetime-local input tag
 export const DateTimeForm = ({
     value,
     setDateTime,

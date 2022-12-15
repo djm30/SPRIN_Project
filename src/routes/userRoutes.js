@@ -15,6 +15,8 @@ const {
     reauthenticate,
 } = require("../controllers/userController");
 
+// Adding the associated endpoints to an express router to be added to the main application
+
 // Only admin
 router.get("/", authorize("admin"), asyncHandler(getUsers));
 
@@ -36,6 +38,7 @@ router.delete(
 router.post(
     "/login",
     (req, res, next) => {
+        // Checking if there are any missing fields before passing to passport for login
         const { email, password } = req.body;
         if (!email || !password) {
             return res.status(400).json({ message: "Please enter all fields" });

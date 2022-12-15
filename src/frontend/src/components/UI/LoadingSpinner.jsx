@@ -1,6 +1,10 @@
 import React from "react";
 import { PulseLoader } from "react-spinners";
 
+// Loading spinner component
+// Takes in loading and size
+// Loading is a boolean that determines if the spinner is shown or not
+// Size is the size of the spinner
 const LoadingSpinner = ({ loading, size }) => {
     return (
         <div>

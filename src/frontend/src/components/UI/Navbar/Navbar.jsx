@@ -11,6 +11,9 @@ import UserRoles from "../../../services/UserRoles";
 import UserForm from "../../Admin/UserForm/UserForm";
 import { getUser } from "../../../services/userService";
 
+// Main navigation bar
+// Displays the navigation links and the logout button
+// If the transparent prop is true, the background is transparent
 const Navbar = ({ transparent }) => {
     const [open, setOpen] = useState(false);
     const bgColor = transparent ? "transparent" : "darkblue-100";

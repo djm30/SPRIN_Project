@@ -1,6 +1,11 @@
 import React from "react";
 import Modal from "./Modal/Modal";
 
+// Defines a confirmation modal
+// Used to confirm actions such as deleting a post
+// Takes in a function to run on confirmation
+// Takes in a boolean to open/close the modal
+// Takes in a function to set the open state
 const ConfirmationModal = ({ setOpen, open, onConfirm, children }) => {
     return (
         <Modal

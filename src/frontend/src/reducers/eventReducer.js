@@ -11,6 +11,9 @@ import statTypes from "../services/StatTypes";
 
 let initialState = [];
 
+// Reducer for events
+// Contains the state of all events
+// Contains the actions for updating the state of all events
 const eventSlice = createSlice({
     name: "events",
     initialState,
@@ -36,11 +39,13 @@ const eventSlice = createSlice({
 
 const { setEvents, addEvent, replaceEvent, removeEvent } = eventSlice.actions;
 
+// Action for fetching all events from the backend
 export const initializeEvents = () => {
     return async (dispatch) => {
         try {
             const events = await getEvents();
 
+            // Split events into pages of 4
             const pages = [];
             let currPage = [];
             for (let i = 0; i < events.length; i++) {
@@ -59,11 +64,13 @@ export const initializeEvents = () => {
     };
 };
 
+// Action for creating a new event
 export const newEvent = (event) => {
     return async (dispatch) => {
         try {
             const newEvent = await createEventRequest(event);
             dispatch(addEvent(newEvent));
+            // Show notification and increment stats
             dispatch(setNotification("Event created successfully", false));
             dispatch(incrementStats(statTypes.EVENTS));
         } catch (e) {
@@ -73,6 +80,7 @@ export const newEvent = (event) => {
     };
 };
 
+// Action for updating an existing event
 export const updateEvent = (id, event) => {
     return async (dispatch) => {
         try {
@@ -85,6 +93,7 @@ export const updateEvent = (id, event) => {
     };
 };
 
+// Action for deleting an existing event
 export const deleteEvent = (id) => {
     return async (dispatch) => {
         try {

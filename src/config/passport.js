@@ -2,6 +2,10 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const User = require("../models/User");
 
+// This is the callback function that is called when the user tries to log in
+// It takes the username and password from the request body and checks if they are valid
+// If they are valid, it calls done with the user object
+// If they are not valid, it calls done with false
 const authCallback = async (username, password, done) => {
     try {
         const user = await User.findOne({ email: username });
@@ -16,6 +20,7 @@ const authCallback = async (username, password, done) => {
     }
 };
 
+// This is the strategy that passport uses to authenticate the user
 const strategy = new LocalStrategy(
     { usernameField: "email", passwordField: "password" },
     authCallback,

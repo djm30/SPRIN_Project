@@ -4,6 +4,9 @@ import Clock from "../../assets/ClockBlack.svg";
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 
+// Single resource card
+// Displays the resource information
+// When clicked, it navigates to the single page for the resource
 const SingleResource = ({ resource }) => {
     const navigate = useNavigate();
     let { _id, title, description, resourceType, resourceUrl, dateTime } =

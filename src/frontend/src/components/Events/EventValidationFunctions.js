@@ -1,6 +1,5 @@
 // Validation functions for all fields for the create event form
 
-// TODO
 export const eventTileValidator = (title) => {
     if (title.trim().length === 0) return "Please provide a title";
     if (title.trim().length < 4) return "Please provide a longer title";
