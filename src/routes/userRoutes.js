@@ -8,6 +8,7 @@ const {
     getUsers,
     approveUser,
     registerUser,
+    preLogin,
     deleteUser,
     editUser,
     login,
@@ -37,15 +38,7 @@ router.delete(
 
 router.post(
     "/login",
-    (req, res, next) => {
-        // Checking if there are any missing fields before passing to passport for login
-        const { email, password } = req.body;
-        if (!email || !password) {
-            return res.status(400).json({ message: "Please enter all fields" });
-        } else {
-            next();
-        }
-    },
+    preLogin,
     passport.authenticate("local"),
     asyncHandler(login),
 );

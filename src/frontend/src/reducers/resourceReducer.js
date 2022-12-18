@@ -7,7 +7,7 @@ import {
 } from "../services/resourceService";
 import { setNotification } from "./notificationReducer";
 import { incrementStats } from "./statsReducer";
-import statTypes from "../services/StatTypes";
+import statTypes from "../services/statTypes";
 
 // An array of arrays, each inner array will have a max length of 9
 let initialState = [];

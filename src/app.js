@@ -1,5 +1,6 @@
 const express = require("express");
 const session = require("express-session");
+const path = require("path");
 
 const MongoStore = require("connect-mongo");
 const mongoose = require("mongoose");
@@ -11,6 +12,7 @@ const errorMiddleware = require("./middleware/error");
 const logger = require("./config/logger");
 
 const app = express();
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -51,6 +53,12 @@ app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/stats", require("./routes/statsRoutes"));
 app.use("/api/events", require("./routes/eventRoutes"));
 app.use("/api/resources", require("./routes/resourceRoutes"));
+
+app.use("/", express.static("./src/frontend/dist"));
+app.use("*", express.static("./src/frontend/dist"));
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + "/frontend" + "/index.html"));
+});
 
 app.use(errorMiddleware);
 
