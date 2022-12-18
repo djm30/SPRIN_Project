@@ -13,6 +13,7 @@ const PreventionCardsTop = () => {
                     </h4>
                     {/* CARD IMAGE */}
                     <img
+                        data-cy="prevLink"
                         src="https://www.suicideinfo.ca/wp-content/uploads/2016/11/csp_horz_logo_rgb_fullcolour.jpg"
                         onClick={() =>
                             window.open("https://www.suicideinfo.ca", "_blank")

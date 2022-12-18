@@ -28,6 +28,7 @@ const CallToAction = () => {
                 <div className="space-x-2 sm:space-x-16">
                     <JoinPopUp />
                     <a
+                        data-cy="learnMore"
                         href="#aboutUs"
                         className="bg-grey-transparent md:text-lg hover:bg-skyblue-100 transition-all text-white shadow-sm px-10 py-3 rounded-3xl select-none cursor-pointer"
                     >

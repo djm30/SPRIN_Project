@@ -49,6 +49,7 @@ const YoutubePage = ({ resource }) => {
                 Are you sure you want to delete this resource?
             </ConfirmationModal>
             <iframe
+                data-cy='video'
                 className="aspect-video w-full mb-6 p-2 bg-neutral-50 rounded-xl"
                 src={embedLink}
             ></iframe>
