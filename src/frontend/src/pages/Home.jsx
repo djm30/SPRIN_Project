@@ -2,15 +2,15 @@ import React from "react";
 import AboutUs from "../components/Home/AboutUs";
 import CallToAction from "../components/Home/CallToAction";
 import ConnectionSupportAdvocacy from "../components/Home/CSA";
-import Modal from "../components/UI/Modal/Modal";
-import ContentContainer from "../components/UI/ContentContainer";
 import PopUp from "../components/UI/UrgentHelpPopup";
 
+// Home page
+// Displays the home page
 const Home = () => {
     return (
         <>
-            <PopUp />
-            <CallToAction />
+            <PopUp data-cy="closeBut" />
+            <CallToAction data-cy="joinBut" />
             <ConnectionSupportAdvocacy />
             <AboutUs />
             {/* PADDING BETWEEN ABOUT US AND FOOTER */}

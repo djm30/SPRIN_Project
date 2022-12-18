@@ -2,6 +2,7 @@ import React from "react";
 import ContentContainer from "../components/UI/ContentContainer";
 import Navbar from "../components/UI/Navbar/Navbar";
 
+// Generic page for when a url is not matched
 const NotFound = () => {
     return (
         <div className="min-h-screen flex flex-col">

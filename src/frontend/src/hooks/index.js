@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useMatch } from "react-router-dom";
 
+// All custom react hooks for the application
+
 /**
  *
  * @desc Handles state and error message for a text field
@@ -21,8 +23,8 @@ export const useTextField = (
         setError(validationFunction(event.target.value));
     };
 
-    const reset = () => {
-        setValue("");
+    const reset = (value = "") => {
+        setValue(value);
         setError("");
     };
 
@@ -41,6 +43,7 @@ export const useTextField = (
     return [value, reset, error, isValid, inputParams];
 };
 
+// Retrieves the resource from the redux store based on the id in the url
 export const useResource = () => {
     const resources = useSelector((state) => state.resources);
     const match = useMatch("/resources/:id");
@@ -50,6 +53,7 @@ export const useResource = () => {
     return null;
 };
 
+// Retrieves the event from the redux store based on the id in the url
 export const useEvent = () => {
     const events = useSelector((state) => state.events);
     const match = useMatch("/events/:id");
@@ -59,6 +63,7 @@ export const useEvent = () => {
     return null;
 };
 
+// Finds an item in a list of pages based on the provided id
 const findInPage = (pages, id) => {
     for (let page of pages) {
         for (let item of page) {
@@ -70,12 +75,12 @@ const findInPage = (pages, id) => {
     return null;
 };
 
+// Checks if the user is authorized to perform an action
 export const useAuthorized = (...roles) => {
     const user = useSelector((state) => state.auth);
     if (!user) return false;
-    const isAuthorized = roles.reduce(
-        (prev, role) => (!prev ? user.role === role : false),
-        false,
-    );
-    return isAuthorized;
+    for (let role of roles) {
+        if (role === user.role) return true;
+    }
+    return false;
 };

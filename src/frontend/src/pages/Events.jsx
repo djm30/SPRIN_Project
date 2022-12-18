@@ -6,7 +6,11 @@ import PageNumbers from "../components/UI/PageNumbers";
 import EventForm from "../components/Events/EventForm";
 import { useSelector } from "react-redux";
 import EventContainer from "../components/Events/EventContainer";
+import { useAuthorized } from "../hooks";
+import UserRoles from "../services/UserRoles";
 
+// Events page
+// Displays all events
 const Events = () => {
     const [openForm, setOpenForm] = useState(false);
 
@@ -18,14 +22,30 @@ const Events = () => {
 
     let currentPageOfEvents;
 
+    // Trying to get current page of events
     try {
         currentPageOfEvents = events[currPage - 1];
-    } catch (e) {}
+    } catch (e) {
+        console.log(e);
+    }
 
     // Refetching current page when events changes
     useEffect(() => {
         currentPageOfEvents = events[currPage - 1];
     }, [events]);
+
+    const toggleButton = () => {
+        return useAuthorized(UserRoles.ADMIN) ? (
+            <button
+                className="bg-darkblue-100 text-white hover:bg-skyblue-300 hover:text-white transition-all px-6 py-2 rounded-xl shadow-sm hidden md:block"
+                onClick={() => setOpenForm(true)}
+            >
+                New Event
+            </button>
+        ) : (
+            ""
+        );
+    };
 
     return (
         <div className="min-h-screen">
@@ -33,19 +53,17 @@ const Events = () => {
             <EventForm open={openForm} setOpen={setOpenForm} />
             <section className="w-full h-full">
                 <ContentContainer>
-                    <Heading>Events</Heading>
+                    <Heading Button={toggleButton}>Events</Heading>
                     {/* EVENTS CONTAINER */}
                 </ContentContainer>
                 <EventContainer events={currentPageOfEvents} />
             </section>
             <div className="flex justify-center">
-                <div className="absolute bottom-10">
-                    <PageNumbers
-                        numPages={numPages}
-                        currPage={currPage}
-                        setCurrPage={setCurrPage}
-                    />
-                </div>
+                <PageNumbers
+                    numPages={numPages}
+                    currPage={currPage}
+                    setCurrPage={setCurrPage}
+                />
             </div>
         </div>
     );

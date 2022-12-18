@@ -4,41 +4,29 @@ services:
   mongo:
     container_name: mongodb
     image: mongo:latest
-    restart: unless_stopped
+    restart: always
     ports:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
-    
-  mongoexpress:
-    container_name: mongo_express
-    restart: always
-    image: mongo-express:0.54.0
-    environment:
-      - ME_CONFIG_MONGODB_SERVER=mongodb
-    depends_on:
-      - mongo
-    ports:
-      - "8081:8081"
-    
+
   redis:
     container_name: redis
     image: redis:latest
     restart: always
     ports:
       - "6379:6379"
-  portainer:
-    image: portainer/portainer-ce
-    container_name: portainer
-    restart: always
-    ports:
-      - "8080:8000"
-      - "9000:9000"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - portainer_data:/data
+  # portainer:
+  #   image: portainer/portainer-ce
+  #   container_name: portainer
+  #   restart: always
+  #   ports:
+  #     - "8080:8000"
+  #     - "9000:9000"
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #     - portainer_data:/data
 
 volumes:
   mongo_data:
-  redis_data:
-  portainer_data:
+  redis_data: # portainer_data:

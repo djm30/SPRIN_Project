@@ -8,6 +8,8 @@ import NotFound from "./NotFound";
 import WebsitePage from "../components/Resources/SinglePages/WebsitePage";
 import PdfPage from "../components/Resources/SinglePages/PdfPage";
 
+// Single resource page
+// Displays a single resource on an entire page when the url is /resources/:id
 const SingleResourcePage = ({ resource }) => {
     if (resource === undefined) return <Loading />;
     if (resource === null) return <NotFound />;

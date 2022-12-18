@@ -12,6 +12,8 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
     "axios": "^0.27.2",
+    "date-fns": "^2.29.3",
+    "random-gradient": "^0.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dropdown": "^1.11.0",
@@ -19,7 +21,9 @@
     "react-icons": "^4.6.0",
     "react-pdf": "^6.1.0",
     "react-redux": "^8.0.2",
-    "react-router-dom": "^6.4.1"
+    "react-router-dom": "^6.4.1",
+    "react-spinners": "^0.13.6",
+    "vite-plugin-svgr": "^2.2.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

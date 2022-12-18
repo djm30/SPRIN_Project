@@ -16,6 +16,7 @@ const { validateSync } = require("../validation/common");
 // therefore user object will always be available
 // for all of these methods
 
+// This method will find a single event by its ID and return it
 const getEvent = async (req, res) => {
     const id = req.params.id;
     const event = await Event.findById(id);
@@ -25,11 +26,13 @@ const getEvent = async (req, res) => {
     res.status(200).json(event);
 };
 
+// This method will find all events and return them
 const getEvents = async (req, res) => {
     const events = await Event.find({});
     res.status(200).json(events);
 };
 
+// This method will create a new event and return it
 const createEvent = async (req, res) => {
     const { title, description, location, address, eventbriteUrl, dateTime } =
         req.body;
@@ -55,6 +58,7 @@ const createEvent = async (req, res) => {
 
     let imgUrl = "";
 
+    // If there is a file in the request, upload it to S3
     if ("file" in req) {
         const file = req.file;
         if (!file)
@@ -86,6 +90,7 @@ const createEvent = async (req, res) => {
     }
 };
 
+// This method will update an existing event and return it
 const updateEvent = async (req, res) => {
     const { title, description, location, address, eventbriteUrl, dateTime } =
         req.body;
@@ -113,11 +118,13 @@ const updateEvent = async (req, res) => {
 
     let imgUrl = eventToUpdate.imgUrl;
 
-    if ("file" in req) {
+    // If there is a file in the request, upload it to S3
+    if (req.file) {
         const file = req.file;
         if (!file)
             return res.status(400).json({ message: "Please upload a file" });
-        imgUrl = await replaceFile(eventToUpdate.imgUrl, file.mimetype);
+        // Replacing the file in S3
+        imgUrl = await replaceFile(eventToUpdate.imgUrl, file, file.mimetype);
         if (!imgUrl)
             return res.status(500).json({
                 message: "Something went wrong uploading, please try again",
@@ -139,6 +146,7 @@ const updateEvent = async (req, res) => {
     }
 };
 
+// This method will delete an existing event
 const deleteEvent = async (req, res) => {
     const id = req.params.id;
     await Event.findByIdAndDelete(id);

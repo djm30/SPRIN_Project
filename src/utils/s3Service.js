@@ -6,7 +6,6 @@ const {
     AWS_ACCESS,
 } = require("../config/config");
 const fs = require("fs");
-const { unlink } = require("fs");
 const Logger = require("../config/logger");
 
 const bucketUrl = "https://sprin-storage-bucket.s3.eu-west-1.amazonaws.com/";
@@ -20,49 +19,45 @@ const s3 = new S3({
     },
 });
 
-const validateFile = () => {};
-
-/**
- *
- * @param {*} filename
- *
- */
+// Reads file from the system, and then proceeds to upload it to S3
 const uploadFile = async (file, contentType = "application/octet-stream") => {
-    const fileStream = fs.createReadStream(file.path);
-
-    const extension = "." + file.originalname.split(".").pop();
-
-    console.log(contentType);
-
-    const uploadParams = {
-        Bucket: AWS_BUCKET,
-        Body: fileStream,
-        Key: file.filename + extension,
-        ContentType: contentType,
-        ACl: "public-read",
-    };
-
-    let location;
     try {
+        const fileStream = fs.createReadStream(file.path);
+
+        const extension = "." + file.originalname.split(".").pop();
+
+        const uploadParams = {
+            Bucket: AWS_BUCKET,
+            Body: fileStream,
+            Key: file.filename + extension,
+            ContentType: contentType,
+            ACl: "public-read",
+        };
+
+        let location;
+
+        // uploading the file to S3 and returning the location url of the file
         const response = await s3.upload(uploadParams).promise();
         Logger.info(`Uploading ${file.originalname} to S3`);
         location = response.Location;
-    } catch (e) {
-        Logger.error(`Error: ${e}`);
-    }
 
-    // Cleaning up uploaded file and deleting it from the server
-    await fileStream.close();
-    try {
-        unlink(file.path, () => {
-            Logger.info("File Cleaned up");
-        });
+        // Cleaning up uploaded file and deleting it from the server
+        await fileStream.close();
+
+        return location;
     } catch (e) {
         Logger.error(`Error: ${e}`);
+    } finally {
+        // Delete the file from the local file system
+        fs.unlink(file.path, (err) => {
+            if (err) {
+                Logger.error(`Error: ${err}`);
+            }
+        });
     }
-    return location;
 };
 
+// Replaces a file on S3 with a new one
 const replaceFile = async (oldResourceUrl, file, contentType) => {
     let newLocation;
 
@@ -76,6 +71,7 @@ const replaceFile = async (oldResourceUrl, file, contentType) => {
     return newLocation;
 };
 
+// Deletes a file from S3
 const deleteFile = async (resourceUrl) => {
     // Getting name of old file on bucket
     const key = resourceUrl.replace(bucketUrl, "");

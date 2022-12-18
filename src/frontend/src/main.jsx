@@ -7,12 +7,14 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./reducers/store";
 
+// Render the application
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Provider store={store}>
-    <Router>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </Router>
-  </Provider>,
+    // Wrap the application in a provider to make the store available to all components
+    <Provider store={store}>
+        <Router>
+            <React.StrictMode>
+                <App />
+            </React.StrictMode>
+        </Router>
+    </Provider>,
 );

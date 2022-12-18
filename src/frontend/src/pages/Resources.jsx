@@ -6,7 +6,11 @@ import PageNumbers from "../components/UI/PageNumbers";
 import ResourceForm from "../components/Resources/ResourceForm";
 import ResourceContainer from "../components/Resources/ResourceContainer";
 import { useSelector } from "react-redux";
+import { useAuthorized } from "../hooks";
+import UserRoles from "../services/UserRoles";
 
+// Resources page
+// Lists out all resources
 const Resources = () => {
     const [openForm, setOpenForm] = useState(false);
 
@@ -21,12 +25,27 @@ const Resources = () => {
     // Trying to get current page from resources on load, may not be loaded at this stage however
     try {
         currentPageOfResources = resources[currPage - 1];
-    } catch (e) {}
+    } catch (e) {
+        console.log(e);
+    }
 
     // Refetching current page when resources changes
     useEffect(() => {
         currentPageOfResources = resources[currPage - 1];
     }, [resources]);
+
+    const toggleButton = () => {
+        return useAuthorized(UserRoles.ADMIN, UserRoles.USER) ? (
+            <button
+                className="bg-darkblue-100 text-white hover:bg-skyblue-300 hover:text-white transition-all px-6 py-2 rounded-xl shadow-sm hidden md:block"
+                onClick={() => setOpenForm(true)}
+            >
+                New Resource
+            </button>
+        ) : (
+            ""
+        );
+    };
 
     return (
         <div className="min-h-screen flex flex-col">
@@ -34,7 +53,7 @@ const Resources = () => {
             <ResourceForm open={openForm} setOpen={setOpenForm} />
             <section className="w-full h-full">
                 <ContentContainer>
-                    <Heading>Resources</Heading>
+                    <Heading Button={toggleButton}>Resources</Heading>
                     {/* Button to add a post here i suppose */}
                 </ContentContainer>
                 {/* POST A RESOURCE BUTTON HERE TODO*/}
@@ -42,15 +61,17 @@ const Resources = () => {
 
                 {/* SINGLE ROW */}
             </section>
-            <div className="flex justify-center">
-                <div className="absolute bottom-10">
+            {resources ? (
+                <div className="flex justify-center">
                     <PageNumbers
                         numPages={numPages}
                         currPage={currPage}
                         setCurrPage={setCurrPage}
                     />
                 </div>
-            </div>
+            ) : (
+                ""
+            )}
         </div>
     );
 };
