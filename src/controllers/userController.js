@@ -116,6 +116,23 @@ const editUser = async (req, res) => {
     return res.send(user);
 };
 
+const preLogin = async (req, res, next) => {
+    // Checking if there are any missing fields before passing to passport for login
+    const { email, password } = req.body;
+    if (!email || !password) {
+        return res.status(400).json({ message: "Please enter all fields" });
+    } else {
+        // Checking if user is approved before logging in
+        const user = await User.findOne({ email });
+        if (user.approved === false) {
+            return res.status(400).json({
+                message: "Account needs to be approved before logging in",
+            });
+        }
+        next();
+    }
+};
+
 const login = async (req, res) => {
     res.status(200).json({
         id: req.user._id,
@@ -150,6 +167,7 @@ module.exports = {
     getUser,
     getUsers,
     approveUser,
+    preLogin,
     registerUser,
     deleteUser,
     editUser,
