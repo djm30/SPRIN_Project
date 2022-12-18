@@ -8,7 +8,7 @@ import {
 } from "../services/userService";
 import { setNotification } from "./notificationReducer";
 import { incrementStats } from "./statsReducer";
-import statTypes from "../services/StatTypes";
+import statTypes from "../services/statTypes";
 
 let initialState = [];
 
