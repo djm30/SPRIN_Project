@@ -60,12 +60,12 @@ const Register = () => {
     if (confPassword == password) {
       if (!confPassword.length > 0) {
         // Validate the password
-        setPasswordValidation(
+        setConfPasswordValidation(
           "Your password must be greater than 8 characters!"
         );
         setConfPasswordValidation("");
       }
-    }
+    } else setConfPasswordValidation("Both passwords must match");
   }, [confPassword]);
 
   const onSubmit = (e) => {
@@ -151,7 +151,7 @@ const Register = () => {
               </div>
               <div className="flex justify-center">
                 <button className="bg-darkblue-100 text-white w-1/3 px-4 py-2 rounded-lg hover:bg-skyblue-200 transition-all">
-                  Login
+                  Register
                 </button>
               </div>
             </form>
