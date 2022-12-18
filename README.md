@@ -17,7 +17,7 @@ docker build -t sprin-application .
 docker run -p 3000:3000 sprin-application
 ```
 
-### Unix
+### Linux / MacOS
 ```
 chmod +x ./run.sh
 ./run.sh
