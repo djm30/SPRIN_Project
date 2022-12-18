@@ -5,9 +5,11 @@ import Heading from "../components/UI/Heading";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../reducers/userReducer";
 
+// The useDispatch allows the Register component to dispatch the components.
 const Register = () => {
   const dispatch = useDispatch();
 
+  // The useState hooks store the email, password, confPassword, emailValidation, confPasswordValidation and passwordValidation in the component's state.
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,6 +20,9 @@ const Register = () => {
   const [passwordValidation, setPasswordValidation] = useState("");
   const [confPasswordValidation, setConfPasswordValidation] = useState("");
 
+  // This code uses the useEffect hook to check the length of the email string and validate its contents. If the length of the email string is greater than 0, the code checks
+  // if an "@" symbol is present and if there is a "." after the "@" symbol. If either of these conditions are not met, an error message is set in the emailValidation state. If
+  // both conditions are met, the emailValidation state is set to an empty string.
   useEffect(() => {
     if (email.length > 0) {
       // Validate the email
@@ -36,6 +41,8 @@ const Register = () => {
     }
   }, [email]);
 
+  // This code uses the React Hook useEffect to check if the length of the "name" input is greater than 0. If it is, it sets the nameValidation to an empty string,
+  // indicating that the input is valid. If the name input is blank, it sets the nameValidation to a string saying "Your username can't be blank".
   useEffect(() => {
     if (name.length > 0) {
       if (!name.length > 0) {
@@ -45,6 +52,8 @@ const Register = () => {
     }
   }, [name]);
 
+  // This code uses the useEffect hook to set a validation check for a password field. If the length of the password is greater than 0, it will set the password validation
+  // to an empty string if the password is greater than 8 characters, or a message if it is not. The useEffect hook will re-run whenever the value of the password field changes.
   useEffect(() => {
     if (password.length > 0) {
       // Validate the password
@@ -56,6 +65,9 @@ const Register = () => {
     }
   }, [password]);
 
+  // This code is used to validate that both the password and confirmation password fields are the same. If they are not, the function will set a validation message to let
+  // the user know that both passwords must match. If the length of the confirmation password is greater than 0, the function will set the confirmation password validation message
+  // to an empty string.
   useEffect(() => {
     if (confPassword == password) {
       if (!confPassword.length > 0) {
@@ -68,6 +80,8 @@ const Register = () => {
     } else setConfPasswordValidation("Both passwords must match");
   }, [confPassword]);
 
+  // This code is a function that runs when the form below is submitted. It prevents the default action of the form from happening and checks for any validation errors. If there are
+  // no validation errors, it will dispatch the registerUser action with the entered name, email, and password.
   const onSubmit = (e) => {
     e.preventDefault();
     if (
@@ -80,6 +94,8 @@ const Register = () => {
     }
   };
 
+  // This html code draws the register page with page name, labelled text boxes and a register button. Each textbox contains the validation coded above and on submit, all the info
+  // in the form is sent to the dispatch method
   return (
     <div className="min-h-screen">
       <Navbar transparent={false} />
