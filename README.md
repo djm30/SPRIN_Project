@@ -16,6 +16,7 @@ The application can be run locally, either via the use of docker or by running o
 docker build -t sprin-application .
 docker run -p 3000:3000 sprin-application
 ```
+The application will be viewable at <hr href="http://localhost:3000">http://localhost:3000</href>
 
 ### Linux / MacOS
 ```
@@ -27,3 +28,5 @@ chmod +x ./run.sh
 ```
 PowerShell -File ./run.ps1
 ```
+
+The application will be viewable at <hr href="http://localhost:5173">http://localhost:5173</href>
