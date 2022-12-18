@@ -1,7 +1,9 @@
 import React from "react";
-
+// This component is a modal that is displayed when the "Join Today" button is clicked
 export default function JoinPopUp() {
+    // The `showModal` state variable is used to track whether the modal is open or closed
     const [showModal, setShowModal] = React.useState(false);
+    // The modal is rendered using JSX fragments
     return (
         <>
             {/* <a
@@ -20,7 +22,7 @@ export default function JoinPopUp() {
             >
                 Join Today
             </a>
-
+            {/* If `showModal` is `true`, the modal is rendered */}
             {showModal ? (
                 <>
                     <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">

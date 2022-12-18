@@ -5,6 +5,7 @@ import Card from "../UI/Card";
 
 
 const PartnerFlashCardsLeft = () =>{
+  // This is a functional component that returns a section element with some classes and a ContentContainer component
 return(
 <section className=" bg-white my-20 flex justify-center">
 <ContentContainer className="grid grid-cols-1 md:grid-cols-3 gap-2 space-y-5 md:space-y-0 space-x-1">

@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 import HamburgerMenu from "../UI/Navbar/HamburgerMenu";
 import MobileMenu from "../UI/Navbar/MobileMenu";
 import JoinPopUp from "./JoinTodayPop";
-
+// This component is a navbar with a transparent background (depending on the value of the `transparent` prop) that includes a label and a button
 const JoinTodayBar = ({ transparent }) => {
+    // The `open` state variable is used to track whether the join form is open or closed
     const [open, setOpen] = useState(false);
     const bgColor = transparent ? "transparent" : "bg-skyblue-200";
-
+     // The navbar is rendered as a nav element with the appropriate background color
     return (
         <nav className={`h-20 bg-skyblue-200 relative font-body text-white`}>
             {/* LABELS */}

@@ -17,6 +17,7 @@ class Carousel extends Component {
             <div className="mt-8">
                 <div className="max-w-lg h-72 flex overflow-hidden relative">
                     {CarouselData.map((slide, index) => {
+                        // The carousel slides are mapped over the `CarouselData` array and rendered as anchor tags with images inside
                         return (
                             <a
                                 href={slide.url}
@@ -24,15 +25,19 @@ class Carousel extends Component {
                                 rel="noopener noreferrer"
                             >
                                 <img
+                                // The `data-cy` attribute is used for Cypress testing
                                     data-cy="partLink"
+                                     // The `onMouseEnter` and `onMouseLeave` event handlers are used to pause the carousel when the user hovers over an image
                                     onMouseEnter={() => {
                                         this.setState({ paused: true });
                                     }}
                                     onMouseLeave={() => {
                                         this.setState({ paused: false });
                                     }}
+                                    // The `src` attribute sets the source of the image, and the `alt` attribute provides a text alternative for the image
                                     src={slide.image}
                                     alt="This is a carousel slide"
+                                    // The `key` prop is used to give each element in the array a unique key for React to keep track of
                                     key={index}
                                     className={
                                         index === this.state.currentSlide
@@ -45,9 +50,9 @@ class Carousel extends Component {
                                     }}
                                 />
                             </a>
-                        );
+                        );// The dot indicators at the bottom of the carousel are mapped over the `CarouselData` array and rendered as divs
                     })}
-
+                    
                     <div className="absolute w-full flex justify-center bottom-0">
                         {CarouselData.map((element, index) => {
                             return (

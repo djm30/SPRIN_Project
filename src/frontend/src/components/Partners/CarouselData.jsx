@@ -1,5 +1,6 @@
 import Placeholder from "../../assets/Placeholder.svg";
 export const CarouselData = [
+    //Provides image label and url properties to be used in the carousel
     {
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/NI_Assembly.svg/1200px-NI_Assembly.svg.png",
         label: "All Party Group on Suicide Prevention",
