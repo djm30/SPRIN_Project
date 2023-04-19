@@ -4,3 +4,4 @@ coverage
 *.log
 .env
 docker-compose.yaml
+mongo-init.js
