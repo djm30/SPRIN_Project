@@ -202,7 +202,6 @@ const ResourceForm = ({ open, setOpen, resource, edit }) => {
                         <FileUpload
                             label="Upload Research Paper"
                             onChange={(e) => {
-                                console.log(e);
                                 setPdf(e.target.files[0]);
                             }}
                             errorMessage={pdfError}

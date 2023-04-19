@@ -49,11 +49,11 @@ const uploadFile = async (file, contentType = "application/octet-stream") => {
         Logger.error(`Error: ${e}`);
     } finally {
         // Delete the file from the local file system
-        fs.unlink(file.path, (err) => {
-            if (err) {
-                Logger.error(`Error: ${err}`);
-            }
-        });
+        // fs.unlink(file.path, (err) => {
+        //     if (err) {
+        //         Logger.error(`Error: ${err}`);
+        //     }
+        // });
     }
 };
 

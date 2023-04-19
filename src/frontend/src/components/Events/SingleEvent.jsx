@@ -8,6 +8,7 @@ import { eventTypes } from "./EventTypes";
 import { useNavigate } from "react-router-dom";
 import gradient from "random-gradient";
 import { format } from "date-fns";
+import { fileUrl } from "../../services/fileUrl";
 
 // The image section of each event
 // Takes in the left prop to determine if it is on the left or right
@@ -27,7 +28,7 @@ const ImageSection = ({ left, img, title }) => {
         >
             {img && (
                 <img
-                    src={img}
+                    src={fileUrl(img)}
                     alt="Event Image"
                     className={`${
                         left
@@ -153,7 +154,7 @@ const InfoSection = ({
                     {/* VIEW BUTTON */}
                     {location === "physical" && (
                         <button
-                        data-cy='view'
+                            data-cy="view"
                             className="text-darkblue-100 border-border-color border-[1px] rounded-lg px-5 py-2 shadow-sm cursor-pointer hover:bg-sky-50 transition-all"
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -186,7 +187,7 @@ const InfoSection = ({
                 {/* REGISTER BUTTON */}
                 <div>
                     <button
-                        data-cy='register'
+                        data-cy="register"
                         className="text-white bg-skyblue-200 hover:bg-skyblue-300 rounded-lg px-5 py-2"
                         onClick={(e) => {
                             e.stopPropagation();
@@ -212,8 +213,6 @@ const InfoSection = ({
 const SingleEvent = ({ alt, event, isAuthorized, setOpen, setConfirmOpen }) => {
     const imageLeft = !alt;
     const infoLeft = alt;
-
-    console.log(event);
 
     const navigate = useNavigate();
 

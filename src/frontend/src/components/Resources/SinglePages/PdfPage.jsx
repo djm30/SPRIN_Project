@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 import { deleteResource } from "../../../reducers/resourceReducer";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { fileUrl } from "../../../services/fileUrl";
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
 
 // Single page for displaying a pdf
@@ -64,7 +65,7 @@ const PdfPage = ({ resource }) => {
                 <div className="flex justify-center items-center bg-neutral-50 rounded-xl p-4 my-4 min-h-[500px]">
                     <Document
                         className=""
-                        file={resource.resourceUrl}
+                        file={fileUrl(resource.resourceUrl)}
                         onLoadSuccess={onDocumentLoadSuccess}
                         loading={<LoadingSpinner />}
                     >

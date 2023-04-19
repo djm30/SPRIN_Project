@@ -1,6 +1,11 @@
 const Event = require("../models/Event");
 const Logger = require("../config/logger");
-const { uploadFile, replaceFile } = require("../utils/s3Service");
+
+const {
+    uploadFile,
+    replaceFile,
+    deleteFile,
+} = require("../utils/localStorageService");
 const {
     validateTitle,
     validateDescription,
@@ -9,7 +14,7 @@ const {
     validateDateTime,
     validateEventbriteUrl,
 } = require("../validation/Event");
-
+const authorizeUser = require("../utils/authorizeUser");
 const { validateSync } = require("../validation/common");
 
 // All event methods require admin authorization,
@@ -82,7 +87,6 @@ const createEvent = async (req, res) => {
 
     try {
         await event.save();
-        // console.log(event);
         res.status(200).json(event);
     } catch (e) {
         Logger.error(e);
@@ -149,7 +153,11 @@ const updateEvent = async (req, res) => {
 // This method will delete an existing event
 const deleteEvent = async (req, res) => {
     const id = req.params.id;
-    await Event.findByIdAndDelete(id);
+    const event = await Event.findById(id);
+    if (!event) return res.sendStatus(204);
+    if (!authorizeUser(req.user, event.poster)) return res.sendStatus(403);
+    if (event.imgUrl) await deleteFile(event.imgUrl);
+    await event.delete();
     res.sendStatus(204);
 };
 

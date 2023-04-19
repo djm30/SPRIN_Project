@@ -1,0 +1,272 @@
+Date : 2023-04-19 12:26:31
+Directory : /Users/dylan/Code/web/uni-project
+Total : 183 files,  35626 codes, 713 comments, 1211 blanks, all 37550 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| JSON               |          5 |     27,672 |          0 |          5 |     27,677 |
+| JavaScript         |        145 |      7,651 |        693 |      1,151 |      9,495 |
+| XML                |         18 |         92 |          1 |          2 |         95 |
+| YAML               |          3 |         67 |         16 |         21 |        104 |
+| CSS                |          3 |         61 |          2 |         14 |         77 |
+| Markdown           |          2 |         34 |          0 |          7 |         41 |
+| Properties         |          1 |         15 |          0 |          1 |         16 |
+| HTML               |          1 |         14 |          0 |          1 |         15 |
+| Docker             |          1 |         11 |          0 |          7 |         18 |
+| Shell Script       |          1 |          4 |          1 |          1 |          6 |
+| PowerShell         |          1 |          4 |          0 |          0 |          4 |
+| Ignore             |          1 |          1 |          0 |          0 |          1 |
+| JSON with Comments |          1 |          0 |          0 |          1 |          1 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                    | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                       |        183 |     35,626 |        713 |      1,211 |     37,550 |
+| . (Files)                                                                                               |         11 |     16,719 |         15 |         32 |     16,766 |
+| .fleet                                                                                                  |          1 |          0 |          0 |          1 |          1 |
+| .github                                                                                                 |          1 |         28 |          2 |          8 |         38 |
+| .github/workflows                                                                                       |          1 |         28 |          2 |          8 |         38 |
+| src                                                                                                     |        162 |     17,454 |        692 |        857 |     19,003 |
+| src (Files)                                                                                             |          2 |         47 |         17 |         21 |         85 |
+| src/config                                                                                              |          9 |        171 |         30 |         41 |        242 |
+| src/controllers                                                                                         |          4 |        457 |         67 |         94 |        618 |
+| src/frontend                                                                                            |        129 |     16,126 |        503 |        563 |     17,192 |
+| src/frontend (Files)                                                                                    |          9 |     11,177 |          3 |         14 |     11,194 |
+| src/frontend/cypress                                                                                    |         11 |         88 |         87 |         10 |        185 |
+| src/frontend/cypress/e2e                                                                                |          8 |         79 |         43 |          7 |        129 |
+| src/frontend/cypress/e2e (Files)                                                                        |          6 |         78 |          1 |          5 |         84 |
+| src/frontend/cypress/e2e/cypress                                                                        |          2 |          1 |         42 |          2 |         45 |
+| src/frontend/cypress/e2e/cypress/support                                                                |          2 |          1 |         42 |          2 |         45 |
+| src/frontend/cypress/fixtures                                                                           |          1 |          5 |          0 |          1 |          6 |
+| src/frontend/cypress/support                                                                            |          2 |          4 |         44 |          2 |         50 |
+| src/frontend/public                                                                                     |          1 |          1 |          0 |          0 |          1 |
+| src/frontend/src                                                                                        |        108 |      4,860 |        413 |        539 |      5,812 |
+| src/frontend/src (Files)                                                                                |          3 |         85 |          5 |         11 |        101 |
+| src/frontend/src/assets                                                                                 |         17 |         91 |          1 |          2 |         94 |
+| src/frontend/src/components                                                                             |         57 |      3,287 |        240 |        326 |      3,853 |
+| src/frontend/src/components/Admin                                                                       |          6 |        311 |         32 |         41 |        384 |
+| src/frontend/src/components/Admin (Files)                                                               |          1 |         18 |          1 |          3 |         22 |
+| src/frontend/src/components/Admin/Table                                                                 |          3 |        138 |         25 |         13 |        176 |
+| src/frontend/src/components/Admin/UserForm                                                              |          2 |        155 |          6 |         25 |        186 |
+| src/frontend/src/components/Events                                                                      |          7 |        716 |         50 |         64 |        830 |
+| src/frontend/src/components/Home                                                                        |          4 |        183 |          6 |         11 |        200 |
+| src/frontend/src/components/Partners                                                                    |          7 |        513 |         19 |         25 |        557 |
+| src/frontend/src/components/Resources                                                                   |         10 |        760 |         51 |         79 |        890 |
+| src/frontend/src/components/Resources (Files)                                                           |          7 |        368 |         40 |         53 |        461 |
+| src/frontend/src/components/Resources/SinglePages                                                       |          3 |        392 |         11 |         26 |        429 |
+| src/frontend/src/components/UI                                                                          |         23 |        804 |         82 |        106 |        992 |
+| src/frontend/src/components/UI (Files)                                                                  |         11 |        339 |         54 |         48 |        441 |
+| src/frontend/src/components/UI/Footer                                                                   |          5 |        157 |          4 |         15 |        176 |
+| src/frontend/src/components/UI/Modal                                                                    |          1 |         61 |         11 |          9 |         81 |
+| src/frontend/src/components/UI/Navbar                                                                   |          6 |        247 |         13 |         34 |        294 |
+| src/frontend/src/errors                                                                                 |          4 |         20 |          4 |          4 |         28 |
+| src/frontend/src/hooks                                                                                  |          1 |         63 |         12 |         12 |         87 |
+| src/frontend/src/pages                                                                                  |         11 |        641 |         61 |         81 |        783 |
+| src/frontend/src/reducers                                                                               |          7 |        461 |         59 |         57 |        577 |
+| src/frontend/src/services                                                                               |          8 |        212 |         31 |         46 |        289 |
+| src/middleware                                                                                          |          3 |         34 |         11 |         10 |         55 |
+| src/models                                                                                              |          4 |        144 |         14 |         16 |        174 |
+| src/routes                                                                                              |          4 |        112 |          7 |         21 |        140 |
+| src/utils                                                                                               |          3 |        104 |         22 |         27 |        153 |
+| src/validation                                                                                          |          4 |        259 |         21 |         64 |        344 |
+| tests                                                                                                   |          8 |      1,425 |          4 |        313 |      1,742 |
+| tests (Files)                                                                                           |          1 |         51 |          1 |          7 |         59 |
+| tests/Events                                                                                            |          2 |        451 |          0 |         91 |        542 |
+| tests/Resources                                                                                         |          2 |        493 |          0 |        108 |        601 |
+| tests/Stats                                                                                             |          1 |         78 |          0 |         25 |        103 |
+| tests/Users                                                                                             |          2 |        352 |          3 |         82 |        437 |
++---------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                                                | language           | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| /Users/dylan/Code/web/uni-project/.dockerignore                                                         | Ignore             |          1 |          0 |          0 |          1 |
+| /Users/dylan/Code/web/uni-project/.env                                                                  | Properties         |         15 |          0 |          1 |         16 |
+| /Users/dylan/Code/web/uni-project/.eslintrc.js                                                          | JavaScript         |         15 |          0 |          1 |         16 |
+| /Users/dylan/Code/web/uni-project/.fleet/settings.json                                                  | JSON with Comments |          0 |          0 |          1 |          1 |
+| /Users/dylan/Code/web/uni-project/.github/workflows/node.js.yml                                         | YAML               |         28 |          2 |          8 |         38 |
+| /Users/dylan/Code/web/uni-project/.gitlab-ci.yml                                                        | YAML               |         20 |          4 |          9 |         33 |
+| /Users/dylan/Code/web/uni-project/Dockerfile                                                            | Docker             |         11 |          0 |          7 |         18 |
+| /Users/dylan/Code/web/uni-project/README.md                                                             | Markdown           |         25 |          0 |          7 |         32 |
+| /Users/dylan/Code/web/uni-project/docker-compose.yaml                                                   | YAML               |         19 |         10 |          4 |         33 |
+| /Users/dylan/Code/web/uni-project/package-lock.json                                                     | JSON               |     16,548 |          0 |          1 |     16,549 |
+| /Users/dylan/Code/web/uni-project/package.json                                                          | JSON               |         57 |          0 |          1 |         58 |
+| /Users/dylan/Code/web/uni-project/run.ps1                                                               | PowerShell         |          4 |          0 |          0 |          4 |
+| /Users/dylan/Code/web/uni-project/run.sh                                                                | Shell Script       |          4 |          1 |          1 |          6 |
+| /Users/dylan/Code/web/uni-project/src/app.js                                                            | JavaScript         |         42 |         12 |         15 |         69 |
+| /Users/dylan/Code/web/uni-project/src/config/config.js                                                  | JavaScript         |         37 |          1 |          6 |         44 |
+| /Users/dylan/Code/web/uni-project/src/config/eventTypes.js                                              | JavaScript         |          4 |          1 |          2 |          7 |
+| /Users/dylan/Code/web/uni-project/src/config/logger.js                                                  | JavaScript         |         43 |          1 |         10 |         54 |
+| /Users/dylan/Code/web/uni-project/src/config/mongo.js                                                   | JavaScript         |         23 |          1 |          4 |         28 |
+| /Users/dylan/Code/web/uni-project/src/config/morgan.js                                                  | JavaScript         |         15 |         15 |          6 |         36 |
+| /Users/dylan/Code/web/uni-project/src/config/passport.js                                                | JavaScript         |         32 |          7 |          6 |         45 |
+| /Users/dylan/Code/web/uni-project/src/config/redis.js                                                   | JavaScript         |          8 |          2 |          3 |         13 |
+| /Users/dylan/Code/web/uni-project/src/config/resourceTypes.js                                           | JavaScript         |          5 |          1 |          2 |          8 |
+| /Users/dylan/Code/web/uni-project/src/config/roles.js                                                   | JavaScript         |          4 |          1 |          2 |          7 |
+| /Users/dylan/Code/web/uni-project/src/controllers/eventController.js                                    | JavaScript         |        112 |         27 |         29 |        168 |
+| /Users/dylan/Code/web/uni-project/src/controllers/resourceController.js                                 | JavaScript         |        123 |         17 |         21 |        161 |
+| /Users/dylan/Code/web/uni-project/src/controllers/statsController.js                                    | JavaScript         |         89 |          9 |         13 |        111 |
+| /Users/dylan/Code/web/uni-project/src/controllers/userController.js                                     | JavaScript         |        133 |         14 |         31 |        178 |
+| /Users/dylan/Code/web/uni-project/src/frontend/.eslintrc.cjs                                            | JavaScript         |         16 |          0 |          1 |         17 |
+| /Users/dylan/Code/web/uni-project/src/frontend/cypress.config.js                                        | JavaScript         |          7 |          1 |          2 |         10 |
+| /Users/dylan/Code/web/uni-project/src/frontend/cypress/e2e/cypress.config.js                            | JavaScript         |          7 |          1 |          2 |         10 |
+| /Users/dylan/Code/web/uni-project/src/frontend/cypress/e2e/cypress/support/commands.js                  | JavaScript         |          0 |         25 |          0 |         25 |
+| /Users/dylan/Code/web/uni-project/src/frontend/cypress/e2e/cypress/support/e2e.js                       | JavaScript         |          1 |         17 |          2 |         20 |
+| /Users/dylan/Code/web/uni-project/src/frontend/cypress/e2e/eventSpec.cy.js                              | JavaScript         |         10 |          0 |          1 |         11 |
+| /Users/dylan/Code/web/uni-project/src/frontend/cypress/e2e/homeSpec.cy.js                               | JavaScript         |         16 |          0 |          1 |         17 |
+| /Users/dylan/Code/web/uni-project/src/frontend/cypress/e2e/partnersSpec.cy.js                           | JavaScript         |         16 |          0 |          0 |         16 |
+| /Users/dylan/Code/web/uni-project/src/frontend/cypress/e2e/resourcesSpec.cy.js                          | JavaScript         |         15 |          0 |          0 |         15 |
+| /Users/dylan/Code/web/uni-project/src/frontend/cypress/e2e/spec.cy.js                                   | JavaScript         |         14 |          0 |          1 |         15 |
+| /Users/dylan/Code/web/uni-project/src/frontend/cypress/fixtures/example.json                            | JSON               |          5 |          0 |          1 |          6 |
+| /Users/dylan/Code/web/uni-project/src/frontend/cypress/support/commands.js                              | JavaScript         |          0 |         25 |          0 |         25 |
+| /Users/dylan/Code/web/uni-project/src/frontend/cypress/support/e2e.js                                   | JavaScript         |          4 |         19 |          2 |         25 |
+| /Users/dylan/Code/web/uni-project/src/frontend/icon-attributions.md                                     | Markdown           |          9 |          0 |          0 |          9 |
+| /Users/dylan/Code/web/uni-project/src/frontend/index.html                                               | HTML               |         14 |          0 |          1 |         15 |
+| /Users/dylan/Code/web/uni-project/src/frontend/package-lock.json                                        | JSON               |     11,018 |          0 |          1 |     11,019 |
+| /Users/dylan/Code/web/uni-project/src/frontend/package.json                                             | JSON               |         44 |          0 |          1 |         45 |
+| /Users/dylan/Code/web/uni-project/src/frontend/postcss.config.cjs                                       | JavaScript         |          6 |          0 |          1 |          7 |
+| /Users/dylan/Code/web/uni-project/src/frontend/public/vite.svg                                          | XML                |          1 |          0 |          0 |          1 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/App.jsx                                              | JavaScript         |         65 |          3 |          6 |         74 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/assets/Advocacy.svg                                  | XML                |         17 |          0 |          1 |         18 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/assets/Calendar.svg                                  | XML                |          4 |          0 |          0 |          4 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/assets/CallToAction.svg                              | XML                |          9 |          0 |          0 |          9 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/assets/CallToActionSmall.svg                         | XML                |          9 |          0 |          0 |          9 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/assets/ClockBlack.svg                                | XML                |          4 |          0 |          0 |          4 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/assets/ClockWhite.svg                                | XML                |          4 |          0 |          0 |          4 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/assets/Connection.svg                                | XML                |          3 |          0 |          1 |          4 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/assets/Download.svg                                  | XML                |          3 |          0 |          0 |          3 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/assets/Edit.svg                                      | XML                |          3 |          1 |          0 |          4 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/assets/Link.svg                                      | XML                |         10 |          0 |          0 |         10 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/assets/Location.svg                                  | XML                |          3 |          0 |          0 |          3 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/assets/Meeting.svg                                   | XML                |          3 |          0 |          0 |          3 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/assets/Placeholder.svg                               | XML                |          4 |          0 |          0 |          4 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/assets/PlaceholderLarge.svg                          | XML                |          4 |          0 |          0 |          4 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/assets/Radial.svg                                    | XML                |          5 |          0 |          0 |          5 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/assets/Support.svg                                   | XML                |          3 |          0 |          0 |          3 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/assets/react.svg                                     | XML                |          3 |          0 |          0 |          3 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Admin/Stat.jsx                            | JavaScript         |         18 |          1 |          3 |         22 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Admin/Table/Table.jsx                     | JavaScript         |         25 |          3 |          2 |         30 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Admin/Table/TableHead.jsx                 | JavaScript         |         15 |          0 |          3 |         18 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Admin/Table/TableRow.jsx                  | JavaScript         |         98 |         22 |          8 |        128 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Admin/UserForm/UserForm.jsx               | JavaScript         |        124 |          1 |         17 |        142 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Admin/UserForm/UserValidationFunctions.js | JavaScript         |         31 |          5 |          8 |         44 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Events/DateTimeForm.jsx                   | JavaScript         |         25 |          1 |          2 |         28 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Events/EventContainer.jsx                 | JavaScript         |         33 |          4 |          3 |         40 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Events/EventForm.jsx                      | JavaScript         |        324 |         12 |         24 |        360 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Events/EventTypes.js                      | JavaScript         |          4 |          1 |          2 |          7 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Events/EventValidationFunctions.js        | JavaScript         |         55 |          3 |         14 |         72 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Events/RadioButtons.jsx                   | JavaScript         |         36 |          6 |          3 |         45 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Events/SingleEvent.jsx                    | JavaScript         |        239 |         23 |         16 |        278 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Home/AboutUs.jsx                          | JavaScript         |         60 |          2 |          3 |         65 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Home/CSA.jsx                              | JavaScript         |         70 |          2 |          3 |         75 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Home/CallToAction.jsx                     | JavaScript         |         39 |          2 |          3 |         44 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Home/CallToAction.module.css              | CSS                |         14 |          0 |          2 |         16 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Partners/Carousel.jsx                     | JavaScript         |        106 |          5 |         10 |        121 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Partners/CarouselData.jsx                 | JavaScript         |         28 |          1 |          1 |         30 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Partners/JoinToday.jsx                    | JavaScript         |         26 |          3 |          2 |         31 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Partners/JoinTodayPop.jsx                 | JavaScript         |         63 |          9 |          2 |         74 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Partners/PartnerCardsLeft.jsx             | JavaScript         |         85 |          1 |          4 |         90 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Partners/PartnerCardsRight.jsx            | JavaScript         |         96 |          0 |          3 |         99 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Partners/PreventionCardsTop.jsx           | JavaScript         |        109 |          0 |          3 |        112 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Resources/DropdownBox.jsx                 | JavaScript         |         33 |          6 |          4 |         43 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Resources/ResourceContainer.jsx           | JavaScript         |         29 |          6 |          3 |         38 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Resources/ResourceForm.jsx                | JavaScript         |        196 |         14 |         25 |        235 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Resources/ResourceRow.jsx                 | JavaScript         |         18 |          2 |          3 |         23 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Resources/ResourceTypes.js                | JavaScript         |          5 |          1 |          2 |          8 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Resources/ResourceValidationFunctuions.js | JavaScript         |         31 |          5 |          8 |         44 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Resources/SinglePages/PdfPage.jsx         | JavaScript         |        155 |          3 |         10 |        168 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Resources/SinglePages/WebsitePage.jsx     | JavaScript         |        126 |          3 |          9 |        138 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Resources/SinglePages/YoutubePage.jsx     | JavaScript         |        111 |          5 |          7 |        123 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/Resources/SingleResource.jsx              | JavaScript         |         56 |          6 |          8 |         70 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/Card.jsx                               | JavaScript         |         20 |          7 |          3 |         30 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/ConfirmationModal.jsx                  | JavaScript         |         35 |          5 |          3 |         43 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/ContentContainer.jsx                   | JavaScript         |         11 |          4 |          3 |         18 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/FileUpload.jsx                         | JavaScript         |         56 |          6 |          5 |         67 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/Footer/Footer.jsx                      | JavaScript         |         14 |          2 |          3 |         19 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/Footer/FooterLink.jsx                  | JavaScript         |         12 |          1 |          2 |         15 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/Footer/LowerFooter.jsx                 | JavaScript         |         26 |          1 |          3 |         30 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/Footer/MiddleFooter.jsx                | JavaScript         |         80 |          0 |          3 |         83 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/Footer/TopFooter.jsx                   | JavaScript         |         25 |          0 |          4 |         29 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/Heading.jsx                            | JavaScript         |         12 |          4 |          4 |         20 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/LoadingSpinner.jsx                     | JavaScript         |         16 |          4 |          3 |         23 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/Modal/Modal.jsx                        | JavaScript         |         61 |         11 |          9 |         81 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/Navbar/Hamburger.module.css            | CSS                |         43 |          2 |         10 |         55 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/Navbar/HamburgerMenu.jsx               | JavaScript         |         29 |          4 |          4 |         37 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/Navbar/MobileMenu.jsx                  | JavaScript         |         45 |          2 |          5 |         52 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/Navbar/MobileMenuLink.jsx              | JavaScript         |         13 |          1 |          3 |         17 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/Navbar/Navbar.jsx                      | JavaScript         |        100 |          3 |          9 |        112 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/Navbar/Navlink.jsx                     | JavaScript         |         17 |          1 |          3 |         21 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/Notification.jsx                       | JavaScript         |         33 |          6 |          7 |         46 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/PageNumbers.jsx                        | JavaScript         |         67 |          6 |         12 |         85 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/Portal.jsx                             | JavaScript         |          5 |          5 |          2 |         12 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/TextField.jsx                          | JavaScript         |         15 |          5 |          3 |         23 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/components/UI/UrgentHelpPopup.jsx                    | JavaScript         |         69 |          2 |          3 |         74 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/errors/ForbiddenAccess.js                            | JavaScript         |          5 |          1 |          1 |          7 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/errors/InvalidCredentials.js                         | JavaScript         |          5 |          1 |          1 |          7 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/errors/InvalidRequest.js                             | JavaScript         |          5 |          1 |          1 |          7 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/errors/Unauthorized.js                               | JavaScript         |          5 |          1 |          1 |          7 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/hooks/index.js                                       | JavaScript         |         63 |         12 |         12 |         87 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/index.css                                            | CSS                |          4 |          0 |          2 |          6 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/main.jsx                                             | JavaScript         |         16 |          2 |          3 |         21 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/pages/Admin.jsx                                      | JavaScript         |         84 |          5 |         10 |         99 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/pages/Events.jsx                                     | JavaScript         |         58 |          5 |         10 |         73 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/pages/Home.jsx                                       | JavaScript         |         18 |          2 |          3 |         23 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/pages/Loading.jsx                                    | JavaScript         |         16 |          2 |          3 |         21 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/pages/Login.jsx                                      | JavaScript         |        104 |         17 |         13 |        134 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/pages/NotFound.jsx                                   | JavaScript         |         17 |          1 |          3 |         21 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/pages/Partners.jsx                                   | JavaScript         |         34 |          0 |          3 |         37 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/pages/Register.jsx                                   | JavaScript         |        151 |         19 |         13 |        183 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/pages/Resources.jsx                                  | JavaScript         |         64 |          6 |         10 |         80 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/pages/SingleEventPage.jsx                            | JavaScript         |         60 |          2 |          8 |         70 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/pages/SingleResourcePage.jsx                         | JavaScript         |         35 |          2 |          5 |         42 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/reducers/authReducer.js                              | JavaScript         |         54 |          5 |          8 |         67 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/reducers/eventReducer.js                             | JavaScript         |         91 |          9 |         10 |        110 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/reducers/notificationReducer.js                      | JavaScript         |         29 |          6 |          7 |         42 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/reducers/resourceReducer.js                          | JavaScript         |        102 |         12 |         10 |        124 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/reducers/statsReducer.js                             | JavaScript         |         79 |          9 |          7 |         95 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/reducers/store.js                                    | JavaScript         |         18 |          9 |          5 |         32 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/reducers/userReducer.js                              | JavaScript         |         88 |          9 |         10 |        107 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/services/UserRoles.js                                | JavaScript         |          4 |          1 |          2 |          7 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/services/authService.js                              | JavaScript         |         27 |          3 |          6 |         36 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/services/errorHandler.js                             | JavaScript         |         16 |          3 |          2 |         21 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/services/eventService.js                             | JavaScript         |         43 |          6 |          8 |         57 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/services/resourceService.js                          | JavaScript         |         43 |          6 |          8 |         57 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/services/statTypes.js                                | JavaScript         |          6 |          1 |          2 |          9 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/services/statsService.js                             | JavaScript         |         22 |          4 |          9 |         35 |
+| /Users/dylan/Code/web/uni-project/src/frontend/src/services/userService.js                              | JavaScript         |         51 |          7 |          9 |         67 |
+| /Users/dylan/Code/web/uni-project/src/frontend/tailwind.config.cjs                                      | JavaScript         |         45 |          1 |          5 |         51 |
+| /Users/dylan/Code/web/uni-project/src/frontend/vite.config.js                                           | JavaScript         |         18 |          1 |          2 |         21 |
+| /Users/dylan/Code/web/uni-project/src/index.js                                                          | JavaScript         |          5 |          5 |          6 |         16 |
+| /Users/dylan/Code/web/uni-project/src/middleware/auth.js                                                | JavaScript         |         15 |          7 |          3 |         25 |
+| /Users/dylan/Code/web/uni-project/src/middleware/error.js                                               | JavaScript         |         16 |          3 |          4 |         23 |
+| /Users/dylan/Code/web/uni-project/src/middleware/upload.js                                              | JavaScript         |          3 |          1 |          3 |          7 |
+| /Users/dylan/Code/web/uni-project/src/models/Event.js                                                   | JavaScript         |         32 |          2 |          3 |         37 |
+| /Users/dylan/Code/web/uni-project/src/models/Resource.js                                                | JavaScript         |         30 |          2 |          3 |         35 |
+| /Users/dylan/Code/web/uni-project/src/models/Stats.js                                                   | JavaScript         |         32 |          2 |          3 |         37 |
+| /Users/dylan/Code/web/uni-project/src/models/User.js                                                    | JavaScript         |         50 |          8 |          7 |         65 |
+| /Users/dylan/Code/web/uni-project/src/routes/eventRoutes.js                                             | JavaScript         |         28 |          1 |          4 |         33 |
+| /Users/dylan/Code/web/uni-project/src/routes/resourceRoutes.js                                          | JavaScript         |         32 |          1 |          4 |         37 |
+| /Users/dylan/Code/web/uni-project/src/routes/statsRoutes.js                                             | JavaScript         |         16 |          1 |          4 |         21 |
+| /Users/dylan/Code/web/uni-project/src/routes/userRoutes.js                                              | JavaScript         |         36 |          4 |          9 |         49 |
+| /Users/dylan/Code/web/uni-project/src/utils/authorizeUser.js                                            | JavaScript         |          8 |          4 |          2 |         14 |
+| /Users/dylan/Code/web/uni-project/src/utils/localStorageService.js                                      | JavaScript         |         37 |          5 |         10 |         52 |
+| /Users/dylan/Code/web/uni-project/src/utils/s3Service.js                                                | JavaScript         |         59 |         13 |         15 |         87 |
+| /Users/dylan/Code/web/uni-project/src/validation/Event.js                                               | JavaScript         |         89 |          3 |         24 |        116 |
+| /Users/dylan/Code/web/uni-project/src/validation/Resource.js                                            | JavaScript         |         80 |          3 |         20 |        103 |
+| /Users/dylan/Code/web/uni-project/src/validation/User.js                                                | JavaScript         |         56 |         10 |         14 |         80 |
+| /Users/dylan/Code/web/uni-project/src/validation/common.js                                              | JavaScript         |         34 |          5 |          6 |         45 |
+| /Users/dylan/Code/web/uni-project/tests/Events/event.test.js                                            | JavaScript         |        288 |          0 |         56 |        344 |
+| /Users/dylan/Code/web/uni-project/tests/Events/eventValidationFunctions.test.js                         | JavaScript         |        163 |          0 |         35 |        198 |
+| /Users/dylan/Code/web/uni-project/tests/Resources/resource.test.js                                      | JavaScript         |        345 |          0 |         65 |        410 |
+| /Users/dylan/Code/web/uni-project/tests/Resources/resourceValidationFunctions.test.js                   | JavaScript         |        148 |          0 |         43 |        191 |
+| /Users/dylan/Code/web/uni-project/tests/Stats/stats.test.js                                             | JavaScript         |         78 |          0 |         25 |        103 |
+| /Users/dylan/Code/web/uni-project/tests/Users/user.test.js                                              | JavaScript         |        251 |          3 |         58 |        312 |
+| /Users/dylan/Code/web/uni-project/tests/Users/userValidationFunctions.test.js                           | JavaScript         |        101 |          0 |         24 |        125 |
+| /Users/dylan/Code/web/uni-project/tests/testUtils.js                                                    | JavaScript         |         51 |          1 |          7 |         59 |
+| Total                                                                                                   |                    |     35,626 |        713 |      1,211 |     37,550 |
++---------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+

@@ -2,7 +2,12 @@ const Resource = require("../models/Resource");
 const User = require("../models/User");
 const resourceTypes = require("../config/resourceTypes");
 const Logger = require("../config/logger");
-const { uploadFile, replaceFile, deleteFile } = require("../utils/s3Service");
+
+const {
+    uploadFile,
+    replaceFile,
+    deleteFile,
+} = require("../utils/localStorageService");
 const {
     validateTitle,
     validateDescription,
@@ -54,7 +59,6 @@ const createResource = async (req, res) => {
     } else {
         const file = req.file;
         if (!validateSync(validateFile, [file], res)) return res;
-        console.log(file.mimetype);
         resourceUrl = await uploadFile(file, file.mimetype);
         if (!resourceUrl)
             return res.status(500).json({

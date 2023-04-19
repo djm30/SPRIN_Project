@@ -54,7 +54,6 @@ const Admin = () => {
                 open={confirmOpen}
                 setOpen={setConfirmOpen}
                 onConfirm={() => {
-                    // console.log(chosenUser._id);
                     dispatch(deleteUser(chosenUser._id));
                     setConfirmOpen(false);
                 }}

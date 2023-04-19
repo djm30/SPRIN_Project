@@ -185,7 +185,6 @@ const EventForm = ({ open, setOpen, event, edit }) => {
             }
             formData.append("eventbriteUrl", eventbriteUrl);
             if (!imageError && image) formData.append("file", image);
-            console.log(formData);
 
             edit
                 ? dispatch(updateEvent(event._id, formData))
