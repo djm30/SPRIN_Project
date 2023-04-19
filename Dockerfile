@@ -3,6 +3,8 @@ WORKDIR /app
 
 COPY .env ./
 COPY package.json ./
+COPY package-lock.json ./
+COPY mongo-init.js ./
 COPY ./src ./src
 
 RUN mkdir logs

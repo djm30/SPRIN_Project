@@ -43,6 +43,11 @@ const registerUser = async (req, res) => {
     Logger.info("Request recieved to register new user");
     const { name, email, password } = req.body;
 
+    // If no users exist, the first user to register will be an admin
+    const users = await User.find();
+    let role = users.length === 0 ? "admin" : "user";
+    let approved = users.length === 0 ? true : false;
+
     // Validation
     // Name
     if (!validateSync(validateName, [name], res)) return res;
@@ -57,7 +62,8 @@ const registerUser = async (req, res) => {
         name,
         email,
         password,
-        role: "user",
+        role,
+        approved,
     });
 
     return res.status(201).send(user);
@@ -81,10 +87,6 @@ const editUser = async (req, res) => {
 
     const { name, email, role, password } = req.body;
     const user = await User.findById(id);
-
-    // TODO PASSWORD AND ROLE CHANGES
-
-    // Validation
 
     // Checking if a user was found
     if (!user) {
