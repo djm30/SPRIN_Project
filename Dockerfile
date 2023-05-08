@@ -1,4 +1,15 @@
-FROM node:18
+# Build frontend
+FROM node:18 AS build-frontend
+WORKDIR /app
+
+COPY ./src/frontend/package.json ./src/frontend/package-lock.json ./
+RUN npm install
+
+COPY ./src/frontend .
+RUN npm run build
+
+# Build backend
+FROM node:18 AS build-backend
 WORKDIR /app
 
 COPY .env ./
@@ -8,12 +19,15 @@ COPY mongo-init.js ./
 COPY ./src ./src
 
 RUN mkdir logs
-RUN npm install
-RUN cd ./src/frontend && npm install && npm run build
-RUN cd ../..
+RUN mkdir ./src/uploads
+RUN npm install --omit=dev
 
+COPY --from=build-frontend /app/dist ./src/frontend/dist
+
+ENV PORT=80
 
 CMD ["npm","run", "prod"]
 
-EXPOSE 3000
+EXPOSE 80
 
+VOLUME ["/app/logs", "/app/src/uploads"]

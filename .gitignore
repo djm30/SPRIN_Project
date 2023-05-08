@@ -5,3 +5,5 @@ coverage
 .env
 docker-compose.yaml
 mongo-init.js
+.fleet
+/.VSCodeCounter  

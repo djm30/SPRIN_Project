@@ -12,20 +12,23 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=password
       - MONGO_INITDB_DATABASE=databaseName
     volumes:
-      - ./data:/data/db
+      -  mongo_data:/data/db
       - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
 
   app:
     build:
       context: .
       dockerfile: Dockerfile
-    volumes:
-      - logs_volume:/app/logs
     ports:
-      - "3000:3000"
+      - "3000:80"
+    volumes:
+      - logs:/app/logs
+      - uploads:/app/src/uploads
     depends_on:
       - mongo
 
 volumes:
   mongo_data:
-  logs_volume:
+  logs:
+  uploads:
+

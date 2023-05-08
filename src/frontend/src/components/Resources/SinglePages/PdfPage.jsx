@@ -62,6 +62,7 @@ const PdfPage = ({ resource }) => {
                 Are you sure you want to delete this resource?
             </ConfirmationModal>
             <div>
+                {/* PDF */}
                 <div className="flex justify-center items-center bg-neutral-50 rounded-xl p-4 my-4 min-h-[500px]">
                     <Document
                         className=""
@@ -78,6 +79,7 @@ const PdfPage = ({ resource }) => {
                     </Document>
                 </div>
 
+                {/* Information Bar */}
                 <div className="mt-6 bg-neutral-50 px-4 py-3 rounded-xl mb-6 relative pb-6">
                     {isAuthorized && (
                         <div className="flex absolute sm:right-5 sm:top-10 bottom-3 right-3">
@@ -137,7 +139,7 @@ const PdfPage = ({ resource }) => {
                         </div>
                         <div className="flex gap-2 sm:flex-row flex-col  ">
                             <a
-                                href={resource.resourceUrl}
+                                href={fileUrl(resource.resourceUrl)}
                                 download
                                 className="bg-darkblue-100 px-4 py-2 rounded-xl text-white"
                             >
