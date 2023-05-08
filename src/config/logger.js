@@ -1,5 +1,5 @@
 const winston = require("winston");
-const env = require("./config").ENVIROMENT;
+const env = require("./config").ENVIRONMENT;
 
 // Logging configuration
 
@@ -12,8 +12,13 @@ const levels = {
 };
 
 const level = () => {
-    const isDevelopment = env === "DEVELOPMENT";
-    return isDevelopment ? "debug" : "warn";
+    if (env === "development" || env === "local") {
+        return "debug";
+    } else if (env === "production") {
+        return "info";
+    } else {
+        return "warn";
+    }
 };
 
 const colors = {
