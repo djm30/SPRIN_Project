@@ -54,13 +54,13 @@ app.use("/api/stats", require("./routes/statsRoutes"));
 app.use("/api/events", require("./routes/eventRoutes"));
 app.use("/api/resources", require("./routes/resourceRoutes"));
 
-// File middleware handler for serving files from the uploads folder7
+// File middleware handler for serving files from the uploads folder
 app.use("/files", express.static(path.join(__dirname, "uploads")));
 
 app.use("/", express.static("./src/frontend/dist"));
 app.use("*", express.static("./src/frontend/dist"));
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname + "/frontend" + "/index.html"));
+    res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
 });
 
 app.use(errorMiddleware);

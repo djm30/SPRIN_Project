@@ -48,6 +48,20 @@ const transports = [
     new winston.transports.File({ filename: "logs/all.log" }),
 ];
 
+// Add file transport for HTTP logs in production
+if (env === "production") {
+    transports.push(
+        new winston.transports.File({
+            filename: "logs/http.log",
+            level: "http",
+            format: winston.format.combine(
+                winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss:ms" }),
+                winston.format.json(),
+            ),
+        }),
+    );
+}
+
 const Logger = winston.createLogger({
     level: level(),
     levels,

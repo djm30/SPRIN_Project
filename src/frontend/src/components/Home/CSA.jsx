@@ -1,8 +1,8 @@
 import React from "react";
 import ContentContainer from "../UI/ContentContainer";
-import { ReactComponent as Connection } from "../../assets/Connection.svg";
-import { ReactComponent as Support } from "../../assets/Support.svg";
-import { ReactComponent as Advocacy } from "../../assets/Advocacy.svg";
+import { ReactComponent as ConnectionIcon } from "../../assets/Connection.svg";
+import { ReactComponent as SupportIcon } from "../../assets/Support.svg";
+import { ReactComponent as AdvocacyIcon } from "../../assets/Advocacy.svg";
 import Card from "../UI/Card";
 
 // Connection, Support and Advocacy section
@@ -19,14 +19,16 @@ const ConnectionSupportAdvocacy = () => {
                     </h4>
                     {/* CARD ICON */}
                     <div>
-                        <Connection />
+                        <ConnectionIcon />
                     </div>
                     {/* CARD TEXT */}
                     <p className="text-center">
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit
-                        Ut et massa mi. Aliquam in hendrerit urna. Pellentesque
-                        sit amet sapien fringilla, mattis ligula consectetur,
-                        ultrices mauris.
+                        To develop communication channels to link academics,
+                        policy makers, the community and voluntary sector, those
+                        with lived experiences and those in professional
+                        practice to support knowledge transfer and wider
+                        self-harm and suicide prevention efforts within a
+                        national and international context.
                     </p>
                 </Card>
                 {/* SINGLE CARD */}
@@ -38,14 +40,14 @@ const ConnectionSupportAdvocacy = () => {
                     <h4 className="text-2xl font-display">Support</h4>
                     {/* CARD ICON */}
                     <div>
-                        <Support />
+                        <SupportIcon />
                     </div>
                     {/* CARD TEXT */}
                     <p className="text-center">
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit
-                        Ut et massa mi. Aliquam in hendrerit urna. Pellentesque
-                        sit amet sapien fringilla, mattis ligula consectetur,
-                        ultrices mauris.
+                        To provide a central hub to highlight the latest
+                        research, training and events to support and strengthen
+                        evidence-based approaches to self-harm and suicide
+                        prevention.
                     </p>
                 </Card>
                 {/* SINGLE CARD */}
@@ -56,14 +58,16 @@ const ConnectionSupportAdvocacy = () => {
                     </h4>
                     {/* CARD ICON */}
                     <div>
-                        <Advocacy />
+                        <AdvocacyIcon />
                     </div>
                     {/* CARD TEXT */}
                     <p className="text-center">
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit
-                        Ut et massa mi. Aliquam in hendrerit urna. Pellentesque
-                        sit amet sapien fringilla, mattis ligula consectetur,
-                        ultrices mauris.
+                        To create a strong voice to support evaluation and
+                        quality improvement practices, to encourage relevant and
+                        timely evidence-based policy development and
+                        implementation, and to ensure research efforts are
+                        strategically targeted and implemented effectively
+                        according to the needs of those directly affected.
                     </p>
                 </Card>
             </ContentContainer>
